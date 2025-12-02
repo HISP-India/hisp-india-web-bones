@@ -1,59 +1,101 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { MapPin, Check, Building2, Calendar, ChevronDown } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface ProjectCardProps {
   id: string;
   title: string;
   excerpt: string;
-  tags: string[];
-  imageUrl?: string;
-  categoryColor?: string;
+  category: string;
+  status: string;
+  location: string;
+  client: string;
+  year: string;
 }
 
-export function ProjectCard({ id, title, excerpt, tags, imageUrl, categoryColor }: ProjectCardProps) {
+const statusBadgeColors: Record<string, string> = {
+  Ongoing: "bg-emerald-500 text-white border-transparent",
+  Support: "bg-orange-500 text-white border-transparent",
+  Closed: "bg-gray-600 text-white border-transparent",
+};
+
+const categoryBadgeColors: Record<string, string> = {
+  "Routine Health Information Systems": "bg-orange-500 text-white border-transparent",
+  "Community Information Systems": "bg-teal-500 text-white border-transparent",
+  "Data Analytics, Integration & Data Management": "bg-violet-500 text-white border-transparent",
+  "Capacity Building on Digital Health Skills": "bg-blue-500 text-white border-transparent",
+  "AMR Research": "bg-pink-500 text-white border-transparent",
+  "Action & Implementation Research": "bg-indigo-500 text-white border-transparent",
+  "OpenMRS": "bg-cyan-500 text-white border-transparent",
+};
+
+export function ProjectCard({ id, title, excerpt, category, status, location, client, year }: ProjectCardProps) {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const statusColor = statusBadgeColors[status] || "bg-gray-500 text-white border-transparent";
+  const categoryColor = categoryBadgeColors[category] || "bg-primary text-primary-foreground border-transparent";
+
   return (
-    <Card className="overflow-hidden h-full flex flex-col group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-      {/* Category Color Header */}
-      {categoryColor && (
-        <div className={`h-2 ${categoryColor} transition-all duration-300 group-hover:h-3`} />
-      )}
-      
-      {imageUrl && (
-        <div className="aspect-video overflow-hidden bg-muted">
-          <img
-            src={imageUrl}
-            alt={title}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-          />
-        </div>
-      )}
-      
+    <Card className="overflow-hidden h-full flex flex-col hover:shadow-lg transition-all duration-300">
       <CardHeader className="pb-3">
-        <div className="flex flex-wrap gap-2 mb-3">
-          {tags.slice(0, 2).map((tag) => (
-            <Badge key={tag} variant="secondary" className="text-xs">
-              {tag}
-            </Badge>
-          ))}
+        {/* Badges Row */}
+        <div className="flex flex-wrap gap-2 mb-4">
+          <Badge className={cn("flex items-center gap-1", categoryColor)}>
+            <MapPin className="h-3 w-3" />
+            {category}
+          </Badge>
+          <Badge className={cn("flex items-center gap-1", statusColor)}>
+            <Check className="h-3 w-3" />
+            {status}
+          </Badge>
         </div>
-        <h3 className="font-heading font-semibold text-lg line-clamp-2 group-hover:text-primary transition-colors">
+        
+        {/* Title */}
+        <h3 className="font-heading font-semibold text-lg leading-tight">
           {title}
         </h3>
       </CardHeader>
       
       <CardContent className="flex-1 pt-0">
-        <p className="text-muted-foreground text-sm line-clamp-4 leading-relaxed">{excerpt}</p>
+        {/* Metadata with icons */}
+        <div className="space-y-2 mb-4 text-sm text-muted-foreground">
+          <div className="flex items-start gap-2">
+            <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
+            <span>{location}</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <Building2 className="h-4 w-4 mt-0.5 shrink-0" />
+            <span>{client}</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <Calendar className="h-4 w-4 mt-0.5 shrink-0" />
+            <span>{year}</span>
+          </div>
+        </div>
+        
+        {/* Expandable Description */}
+        <p className={cn(
+          "text-sm text-primary leading-relaxed",
+          !isExpanded && "line-clamp-3"
+        )}>
+          {excerpt}
+        </p>
       </CardContent>
       
-      <CardFooter className="pt-0">
-        <Button variant="link" asChild className="p-0 h-auto group/link">
-          <Link to={`/work/${id}`} className="flex items-center">
-            <span>Learn More</span>
-            <ArrowRight className="ml-2 h-4 w-4 group-hover/link:translate-x-1 transition-transform" />
-          </Link>
+      <CardFooter className="pt-2">
+        <Button 
+          variant="link" 
+          onClick={() => setIsExpanded(!isExpanded)}
+          className="p-0 h-auto text-primary font-medium"
+        >
+          {isExpanded ? "Read Less" : "Read More"}
+          <ChevronDown className={cn(
+            "ml-1 h-4 w-4 transition-transform duration-200",
+            isExpanded && "rotate-180"
+          )} />
         </Button>
       </CardFooter>
     </Card>

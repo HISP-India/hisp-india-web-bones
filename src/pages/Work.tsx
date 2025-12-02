@@ -46,11 +46,7 @@ const filterConfig = [
   },
 ];
 
-const statusColors: Record<string, string> = {
-  Ongoing: "bg-emerald-500",
-  Support: "bg-blue-500",
-  Closed: "bg-gray-400",
-};
+// Status colors no longer needed here - moved to ProjectCard component
 
 const allProjects = [
   // ============ ONGOING PROJECTS ============
@@ -737,8 +733,11 @@ export default function Work() {
                   id={project.id}
                   title={project.title}
                   excerpt={project.excerpt}
-                  tags={project.tags}
-                  categoryColor={statusColors[project.status]}
+                  category={project.category}
+                  status={project.status}
+                  location={project.location}
+                  client={project.client}
+                  year={project.year}
                 />
               ))}
             </div>

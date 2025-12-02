@@ -1,0 +1,57 @@
+export default function Terms() {
+  return (
+    <div className="container max-w-4xl py-16 md:py-24">
+      <h1 className="font-heading text-4xl font-bold mb-8">Terms & Conditions</h1>
+      
+      <div className="prose prose-lg max-w-none space-y-8">
+        <section>
+          <h2 className="font-heading text-2xl font-bold mb-4">1. Acceptance of Terms</h2>
+          <p className="text-muted-foreground">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-heading text-2xl font-bold mb-4">2. Use of Services</h2>
+          <p className="text-muted-foreground">
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-heading text-2xl font-bold mb-4">3. Intellectual Property</h2>
+          <p className="text-muted-foreground">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-heading text-2xl font-bold mb-4">4. Limitation of Liability</h2>
+          <p className="text-muted-foreground">
+            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-heading text-2xl font-bold mb-4">5. Governing Law</h2>
+          <p className="text-muted-foreground">
+            These terms shall be governed by and construed in accordance with the laws of India. Any disputes arising from these terms shall be subject to the exclusive jurisdiction of the courts of Delhi, India.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="font-heading text-2xl font-bold mb-4">6. Contact Information</h2>
+          <p className="text-muted-foreground">
+            For questions about these Terms & Conditions, please contact us at info@hispindia.org.
+          </p>
+        </section>
+      </div>
+
+      <div className="mt-12 pt-8 border-t">
+        <p className="text-sm text-muted-foreground">
+          Last updated: December 2, 2025
+        </p>
+      </div>
+    </div>
+  );
+}

@@ -1,238 +1,288 @@
 import { Link } from "react-router-dom";
 import { Hero } from "@/components/Hero";
-import { CTASection } from "@/components/CTASection";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { PartnersCarousel } from "@/components/PartnersCarousel";
+import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 import {
   Database,
   Users,
-  Hospital,
-  BarChart,
-  BookOpen,
+  Building2,
+  BarChart3,
+  Search,
   GraduationCap,
   Cloud,
   ArrowRight,
+  TrendingUp,
+  Award,
+  Globe,
+  BookOpen,
 } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 const offerings = [
   {
     icon: Database,
     title: "Routine Health Information Systems",
-    description: "Comprehensive digital solutions for routine health data management and reporting.",
-    href: "/offerings/routine-health-info-systems",
+    description: "Comprehensive DHIS2-based solutions for national and state-level health data management, reporting, and visualization.",
+    link: "/offerings/routine-health-info-systems",
   },
   {
     icon: Users,
     title: "Community Information Systems",
-    description: "Empowering communities with digital tools for local health information management.",
-    href: "/offerings/community-info-systems",
+    description: "Mobile and web-based platforms empowering community health workers with real-time data collection and decision support.",
+    link: "/offerings/community-info-systems",
   },
   {
-    icon: Hospital,
+    icon: Building2,
     title: "OpenMRS Integrated Hospital Information Systems",
-    description: "Open-source hospital management systems for seamless patient care coordination.",
-    href: "/offerings/openmrs-his",
+    description: "End-to-end hospital management solutions integrating patient records, pharmacy, laboratory, and billing systems.",
+    link: "/offerings/openmrs-his",
   },
   {
-    icon: BarChart,
+    icon: BarChart3,
     title: "Data Analytics, Integration & Management",
-    description: "Advanced analytics and data integration solutions for evidence-based decision making.",
-    href: "/offerings/data-analytics",
+    description: "Advanced analytics pipelines, data warehousing, and integration services connecting multiple health information systems.",
+    link: "/offerings/data-analytics",
   },
   {
-    icon: BookOpen,
+    icon: Search,
     title: "Action & Implementation Research",
-    description: "Research-driven approaches to implement and evaluate health information systems.",
-    href: "/offerings/research",
+    description: "Evidence-based research partnerships exploring health system strengthening, digital health adoption, and policy impact.",
+    link: "/offerings/research",
   },
   {
     icon: GraduationCap,
     title: "Capacity Building & Education",
-    description: "Training and education programs to build sustainable health information system capacity.",
-    href: "/offerings/capacity-building",
+    description: "Training programs, academic courses, and continuous learning initiatives for health informatics professionals.",
+    link: "/offerings/capacity-building",
   },
   {
     icon: Cloud,
     title: "Climate & Health Data Analytics",
-    description: "Innovative analytics linking climate data with health outcomes for better preparedness.",
-    href: "/offerings/climate-health-analytics",
+    description: "Innovative solutions linking climate data with health outcomes for climate-resilient public health planning.",
+    link: "/offerings/climate-health-analytics",
   },
 ];
 
 const expertise = [
-  { title: "DHIS2 Expertise", count: "200+", description: "Implementations Worldwide" },
-  { title: "Years of Experience", count: "15+", description: "In Health Information Systems" },
-  { title: "Training Programs", count: "500+", description: "Professionals Trained" },
-  { title: "Research Publications", count: "100+", description: "Academic Papers" },
-];
-
-const featuredProjects = [
   {
-    title: "National Health Mission DHIS2 Implementation",
-    region: "India",
-    description: "Nationwide implementation of DHIS2 for health program monitoring and evaluation.",
-    tags: ["DHIS2", "National", "Health Programs"],
+    icon: Globe,
+    value: "200+",
+    label: "DHIS2 Implementations",
+    description: "Worldwide",
   },
   {
-    title: "Community Health Workers Digital Platform",
-    region: "Kerala",
-    description: "Mobile-first platform for community health workers to track maternal and child health.",
-    tags: ["Mobile", "Community Health", "MCH"],
+    icon: TrendingUp,
+    value: "25+",
+    label: "Years Experience",
+    description: "In Health Information Systems",
   },
   {
-    title: "OpenMRS Hospital System Integration",
-    region: "Karnataka",
-    description: "Integrated hospital information system deployment across 50+ facilities.",
-    tags: ["OpenMRS", "Hospital", "Integration"],
+    icon: Award,
+    value: "500+",
+    label: "Training Programs",
+    description: "Professionals Trained",
+  },
+  {
+    icon: BookOpen,
+    value: "100+",
+    label: "Research Publications",
+    description: "Academic Papers",
   },
 ];
 
 export default function Home() {
+  const [counts, setCounts] = useState({ 0: 0, 1: 0, 2: 0, 3: 0 });
+  const expertiseRef = useRef<HTMLDivElement>(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+          // Animate counters
+          expertise.forEach((_, index) => {
+            const target = parseInt(expertise[index].value);
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+
+            const timer = setInterval(() => {
+              current += increment;
+              if (current >= target) {
+                setCounts(prev => ({ ...prev, [index]: target }));
+                clearInterval(timer);
+              } else {
+                setCounts(prev => ({ ...prev, [index]: Math.floor(current) }));
+              }
+            }, 16);
+          });
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (expertiseRef.current) {
+      observer.observe(expertiseRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [hasAnimated]);
+
   return (
-    <div className="flex flex-col">
-      {/* Hero Section */}
+    <div className="scroll-smooth">
+      {/* Hero Section - Full Viewport Height */}
       <Hero
-        title="Building Health Information Systems for Public Good"
+        variant="fullscreen"
         subtitle="HISP India"
-        description="We design, implement, and strengthen sustainable health information systems that empower communities and improve public health outcomes across India and beyond."
-        variant="gradient"
+        title="Building Health Information Systems for Public Good"
+        description="Empowering nations with open-source solutions, research excellence, and capacity building for sustainable public health transformation"
+        showScrollIndicator
       >
-        <Button size="lg" asChild>
-          <Link to="/about">Learn About Us</Link>
+        <Button asChild size="lg" className="shadow-lg">
+          <Link to="/about">Learn More</Link>
         </Button>
-        <Button size="lg" variant="outline" asChild>
+        <Button asChild size="lg" variant="outline" className="shadow-lg bg-background/20 border-primary-foreground/30 text-primary-foreground hover:bg-background/30">
           <Link to="/contact">Get in Touch</Link>
         </Button>
       </Hero>
 
-      {/* Offerings Section */}
-      <section className="py-16 md:py-24">
+      {/* About Us in Brief */}
+      <section className="py-20 md:py-32 bg-background scroll-snap-start">
         <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Our Offerings</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive solutions for health information systems across diverse contexts and needs.
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <div>
+                <Badge className="mb-4">About HISP India</Badge>
+                <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">
+                  Leading Public Health Informatics Partner
+                </h2>
+              </div>
+              <p className="text-muted-foreground leading-relaxed">
+                Over the last two decades, HISP India has sought to firmly establish itself as a leading public health informatics partner. It uniquely blends rigorous research and education, advanced digital solutions based on free and open-source software platforms, and targeted capacity-building initiatives to tackle public health challenges in India and globally, focusing on South Asia.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                As a non-profit organization, HISP India has successfully developed engagement models while operating in a market increasingly dominated by large IT companies. The distinctive model, which integrates health system strengthening, research, and education, has enabled HISP India to establish a unique position.
+              </p>
+              <Button asChild variant="default" className="group">
+                <Link to="/about">
+                  Read More <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </Button>
+            </div>
+            <div className="relative">
+              <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                <Database className="w-32 h-32 text-primary/40" />
+              </div>
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-accent/10 rounded-full blur-3xl" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Expertise */}
+      <section ref={expertiseRef} className="py-20 md:py-32 bg-muted scroll-snap-start">
+        <div className="container">
+          <div className="text-center mb-16">
+            <Badge className="mb-4">Our Expertise</Badge>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
+              Proven Track Record of Impact
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Two and a half decades of excellence in health information systems
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {offerings.map((offering, index) => (
-              <Card key={index} className="group hover:shadow-lg transition-all">
-                <CardHeader>
-                  <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                    <offering.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle className="text-xl">{offering.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">{offering.description}</p>
-                  <Button variant="link" asChild className="p-0 h-auto">
-                    <Link to={offering.href}>
-                      Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {expertise.map((item, index) => {
+              const Icon = item.icon;
+              const displayValue = typeof counts[index as keyof typeof counts] === 'number' 
+                ? counts[index as keyof typeof counts] 
+                : 0;
+              
+              return (
+                <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-border/50">
+                  <CardHeader>
+                    <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Icon className="w-8 h-8 text-primary" />
+                    </div>
+                    <CardTitle className="text-4xl font-bold text-primary">
+                      {displayValue}{item.value.includes('+') ? '+' : ''}
+                    </CardTitle>
+                    <CardDescription className="font-semibold text-foreground">
+                      {item.label}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground">{item.description}</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
-          <div className="text-center mt-8">
-            <Button variant="outline" size="lg" asChild>
+        </div>
+      </section>
+
+      {/* Our Offerings */}
+      <section className="py-20 md:py-32 bg-card scroll-snap-start">
+        <div className="container">
+          <div className="text-center mb-16">
+            <Badge className="mb-4">Our Offerings</Badge>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
+              Comprehensive Health Informatics Solutions
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              From grassroots community systems to national-level implementations
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {offerings.map((offering, index) => {
+              const Icon = offering.icon;
+              return (
+                <Card 
+                  key={index} 
+                  className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-border/50 hover:border-primary/50"
+                >
+                  <CardHeader>
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                      <Icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors" />
+                    </div>
+                    <CardTitle className="text-xl group-hover:text-primary transition-colors">
+                      {offering.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="mb-4 leading-relaxed">
+                      {offering.description}
+                    </CardDescription>
+                    <Button asChild variant="ghost" size="sm" className="group/btn">
+                      <Link to={offering.link}>
+                        Learn More <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                      </Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+
+          <div className="text-center mt-12">
+            <Button asChild size="lg" variant="outline">
               <Link to="/offerings">View All Offerings</Link>
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Expertise Section */}
-      <section className="py-16 md:py-24 bg-muted">
-        <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Our Expertise</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Proven track record in health information systems implementation and capacity building.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {expertise.map((item, index) => (
-              <Card key={index} className="text-center">
-                <CardContent className="pt-6">
-                  <div className="text-4xl font-bold text-primary mb-2">{item.count}</div>
-                  <h3 className="font-heading font-semibold mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Partners Carousel */}
+      <PartnersCarousel />
 
-      {/* Featured Projects Section */}
-      <section className="py-16 md:py-24">
-        <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Showcasing our impact across diverse health information system implementations.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {featuredProjects.map((project, index) => (
-              <Card key={index} className="group hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <Badge className="w-fit mb-2">{project.region}</Badge>
-                  <CardTitle className="text-xl">{project.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <Button variant="outline" size="lg" asChild>
-              <Link to="/work">View All Projects</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <CTASection
-        title="Ready to Transform Your Health Information Systems?"
-        description="Let's work together to build sustainable, community-centered solutions."
-      >
-        <Button size="lg" variant="secondary" asChild>
-          <Link to="/contact">Contact Us</Link>
-        </Button>
-        <Button size="lg" variant="outline" asChild className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
-          <Link to="/offerings">Explore Our Services</Link>
-        </Button>
-      </CTASection>
-
-      {/* Newsletter Section */}
-      <section className="py-16 md:py-24 bg-muted">
-        <div className="container max-w-2xl text-center">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Stay Updated</h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            Subscribe to our newsletter for the latest insights on health information systems, research updates, and project highlights.
-          </p>
-          <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Your email address"
-              className="flex h-11 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-            />
-            <Button type="submit">Subscribe</Button>
-          </form>
-        </div>
-      </section>
+      {/* Testimonials */}
+      <TestimonialCarousel />
     </div>
   );
 }

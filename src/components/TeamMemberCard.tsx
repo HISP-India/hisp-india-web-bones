@@ -38,7 +38,7 @@ export function TeamMemberCard({ name, role, bio, imageUrl, isExpanded, onToggle
           {/* Bio */}
           <div className="w-full">
             <p className={cn(
-              "text-sm text-muted-foreground transition-all",
+              "text-sm text-muted-foreground transition-all text-center",
               !isExpanded && "line-clamp-3"
             )}>
               {isExpanded ? bio : bioPreview}

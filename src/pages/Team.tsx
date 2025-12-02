@@ -175,22 +175,22 @@ const departments = [
     name: "Research Team",
     members: [
       {
-        id: "24",
-        name: "Gian Singh Negi",
-        role: "Research Associate",
-        bio: "Gian Singh Negi is working with HISP India from May 2023. He has done his Masters and Ph.D. in Anthropology from Panjab University, Chandigarh. In 2014, he was awarded Doctoral fellowship by University Grants Commission (UGC), New Delhi. He had more than 5 years of experience as research and teaching assistant in Panjab University, Chandigarh. He has expertise in qualitative & quantitative research, and his major area of research is Biological and Biosocial Anthropology. In the past, He has worked as a researcher with PGIMER, Chandigarh on a project focusing on Antimicrobial resistance (AMR) in environment in collaboration with University of Bristol, U.K. His role at HISP India is to conduct study on qualitative research for the EquityAMR project. His research focuses on socio-cultural drivers of Antimicrobial resistance (AMR), especially in the most vulnerable communities and AST-culture-positive patients of Civil Hospital Baddi.",
-      },
-      {
         id: "25",
         name: "Jyotsna Sahay",
         role: "Researcher - HIS",
         bio: "Jyotsna is working as HIS- Researcher at HISP India aimed at evaluating ongoing DHIS2 implementation efforts in state governments in India, and trying to discern best practices which can strengthen these efforts. This work also feeds into the University of Oslo research efforts on DHIS2 evaluation research within the global HISP network.",
       },
       {
-        id: "26",
-        name: "Oshin Sinha",
-        role: "Junior Research Fellow",
-        bio: "Oshin Sinha is working as a Junior research fellow with HISP India since August 2023. She holds a Bachelor's degree in Zoology from Himachal Pradesh University and a Master's degree in Microbiology from DAV University. She has gained practical laboratory training in microbiology lab from RPGMC Tanda and Fortis Hospital. She has extensive experience in medical microbiology research and specialized in synthesizing copper nanoparticles for plant protection. Previously, she worked as Lab technician in PGIMER under a DBT project focusing on Environment and Antimicrobial resistance (AMR) in collaboration with University of Bristol, U.K. She has hands-on experience in the collection and processing of various clinical samples including urine, stool, pus swab, throat swab, ear swab, nasal swab, water sample testing and performing antibiotic sensitivity testing. She also has experience in analysing AMR data from clinical samples.",
+        id: "28",
+        name: "Vinay Modgil",
+        role: "Senior Data Scientist",
+        bio: "Dr. Vinay Modgil has been working with HISP India as a Senior Data Scientist since June 16, 2023. He holds a Bachelor's degree in Medical Science and a Master's in Biotechnology from Himachal Pradesh University, Shimla, Himachal Pradesh. He qualified for the CSIR NET/JRF exam with an All-India Rank of 75th and completed his PhD from Post Graduate Institute of Medical sciences and Education (PGIMER), Chandigarh. Previously, he worked as a Senior Researcher at PGIMER, he worked on a DBT-funded project in collaboration with the University of Bristol, UK, studying antimicrobial resistance (AMR) in environmental contexts. His research provided key insights into the environmental factors influencing AMR spread. He has also been actively involved in teaching and academic discussions, leading weekly journal clubs and seminars on international publications and delivering bi-monthly seminars on various topics to residents, M.Sc. and Ph.D. students at PGIMER Chandigarh. He has a strong portfolio of research publications and extensive experience in analysing AMR data from clinical samples in hospital settings. He received the Best Published Paper award in Bacteriology (2019) from the Indian Association of Medical Microbiologists during the 44th National Conference of IAMM in Guwahati.",
+      },
+      {
+        id: "24",
+        name: "Gian Singh Negi",
+        role: "Research Associate",
+        bio: "Gian Singh Negi is working with HISP India from May 2023. He has done his Masters and Ph.D. in Anthropology from Panjab University, Chandigarh. In 2014, he was awarded Doctoral fellowship by University Grants Commission (UGC), New Delhi. He had more than 5 years of experience as research and teaching assistant in Panjab University, Chandigarh. He has expertise in qualitative & quantitative research, and his major area of research is Biological and Biosocial Anthropology. In the past, He has worked as a researcher with PGIMER, Chandigarh on a project focusing on Antimicrobial resistance (AMR) in environment in collaboration with University of Bristol, U.K. His role at HISP India is to conduct study on qualitative research for the EquityAMR project. His research focuses on socio-cultural drivers of Antimicrobial resistance (AMR), especially in the most vulnerable communities and AST-culture-positive patients of Civil Hospital Baddi.",
       },
       {
         id: "27",
@@ -199,10 +199,10 @@ const departments = [
         bio: "RASHMI is working as Research assistant in HISP India from August 2022. She has done Bachelors in Microbial Food Tech (MFT) from Panjab University and Masters in Microbiology from Himachal Pradesh University. In the past, she has done various Industrial trainings on dairy technology and fermentation in Verka milk plant and Bio-age lab, Mohali. She has earlier worked in PGIMER as Field Investigator under DBT project focusing on Environment and Anti-microbial resistance (AMR) in collaboration with University of Bristol, U.K. She has done environmental sampling of water and soil from Kangra. She has the experience of culturing urine, stool, water and soil samples. She has also gained experience in conducting qualitative research, in-depth interviews, maintaining field notes, and observations.",
       },
       {
-        id: "28",
-        name: "Vinay Modgil",
-        role: "Senior Data Scientist",
-        bio: "Dr. Vinay Modgil has been working with HISP India as a Senior Data Scientist since June 16, 2023. He holds a Bachelor's degree in Medical Science and a Master's in Biotechnology from Himachal Pradesh University, Shimla, Himachal Pradesh. He qualified for the CSIR NET/JRF exam with an All-India Rank of 75th and completed his PhD from Post Graduate Institute of Medical sciences and Education (PGIMER), Chandigarh. Previously, he worked as a Senior Researcher at PGIMER, he worked on a DBT-funded project in collaboration with the University of Bristol, UK, studying antimicrobial resistance (AMR) in environmental contexts. His research provided key insights into the environmental factors influencing AMR spread. He has also been actively involved in teaching and academic discussions, leading weekly journal clubs and seminars on international publications and delivering bi-monthly seminars on various topics to residents, M.Sc. and Ph.D. students at PGIMER Chandigarh. He has a strong portfolio of research publications and extensive experience in analysing AMR data from clinical samples in hospital settings. He received the Best Published Paper award in Bacteriology (2019) from the Indian Association of Medical Microbiologists during the 44th National Conference of IAMM in Guwahati.",
+        id: "26",
+        name: "Oshin Sinha",
+        role: "Junior Research Fellow",
+        bio: "Oshin Sinha is working as a Junior research fellow with HISP India since August 2023. She holds a Bachelor's degree in Zoology from Himachal Pradesh University and a Master's degree in Microbiology from DAV University. She has gained practical laboratory training in microbiology lab from RPGMC Tanda and Fortis Hospital. She has extensive experience in medical microbiology research and specialized in synthesizing copper nanoparticles for plant protection. Previously, she worked as Lab technician in PGIMER under a DBT project focusing on Environment and Antimicrobial resistance (AMR) in collaboration with University of Bristol, U.K. She has hands-on experience in the collection and processing of various clinical samples including urine, stool, pus swab, throat swab, ear swab, nasal swab, water sample testing and performing antibiotic sensitivity testing. She also has experience in analysing AMR data from clinical samples.",
       },
     ],
   },

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Hero } from "@/components/Hero";
+import { CTASection } from "@/components/CTASection";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -102,6 +103,8 @@ export default function Careers() {
         title="Join Our Team"
         subtitle="Careers at HISP India"
         description="Be part of a mission-driven team building health information systems for public good."
+        variant="gradient"
+        className="bg-gradient-to-br from-primary via-primary/90 to-primary/80 text-primary-foreground"
       />
 
       {/* Why Join Us */}
@@ -196,9 +199,9 @@ export default function Careers() {
       </section>
 
       {/* Application Process */}
-      <section className="py-16 md:py-24 bg-muted">
+      <section className="py-16 md:py-24 bg-primary text-primary-foreground">
         <div className="container max-w-4xl">
-          <h2 className="font-heading text-3xl font-bold mb-8 text-center">Our Hiring Process</h2>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-8 text-center">Our Hiring Process</h2>
           <div className="space-y-6">
             {[
               { step: "1", title: "Application Review", description: "We review your application and assess alignment with position requirements." },
@@ -208,18 +211,31 @@ export default function Careers() {
               { step: "5", title: "Offer & Onboarding", description: "Successful candidates receive an offer and begin comprehensive onboarding." },
             ].map((item, index) => (
               <div key={index} className="flex items-start gap-4">
-                <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
+                <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary-foreground/20 flex items-center justify-center font-bold">
                   {item.step}
                 </div>
                 <div className="flex-1">
                   <h3 className="font-heading font-semibold mb-1">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.description}</p>
+                  <p className="opacity-90">{item.description}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      <CTASection
+        title="Don't See the Right Role?"
+        description="We're always interested in hearing from talented individuals passionate about public health technology."
+        variant="default"
+      >
+        <Button asChild size="lg" variant="default">
+          <Link to="/contact">Send Us Your Resume</Link>
+        </Button>
+        <Button asChild size="lg" variant="outline">
+          <Link to="/about">Learn More About Us</Link>
+        </Button>
+      </CTASection>
     </div>
   );
 }

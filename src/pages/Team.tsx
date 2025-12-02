@@ -1,6 +1,10 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Hero } from "@/components/Hero";
+import { CTASection } from "@/components/CTASection";
 import { TeamMemberCard } from "@/components/TeamMemberCard";
+import { Button } from "@/components/ui/button";
+import { Users, Award, Heart } from "lucide-react";
 
 const departments = [
   {
@@ -137,6 +141,8 @@ export default function Team() {
         title="Our Team"
         subtitle="Meet the People"
         description="A diverse team of public health professionals, technologists, researchers, and educators dedicated to strengthening health information systems."
+        variant="gradient"
+        className="bg-gradient-to-br from-primary via-primary/90 to-primary/80 text-primary-foreground"
       />
 
       {departments.map((department, deptIndex) => (
@@ -158,6 +164,57 @@ export default function Team() {
           </div>
         </section>
       ))}
+
+      {/* Team Culture */}
+      <section className="py-16 md:py-24 bg-primary text-primary-foreground">
+        <div className="container">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-12 text-center">
+            Our Team Culture
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="text-center">
+              <div className="h-16 w-16 rounded-full bg-primary-foreground/10 flex items-center justify-center mx-auto mb-4">
+                <Users className="h-8 w-8" />
+              </div>
+              <h3 className="font-heading font-semibold text-xl mb-2">Collaborative</h3>
+              <p className="opacity-90">
+                We work together across disciplines to solve complex health system challenges.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="h-16 w-16 rounded-full bg-primary-foreground/10 flex items-center justify-center mx-auto mb-4">
+                <Award className="h-8 w-8" />
+              </div>
+              <h3 className="font-heading font-semibold text-xl mb-2">Excellence-Driven</h3>
+              <p className="opacity-90">
+                We strive for the highest quality in everything we do, from code to partnerships.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="h-16 w-16 rounded-full bg-primary-foreground/10 flex items-center justify-center mx-auto mb-4">
+                <Heart className="h-8 w-8" />
+              </div>
+              <h3 className="font-heading font-semibold text-xl mb-2">Mission-Focused</h3>
+              <p className="opacity-90">
+                Our work is driven by commitment to public health and health equity.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <CTASection
+        title="Join Our Team"
+        description="Interested in being part of our mission? Explore career opportunities and join us in transforming health systems."
+        variant="default"
+      >
+        <Button asChild size="lg" variant="default">
+          <Link to="/careers">View Open Positions</Link>
+        </Button>
+        <Button asChild size="lg" variant="outline">
+          <Link to="/about">Learn About HISP India</Link>
+        </Button>
+      </CTASection>
     </div>
   );
 }

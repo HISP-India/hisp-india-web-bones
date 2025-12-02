@@ -1,7 +1,11 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Hero } from "@/components/Hero";
+import { CTASection } from "@/components/CTASection";
 import { FilterBar } from "@/components/FilterBar";
 import { ProjectCard } from "@/components/ProjectCard";
+import { Button } from "@/components/ui/button";
+import { Users, MapPin, TrendingUp } from "lucide-react";
 
 const filterConfig = [
   {
@@ -118,6 +122,8 @@ export default function Work() {
         title="Our Work"
         subtitle="Projects & Impact"
         description="Explore our portfolio of health information system implementations across India and beyond."
+        variant="gradient"
+        className="bg-gradient-to-br from-primary via-primary/90 to-primary/80 text-primary-foreground"
       />
 
       <section className="py-16 md:py-24">
@@ -149,6 +155,51 @@ export default function Work() {
           )}
         </div>
       </section>
+
+      {/* Impact Stats */}
+      <section className="py-16 md:py-24 bg-primary text-primary-foreground">
+        <div className="container">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-12 text-center">
+            Our Impact
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="text-center">
+              <div className="h-16 w-16 rounded-full bg-primary-foreground/10 flex items-center justify-center mx-auto mb-4">
+                <MapPin className="h-8 w-8" />
+              </div>
+              <div className="text-4xl font-bold mb-2">28+</div>
+              <p className="opacity-90">States & Union Territories</p>
+            </div>
+            <div className="text-center">
+              <div className="h-16 w-16 rounded-full bg-primary-foreground/10 flex items-center justify-center mx-auto mb-4">
+                <Users className="h-8 w-8" />
+              </div>
+              <div className="text-4xl font-bold mb-2">500,000+</div>
+              <p className="opacity-90">Health Workers Supported</p>
+            </div>
+            <div className="text-center">
+              <div className="h-16 w-16 rounded-full bg-primary-foreground/10 flex items-center justify-center mx-auto mb-4">
+                <TrendingUp className="h-8 w-8" />
+              </div>
+              <div className="text-4xl font-bold mb-2">200+</div>
+              <p className="opacity-90">Successful Implementations</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <CTASection
+        title="Have a Project in Mind?"
+        description="We'd love to discuss how we can support your health information system needs."
+        variant="default"
+      >
+        <Button asChild size="lg" variant="default">
+          <Link to="/contact">Start a Conversation</Link>
+        </Button>
+        <Button asChild size="lg" variant="outline">
+          <Link to="/offerings">Explore Our Services</Link>
+        </Button>
+      </CTASection>
     </div>
   );
 }

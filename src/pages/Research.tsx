@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Hero } from "@/components/Hero";
+import { CTASection } from "@/components/CTASection";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -102,6 +104,8 @@ export default function Research() {
         title="Research & Publications"
         subtitle="Evidence & Innovation"
         description="Generating evidence to inform health information system design, implementation, and policy."
+        variant="gradient"
+        className="bg-gradient-to-br from-primary via-primary/90 to-primary/80 text-primary-foreground"
       />
 
       {/* Publications */}
@@ -172,20 +176,18 @@ export default function Research() {
       </section>
 
       {/* Research Themes */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 bg-primary text-primary-foreground">
         <div className="container">
-          <h2 className="font-heading text-3xl font-bold mb-8 text-center">Key Research Themes</h2>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-8 text-center">Key Research Themes</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {researchThemes.map((theme, index) => (
-              <Card key={index} className="text-center">
-                <CardContent className="pt-6">
-                  <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                    <theme.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <h3 className="font-heading font-semibold mb-2">{theme.title}</h3>
-                  <p className="text-sm text-muted-foreground">{theme.description}</p>
-                </CardContent>
-              </Card>
+              <div key={index} className="text-center">
+                <div className="h-12 w-12 rounded-full bg-primary-foreground/10 flex items-center justify-center mx-auto mb-4">
+                  <theme.icon className="h-6 w-6" />
+                </div>
+                <h3 className="font-heading font-semibold mb-2">{theme.title}</h3>
+                <p className="text-sm opacity-90">{theme.description}</p>
+              </div>
             ))}
           </div>
         </div>
@@ -218,6 +220,19 @@ export default function Research() {
           </div>
         </div>
       </section>
+
+      <CTASection
+        title="Interested in Research Collaboration?"
+        description="We welcome partnerships with academic institutions, research organizations, and health systems for collaborative research."
+        variant="default"
+      >
+        <Button asChild size="lg" variant="default">
+          <Link to="/contact">Discuss Research Opportunities</Link>
+        </Button>
+        <Button asChild size="lg" variant="outline">
+          <Link to="/about">Learn More About Us</Link>
+        </Button>
+      </CTASection>
     </div>
   );
 }

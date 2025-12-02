@@ -3,6 +3,7 @@ import { Facebook, Twitter, Linkedin, Mail, MapPin, Phone, Building2, Globe, Che
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState, useEffect } from "react";
+import hispIndiaLogo from "@/assets/hisp-india-logo.png";
 
 const offices = [
   {
@@ -61,11 +62,12 @@ export function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
             {/* Column 1: Brand & Social */}
             <div className="space-y-6">
-              <Link to="/" className="flex items-center space-x-2">
-                <div className="h-12 w-12 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">
-                  <span className="text-white font-bold text-2xl">H</span>
-                </div>
-                <span className="font-heading font-bold text-2xl text-white">HISP INDIA</span>
+              <Link to="/" className="inline-block">
+                <img 
+                  src={hispIndiaLogo} 
+                  alt="HISP India - Open Source for Public Health" 
+                  className="h-14 md:h-16 w-auto brightness-0 invert"
+                />
               </Link>
               
               <p className="text-slate-200 text-sm leading-relaxed">

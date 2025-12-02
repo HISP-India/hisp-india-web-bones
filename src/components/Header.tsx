@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import hispIndiaLogo from "@/assets/hisp-india-logo.png";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -22,11 +23,12 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center space-x-2">
-          <div className="h-10 w-10 rounded bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-xl">H</span>
-          </div>
-          <span className="font-heading font-bold text-xl">HISP India</span>
+        <Link to="/" className="flex items-center">
+          <img 
+            src={hispIndiaLogo} 
+            alt="HISP India - Open Source for Public Health" 
+            className="h-10 md:h-12 w-auto"
+          />
         </Link>
 
         {/* Desktop Navigation */}

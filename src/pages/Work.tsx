@@ -322,6 +322,34 @@ export default function Work() {
         className="bg-gradient-to-br from-primary via-primary/90 to-primary/80 text-primary-foreground"
       />
 
+      {/* Stats Overview Section */}
+      <section className="py-12 bg-muted/30 border-b">
+        <div className="container">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6 max-w-6xl mx-auto">
+            <div className="bg-card rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow border">
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">50+</div>
+              <p className="text-sm md:text-base text-muted-foreground font-medium">Live Projects</p>
+            </div>
+            <div className="bg-card rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow border">
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">28+</div>
+              <p className="text-sm md:text-base text-muted-foreground font-medium">States Covered</p>
+            </div>
+            <div className="bg-card rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow border">
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">15+</div>
+              <p className="text-sm md:text-base text-muted-foreground font-medium">Countries</p>
+            </div>
+            <div className="bg-card rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow border">
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">200+</div>
+              <p className="text-sm md:text-base text-muted-foreground font-medium">Training Programs</p>
+            </div>
+            <div className="bg-card rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow border">
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">1000+</div>
+              <p className="text-sm md:text-base text-muted-foreground font-medium">Personnel Trained</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 md:py-24">
         <div className="container">
           <div className="mb-8">

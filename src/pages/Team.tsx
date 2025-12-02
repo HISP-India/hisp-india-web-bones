@@ -222,6 +222,12 @@ const departments = [
         bio: "Nisha has joined HISP India in June 2020. She is a Commerce Graduate and also completed her CA Inter along with 3 Years of Articleship training. She has 9 years of work experience in the Finance & Accounts field, Her current designation is Head - Accounts and Finance and she is responsible for overall supervision in Accounts & Finance Deptt.",
       },
       {
+        id: "34",
+        name: "Aman Jindal",
+        role: "Head - Office Administration",
+        bio: "Aman is a Commerce graduate from CCS university. He is working as Head- Office Admin in HISP India. He is responsible for Admin work of HISP India since April 2016.",
+      },
+      {
         id: "32",
         name: "Prem Chandra Tiwari",
         role: "Manager - Accounts and Finance",
@@ -232,12 +238,6 @@ const departments = [
         name: "Abhijit Jena",
         role: "Accounts Officer",
         bio: "Abhijit has joined HISP India in August 2023 as Accounts officer. He is a B.Com graduate. He did his graduation from Utkal University in 2018. Abhijit boasts over 6 years of expertise in Accounting & Taxation. His role encompasses Invoice Raising, GST handling, Documentation, and precise Book Keeping. Abhijit has been an essential part of our financial operations, ensuring accuracy and compliance in all tasks.",
-      },
-      {
-        id: "34",
-        name: "Aman Jindal",
-        role: "Head - Office Administration",
-        bio: "Aman is a Commerce graduate from CCS university. He is working as Head- Office Admin in HISP India. He is responsible for Admin work of HISP India since April 2016.",
       },
       {
         id: "35",

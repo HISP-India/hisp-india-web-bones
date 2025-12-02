@@ -34,17 +34,23 @@ const departments = [
         role: "Research Advisor",
         bio: "Arunima has been working with HISP since 2008, as the lead of HISP India's Health Systems cluster. She has a background in Social Sciences with specializations in Geography and Development Communication for her bachelors and masters respectively. She has about 15 years professional experience including as a Journalist and a Programme Manager within the public health system in an Indian state. She has particular research interest in challenges pertaining to the scaling up of mobile based health information systems. She additionally serves as the Coordinator of the Himachal Pradesh project of HISP, where HISP is implementing an 'integrated e-health architecture' comprising of mobile HIS, Hospital IS, and tracking system for mother care and child immunization in addition to the routine health IS based on DHIS2. She has led the initiative to design, develop and implement an open source (on OpenMRS) hospital information system for the district hospital network, arguably the first of its kind in India.",
       },
-    ],
-  },
-  {
-    name: "Program & Technical Management",
-    members: [
       {
         id: "5",
         name: "Chahat Narula Thakur",
         role: "Head – Project Operations",
         bio: "Chahat Narula is a driven and compassionate healthcare professional with over 12 years of experience in health systems strengthening, digital health, and project management. Currently serving as the Head of Project Operations at HISP India, she provides techno-managerial leadership to teams, oversees field-based interventions, and ensures the successful execution of health information system projects. Chahat is a post-graduate in Health and Hospital Management from IIHMR, New Delhi, and a B.Tech in Biotechnology. She has played a key role in preparing technical reports, stakeholder engagement, and knowledge dissemination across national and international projects. Her experience spans digital health implementations, immunization programs, and hospital information systems in India, Kenya, and Bangladesh. Chahat is committed to improving performance and productivity by setting realistic goals, enforcing deadlines, and driving impactful collaborations in the healthcare sector.",
       },
+      {
+        id: "9",
+        name: "Mithilesh Kumar Thakur",
+        role: "Head - Technical Systems",
+        bio: "Mithilesh has been working in HISP-India since May 2010 as the head- technical systems focusing on development activities in DHIS2 and also taking care of the Dhis2 application servers, including server setup, Database optimization, Application optimization, manage applications on ownCloud. He is a post graduate in computer application with 2 years of experience as a software developer in a large public sector organization.",
+      },
+    ],
+  },
+  {
+    name: "Program & Technical Management",
+    members: [
       {
         id: "6",
         name: "Deepika",
@@ -62,12 +68,6 @@ const departments = [
         name: "Sumit Poudel",
         role: "Technical Manager - DHIS2",
         bio: "A web developer with over four years of experience in building responsive web applications and working with DHIS2 implementations. He specializes in technical management and development of health information systems.",
-      },
-      {
-        id: "9",
-        name: "Mithilesh Kumar Thakur",
-        role: "Head - Technical Systems",
-        bio: "Mithilesh has been working in HISP-India since May 2010 as the head- technical systems focusing on development activities in DHIS2 and also taking care of the Dhis2 application servers, including server setup, Database optimization, Application optimization, manage applications on ownCloud. He is a post graduate in computer application with 2 years of experience as a software developer in a large public sector organization.",
       },
       {
         id: "10",

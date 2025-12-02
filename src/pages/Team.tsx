@@ -58,12 +58,6 @@ const departments = [
     name: "Program & Technical Management",
     members: [
       {
-        id: "6",
-        name: "Deepika",
-        role: "Sr Advisor - DHIS2",
-        bio: "Deepika has been associated with HISP India for several years, working on various DHIS2 implementations. She has a graduate degree in Biomedical Sciences from Delhi University and did her masters in healthcare management (specialisation in Healthcare IT) from IIHMR, Delhi. She has been involved in multiple DHIS2 implementation projects Nationally and Internationally. Her major domain is Design and Customisation. She has around 7 years of working experience in healthcare industry.",
-      },
-      {
         id: "7",
         name: "Sumit Kumar Tripathi",
         role: "Program Manager - DHIS2",
@@ -86,6 +80,12 @@ const departments = [
   {
     name: "Project Support (Implementation)",
     members: [
+      {
+        id: "6",
+        name: "Deepika",
+        role: "Sr Advisor - DHIS2",
+        bio: "Deepika has been associated with HISP India for several years, working on various DHIS2 implementations. She has a graduate degree in Biomedical Sciences from Delhi University and did her masters in healthcare management (specialisation in Healthcare IT) from IIHMR, Delhi. She has been involved in multiple DHIS2 implementation projects Nationally and Internationally. Her major domain is Design and Customisation. She has around 7 years of working experience in healthcare industry.",
+      },
       {
         id: "11",
         name: "Akshita Pundir",

@@ -211,7 +211,7 @@ export default function Home() {
         <Button size="lg" variant="secondary" asChild>
           <Link to="/contact">Contact Us</Link>
         </Button>
-        <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
+        <Button size="lg" variant="outline" asChild className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
           <Link to="/offerings">Explore Our Services</Link>
         </Button>
       </CTASection>

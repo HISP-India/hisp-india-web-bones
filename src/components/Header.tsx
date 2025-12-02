@@ -36,7 +36,7 @@ export function Header() {
               key={item.name}
               to={item.href}
               className="px-3 py-2 text-sm font-medium text-foreground/80 hover:text-foreground transition-colors rounded-md hover:bg-accent/50"
-              activeClassName="text-primary bg-accent"
+              activeClassName="text-accent-foreground bg-accent"
             >
               {item.name}
             </NavLink>
@@ -59,7 +59,7 @@ export function Header() {
                   to={item.href}
                   onClick={() => setIsOpen(false)}
                   className="px-4 py-3 text-base font-medium text-foreground/80 hover:text-foreground transition-colors rounded-md hover:bg-accent"
-                  activeClassName="text-primary bg-accent"
+                  activeClassName="text-accent-foreground bg-accent"
                 >
                   {item.name}
                 </NavLink>

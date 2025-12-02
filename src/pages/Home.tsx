@@ -15,11 +15,7 @@ import {
   Cloud,
   ArrowRight,
   TrendingUp,
-  Award,
-  Globe,
-  BookOpen,
 } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
 
 const offerings = [
   {
@@ -68,69 +64,32 @@ const offerings = [
 
 const expertise = [
   {
-    icon: Globe,
-    value: "200+",
-    label: "DHIS2 Implementations",
-    description: "Worldwide",
+    icon: Database,
+    title: "System Development",
+    description: "Integrating health data solutions with DHIS2 and OpenMRS worldwide.",
+    link: "/offerings",
+  },
+  {
+    icon: Search,
+    title: "Research",
+    description: "Advancing health informatics through AMR, health inequities & climate studies",
+    link: "/research",
+  },
+  {
+    icon: GraduationCap,
+    title: "Capacity Building",
+    description: "Empowering stakeholders with specialised digital courses and training",
+    link: "/offerings/capacity-building",
   },
   {
     icon: TrendingUp,
-    value: "25+",
-    label: "Years Experience",
-    description: "In Health Information Systems",
-  },
-  {
-    icon: Award,
-    value: "500+",
-    label: "Training Programs",
-    description: "Professionals Trained",
-  },
-  {
-    icon: BookOpen,
-    value: "100+",
-    label: "Research Publications",
-    description: "Academic Papers",
+    title: "Health Systems Assessments",
+    description: "Systematic evaluations ensuring robust, efficient, and data-driven health systems.",
+    link: "/offerings",
   },
 ];
 
 export default function Home() {
-  const [counts, setCounts] = useState({ 0: 0, 1: 0, 2: 0, 3: 0 });
-  const expertiseRef = useRef<HTMLDivElement>(null);
-  const [hasAnimated, setHasAnimated] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting && !hasAnimated) {
-          setHasAnimated(true);
-          // Animate counters
-          expertise.forEach((_, index) => {
-            const target = parseInt(expertise[index].value);
-            const duration = 2000;
-            const increment = target / (duration / 16);
-            let current = 0;
-
-            const timer = setInterval(() => {
-              current += increment;
-              if (current >= target) {
-                setCounts(prev => ({ ...prev, [index]: target }));
-                clearInterval(timer);
-              } else {
-                setCounts(prev => ({ ...prev, [index]: Math.floor(current) }));
-              }
-            }, 16);
-          });
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    if (expertiseRef.current) {
-      observer.observe(expertiseRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, [hasAnimated]);
 
   return (
     <div className="scroll-smooth">
@@ -184,40 +143,41 @@ export default function Home() {
       </section>
 
       {/* Our Expertise */}
-      <section ref={expertiseRef} className="py-20 md:py-32 bg-muted scroll-snap-start">
+      <section className="py-20 md:py-32 bg-muted scroll-snap-start">
         <div className="container">
-          <div className="text-center mb-16">
-            <Badge className="mb-4">Our Expertise</Badge>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
-              Proven Track Record of Impact
+          <div className="text-center mb-4">
+            <h2 className="font-heading text-3xl md:text-5xl font-bold mb-6">
+              OUR EXPERTISE
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Two and a half decades of excellence in health information systems
-            </p>
+            <div className="w-full h-1 bg-primary mb-16" />
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {expertise.map((item, index) => {
               const Icon = item.icon;
-              const displayValue = typeof counts[index as keyof typeof counts] === 'number' 
-                ? counts[index as keyof typeof counts] 
-                : 0;
               
               return (
-                <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-border/50">
-                  <CardHeader>
-                    <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Icon className="w-8 h-8 text-primary" />
+                <Card 
+                  key={index} 
+                  className="text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-border/50 bg-card group"
+                >
+                  <CardHeader className="pb-4">
+                    <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <Icon className="w-12 h-12 text-primary-foreground" />
                     </div>
-                    <CardTitle className="text-4xl font-bold text-primary">
-                      {displayValue}{item.value.includes('+') ? '+' : ''}
+                    <CardTitle className="text-xl font-bold mb-4">
+                      {item.title}
                     </CardTitle>
-                    <CardDescription className="font-semibold text-foreground">
-                      {item.label}
-                    </CardDescription>
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">{item.description}</p>
+                  <CardContent className="space-y-4">
+                    <p className="text-muted-foreground leading-relaxed min-h-[4rem]">
+                      {item.description}
+                    </p>
+                    <Button asChild variant="link" className="text-primary font-semibold p-0 h-auto group/link">
+                      <Link to={item.link}>
+                        Read more <ArrowRight className="ml-2 w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                      </Link>
+                    </Button>
                   </CardContent>
                 </Card>
               );

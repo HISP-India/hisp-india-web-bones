@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Hero } from "@/components/Hero";
+import { CTASection } from "@/components/CTASection";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -11,6 +12,9 @@ import {
   GraduationCap,
   Cloud,
   ArrowRight,
+  Target,
+  Award,
+  Globe,
 } from "lucide-react";
 
 const offerings = [
@@ -65,6 +69,8 @@ export default function Offerings() {
         title="Our Offerings"
         subtitle="What We Do"
         description="Comprehensive solutions for health information systems across diverse contexts and needs."
+        variant="gradient"
+        className="bg-gradient-to-br from-primary via-primary/90 to-primary/80 text-primary-foreground"
       />
 
       <section className="py-16 md:py-24">
@@ -91,6 +97,57 @@ export default function Offerings() {
           </div>
         </div>
       </section>
+
+      {/* Why Choose Us */}
+      <section className="py-16 md:py-24 bg-primary text-primary-foreground">
+        <div className="container">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-12 text-center">
+            Why Partner With HISP India
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="text-center">
+              <div className="h-16 w-16 rounded-full bg-primary-foreground/10 flex items-center justify-center mx-auto mb-4">
+                <Target className="h-8 w-8" />
+              </div>
+              <h3 className="font-heading font-semibold text-xl mb-2">20+ Years Experience</h3>
+              <p className="opacity-90">
+                Deep expertise in health information systems across diverse contexts and scales.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="h-16 w-16 rounded-full bg-primary-foreground/10 flex items-center justify-center mx-auto mb-4">
+                <Award className="h-8 w-8" />
+              </div>
+              <h3 className="font-heading font-semibold text-xl mb-2">Open Source Commitment</h3>
+              <p className="opacity-90">
+                Building sustainable solutions with open-source platforms and community-driven development.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="h-16 w-16 rounded-full bg-primary-foreground/10 flex items-center justify-center mx-auto mb-4">
+                <Globe className="h-8 w-8" />
+              </div>
+              <h3 className="font-heading font-semibold text-xl mb-2">National Scale Impact</h3>
+              <p className="opacity-90">
+                Successfully implementing health information systems serving millions across India.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <CTASection
+        title="Ready to Transform Your Health Information Systems?"
+        description="Let's discuss how we can support your health programs with effective, sustainable digital solutions."
+        variant="default"
+      >
+        <Button asChild size="lg" variant="default">
+          <Link to="/contact">Get in Touch</Link>
+        </Button>
+        <Button asChild size="lg" variant="outline">
+          <Link to="/work">View Our Work</Link>
+        </Button>
+      </CTASection>
     </div>
   );
 }

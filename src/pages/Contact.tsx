@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { MapPin, Mail, Phone, Facebook, Twitter, Linkedin } from "lucide-react";
+import { MapPin, Mail, Phone, Facebook, Twitter, Linkedin, Clock, Globe } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -13,6 +13,8 @@ export default function Contact() {
         title="Contact Us"
         subtitle="Get in Touch"
         description="We'd love to hear from you. Reach out to discuss partnerships, projects, or learn more about our work."
+        variant="gradient"
+        className="bg-gradient-to-br from-primary via-primary/90 to-primary/80 text-primary-foreground"
       />
 
       <section className="py-16 md:py-24">
@@ -141,6 +143,41 @@ export default function Contact() {
                   </a>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Connect */}
+      <section className="py-16 md:py-24 bg-primary text-primary-foreground">
+        <div className="container">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-12 text-center">
+            Quick Connect
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="text-center">
+              <div className="h-16 w-16 rounded-full bg-primary-foreground/10 flex items-center justify-center mx-auto mb-4">
+                <Mail className="h-8 w-8" />
+              </div>
+              <h3 className="font-heading font-semibold text-xl mb-2">Email Us</h3>
+              <p className="opacity-90 mb-2">For general inquiries</p>
+              <a href="mailto:info@hispindia.org" className="hover:underline">info@hispindia.org</a>
+            </div>
+            <div className="text-center">
+              <div className="h-16 w-16 rounded-full bg-primary-foreground/10 flex items-center justify-center mx-auto mb-4">
+                <Phone className="h-8 w-8" />
+              </div>
+              <h3 className="font-heading font-semibold text-xl mb-2">Call Us</h3>
+              <p className="opacity-90 mb-2">Monday to Friday, 9 AM - 5 PM IST</p>
+              <p>+91-124-4722900</p>
+            </div>
+            <div className="text-center">
+              <div className="h-16 w-16 rounded-full bg-primary-foreground/10 flex items-center justify-center mx-auto mb-4">
+                <Globe className="h-8 w-8" />
+              </div>
+              <h3 className="font-heading font-semibold text-xl mb-2">Visit Us</h3>
+              <p className="opacity-90 mb-2">Our offices in Delhi & Bangalore</p>
+              <p>See addresses above</p>
             </div>
           </div>
         </div>

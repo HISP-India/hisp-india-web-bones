@@ -43,21 +43,21 @@ export function Hero({
           {subtitle && (
             <p className={cn(
               "text-sm font-medium uppercase tracking-wider animate-fade-in",
-              variant === "fullscreen" ? "text-primary-foreground/90" : "text-primary"
+              variant === "fullscreen" || variant === "gradient" ? "text-primary-foreground/90" : "text-primary"
             )}>
               {subtitle}
             </p>
           )}
           <h1 className={cn(
             "font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight animate-fade-in",
-            variant === "fullscreen" ? "text-primary-foreground" : "text-foreground"
+            variant === "fullscreen" || variant === "gradient" ? "text-primary-foreground" : "text-foreground"
           )}>
             {title}
           </h1>
           {description && (
             <p className={cn(
               "text-lg md:text-xl max-w-2xl mx-auto animate-fade-in",
-              variant === "fullscreen" ? "text-primary-foreground/80" : "text-muted-foreground"
+              variant === "fullscreen" || variant === "gradient" ? "text-primary-foreground/80" : "text-muted-foreground"
             )}>
               {description}
             </p>

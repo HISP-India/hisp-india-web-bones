@@ -300,6 +300,7 @@ export default function Team() {
                     name={member.name}
                     role={member.role}
                     bio={member.bio}
+                    imageUrl={member.imageUrl}
                     isExpanded={expandedMemberId === member.id}
                     onToggle={() => handleToggle(member.id)}
                   />

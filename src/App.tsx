@@ -12,6 +12,7 @@ import OfferingDetail from "./pages/OfferingDetail";
 import Work from "./pages/Work";
 import ProjectDetail from "./pages/ProjectDetail";
 import Research from "./pages/Research";
+import DigitalStories from "./pages/DigitalStories";
 import Careers from "./pages/Careers";
 import JobDetail from "./pages/JobDetail";
 import Contact from "./pages/Contact";
@@ -38,6 +39,7 @@ const App = () => (
             <Route path="/work" element={<Work />} />
             <Route path="/work/:id" element={<ProjectDetail />} />
             <Route path="/research" element={<Research />} />
+            <Route path="/research/digital-stories" element={<DigitalStories />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/careers/:id" element={<JobDetail />} />
             <Route path="/contact" element={<Contact />} />

@@ -40,6 +40,9 @@ import vinayImage from "@/assets/vinay-modgil.png";
 import gianImage from "@/assets/gian-singh-negi.png";
 import rashmiImage from "@/assets/rashmi-surial.png";
 import oshinImage from "@/assets/oshin-sinha.png";
+import shirinImage from "@/assets/shirin-saini.png";
+import prekshaImage from "@/assets/preksha-singh.png";
+import sahilImage from "@/assets/sahil-bhardwaj.jpg";
 
 const departments = [
   {
@@ -274,10 +277,25 @@ const departments = [
     name: "Capacity Building & Digital Operations",
     members: [
       {
+        id: "37",
+        name: "Dr. Shirin Saini",
+        role: "Senior Advisor, Capacity Building",
+        imageUrl: shirinImage,
+        bio: "Dr. Shirin Saini is a health informatics and hospital management specialist with 11+ years of experience in product development, teaching, training, and business analysis in the healthcare sector. Her expertise spans EMR/HIS systems, digital health product design, academic instruction, and capacity-building programs. Shirin has worked across corporate, academic, and NGO settings, contributing to high-impact digital solutions and training initiatives. She has served as visiting faculty at leading institutions such as DPSRU, IIHMR Delhi, and Amity University, teaching health informatics, practice management, and business analysis. Her industry experience includes 5–6 years as a business analyst for EMR/HIS platforms, including contributing to EMR Stage 2 Meaningful Use CCHIT Certification in the US market. Currently pursuing a Fellow Program in Management with a focus on digital health and climate-resilient healthcare, she brings strong project management, teaching, and digital content skills to HISP India's capacity-building efforts.",
+      },
+      {
+        id: "38",
+        name: "Dr. Preksha Singh",
+        role: "Consultant, Capacity Building",
+        imageUrl: prekshaImage,
+        bio: "Dr. Preksha Singh is a public health professional with 5+ years of experience in community programs, digital learning, curriculum design, and health system strengthening. Her work focuses on capacity building for health workers, digital training programs, and monitoring & evaluation across multi-state public health initiatives. At HISP India, she leads training design, digital learning modules, and knowledge management for public health informatics programs. She has collaborated extensively with government bodies, donors, and NGOs—including MoHFW, NHM, UNICEF, and GAVI—to deliver high-impact learning interventions. Preksha has developed and deployed digital learning modules reaching more than 10,000 health workers and contributed to a peer-reviewed research publication in Global Health: Science & Practice. With strong experience in stakeholder engagement, community facilitation, and program documentation, she aims to advance innovative, technology-enabled capacity-building models that strengthen public health systems and improve community wellbeing.",
+      },
+      {
         id: "36",
         name: "Sahil Bhardwaj",
-        role: "Coordinator - Digital Operations",
-        bio: "Sahil Bhardwaj is a Digital Media Professional with over 10 years of experience in Web Development, Social Media Marketing, and Learning Management Systems (LMS). As the Coordinator - Digital Operations at HISP India, he leads digital initiatives to strengthen the organization's online presence and technical capabilities. Currently, Sahil is working on the DMGtasia Project, contributing his expertise in digital media and web technologies to enhance project efficiency. Alongside this, he is spearheading web development for HISP India, ensuring user-friendly and impactful digital platforms. His proficiency in website architecture, content strategy, and digital engagement has been instrumental in optimizing capacity-building efforts and online learning solutions. Passionate about technology-driven impact, Sahil continuously explores innovative ways to enhance digital communication and streamline operations, aligning with HISP India's mission of empowering public health informatics through open-source and collaborative solutions.",
+        role: "Coordinator, Digital Operations",
+        imageUrl: sahilImage,
+        bio: "Sahil Bhardwaj is a digital health design and learning systems professional with extensive experience in UI/UX design, multimedia learning, and web-based capacity-building solutions. His work spans digital innovation, user-centered design, and public health communication. At HISP India, Sahil contributes to UI/UX development, digital learning content, and web platforms that strengthen global health programs. He has previously led major digital transformation initiatives in academic institutions, including implementing open-source LMS platforms, developing multimedia courseware, and driving institutional SaaS adoption. His expertise includes prototyping, responsive web design, interactive learning content, and social media communication for health systems. Sahil is passionate about building accessible digital learning ecosystems and enhancing user experience across public health platforms. With a background in IT and over a decade of experience across NGOs, academia, and digital operations, he aims to continue designing impactful, user-friendly solutions that accelerate digital health capacity-building.",
       },
     ],
   },

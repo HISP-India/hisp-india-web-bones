@@ -6,6 +6,12 @@ import { TeamMemberCard } from "@/components/TeamMemberCard";
 import { Button } from "@/components/ui/button";
 import { Users, Award, Heart } from "lucide-react";
 import sundeepSahayImage from "@/assets/sundeep-sahay.png";
+import arunimaImage from "@/assets/arunima-s-mukherjee.png";
+import saurabhImage from "@/assets/saurabh-leekha.png";
+import mithileshImage from "@/assets/mithilesh-kumar-thakur.png";
+import rashiImage from "@/assets/rashi-banta.png";
+import chahatImage from "@/assets/chahat-narula.png";
+import gitikaImage from "@/assets/gitika-arora.png";
 
 const departments = [
   {
@@ -22,36 +28,42 @@ const departments = [
         id: "4",
         name: "Arunima S Mukherjee",
         role: "Research Advisor",
+        imageUrl: arunimaImage,
         bio: "Arunima has been working with HISP since 2008, as the lead of HISP India's Health Systems cluster. She has a background in Social Sciences with specializations in Geography and Development Communication for her bachelors and masters respectively. She has about 15 years professional experience including as a Journalist and a Programme Manager within the public health system in an Indian state. She has particular research interest in challenges pertaining to the scaling up of mobile based health information systems. She additionally serves as the Coordinator of the Himachal Pradesh project of HISP, where HISP is implementing an 'integrated e-health architecture' comprising of mobile HIS, Hospital IS, and tracking system for mother care and child immunization in addition to the routine health IS based on DHIS2. She has led the initiative to design, develop and implement an open source (on OpenMRS) hospital information system for the district hospital network, arguably the first of its kind in India.",
       },
       {
         id: "2",
         name: "Saurabh Leekha",
         role: "Chief Executive Officer",
+        imageUrl: saurabhImage,
         bio: "Saurabh has joined HISP India in December 2012 and is currently working as CEO. He has done Post Graduation in Hospital and Healthcare Management with specialization in Health Information Technology Management from IIHMR, Delhi. He has 4 years of experience, has been involved in requirements management and customization of various public health systems based on DHIS2 such as Routine HMIS for Indian States, as well as health information systems for various organizations working in public health delivery sector.",
       },
       {
         id: "9",
         name: "Mithilesh Kumar Thakur",
         role: "Head - Technical Systems",
+        imageUrl: mithileshImage,
         bio: "Mithilesh has been working in HISP-India since May 2010 as the head- technical systems focusing on development activities in DHIS2 and also taking care of the Dhis2 application servers, including server setup, Database optimization, Application optimization, manage applications on ownCloud. He is a post graduate in computer application with 2 years of experience as a software developer in a large public sector organization.",
       },
       {
         id: "29",
         name: "Rashi Banta",
         role: "Management/ISO/Research",
+        imageUrl: rashiImage,
         bio: "Ms. Rashi Banta is a post graduate in management with over 20 years of valuable hands-on experience in MNCs, Corporate and NGOs. She is a versatile and experienced professional specializing in management, ISO coordination, compliance, and government liaison. Demonstrated expertise in business development, academic coordination, and organizing international academic conferences such as HDCA and IHIP. Skilled in research related to antimicrobial resistance (AMR) projects, with a strong focus on fostering collaboration across diverse stakeholders. Key Skills and Expertise: Project Management & Coordination - Proven ability to manage complex projects, streamline operations, and ensure successful execution of academic and business initiatives under openMRS & DHIS2. ISO Coordination & Compliance - Proficient in developing, implementing, and maintaining ISO standards to ensure operational excellence and regulatory compliance. Successfully coordinated high-profile international academic conferences, including HDCA and IFIP. Played a key role in AMR-related projects, contributing to impactful research and policy recommendations.",
       },
       {
         id: "5",
         name: "Chahat Narula Thakur",
         role: "Head – Project Operations",
+        imageUrl: chahatImage,
         bio: "Chahat Narula is a driven and compassionate healthcare professional with over 12 years of experience in health systems strengthening, digital health, and project management. Currently serving as the Head of Project Operations at HISP India, she provides techno-managerial leadership to teams, oversees field-based interventions, and ensures the successful execution of health information system projects. Chahat is a post-graduate in Health and Hospital Management from IIHMR, New Delhi, and a B.Tech in Biotechnology. She has played a key role in preparing technical reports, stakeholder engagement, and knowledge dissemination across national and international projects. Her experience spans digital health implementations, immunization programs, and hospital information systems in India, Kenya, and Bangladesh. Chahat is committed to improving performance and productivity by setting realistic goals, enforcing deadlines, and driving impactful collaborations in the healthcare sector.",
       },
       {
         id: "3",
         name: "Gitika Arora",
         role: "Head - Health Systems",
+        imageUrl: gitikaImage,
         bio: "Gitika is currently working as Head - Health Systems in HISP India since June 2013. She has done Bachelors in Dental Surgery and is a Post Graduate in Hospital and Healthcare Management with specialization in Healthcare IT. She has a good domain knowledge of design, customization, and implementation of DHIS2 in various national and international projects. Currently she is leading the digitisation activities under the domain of Antimicrobial Surveillance. She has been closely working with the World Health Organisation on various DHIS2 implementation projects globally.",
       },
     ],

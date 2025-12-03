@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, MapPin, Calendar, Users, Globe, Building, Award } from "lucide-react";
+import { ArrowLeft, MapPin, Calendar, Users, Globe, Building, Award, User, Heart, Quote } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -15,6 +15,12 @@ interface StoryData {
   year: string;
   heroImage?: string;
   heroImageCaption: string;
+  heroIcon?: "location" | "person";
+  openingQuote?: {
+    text: string;
+    author: string;
+    title?: string;
+  };
   sections: {
     title: string;
     content: string[];
@@ -24,7 +30,12 @@ interface StoryData {
     value: string;
     label: string;
   }[];
+  legacyItems?: string[];
   closingNote: string;
+  closingTribute?: {
+    quote: string;
+    author: string;
+  };
   relatedStories?: {
     id: string;
     title: string;
@@ -42,6 +53,7 @@ const storiesDatabase: Record<string, StoryData> = {
     location: "Vizhinjam, Kerala, India",
     year: "2005 - Present",
     heroImageCaption: "Vizhinjam Community Health Centre / Coastal Kerala",
+    heroIcon: "location",
     sections: [
       {
         title: "Introduction",
@@ -86,6 +98,69 @@ const storiesDatabase: Record<string, StoryData> = {
         teaser: "A heartfelt tribute to a mentor, innovator, and early champion of the global HISP movement."
       }
     ]
+  },
+  "calle-hedberg": {
+    id: "calle-hedberg",
+    title: "Remembering Calle Hedberg",
+    subtitle: "A tribute to a visionary of the global HISP movement",
+    theme: "Our Roots & Legacy",
+    themeColor: "bg-amber-500",
+    location: "HISP South Africa",
+    year: "In Memoriam",
+    heroImageCaption: "Calle Hedberg / HISP South Africa archive",
+    heroIcon: "person",
+    openingQuote: {
+      text: "Calle was a friend, mentor, and a strong source of inspiration. We offer condolences on his sad passing away and celebrate the rich legacy he left behind, beyond just the DHIS.",
+      author: "Prof. Sundeep Sahay",
+      title: "Founder & President, HISP India"
+    },
+    sections: [
+      {
+        title: "A Pioneer of Public Health Informatics",
+        content: [
+          "Calle Hedberg was among the earliest champions of the global HISP movement. His contributions shaped both the technical foundations and the philosophical underpinnings of DHIS, the predecessor to DHIS2.",
+          "For more than three decades, he worked tirelessly to advance public health informatics across the developing world.",
+          "His deep commitment to equity, localisation, and open systems was felt in every initiative he touched."
+        ],
+        contributors: [
+          "HISP South Africa",
+          "University of Oslo's DHIS2 core team",
+          "Country programs across Africa"
+        ]
+      },
+      {
+        title: "A Critical Voice Who Challenged Norms",
+        content: [
+          "Calle's sharp intellect and bold thinking stood out in every room he entered.",
+          "One of his iconic gestures was depicting the world map inverted, placing South Africa at the top—symbolising his challenge to entrenched power structures and dominant worldviews.",
+          "He believed technology should empower the marginalised, not reinforce hierarchies."
+        ]
+      },
+      {
+        title: "His Influence on HISP India",
+        content: [
+          "Calle's guidance played a significant role in shaping the HISP network's approach to community-centred systems, open-source advocacy, decentralised architectures, and pragmatic, context-sensitive implementations.",
+          "His relationship with Prof. Sahay—and the broader HISP community—was built on mutual respect, shared purpose, and intellectual honesty."
+        ]
+      }
+    ],
+    legacyItems: [
+      "Every DHIS2 implementation",
+      "Every open-source system that respects local context",
+      "Every community empowered through better information"
+    ],
+    closingNote: "HISP India joins colleagues worldwide in honouring his memory.",
+    closingTribute: {
+      quote: "A rare critical voice… he held no inhibitions in challenging established orders. Rest in peace dear Calle.",
+      author: "Prof. Sahay"
+    },
+    relatedStories: [
+      {
+        id: "vizhinjam",
+        title: "A Meaningful Return: Vizhinjam Community Health Centre",
+        teaser: "Revisiting the birthplace of the world's first DHIS2 pilot in Kerala, India."
+      }
+    ]
   }
 };
 
@@ -110,6 +185,8 @@ export default function StoryDetail() {
     );
   }
 
+  const HeroIcon = story.heroIcon === "person" ? User : MapPin;
+
   return (
     <main>
       {/* Hero Section with Image Placeholder */}
@@ -117,8 +194,8 @@ export default function StoryDetail() {
         {/* Image Placeholder */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-primary/80">
           <div className="absolute inset-0 flex flex-col items-center justify-center text-primary-foreground/30">
-            <div className="w-24 h-24 border-4 border-dashed border-current rounded-lg flex items-center justify-center mb-4">
-              <MapPin className="w-12 h-12" />
+            <div className="w-24 h-24 border-4 border-dashed border-current rounded-full flex items-center justify-center mb-4">
+              <HeroIcon className="w-12 h-12" />
             </div>
             <p className="text-sm font-medium">{story.heroImageCaption}</p>
             <p className="text-xs mt-1">Image placeholder - upload coming soon</p>
@@ -162,49 +239,73 @@ export default function StoryDetail() {
         </div>
       </section>
 
-      {/* Content Sections */}
-      {story.sections.map((section, index) => (
-        <section
-          key={section.title}
-          className={`py-16 md:py-20 ${index % 2 === 0 ? "bg-background" : "bg-muted"}`}
-        >
+      {/* Opening Quote Section (for tribute stories) */}
+      {story.openingQuote && (
+        <section className="py-16 md:py-20 bg-muted">
           <div className="container">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="font-heading text-2xl md:text-3xl font-bold mb-6 text-foreground">
-                {section.title}
-              </h2>
-              
-              <div className="space-y-5">
-                {section.content.map((paragraph, pIndex) => (
-                  <p key={pIndex} className="text-lg leading-relaxed text-muted-foreground">
-                    {paragraph}
-                  </p>
-                ))}
+            <div className="max-w-3xl mx-auto text-center">
+              <Quote className="h-12 w-12 text-primary/30 mx-auto mb-6 rotate-180" />
+              <blockquote className="text-xl md:text-2xl font-medium text-foreground leading-relaxed italic mb-6">
+                "{story.openingQuote.text}"
+              </blockquote>
+              <div className="text-muted-foreground">
+                <p className="font-semibold text-foreground">— {story.openingQuote.author}</p>
+                {story.openingQuote.title && (
+                  <p className="text-sm">{story.openingQuote.title}</p>
+                )}
               </div>
-
-              {/* Contributors */}
-              {section.contributors && (
-                <div className="mt-8 p-6 bg-primary/5 border-l-4 border-primary rounded-r-lg">
-                  <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                    <Users className="h-5 w-5 text-primary" />
-                    This effort was led by:
-                  </h3>
-                  <ul className="space-y-2">
-                    {section.contributors.map((contributor, cIndex) => (
-                      <li key={cIndex} className="text-muted-foreground flex items-start gap-2">
-                        <Award className="h-4 w-4 text-primary mt-1 shrink-0" />
-                        {contributor}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
             </div>
           </div>
         </section>
-      ))}
+      )}
 
-      {/* Impact Statistics */}
+      {/* Content Sections */}
+      {story.sections.map((section, index) => {
+        // Adjust background alternation based on whether there's an opening quote
+        const adjustedIndex = story.openingQuote ? index + 1 : index;
+        return (
+          <section
+            key={section.title}
+            className={`py-16 md:py-20 ${adjustedIndex % 2 === 0 ? "bg-background" : "bg-muted"}`}
+          >
+            <div className="container">
+              <div className="max-w-3xl mx-auto">
+                <h2 className="font-heading text-2xl md:text-3xl font-bold mb-6 text-foreground">
+                  {section.title}
+                </h2>
+                
+                <div className="space-y-5">
+                  {section.content.map((paragraph, pIndex) => (
+                    <p key={pIndex} className="text-lg leading-relaxed text-muted-foreground">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+
+                {/* Contributors */}
+                {section.contributors && (
+                  <div className="mt-8 p-6 bg-primary/5 border-l-4 border-primary rounded-r-lg">
+                    <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                      <Users className="h-5 w-5 text-primary" />
+                      {story.openingQuote ? "He worked closely with:" : "This effort was led by:"}
+                    </h3>
+                    <ul className="space-y-2">
+                      {section.contributors.map((contributor, cIndex) => (
+                        <li key={cIndex} className="text-muted-foreground flex items-start gap-2">
+                          <Award className="h-4 w-4 text-primary mt-1 shrink-0" />
+                          {contributor}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </div>
+          </section>
+        );
+      })}
+
+      {/* Impact Statistics (for non-tribute stories) */}
       {story.stats && (
         <section className="py-16 bg-primary text-primary-foreground">
           <div className="container">
@@ -236,17 +337,63 @@ export default function StoryDetail() {
         </section>
       )}
 
-      {/* Closing Note */}
-      <section className="py-16 md:py-20 bg-muted">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center">
-            <Building className="h-12 w-12 text-primary mx-auto mb-6" />
-            <blockquote className="text-xl md:text-2xl font-medium text-foreground leading-relaxed italic">
-              "{story.closingNote}"
-            </blockquote>
+      {/* Legacy Section (for tribute stories) */}
+      {story.legacyItems && (
+        <section className="py-16 bg-primary text-primary-foreground">
+          <div className="container">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">
+                A Legacy That Continues
+              </h2>
+              <p className="text-primary-foreground/80 mb-8">
+                {story.closingNote}
+              </p>
+              <p className="text-lg font-medium mb-6">His legacy lives on through:</p>
+              <ul className="space-y-4 text-left max-w-md mx-auto">
+                {story.legacyItems.map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <Heart className="h-5 w-5 text-amber-400 mt-1 shrink-0 fill-amber-400" />
+                    <span className="text-lg">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
+
+      {/* Closing Note (for non-tribute stories) */}
+      {!story.legacyItems && (
+        <section className="py-16 md:py-20 bg-muted">
+          <div className="container">
+            <div className="max-w-3xl mx-auto text-center">
+              <Building className="h-12 w-12 text-primary mx-auto mb-6" />
+              <blockquote className="text-xl md:text-2xl font-medium text-foreground leading-relaxed italic">
+                "{story.closingNote}"
+              </blockquote>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Closing Tribute (for tribute stories) */}
+      {story.closingTribute && (
+        <section className="py-16 md:py-20 bg-muted">
+          <div className="container">
+            <div className="max-w-3xl mx-auto text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-6">
+                <Heart className="h-8 w-8 text-primary" />
+              </div>
+              <blockquote className="text-xl md:text-2xl font-medium text-foreground leading-relaxed italic mb-4">
+                "{story.closingTribute.quote}"
+              </blockquote>
+              <p className="text-muted-foreground font-medium">
+                — {story.closingTribute.author}
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Related Stories */}
       {story.relatedStories && story.relatedStories.length > 0 && (

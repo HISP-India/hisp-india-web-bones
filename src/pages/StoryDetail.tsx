@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CTASection } from "@/components/CTASection";
+import vizhinjamHeroImage from "@/assets/vizhinjam-health-centre.jpg";
 
 interface StoryData {
   id: string;
@@ -52,6 +53,7 @@ const storiesDatabase: Record<string, StoryData> = {
     themeColor: "bg-amber-500",
     location: "Vizhinjam, Kerala, India",
     year: "2005 - Present",
+    heroImage: vizhinjamHeroImage,
     heroImageCaption: "Vizhinjam Community Health Centre / Coastal Kerala",
     heroIcon: "location",
     sections: [
@@ -189,19 +191,31 @@ export default function StoryDetail() {
 
   return (
     <main>
-      {/* Hero Section with Image Placeholder */}
+      {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-end">
-        {/* Image Placeholder */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-primary/80">
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-primary-foreground/30">
-            <div className="w-24 h-24 border-4 border-dashed border-current rounded-full flex items-center justify-center mb-4">
-              <HeroIcon className="w-12 h-12" />
+        {/* Hero Background */}
+        <div className="absolute inset-0">
+          {story.heroImage ? (
+            <>
+              <img 
+                src={story.heroImage} 
+                alt={story.heroImageCaption}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+            </>
+          ) : (
+            <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-primary/80">
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-primary-foreground/30">
+                <div className="w-24 h-24 border-4 border-dashed border-current rounded-full flex items-center justify-center mb-4">
+                  <HeroIcon className="w-12 h-12" />
+                </div>
+                <p className="text-sm font-medium">{story.heroImageCaption}</p>
+                <p className="text-xs mt-1">Image placeholder - upload coming soon</p>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
             </div>
-            <p className="text-sm font-medium">{story.heroImageCaption}</p>
-            <p className="text-xs mt-1">Image placeholder - upload coming soon</p>
-          </div>
-          {/* Gradient overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+          )}
         </div>
 
         {/* Hero Content */}

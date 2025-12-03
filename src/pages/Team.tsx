@@ -271,6 +271,17 @@ const departments = [
     ],
   },
   {
+    name: "Capacity Building & Digital Operations",
+    members: [
+      {
+        id: "36",
+        name: "Sahil Bhardwaj",
+        role: "Coordinator - Digital Operations",
+        bio: "Sahil Bhardwaj is a Digital Media Professional with over 10 years of experience in Web Development, Social Media Marketing, and Learning Management Systems (LMS). As the Coordinator - Digital Operations at HISP India, he leads digital initiatives to strengthen the organization's online presence and technical capabilities. Currently, Sahil is working on the DMGtasia Project, contributing his expertise in digital media and web technologies to enhance project efficiency. Alongside this, he is spearheading web development for HISP India, ensuring user-friendly and impactful digital platforms. His proficiency in website architecture, content strategy, and digital engagement has been instrumental in optimizing capacity-building efforts and online learning solutions. Passionate about technology-driven impact, Sahil continuously explores innovative ways to enhance digital communication and streamline operations, aligning with HISP India's mission of empowering public health informatics through open-source and collaborative solutions.",
+      },
+    ],
+  },
+  {
     name: "HR & Accounts Team",
     members: [
       {
@@ -314,17 +325,6 @@ const departments = [
         role: "Office Supervisor",
         imageUrl: anilImage,
         bio: "Currently working as Office Assistant in HISP India. His duty includes: Ensuring the office runs smoothly, Managing office outside work, Performing general clerical and administrative tasks, Keeping record of HR & Accounts office supplies and stock, Helping manage the office correspondence.",
-      },
-    ],
-  },
-  {
-    name: "Capacity Building & Digital Operations",
-    members: [
-      {
-        id: "36",
-        name: "Sahil Bhardwaj",
-        role: "Coordinator - Digital Operations",
-        bio: "Sahil Bhardwaj is a Digital Media Professional with over 10 years of experience in Web Development, Social Media Marketing, and Learning Management Systems (LMS). As the Coordinator - Digital Operations at HISP India, he leads digital initiatives to strengthen the organization's online presence and technical capabilities. Currently, Sahil is working on the DMGtasia Project, contributing his expertise in digital media and web technologies to enhance project efficiency. Alongside this, he is spearheading web development for HISP India, ensuring user-friendly and impactful digital platforms. His proficiency in website architecture, content strategy, and digital engagement has been instrumental in optimizing capacity-building efforts and online learning solutions. Passionate about technology-driven impact, Sahil continuously explores innovative ways to enhance digital communication and streamline operations, aligning with HISP India's mission of empowering public health informatics through open-source and collaborative solutions.",
       },
     ],
   },

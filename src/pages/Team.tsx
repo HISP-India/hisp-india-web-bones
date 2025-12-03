@@ -274,7 +274,7 @@ const departments = [
     ],
   },
   {
-    name: "Capacity Building & Digital Operations",
+    name: "Capacity Building Team",
     members: [
       {
         id: "37",

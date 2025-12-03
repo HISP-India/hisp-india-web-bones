@@ -25,6 +25,10 @@ import subhashImage from "@/assets/subhash-chand.png";
 import sureshImage from "@/assets/suresh-kumar.png";
 import vipinImage from "@/assets/vipin-kumar-gerlack.png";
 import yogeshImage from "@/assets/yogesh-chand.png";
+import bhuvneshwarImage from "@/assets/bhuvneshwar-thakur.png";
+import shashikantImage from "@/assets/shashikant-sharma.png";
+import mitushiImage from "@/assets/mitushi-kohli.png";
+import nawazImage from "@/assets/mohd-nawaz.png";
 
 const departments = [
   {
@@ -189,24 +193,28 @@ const departments = [
         id: "20",
         name: "Bhuvneshwar Thakur",
         role: "Sr. Infrastructure Administrator",
+        imageUrl: bhuvneshwarImage,
         bio: "Bhuvneshwar is working as Sr. Infrastructure Administrator in our organization. Over 10 years of experience in the I.T industry with a variety of roles and responsibilities. He is responsible for supporting the development and implementation of the IT infrastructure strategy and roadmap to ensure that the organization's technology infrastructure is reliable, scalable, and secure including servers, end-user IT inventory, and storage/backup systems. Also, taking care of TVHA (which are part of our projects) which includes server hardening, database tuning, server management, and support. Prior to our organization, he was associated with Himachal Pradesh Secretariat Shimla (H.P). He also manages the team's and the client's troubleshooting of application-related problems. Also responsible for dhis2 states and openMRS servers.",
       },
       {
         id: "21",
         name: "Shashikant Sharma",
         role: "Software Developer",
+        imageUrl: shashikantImage,
         bio: "I'm Shashikant Sharma, working as a Software Developer at HISP India. My main focus is on DHIS2-related projects, where I use React.js to build user-friendly and effective solutions for health programs.",
       },
       {
         id: "22",
         name: "Mitushi Kohli",
         role: "Jr. Software Developer",
+        imageUrl: mitushiImage,
         bio: "Mitushi has completed her BTech in Computer Science and Engineering from Jaypee University of Information Technology, Waknaghat. She is currently the software intern. She has worked on innovative projects like a YouTube Summarizer using LLM, and MOOC Course Recommendation System. Her interpersonal skills include problem-solving, teamwork, and adaptability.",
       },
       {
         id: "23",
         name: "Mohd Nawaz",
         role: "Frontend Developer",
+        imageUrl: nawazImage,
         bio: "Mohd Nawaz is a skilled Frontend Developer with expertise in React.js, JavaScript, and database management (MySQL). Proficient in C++, he has built scalable applications like a Doctor Appointment Web App and an Apartment Rental System. With strong problem-solving skills, he develops high-performance solutions and is always ready to learn new tech stacks.",
       },
     ],

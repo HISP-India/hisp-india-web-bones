@@ -12,6 +12,9 @@ import mithileshImage from "@/assets/mithilesh-kumar-thakur.png";
 import rashiImage from "@/assets/rashi-banta.png";
 import chahatImage from "@/assets/chahat-narula.png";
 import gitikaImage from "@/assets/gitika-arora.png";
+import sumitTripathiImage from "@/assets/sumit-kumar-tripathi.png";
+import sumitPoudelImage from "@/assets/sumit-poudel.png";
+import mohinderImage from "@/assets/mohinder-singh.png";
 
 const departments = [
   {
@@ -75,18 +78,21 @@ const departments = [
         id: "7",
         name: "Sumit Kumar Tripathi",
         role: "Program Manager - DHIS2",
+        imageUrl: sumitTripathiImage,
         bio: "Sumit Kr Tripathi has been working with HISP India since 2014. He has done Post Graduation in Hospital and Healthcare Management with specialization in Health IT along with a Graduation degree in Physiotherapy. He has been involved in requirements management and implementation of various public health systems based on DHIS2.",
       },
       {
         id: "8",
         name: "Sumit Poudel",
         role: "Technical Manager - DHIS2",
+        imageUrl: sumitPoudelImage,
         bio: "A web developer with over four years of experience in building responsive web applications and working with DHIS2 implementations. He specializes in technical management and development of health information systems.",
       },
       {
         id: "10",
         name: "Mohinder Singh",
         role: "Head - Infrastructure Management",
+        imageUrl: mohinderImage,
         bio: "Mohinder is working in Hisp India as an IT - Infrastructure management. He holds a B.Sc. and M.Sc. in information technology. He also holds the Red Hat Certified Engineer (RHCE). He has over 8+ years of experience as a server administrator. He managed a wide range of Linux and Window servers, including those from AWS, Linode, DigitalOcean, Google Cloud, Physical and other hostings. He is in charge of the Dhis2 application servers, which includes server configuration, database and application optimisation, daily backup management, application and server security patch updates. He also manages the team's and the client's troubleshooting of application-related problems. He is proficient with Kubernetes, Ansible and the LXC containerisation tools. He has experience working with states Himachal Pradesh, Maharashtra, Manipur, Mizoram, Odisha, Tamil Nadu etc, and countries Bhutan, Nepal, Libya, Rwanda, Kyrgyzstan, Sri Lanka, Bangladesh, Philippines and Myanmar (AMR Projects, FPOP, FHAI, WHO, Save the Children) ETC.",
       },
     ],

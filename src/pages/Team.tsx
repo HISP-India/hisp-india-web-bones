@@ -43,6 +43,7 @@ import oshinImage from "@/assets/oshin-sinha.png";
 import shirinImage from "@/assets/shirin-saini.png";
 import prekshaImage from "@/assets/preksha-singh.png";
 import sahilImage from "@/assets/sahil-bhardwaj.jpg";
+import gauravImage from "@/assets/gaurav-kumar.png";
 
 const departments = [
   {
@@ -232,6 +233,13 @@ const departments = [
         role: "Frontend Developer",
         imageUrl: nawazImage,
         bio: "Mohd Nawaz is a skilled Frontend Developer with expertise in React.js, JavaScript, and database management (MySQL). Proficient in C++, he has built scalable applications like a Doctor Appointment Web App and an Apartment Rental System. With strong problem-solving skills, he develops high-performance solutions and is always ready to learn new tech stacks.",
+      },
+      {
+        id: "29",
+        name: "Gaurav Kumar",
+        role: "IT Intern",
+        imageUrl: gauravImage,
+        bio: "A dedicated Computer Science graduate specializing in Artificial Intelligence and Machine Learning, currently working as an IT Intern at HISP India. I focus on generative models and deep learning, with hands-on experience demonstrated through the development of a Text-to-Image Synthesizer using GANs. I am passionate about applying advanced AI techniques to solve complex problems, create intelligent systems, and contribute to impactful technology-driven solutions. I am now seeking a full-time opportunity as an ML Engineer to further expand my expertise and build scalable, innovative AI applications.",
       },
     ],
   },

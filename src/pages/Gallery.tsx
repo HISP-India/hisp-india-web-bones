@@ -27,7 +27,7 @@ const eventAlbums: EventAlbum[] = [
     date: "March 2024",
     location: "New Delhi, India",
     coverImage: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop",
-    googlePhotosUrl: "https://photos.google.com/share/AF1QipNHbWZBbAG3YvLQwZ5C0xVdEZBxWUBQlNs7nJb8IuGU1IEV8bLiQPwHLJl8ZUyQjA?key=placeholder",
+    googlePhotosUrl: "https://photos.app.goo.gl/R8NVeEmob4e173sUA",
     category: "Conference",
   },
   {

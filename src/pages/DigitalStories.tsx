@@ -144,6 +144,7 @@ export default function DigitalStories() {
         title="Digital Stories"
         subtitle="Real experiences, field insights, and transformative journeys from HISP India's work across India, Nepal, and beyond."
         description="At HISP India, every project is more than technology—it's a story of people, context, collaboration, and change. Explore our collection of digital stories capturing more than two decades of work in strengthening public health systems through open-source innovation, capacity building, and community partnerships."
+        className="bg-gradient-to-br from-primary via-primary/90 to-primary/80 text-primary-foreground"
       />
 
       {/* Stories by Theme */}

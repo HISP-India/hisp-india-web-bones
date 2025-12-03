@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CTASection } from "@/components/CTASection";
 import vizhinjamHeroImage from "@/assets/vizhinjam-health-centre.jpg";
+import calleHedbergImage from "@/assets/calle-hedberg.jpg";
 
 interface StoryData {
   id: string;
@@ -109,6 +110,7 @@ const storiesDatabase: Record<string, StoryData> = {
     themeColor: "bg-amber-500",
     location: "HISP South Africa",
     year: "In Memoriam",
+    heroImage: calleHedbergImage,
     heroImageCaption: "Calle Hedberg / HISP South Africa archive",
     heroIcon: "person",
     openingQuote: {

@@ -3,8 +3,7 @@ import { Hero } from "@/components/Hero";
 import { CTASection } from "@/components/CTASection";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { GooglePhotosEmbed } from "@/components/GooglePhotosEmbed";
-import { Calendar, MapPin, Images, Sparkles, Camera, X } from "lucide-react";
+import { Calendar, MapPin, Images, Sparkles, Camera, ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
 
@@ -236,34 +235,57 @@ export default function Gallery() {
 
       {/* Album Modal */}
       <Dialog open={!!selectedAlbum} onOpenChange={() => setSelectedAlbum(null)}>
-        <DialogContent className="max-w-5xl w-[95vw] h-[85vh] p-0 overflow-hidden">
-          <DialogHeader className="p-6 pb-4 border-b">
-            <div className="flex items-start justify-between">
-              <div>
-                <DialogTitle className="font-heading text-2xl font-bold">
-                  {selectedAlbum?.title}
-                </DialogTitle>
-                <DialogDescription className="flex items-center gap-4 mt-2">
-                  <span className="flex items-center gap-1.5">
-                    <Calendar className="h-4 w-4" />
-                    {selectedAlbum?.date}
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <MapPin className="h-4 w-4" />
-                    {selectedAlbum?.location}
-                  </span>
-                </DialogDescription>
-              </div>
+        <DialogContent className="max-w-2xl w-[95vw] p-0 overflow-hidden">
+          {/* Cover Image with Gradient */}
+          <div className="relative h-64 md:h-80">
+            <img 
+              src={selectedAlbum?.coverImage} 
+              alt={selectedAlbum?.title}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+            
+            {/* Category Badge */}
+            <div className="absolute top-4 left-4">
+              <span className="px-3 py-1 bg-primary/90 backdrop-blur-sm text-primary-foreground text-xs font-medium rounded-full">
+                {selectedAlbum?.category}
+              </span>
             </div>
-          </DialogHeader>
-          <div className="flex-1 h-[calc(85vh-120px)]">
-            {selectedAlbum && (
-              <GooglePhotosEmbed
-                albumUrl={selectedAlbum.googlePhotosUrl}
-                title={selectedAlbum.title}
-                className="h-full rounded-none"
-              />
-            )}
+          </div>
+          
+          {/* Album Info & CTA */}
+          <div className="p-6 pt-4">
+            <DialogHeader className="mb-4">
+              <DialogTitle className="font-heading text-2xl font-bold">
+                {selectedAlbum?.title}
+              </DialogTitle>
+              <DialogDescription className="flex items-center gap-4 mt-2">
+                <span className="flex items-center gap-1.5">
+                  <Calendar className="h-4 w-4" />
+                  {selectedAlbum?.date}
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <MapPin className="h-4 w-4" />
+                  {selectedAlbum?.location}
+                </span>
+              </DialogDescription>
+            </DialogHeader>
+            
+            <p className="text-muted-foreground mb-6">
+              {selectedAlbum?.description}
+            </p>
+            
+            <div className="flex flex-col items-center gap-3">
+              <Button asChild size="lg" className="w-full sm:w-auto gap-2">
+                <a href={selectedAlbum?.googlePhotosUrl} target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="h-5 w-5" />
+                  View Full Album on Google Photos
+                </a>
+              </Button>
+              <p className="text-xs text-muted-foreground">
+                Opens in a new tab
+              </p>
+            </div>
           </div>
         </DialogContent>
       </Dialog>

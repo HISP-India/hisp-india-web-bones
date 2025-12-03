@@ -29,6 +29,12 @@ import bhuvneshwarImage from "@/assets/bhuvneshwar-thakur.png";
 import shashikantImage from "@/assets/shashikant-sharma.png";
 import mitushiImage from "@/assets/mitushi-kohli.png";
 import nawazImage from "@/assets/mohd-nawaz.png";
+import meenakshiImage from "@/assets/meenakshi-sharma.png";
+import nishaImage from "@/assets/nisha-attery.png";
+import amanImage from "@/assets/aman-jindal.png";
+import premImage from "@/assets/prem-chandra-tiwari.png";
+import abhijitImage from "@/assets/abhijit-jena.png";
+import anilImage from "@/assets/anil-kumar.png";
 
 const departments = [
   {
@@ -261,36 +267,42 @@ const departments = [
         id: "30",
         name: "Meenakshi Sharma",
         role: "Head - Human Resources",
+        imageUrl: meenakshiImage,
         bio: "Meenakshi is a post graduate in Human Resource, currently working as Human Resource - Head with HISP India. She has over 15 + years of working experience in the field of HR. At HISP India, she is responsible for managing the HR department, Employment Life Cycle, formulating policies, ensuring ISO Compliance, handling Employee Provident fund and providing Mediclaim assistance to the employees. She is taking care of the HR Department, Policy formulation, ISO Compliance, Employee Provident Fund, Employee mediclaim, Employee data management, Employee engagement, Appraisal process etc.",
       },
       {
         id: "31",
         name: "Nisha Attery",
         role: "Head - Accounts and Finance",
+        imageUrl: nishaImage,
         bio: "Nisha has joined HISP India in June 2020. She is a Commerce Graduate and also completed her CA Inter along with 3 Years of Articleship training. She has 9 years of work experience in the Finance & Accounts field, Her current designation is Head - Accounts and Finance and she is responsible for overall supervision in Accounts & Finance Deptt.",
       },
       {
         id: "34",
         name: "Aman Jindal",
         role: "Head - Office Administration",
+        imageUrl: amanImage,
         bio: "Aman is a Commerce graduate from CCS university. He is working as Head- Office Admin in HISP India. He is responsible for Admin work of HISP India since April 2016.",
       },
       {
         id: "32",
         name: "Prem Chandra Tiwari",
         role: "Manager - Accounts and Finance",
+        imageUrl: premImage,
         bio: "Prem Tiwari has joined HISP India since April 2016. He is a Commerce Graduate and also completed MBA in Finance from IMT-Ghaziabad with 12 years experience in Accounting & Taxation field. He is working as Manager- Finance and Accounts in HISP INDIA. He is responsible for managing the all payable accounts & statutory payment like TDS, GST, EPF, Salary, All expenses and maintain all accounting documentation in HISP INDIA.",
       },
       {
         id: "33",
         name: "Abhijit Jena",
         role: "Accounts Officer",
+        imageUrl: abhijitImage,
         bio: "Abhijit has joined HISP India in August 2023 as Accounts officer. He is a B.Com graduate. He did his graduation from Utkal University in 2018. Abhijit boasts over 6 years of expertise in Accounting & Taxation. His role encompasses Invoice Raising, GST handling, Documentation, and precise Book Keeping. Abhijit has been an essential part of our financial operations, ensuring accuracy and compliance in all tasks.",
       },
       {
         id: "35",
         name: "Anil Kumar",
         role: "Office Supervisor",
+        imageUrl: anilImage,
         bio: "Currently working as Office Assistant in HISP India. His duty includes: Ensuring the office runs smoothly, Managing office outside work, Performing general clerical and administrative tasks, Keeping record of HR & Accounts office supplies and stock, Helping manage the office correspondence.",
       },
     ],

@@ -5,6 +5,7 @@ import { CTASection } from "@/components/CTASection";
 import { TeamMemberCard } from "@/components/TeamMemberCard";
 import { Button } from "@/components/ui/button";
 import { Users, Award, Heart } from "lucide-react";
+import sundeepSahayImage from "@/assets/sundeep-sahay.png";
 
 const departments = [
   {
@@ -14,6 +15,7 @@ const departments = [
         id: "1",
         name: "Sundeep Sahay",
         role: "Founder/Mentor",
+        imageUrl: sundeepSahayImage,
         bio: "Sundeep Sahay has been the Founder/Mentor of HISP India since its inception in 1999. With a specialization in information systems, he has worked in the domain of health information systems research and implementation for over a decade in India and in several other countries including South Africa, Mozambique, Ethiopia, Tanzania, Tajikistan, Bangladesh, Sri Lanka and Vietnam. He has authored more than 150 internationally peer-reviewed articles, supervised more than 15 doctoral students and various masters students. He holds post graduate degrees in Management (India), Engineering (India), Information Systems (USA), Philosophy (Canada) and Public Health (South Africa).",
       },
       {

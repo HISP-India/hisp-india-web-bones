@@ -126,7 +126,8 @@ const departments = [
     ],
   },
   {
-    name: "Project Support (Implementation)",
+    name: "Project Support Team",
+    subtitle: "Implementation",
     members: [
       {
         id: "6",

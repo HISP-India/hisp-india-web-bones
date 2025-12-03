@@ -23,7 +23,19 @@ type NavItem = {
 const navigation: NavItem[] = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
-  { name: "Offerings", href: "/offerings" },
+  {
+    name: "Offerings",
+    children: [
+      { name: "All Offerings", href: "/offerings" },
+      { name: "Routine Health Information Systems", href: "/offerings/routine-health-info-systems" },
+      { name: "Community Information Systems", href: "/offerings/community-info-systems" },
+      { name: "OpenMRS Hospital Information Systems", href: "/offerings/openmrs-his" },
+      { name: "Data Analytics & Integration", href: "/offerings/data-analytics" },
+      { name: "Action & Implementation Research", href: "/offerings/research" },
+      { name: "Capacity Building & Education", href: "/offerings/capacity-building" },
+      { name: "Climate & Health Data Analytics", href: "/offerings/climate-health-analytics" },
+    ],
+  },
   { name: "Work", href: "/work" },
   {
     name: "Research",
@@ -40,9 +52,11 @@ const navigation: NavItem[] = [
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [researchOpen, setResearchOpen] = useState(false);
+  const [offeringsOpen, setOfferingsOpen] = useState(false);
   const location = useLocation();
 
   const isResearchActive = location.pathname.startsWith("/research");
+  const isOfferingsActive = location.pathname.startsWith("/offerings");
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -64,7 +78,8 @@ export function Header() {
                   <button
                     className={cn(
                       "inline-flex items-center gap-1 px-3 py-2 text-sm font-medium text-foreground/80 hover:text-foreground transition-colors rounded-md hover:bg-accent/50",
-                      isResearchActive && "text-accent-foreground bg-accent"
+                      item.name === "Research" && isResearchActive && "text-accent-foreground bg-accent",
+                      item.name === "Offerings" && isOfferingsActive && "text-accent-foreground bg-accent"
                     )}
                   >
                     {item.name}
@@ -112,23 +127,24 @@ export function Header() {
             <nav className="flex flex-col space-y-2 mt-8">
               {navigation.map((item) =>
                 item.children ? (
-                  <Collapsible
+                <Collapsible
                     key={item.name}
-                    open={researchOpen}
-                    onOpenChange={setResearchOpen}
+                    open={item.name === "Research" ? researchOpen : offeringsOpen}
+                    onOpenChange={item.name === "Research" ? setResearchOpen : setOfferingsOpen}
                   >
                     <CollapsibleTrigger asChild>
                       <button
                         className={cn(
                           "w-full flex items-center justify-between px-4 py-3 text-base font-medium text-foreground/80 hover:text-foreground transition-colors rounded-md hover:bg-accent",
-                          isResearchActive && "text-accent-foreground bg-accent"
+                          item.name === "Research" && isResearchActive && "text-accent-foreground bg-accent",
+                          item.name === "Offerings" && isOfferingsActive && "text-accent-foreground bg-accent"
                         )}
                       >
                         {item.name}
                         <ChevronDown
                           className={cn(
                             "h-4 w-4 transition-transform",
-                            researchOpen && "rotate-180"
+                            (item.name === "Research" ? researchOpen : offeringsOpen) && "rotate-180"
                           )}
                         />
                       </button>

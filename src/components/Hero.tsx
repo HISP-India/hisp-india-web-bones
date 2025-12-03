@@ -25,7 +25,7 @@ export function Hero({
       className={cn(
         "relative w-full",
         variant === "fullscreen" ? "min-h-screen flex items-center justify-center scroll-snap-start" : "py-20 md:py-32",
-        variant === "gradient" && "bg-gradient-to-br from-primary/10 via-accent/5 to-background",
+        variant === "gradient" && "bg-gradient-to-br from-primary via-primary/90 to-primary/80",
         variant === "fullscreen" && "bg-gradient-to-br from-primary via-primary/90 to-accent overflow-hidden",
         className
       )}

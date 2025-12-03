@@ -125,7 +125,7 @@ function StoryCard({ story, themeColor }: { story: Story; themeColor: string }) 
       <CardContent className="flex-1 flex flex-col">
         <p className="text-muted-foreground text-sm flex-1">{story.teaser}</p>
         <Link
-          to="#"
+          to={`/research/digital-stories/${story.id}`}
           className="inline-flex items-center gap-1 text-primary font-medium text-sm mt-4 hover:underline"
         >
           Read Story <ArrowRight className="h-4 w-4" />

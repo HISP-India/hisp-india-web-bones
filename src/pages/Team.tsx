@@ -15,6 +15,16 @@ import gitikaImage from "@/assets/gitika-arora.png";
 import sumitTripathiImage from "@/assets/sumit-kumar-tripathi.png";
 import sumitPoudelImage from "@/assets/sumit-poudel.png";
 import mohinderImage from "@/assets/mohinder-singh.png";
+import deepikaImage from "@/assets/deepika.png";
+import akshitaImage from "@/assets/akshita-pundir.png";
+import kanavImage from "@/assets/kanav-banta.png";
+import nehaChadhaImage from "@/assets/neha-chadha.png";
+import nehaJoshiImage from "@/assets/neha-joshi.png";
+import prakamyaImage from "@/assets/prakamya-arora.png";
+import subhashImage from "@/assets/subhash-chand.png";
+import sureshImage from "@/assets/suresh-kumar.png";
+import vipinImage from "@/assets/vipin-kumar-gerlack.png";
+import yogeshImage from "@/assets/yogesh-chand.png";
 
 const departments = [
   {
@@ -104,60 +114,70 @@ const departments = [
         id: "6",
         name: "Deepika",
         role: "Sr Advisor - DHIS2",
+        imageUrl: deepikaImage,
         bio: "Deepika has been associated with HISP India for several years, working on various DHIS2 implementations. She has a graduate degree in Biomedical Sciences from Delhi University and did her masters in healthcare management (specialisation in Healthcare IT) from IIHMR, Delhi. She has been involved in multiple DHIS2 implementation projects Nationally and Internationally. Her major domain is Design and Customisation. She has around 7 years of working experience in healthcare industry.",
       },
       {
         id: "11",
         name: "Akshita Pundir",
         role: "Sr. Project Officer",
+        imageUrl: akshitaImage,
         bio: "She worked with HISP India as a consultant before joining as a HIS Officer. She completed her M.E in Biotechnology from BITS, Pilani and has worked on two projects so far: 1) NIMR (B.tech Final year dissertation) - Detection of Dengue virus and Malarial parasite through molecular techniques. 2) BITS Pilani, Pilani (Research Practice, Sem-II) - To study polymorphism in Circumsporozoite Protein of Plasmodium falciparum.",
       },
       {
         id: "12",
         name: "Kanav Banta",
         role: "Sr. Project Coordinator - DHIS2",
+        imageUrl: kanavImage,
         bio: "Kanav is a Senior Project Coordinator at HISP India, bringing over 11 years of experience to the customization and implementation of health information system initiatives. Specializing in DHIS2 customization and data management, he has effectively managed large-scale national and international projects, including those for IPPF SARO, IPPF ESEAOR, Save the Children-Nepal, FHI 360, PSTC Bangladesh, Tibetan Voluntary Health Association-India & Nepal, and Mizoram IPA. Kanav's responsibilities encompass comprehensive project management activities, from requirements gathering and system configuration to stakeholder coordination, capacity building, and troubleshooting. A graduate of Annamalai University with a Bachelor of Business Administration and a computer diploma, his contributions have positively impacted public health programs throughout India, Bhutan, Nepal, and Bangladesh, demonstrating his expertise in leading and executing complex health informatics projects.",
       },
       {
         id: "13",
         name: "Neha Chadha",
         role: "Sr. Project Officer",
+        imageUrl: nehaChadhaImage,
         bio: "Neha completed her M.E in Biotechnology from BITS PILANI and has been working with HISP India since 2019. She started as an intern and has grown into her current role as a Senior Project Officer. While her core project focuses on Antimicrobial Resistance (AMR), she also plays an active role in the ISO compliance and Strategic Communication teams, further diversifying her contributions.",
       },
       {
         id: "14",
         name: "Neha Joshi",
         role: "Advisor - DHIS2",
+        imageUrl: nehaJoshiImage,
         bio: "Neha Joshi has been an integral part of HISP-India since August 2009, initially joining as a Mobile Health Coordinator. In this role, she successfully implemented mobile health projects at the community level across various states. Drawing from her prior experiences at esteemed mobile operator giants like Airtel and TATA, Neha brought valuable insights to her work. Presently, Neha serves as an Advisor, primarily focusing on DHIS2 implementation in Indian states. Her responsibilities extend to managing DHIS2 implementation projects in Maharashtra and Odisha, as well as collaborating with DMCH, Ludhiana, for the implementation of community-based applications. Additionally, she plays a crucial role in the Piramal Swasthya project, where she is involved in designing interactive dashboards within DHIS2. Beyond her DHIS2 implementations, Neha actively participates as a team member in field-level research under the 'Equity AMR' project. Her academic qualifications include a postgraduate degree and a diploma in Health & Family Welfare, further enhancing her expertise and contributions to the field.",
       },
       {
         id: "15",
         name: "Prakamya Arora",
         role: "Project Officer",
+        imageUrl: prakamyaImage,
         bio: "Dr. Prakamya joined the organization three years ago as a Health Information Officer and has since been promoted to Senior Project Officer. A BDS graduate with a Post Graduate Diploma in Health and Hospital Management from IIHMR, Delhi, she specializes in understanding client requirements, customization, and training. She has worked on major projects, including various countries under the IPPF project and IPA Mizoram.",
       },
       {
         id: "16",
         name: "Subhash Chand",
         role: "Sr. Project Coordinator - AMR",
+        imageUrl: subhashImage,
         bio: "Joined HISP India in September 2013 and currently working as a Sr. Project Coordinator. Possesses over 11 years of experience in Hospital Projects and DHIS-2-based HMIS. Holds a Bachelor of Computer Applications (BCA) and a Master of Business Administration (MBA) in Information and Technology. Areas of Expertise: Requirements gathering, Configuration, Implementation, Documentation, Training, Testing. Support Projects Involved: Himachal e-Health Project, UIO-NFR INTPART CCC PGI, INTPART-HP, Tibetan Voluntary Health Association-Tibet, UPHMIS, Equity AMR RCN. Previous Experience: Worked with UIDAI as a Technical Administrator from September 2012 to September 2013, gaining 1 year of experience in the role.",
       },
       {
         id: "17",
         name: "Suresh Kumar",
         role: "Sr. Project Coordinator - OpenMRS",
+        imageUrl: sureshImage,
         bio: "Suresh is a Senior Project Coordinator at HISP India since September 2013, bringing over 11 years of experience in hospital projects and DHIS-2-based HMIS. He holds an MBA from HP University and a diploma in IT from NIIT. His responsibilities include requirements gathering, configuration, implementation, documentation, training, testing, and support. He has contributed to projects such as Himachal e-Health Project, PGI INTPART-HP, Tibetan Voluntary Health Association-Tibet, Kenya EHR, Mizoram HMIS, NIPI, IPPF, Myanmar HMIS, and Piramal.",
       },
       {
         id: "18",
         name: "Vipin Kumar Gerlack",
         role: "Sr. Project Coordinator - DHIS2",
+        imageUrl: vipinImage,
         bio: "Vipin Gerlack is a Senior Project Coordinator at HISP India with over 11 years of experience in health information systems. He specializes in end-to-end project execution, from conceptualization to implementation, with expertise in DHIS2 customization, capacity building, and troubleshooting. He has independently managed critical projects, including the DHIS2-based UPHMIS, and has contributed to national and international initiatives such as the IPPF Business Portal, NIPI IPHS, Myanmar TV & Plan International. With a strong technical and strategic vision, Vipin ensures the seamless implementation and sustainability of health information systems. He holds a post graduate degree in Business Administration with a one-year certification in computer programming.",
       },
       {
         id: "19",
         name: "Yogesh Chand",
         role: "Advisor - DHIS2",
+        imageUrl: yogeshImage,
         bio: "Yogesh Chand is a Public Health Informatics professional with over seven years of experience, currently serving as a Senior Advisor at HISP India. He specializes in leading end-to-end project execution, from conceptualization to implementation, across various health information system initiatives. With expertise in DHIS2 customization, data management, GIS integration, and digital surveillance, he has successfully managed large-scale national and international projects. He has independently handled critical projects, including the DHIS2-based Leprosy Information System, the WHO-integrated TB, Malaria, and HIV DHIS2 system in East Timor and other Projects over the years. His role involves project management, requirements gathering, system configuration, stakeholder coordination, capacity building, and troubleshooting. With a strong technical and strategic vision, Yogesh ensures smooth implementation and sustainability of health information systems. He holds a Bachelor's in Biotechnology and a postgraduate diploma in Health Management (Health IT) from IIHMR, New Delhi. His work has impacted public health programs across India, Bhutan, Nepal, Bangladesh, and East Timor, reinforcing his ability to lead and execute complex health informatics projects.",
       },
     ],

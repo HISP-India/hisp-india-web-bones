@@ -22,7 +22,13 @@ type NavItem = {
 
 const navigation: NavItem[] = [
   { name: "Home", href: "/" },
-  { name: "About Us", href: "/about" },
+  {
+    name: "About Us",
+    children: [
+      { name: "About HISP India", href: "/about" },
+      { name: "Gallery", href: "/about/gallery" },
+    ],
+  },
   {
     name: "Offerings",
     children: [
@@ -53,10 +59,12 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [researchOpen, setResearchOpen] = useState(false);
   const [offeringsOpen, setOfferingsOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
   const location = useLocation();
 
   const isResearchActive = location.pathname.startsWith("/research");
   const isOfferingsActive = location.pathname.startsWith("/offerings");
+  const isAboutActive = location.pathname.startsWith("/about");
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -79,7 +87,8 @@ export function Header() {
                     className={cn(
                       "inline-flex items-center gap-1 px-3 py-2 text-sm font-medium text-foreground/80 hover:text-foreground transition-colors rounded-md hover:bg-accent/50",
                       item.name === "Research" && isResearchActive && "text-accent-foreground bg-accent",
-                      item.name === "Offerings" && isOfferingsActive && "text-accent-foreground bg-accent"
+                      item.name === "Offerings" && isOfferingsActive && "text-accent-foreground bg-accent",
+                      item.name === "About Us" && isAboutActive && "text-accent-foreground bg-accent"
                     )}
                   >
                     {item.name}
@@ -129,22 +138,23 @@ export function Header() {
                 item.children ? (
                 <Collapsible
                     key={item.name}
-                    open={item.name === "Research" ? researchOpen : offeringsOpen}
-                    onOpenChange={item.name === "Research" ? setResearchOpen : setOfferingsOpen}
+                    open={item.name === "Research" ? researchOpen : item.name === "Offerings" ? offeringsOpen : aboutOpen}
+                    onOpenChange={item.name === "Research" ? setResearchOpen : item.name === "Offerings" ? setOfferingsOpen : setAboutOpen}
                   >
                     <CollapsibleTrigger asChild>
                       <button
                         className={cn(
                           "w-full flex items-center justify-between px-4 py-3 text-base font-medium text-foreground/80 hover:text-foreground transition-colors rounded-md hover:bg-accent",
                           item.name === "Research" && isResearchActive && "text-accent-foreground bg-accent",
-                          item.name === "Offerings" && isOfferingsActive && "text-accent-foreground bg-accent"
+                          item.name === "Offerings" && isOfferingsActive && "text-accent-foreground bg-accent",
+                          item.name === "About Us" && isAboutActive && "text-accent-foreground bg-accent"
                         )}
                       >
                         {item.name}
                         <ChevronDown
                           className={cn(
                             "h-4 w-4 transition-transform",
-                            (item.name === "Research" ? researchOpen : offeringsOpen) && "rotate-180"
+                            (item.name === "Research" ? researchOpen : item.name === "Offerings" ? offeringsOpen : aboutOpen) && "rotate-180"
                           )}
                         />
                       </button>

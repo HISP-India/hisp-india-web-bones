@@ -215,11 +215,23 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Map Placeholder */}
+      {/* Map Section */}
       <section className="py-16 bg-muted">
         <div className="container">
-          <div className="aspect-video bg-card rounded-lg border flex items-center justify-center">
-            <p className="text-muted-foreground">Map embed placeholder</p>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-8 text-center">
+            Find Us
+          </h2>
+          <div className="aspect-video rounded-lg overflow-hidden shadow-lg">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.003613637678!2d77.2891362!3d28.5396111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce21bebb93fbb%3A0x4476e605a1c36ca2!2sHISP%20India!5e0!3m2!1sen!2sin!4v1764744183625!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="HISP India Office Location"
+            />
           </div>
         </div>
       </section>

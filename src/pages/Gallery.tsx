@@ -6,6 +6,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { Calendar, MapPin, Images, Sparkles, Camera, ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
+import amrRoundtable2025 from "@/assets/amr-roundtable-2025.png";
 
 interface EventAlbum {
   id: string;
@@ -20,12 +21,12 @@ interface EventAlbum {
 
 const eventAlbums: EventAlbum[] = [
   {
-    id: "annual-conference-2024",
-    title: "HISP India Annual Conference 2024",
-    description: "Highlights from our annual gathering of health informatics professionals, featuring keynote sessions, workshops, and networking events.",
-    date: "March 2024",
+    id: "amr-roundtable-2025",
+    title: "National AMR Roundtable 2025",
+    description: "The National AMR Roundtable 2025 at Habitat World, New Delhi brought together researchers, practitioners, and policymakers to explore strengthening AMR responses through collaboration, equity, and innovation, concluding with a shared commitment to advancing equitable and sustainable strategies.",
+    date: "November 2025",
     location: "New Delhi, India",
-    coverImage: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop",
+    coverImage: amrRoundtable2025,
     googlePhotosUrl: "https://photos.app.goo.gl/R8NVeEmob4e173sUA",
     category: "Conference",
   },

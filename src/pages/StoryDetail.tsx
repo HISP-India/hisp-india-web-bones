@@ -165,6 +165,76 @@ const storiesDatabase: Record<string, StoryData> = {
         teaser: "Revisiting the birthplace of the world's first DHIS2 pilot in Kerala, India."
       }
     ]
+  },
+  "rv-university": {
+    id: "rv-university",
+    title: "Prof. Sundeep Sahay Joins Board of Studies at RV University",
+    subtitle: "Bridging academia and practice in health informatics education",
+    theme: "Leadership & Thought Contributions",
+    themeColor: "bg-violet-500",
+    location: "RV University, Bengaluru, India",
+    year: "August 2024",
+    heroImage: undefined,
+    heroImageCaption: "Dr. Ranjini C R presenting the letter of honour to Prof. Sahay",
+    heroIcon: "person",
+    openingQuote: {
+      text: "It is an honour to have Prof. Sundeep Sahay on our Board of Studies! We look forward to his guidance and mentorship.",
+      author: "Dr. Ranjini C R",
+      title: "Professor and Executive Director, Centre for Global Health and Development, SoEPP"
+    },
+    sections: [
+      {
+        title: "A Prestigious Recognition",
+        content: [
+          "Prof. Sundeep Sahay, Founder and President of HISP India, has been appointed as a Member of the Board of Studies at the School of Economics and Public Policy (SoEPP), RV University, Bengaluru.",
+          "This prestigious role is a recognition of his extensive experience in health informatics and his unwavering commitment to nurturing the next generation of public health professionals.",
+          "Nominated from the Centre for Health Informatics, University of Oslo, Norway, Prof. Sahay's involvement is expected to bridge the gap between theoretical knowledge and its practical application in public health systems."
+        ]
+      },
+      {
+        title: "25 Years of Transformative Leadership",
+        content: [
+          "For the past 25 years, Prof. Sahay has been instrumental in driving HISP India's mission—strengthening health systems using open-source digital solutions like DHIS2 and OpenMRS.",
+          "His unique expertise in public health informatics, especially across low and medium-income countries, has helped build sustainable, inclusive, and community-centred digital health ecosystems.",
+          "This academic partnership represents a natural extension of his philosophy: that public health without the proper application of health informatics won't give the best results to communities."
+        ]
+      },
+      {
+        title: "A New Course Inspires 38 Students",
+        content: [
+          "Following this collaboration, RV University introduced a new course on Health Informatics as part of strengthening its interdisciplinary and research-driven academic offerings.",
+          "HISP India partnered with the School of Economics and Public Policy, with the curriculum developed in collaboration with the Department of Health Informatics, University of Oslo.",
+          "The response exceeded all expectations—38 students enrolled in the course during the September 2024 semester, affirming the growing importance of health informatics in public health education."
+        ],
+        contributors: [
+          "Prof. Sundeep Sahay, Founder & President, HISP India",
+          "Dr. Ranjini C R, Professor and Executive Director, Centre for Global Health and Development, SoEPP",
+          "Department of Health Informatics, University of Oslo"
+        ]
+      }
+    ],
+    stats: [
+      { value: "38", label: "Students enrolled in first semester" },
+      { value: "25+", label: "Years of HISP India leadership" },
+      { value: "80+", label: "Countries using DHIS2 globally" }
+    ],
+    closingNote: "Such a positive response from the students underlines that they realise the importance of health informatics in public health and the role it is going to play in their careers. It comes with more responsibilities and paves the way for productive collaborations for the future.",
+    closingTribute: {
+      quote: "Such a positive response from the students underlines that they realise the importance of health informatics in public health and the role it is going to play in their careers.",
+      author: "Dr. Ranjini C R"
+    },
+    relatedStories: [
+      {
+        id: "contemporary-challenges",
+        title: "Contemporary Challenges & Opportunities in Public Health Informatics",
+        teaser: "Insights from Prof. Sahay's distinguished talk on biosocial gaps, inequities, and health information systems."
+      },
+      {
+        id: "vizhinjam",
+        title: "A Meaningful Return: Vizhinjam Community Health Centre",
+        teaser: "Revisiting the birthplace of the world's first DHIS2 pilot in Kerala, India."
+      }
+    ]
   }
 };
 

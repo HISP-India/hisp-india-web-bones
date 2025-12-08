@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, MapPin, Calendar, Users, Globe, Building, Award, User, Heart, Quote } from "lucide-react";
+import { ArrowLeft, MapPin, Calendar, Users, Globe, Building, Award, User, Heart, Quote, BookOpen, Target, Link2, Scale, Lightbulb } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -25,6 +25,7 @@ interface StoryData {
   };
   sections: {
     title: string;
+    icon?: string;
     content: string[];
     contributors?: string[];
   }[];
@@ -228,6 +229,98 @@ const storiesDatabase: Record<string, StoryData> = {
         id: "contemporary-challenges",
         title: "Contemporary Challenges & Opportunities in Public Health Informatics",
         teaser: "Insights from Prof. Sahay's distinguished talk on biosocial gaps, inequities, and health information systems."
+      },
+      {
+        id: "vizhinjam",
+        title: "A Meaningful Return: Vizhinjam Community Health Centre",
+        teaser: "Revisiting the birthplace of the world's first DHIS2 pilot in Kerala, India."
+      }
+    ]
+  },
+  "contemporary-challenges": {
+    id: "contemporary-challenges",
+    title: "Reflecting on a Powerful Exchange: Prof. Sundeep Sahay's Distinguished Talk at RV University",
+    subtitle: "Contemporary Challenges and Opportunities Around Public Health Informatics in Low and Medium-Income Countries",
+    theme: "Leadership & Thought Contributions",
+    themeColor: "bg-violet-500",
+    location: "Senate Hall, RV University, Bengaluru, India",
+    year: "August 2024",
+    heroImage: undefined,
+    heroImageCaption: "Prof. Sundeep Sahay addressing students and faculty at RV University",
+    heroIcon: "person",
+    openingQuote: {
+      text: "What sets HISP India apart is the philosophy of reciprocity and mutuality—a commitment to shared learning rather than one-way knowledge transfer.",
+      author: "Prof. Sundeep Sahay",
+      title: "Founder & President, HISP India"
+    },
+    sections: [
+      {
+        title: "An Engaging Session on Public Health Informatics",
+        icon: "BookOpen",
+        content: [
+          "Prof. Sundeep Sahay's session at RV University was more than a lecture—it was a thoughtful dialogue with students and faculty on what it truly means to harness information for public health.",
+          "Hosted by the School of Economics and Public Policy (SoEPP) at the prestigious Senate Hall, the talk explored how health informatics can bridge the gap between data and real-world health outcomes.",
+          "This session preceded the formal launch of the Health Informatics course that has since welcomed 38 students—a testament to the growing recognition of the field's importance."
+        ]
+      },
+      {
+        title: "Three Pivotal Challenges Shaping Public Health Informatics",
+        icon: "Target",
+        content: [
+          "At the core of Prof. Sahay's presentation were three pivotal and interrelated challenges that public health informatics must address:",
+          "First, the Biosocial Analysis Gap—health information systems traditionally focus on disease patterns and service delivery but often miss the social determinants that shape health outcomes. Bridging this gap is essential for meaningful intervention.",
+          "Second, the challenge of Health Inequities—data often masks the structural inequalities in healthcare access and outcomes across regions, communities, and marginalised groups. Informatics must evolve to surface and address these disparities.",
+          "Third, addressing the Wrong Problems—too often, public health initiatives focus on symptoms rather than root causes. Prof. Sahay emphasised the importance of asking the right questions before designing interventions."
+        ]
+      },
+      {
+        title: "Can Information Bridge the Divide?",
+        icon: "Link2",
+        content: [
+          "Prof. Sahay explored a fundamental question: Can information systems bring together biomedical data and social context to create more equitable healthcare strategies?",
+          "The answer lies in integrating diverse data sources—clinical records, community surveys, social indicators—to develop a holistic picture of population health.",
+          "This approach enables policymakers and health workers to design interventions that address not just illness, but the conditions that create vulnerability in the first place."
+        ]
+      },
+      {
+        title: "Structural Violence and the Intersectional Approach",
+        icon: "Scale",
+        content: [
+          "One of the most thought-provoking segments of the talk centred on the distinction between inequalities and inequities—and how health systems must move beyond surface-level metrics.",
+          "Prof. Sahay discussed how structural violence—embedded in systems, policies, and social norms—perpetuates health disparities that data alone cannot capture.",
+          "An intersectional approach, he argued, is essential: understanding how factors like gender, caste, geography, and economic status combine to shape health outcomes in complex ways."
+        ]
+      },
+      {
+        title: "A Philosophy Rooted in Reciprocity and Mutuality",
+        icon: "Heart",
+        content: [
+          "What sets HISP India apart is the philosophy of reciprocity and mutuality—a commitment to shared learning rather than one-way knowledge transfer.",
+          "Prof. Sahay reflected on 25 years of HISP India's journey, emphasising that sustainable health systems emerge from genuine partnerships with governments, communities, and local institutions.",
+          "This collaborative ethos has been the foundation of HISP India's work across India, Sri Lanka, Ethiopia, and other countries—always learning as much as contributing."
+        ],
+        contributors: [
+          "Prof. Sundeep Sahay, Founder & President, HISP India",
+          "School of Economics and Public Policy, RV University",
+          "Centre for Global Health and Development, SoEPP"
+        ]
+      }
+    ],
+    stats: [
+      { value: "25+", label: "Years of HISP India leadership" },
+      { value: "80+", label: "Countries using DHIS2 globally" },
+      { value: "3", label: "Key challenges identified" }
+    ],
+    closingNote: "Such a positive response from the students underlines that they realise the importance of health informatics in public health and the role it is going to play in their careers. It comes with more responsibilities and paves the way for productive collaborations for the future.",
+    closingTribute: {
+      quote: "Such a positive response from the students underlines that they realise the importance of health informatics in public health and the role it is going to play in their careers.",
+      author: "Dr. Ranjini C R"
+    },
+    relatedStories: [
+      {
+        id: "rv-university",
+        title: "Prof. Sundeep Sahay Joins Board of Studies at RV University",
+        teaser: "A prestigious recognition of 25 years of leadership in health informatics education."
       },
       {
         id: "vizhinjam",

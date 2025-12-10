@@ -42,7 +42,7 @@ import rashmiImage from "@/assets/rashmi-surial.png";
 import oshinImage from "@/assets/oshin-sinha.png";
 import shirinImage from "@/assets/shirin-saini.png";
 import prekshaImage from "@/assets/preksha-singh.png";
-import sahilImage from "@/assets/sahil-bhardwaj.jpg";
+import sahilImage from "@/assets/sahil-bhardwaj.png";
 import gauravImage from "@/assets/gaurav-kumar.png";
 
 const departments = [

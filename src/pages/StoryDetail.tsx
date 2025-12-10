@@ -8,6 +8,7 @@ import vizhinjamHeroImage from "@/assets/vizhinjam-health-centre.jpg";
 import calleHedbergImage from "@/assets/calle-hedberg.jpg";
 import sundeepSahayPhilosophyHero from "@/assets/sundeep-sahay-philosophy-hero.jpg";
 import rvTalkHero from "@/assets/rv-talk-hero.jpg";
+import rvBosHero from "@/assets/rv-bos-hero.jpg";
 
 interface StoryData {
   id: string;
@@ -177,7 +178,7 @@ const storiesDatabase: Record<string, StoryData> = {
     themeColor: "bg-violet-500",
     location: "RV University, Bengaluru, India",
     year: "August 2024",
-    heroImage: undefined,
+    heroImage: rvBosHero,
     heroImageCaption: "Dr. Ranjini C R presenting the letter of honour to Prof. Sahay",
     heroIcon: "person",
     openingQuote: {

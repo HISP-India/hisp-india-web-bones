@@ -7,6 +7,7 @@ import { CTASection } from "@/components/CTASection";
 import vizhinjamHeroImage from "@/assets/vizhinjam-health-centre.jpg";
 import calleHedbergImage from "@/assets/calle-hedberg.jpg";
 import sundeepSahayPhilosophyHero from "@/assets/sundeep-sahay-philosophy-hero.jpg";
+import rvTalkHero from "@/assets/rv-talk-hero.jpg";
 
 interface StoryData {
   id: string;
@@ -246,7 +247,7 @@ const storiesDatabase: Record<string, StoryData> = {
     themeColor: "bg-violet-500",
     location: "Senate Hall, RV University, Bengaluru, India",
     year: "August 2024",
-    heroImage: undefined,
+    heroImage: rvTalkHero,
     heroImageCaption: "Prof. Sundeep Sahay addressing students and faculty at RV University",
     heroIcon: "person",
     openingQuote: {
@@ -301,7 +302,6 @@ const storiesDatabase: Record<string, StoryData> = {
           "This collaborative ethos has been the foundation of HISP India's work across India, Sri Lanka, Ethiopia, and other countries—always learning as much as contributing."
         ],
         contributors: [
-          "Prof. Sundeep Sahay, Founder & President, HISP India",
           "School of Economics and Public Policy, RV University",
           "Centre for Global Health and Development, SoEPP"
         ]

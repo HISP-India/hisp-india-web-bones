@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import vizhinjamImage from "@/assets/vizhinjam-health-centre.jpg";
 import calleHedbergImage from "@/assets/calle-hedberg.jpg";
 import sundeepSahayPhilosophyThumbnail from "@/assets/sundeep-sahay-philosophy-thumbnail.jpg";
+import rvBosThumbnail from "@/assets/rv-bos-thumbnail.jpg";
 
 interface Story {
   id: string;
@@ -53,7 +54,7 @@ const storiesData: ThemeSection[] = [
         id: "rv-university",
         title: "Prof. Sundeep Sahay Joins RV University's Board of Studies",
         teaser: "Celebrating Prof. Sahay's role in shaping the next generation of public health professionals and strengthening academic engagement.",
-        image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&auto=format&fit=crop",
+        image: rvBosThumbnail,
       },
       {
         id: "contemporary-challenges",

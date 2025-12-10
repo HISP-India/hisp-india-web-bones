@@ -387,7 +387,6 @@ const storiesDatabase: Record<string, StoryData> = {
           "The challenge in India, he admits, is different. 'We haven't yet created that same depth of local capacity—partly because the scale is so large, and partly because the engagement models are different. But that's exactly why we're now so focused here.'"
         ],
         contributors: [
-          "Prof. Sundeep Sahay, Founder & President, HISP India",
           "HISP Ghana",
           "Ministry of Health, Sri Lanka",
           "University of Oslo"

@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, MapPin, Calendar, Users, Globe, Building, Award, User, Heart, Quote, BookOpen, Target, Link2, Scale, Lightbulb } from "lucide-react";
+import { ArrowLeft, MapPin, Calendar, Users, Globe, Building, Award, User, Heart, Quote, BookOpen, Target, Link2, Scale, Lightbulb, Brain, Lock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -326,6 +326,99 @@ const storiesDatabase: Record<string, StoryData> = {
         id: "vizhinjam",
         title: "A Meaningful Return: Vizhinjam Community Health Centre",
         teaser: "Revisiting the birthplace of the world's first DHIS2 pilot in Kerala, India."
+      }
+    ]
+  },
+  "philosophy-digital-health": {
+    id: "philosophy-digital-health",
+    title: "Understanding the Philosophy Behind Digital Health",
+    subtitle: "A Candid Conversation with Prof. Sundeep Sahay",
+    theme: "Leadership & Thought Contributions",
+    themeColor: "bg-violet-500",
+    location: "HISP India",
+    year: "July 2024",
+    heroImage: undefined,
+    heroImageCaption: "Prof. Sundeep Sahay reflecting on 30+ years in public health informatics",
+    heroIcon: "person",
+    openingQuote: {
+      text: "Making a difference comes down to understanding the context. For me, that understanding is rooted, at least partially, in India.",
+      author: "Prof. Sundeep Sahay",
+      title: "Founder & President, HISP India"
+    },
+    sections: [
+      {
+        title: "Why India? A Personal Calling",
+        icon: "Heart",
+        content: [
+          "For Prof. Sahay, choosing to dedicate his career to India was less about strategy and more about identity. 'For me, there was never really a question of why India,' he reflects. 'I am Indian—it would feel strange if I didn't contribute to my own country.'",
+          "This deep-rooted sense of belonging is paired with a unique global perspective. 'Having lived and worked in the UK and now Norway, I bring a certain understanding of the Western context. But I've always believed that if you want to make a difference, you need to know the context—and I understand India.'",
+          "This philosophy—grounded in lived experience rather than abstract expertise—has shaped every initiative HISP India has undertaken."
+        ]
+      },
+      {
+        title: "The Shrinking Space for Open Source",
+        icon: "Lock",
+        content: [
+          "Over the past few years, the landscape of digital health has shifted dramatically. Prof. Sahay has observed a growing preference for proprietary platforms over open-source solutions—even in regions that once championed openness.",
+          "'The space for open source is shrinking,' he notes. 'Many governments, including in Africa, are now opting for closed, vendor-driven systems. It's becoming increasingly difficult to find fertile ground for open-source implementations.'",
+          "This shift is what made focusing on India even more compelling. 'The ABDM ecosystem in India is uniquely receptive,' Prof. Sahay explains. 'It's one of the few environments today where there's still openness to integrating systems, experimenting with interoperability, and building on open standards.'"
+        ]
+      },
+      {
+        title: "A Focused Commitment to India",
+        icon: "Target",
+        content: [
+          "In 2017, a defining moment came when Prof. Sahay made a deliberate choice to stop all HISP India's work in Africa and redirect the team's energy entirely toward India.",
+          "'It was a conscious decision,' he recalls. 'We had spread ourselves too thin. I wanted to focus on where we could have sustained impact—and that meant concentrating on India.'",
+          "This decision also reflected a commitment to building local research capacity. 'As a researcher, I wanted to engage deeply with Indian PhD students, Indian institutions, and Indian problems. The more localized our engagement, the more meaningful our outcomes.'"
+        ]
+      },
+      {
+        title: "Beyond Software: A Philosophical Challenge",
+        icon: "Brain",
+        content: [
+          "Prof. Sahay is candid about where mainstream digital health discourse often goes wrong. 'There's too much focus on software—whether it's DHIS2 or any other tool—and not enough on the real issues.'",
+          "The 'real issues', he argues, are systemic. 'Architecturally, the dominant paradigm is centralization: all data flows upward, all logic is defined at the top. But this creates two problems. First, it renders grassroots workers invisible—they become data entry operators rather than informed actors. Second, it assumes a one-size-fits-all approach, ignoring local variation.'",
+          "His concern extends to the practical burden placed on frontline workers. 'We've seen ANMs (Auxiliary Nurse Midwives) spending 60–70% of their time just collecting and entering data. That's not sustainable—and it's certainly not empowering.'"
+        ]
+      },
+      {
+        title: "Learning from Global Success Stories",
+        icon: "Globe",
+        content: [
+          "Reflecting on decades of global work, Prof. Sahay highlights examples where open-source, community-led approaches have led to real transformation.",
+          "'In Ghana, we worked closely with the Ministry of Health for nearly 15 years. The result was a generation of local experts who now lead the country's health informatics initiatives. In Sri Lanka, a single PhD student we mentored became the architect of the national DHIS2 rollout. In Mozambique, our partnership created lasting institutional capacity.'",
+          "These successes share a common thread: reciprocity and mutual learning. 'It's never about us coming in with all the answers. It's about building together—learning from each other, respecting local knowledge, and staying engaged over the long term.'",
+          "The challenge in India, he admits, is different. 'We haven't yet created that same depth of local capacity—partly because the scale is so large, and partly because the engagement models are different. But that's exactly why we're now so focused here.'"
+        ],
+        contributors: [
+          "Prof. Sundeep Sahay, Founder & President, HISP India",
+          "HISP Ghana",
+          "Ministry of Health, Sri Lanka",
+          "University of Oslo"
+        ]
+      }
+    ],
+    stats: [
+      { value: "30+", label: "Years in health informatics" },
+      { value: "70%", label: "Time ANMs spend on data collection" },
+      { value: "4+", label: "Countries with capacity building success" }
+    ],
+    closingNote: "Effective changes in work practices should alleviate the burden on community health workers and allow them to focus more on care provision—not just data entry.",
+    closingTribute: {
+      quote: "If you want to make a difference, you need to know the context. I understand India—and that's where I can contribute.",
+      author: "Prof. Sundeep Sahay"
+    },
+    relatedStories: [
+      {
+        id: "contemporary-challenges",
+        title: "Contemporary Challenges & Opportunities in Public Health Informatics",
+        teaser: "Insights from Prof. Sahay's distinguished talk on biosocial gaps, inequities, and health information systems."
+      },
+      {
+        id: "rv-university",
+        title: "Prof. Sundeep Sahay Joins Board of Studies at RV University",
+        teaser: "A prestigious recognition of 25 years of leadership in health informatics education."
       }
     ]
   }

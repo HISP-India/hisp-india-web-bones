@@ -310,10 +310,6 @@ const storiesDatabase: Record<string, StoryData> = {
       { value: "3", label: "Key challenges identified" }
     ],
     closingNote: "Such a positive response from the students underlines that they realise the importance of health informatics in public health and the role it is going to play in their careers. It comes with more responsibilities and paves the way for productive collaborations for the future.",
-    closingTribute: {
-      quote: "Such a positive response from the students underlines that they realise the importance of health informatics in public health and the role it is going to play in their careers.",
-      author: "Dr. Ranjini C R"
-    },
     relatedStories: [
       {
         id: "rv-university",

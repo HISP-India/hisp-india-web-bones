@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { CTASection } from "@/components/CTASection";
 import vizhinjamHeroImage from "@/assets/vizhinjam-health-centre.jpg";
 import calleHedbergImage from "@/assets/calle-hedberg.jpg";
+import sundeepSahayPhilosophyHero from "@/assets/sundeep-sahay-philosophy-hero.jpg";
 
 interface StoryData {
   id: string;
@@ -337,7 +338,7 @@ const storiesDatabase: Record<string, StoryData> = {
     themeColor: "bg-violet-500",
     location: "HISP India",
     year: "July 2024",
-    heroImage: undefined,
+    heroImage: sundeepSahayPhilosophyHero,
     heroImageCaption: "Prof. Sundeep Sahay reflecting on 30+ years in public health informatics",
     heroIcon: "person",
     openingQuote: {

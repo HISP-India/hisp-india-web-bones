@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 // Import available images
 import vizhinjamImage from "@/assets/vizhinjam-health-centre.jpg";
 import calleHedbergImage from "@/assets/calle-hedberg.jpg";
+import sundeepSahayPhilosophyThumbnail from "@/assets/sundeep-sahay-philosophy-thumbnail.jpg";
 
 interface Story {
   id: string;
@@ -64,7 +65,7 @@ const storiesData: ThemeSection[] = [
         id: "philosophy-digital-health",
         title: "Understanding the Philosophy Behind Digital Health – Q&A with Prof. Sahay",
         teaser: "A candid conversation exploring India's digital health trajectory and why context and reciprocity matter.",
-        image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&auto=format&fit=crop",
+        image: sundeepSahayPhilosophyThumbnail,
       },
     ],
   },

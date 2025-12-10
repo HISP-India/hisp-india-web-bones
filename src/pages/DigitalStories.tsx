@@ -9,6 +9,7 @@ import vizhinjamImage from "@/assets/vizhinjam-health-centre.jpg";
 import calleHedbergImage from "@/assets/calle-hedberg.jpg";
 import sundeepSahayPhilosophyThumbnail from "@/assets/sundeep-sahay-philosophy-thumbnail.jpg";
 import rvBosThumbnail from "@/assets/rv-bos-thumbnail.jpg";
+import rvTalkThumbnail from "@/assets/rv-talk-thumbnail.jpg";
 
 interface Story {
   id: string;
@@ -60,7 +61,7 @@ const storiesData: ThemeSection[] = [
         id: "contemporary-challenges",
         title: "Contemporary Challenges & Opportunities in Public Health Informatics",
         teaser: "Insights from Prof. Sahay's distinguished talk covering biosocial gaps, inequities, and the deep links between information and health.",
-        image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&auto=format&fit=crop",
+        image: rvTalkThumbnail,
       },
       {
         id: "philosophy-digital-health",

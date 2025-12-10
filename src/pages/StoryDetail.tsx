@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, MapPin, Calendar, Users, Globe, Building, Award, User, Heart, Quote, BookOpen, Target, Link2, Scale, Lightbulb, Brain, Lock } from "lucide-react";
+import { ArrowLeft, MapPin, Calendar, Users, Globe, Building, Award, User, Heart, Quote, BookOpen, Target, Link2, Scale, Lightbulb, Brain, Lock, GraduationCap } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -21,6 +21,7 @@ interface StoryData {
   heroImage?: string;
   heroImageCaption: string;
   heroIcon?: "location" | "person";
+  closingIcon?: "globe" | "heart" | "graduation-cap" | "lightbulb" | "brain" | "award";
   openingQuote?: {
     text: string;
     author: string;
@@ -61,6 +62,7 @@ const storiesDatabase: Record<string, StoryData> = {
     heroImage: vizhinjamHeroImage,
     heroImageCaption: "Vizhinjam Community Health Centre / Coastal Kerala",
     heroIcon: "location",
+    closingIcon: "globe",
     sections: [
       {
         title: "Introduction",
@@ -117,6 +119,7 @@ const storiesDatabase: Record<string, StoryData> = {
     heroImage: calleHedbergImage,
     heroImageCaption: "Calle Hedberg / HISP South Africa archive",
     heroIcon: "person",
+    closingIcon: "heart",
     openingQuote: {
       text: "Calle was a friend, mentor, and a strong source of inspiration. We offer condolences on his sad passing away and celebrate the rich legacy he left behind, beyond just the DHIS.",
       author: "Prof. Sundeep Sahay",
@@ -181,6 +184,7 @@ const storiesDatabase: Record<string, StoryData> = {
     heroImage: rvBosHero,
     heroImageCaption: "Dr. Ranjini C R presenting the letter of honour to Prof. Sahay",
     heroIcon: "person",
+    closingIcon: "graduation-cap",
     openingQuote: {
       text: "It is an honour to have Prof. Sundeep Sahay on our Board of Studies! We look forward to his guidance and mentorship.",
       author: "Dr. Ranjini C R",
@@ -251,6 +255,7 @@ const storiesDatabase: Record<string, StoryData> = {
     heroImage: rvTalkHero,
     heroImageCaption: "Prof. Sundeep Sahay addressing students and faculty at RV University",
     heroIcon: "person",
+    closingIcon: "lightbulb",
     openingQuote: {
       text: "What sets HISP India apart is the philosophy of reciprocity and mutuality—a commitment to shared learning rather than one-way knowledge transfer.",
       author: "Prof. Sundeep Sahay",
@@ -342,6 +347,7 @@ const storiesDatabase: Record<string, StoryData> = {
     heroImage: sundeepSahayPhilosophyHero,
     heroImageCaption: "Prof. Sundeep Sahay reflecting on 30+ years in public health informatics",
     heroIcon: "person",
+    closingIcon: "brain",
     openingQuote: {
       text: "Making a difference comes down to understanding the context. For me, that understanding is rooted, at least partially, in India.",
       author: "Prof. Sundeep Sahay",
@@ -641,7 +647,18 @@ export default function StoryDetail() {
         <section className="py-16 md:py-20 bg-muted">
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
-              <Building className="h-12 w-12 text-primary mx-auto mb-6" />
+              {(() => {
+                const closingIcons = {
+                  globe: Globe,
+                  heart: Heart,
+                  "graduation-cap": GraduationCap,
+                  lightbulb: Lightbulb,
+                  brain: Brain,
+                  award: Award
+                };
+                const IconComponent = closingIcons[story.closingIcon || "globe"];
+                return <IconComponent className="h-12 w-12 text-primary mx-auto mb-6" />;
+              })()}
               <blockquote className="text-xl md:text-2xl font-medium text-foreground leading-relaxed italic">
                 "{story.closingNote}"
               </blockquote>
@@ -655,9 +672,22 @@ export default function StoryDetail() {
         <section className="py-16 md:py-20 bg-muted">
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-6">
-                <Heart className="h-8 w-8 text-primary" />
-              </div>
+              {(() => {
+                const closingIcons = {
+                  globe: Globe,
+                  heart: Heart,
+                  "graduation-cap": GraduationCap,
+                  lightbulb: Lightbulb,
+                  brain: Brain,
+                  award: Award
+                };
+                const IconComponent = closingIcons[story.closingIcon || "heart"];
+                return (
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-6">
+                    <IconComponent className="h-8 w-8 text-primary" />
+                  </div>
+                );
+              })()}
               <blockquote className="text-xl md:text-2xl font-medium text-foreground leading-relaxed italic mb-4">
                 "{story.closingTribute.quote}"
               </blockquote>

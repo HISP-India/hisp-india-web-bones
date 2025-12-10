@@ -213,11 +213,6 @@ const storiesDatabase: Record<string, StoryData> = {
           "Following this collaboration, RV University introduced a new course on Health Informatics as part of strengthening its interdisciplinary and research-driven academic offerings.",
           "HISP India partnered with the School of Economics and Public Policy, with the curriculum developed in collaboration with the Department of Health Informatics, University of Oslo.",
           "The response exceeded all expectations—38 students enrolled in the course during the September 2024 semester, affirming the growing importance of health informatics in public health education."
-        ],
-        contributors: [
-          "Prof. Sundeep Sahay, Founder & President, HISP India",
-          "Dr. Ranjini C R, Professor and Executive Director, Centre for Global Health and Development, SoEPP",
-          "Department of Health Informatics, University of Oslo"
         ]
       }
     ],
@@ -227,10 +222,6 @@ const storiesDatabase: Record<string, StoryData> = {
       { value: "80+", label: "Countries using DHIS2 globally" }
     ],
     closingNote: "Such a positive response from the students underlines that they realise the importance of health informatics in public health and the role it is going to play in their careers. It comes with more responsibilities and paves the way for productive collaborations for the future.",
-    closingTribute: {
-      quote: "Such a positive response from the students underlines that they realise the importance of health informatics in public health and the role it is going to play in their careers.",
-      author: "Dr. Ranjini C R"
-    },
     relatedStories: [
       {
         id: "contemporary-challenges",

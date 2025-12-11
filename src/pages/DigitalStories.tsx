@@ -34,7 +34,7 @@ const storiesData: ThemeSection[] = [
     stories: [
       {
         id: "vizhinjam",
-        title: "A Meaningful Return: Vizhinjam Community Health Centre",
+        title: "Revisiting the birthplace of the world's first DHIS2 pilot",
         teaser: "A nostalgic journey to Vizhinjam, the site of the world's first DHIS2 pilot in 2005. A reminder of where the global digital health movement began.",
         image: vizhinjamImage,
       },

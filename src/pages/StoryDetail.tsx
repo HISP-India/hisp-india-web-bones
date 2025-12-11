@@ -53,8 +53,8 @@ interface StoryData {
 const storiesDatabase: Record<string, StoryData> = {
   vizhinjam: {
     id: "vizhinjam",
-    title: "A Meaningful Return: HISP India Visits Vizhinjam Community Health Centre",
-    subtitle: "Revisiting the birthplace of the world's first DHIS2 pilot",
+    title: "Revisiting the birthplace of the world's first DHIS2 pilot",
+    subtitle: "A Meaningful Return: HISP India Visits Vizhinjam Community Health Centre",
     theme: "Our Roots & Legacy",
     themeColor: "bg-amber-500",
     location: "Vizhinjam, Kerala, India",
@@ -168,7 +168,7 @@ const storiesDatabase: Record<string, StoryData> = {
     relatedStories: [
       {
         id: "vizhinjam",
-        title: "A Meaningful Return: Vizhinjam Community Health Centre",
+        title: "Revisiting the birthplace of the world's first DHIS2 pilot",
         teaser: "Revisiting the birthplace of the world's first DHIS2 pilot in Kerala, India."
       }
     ]
@@ -230,7 +230,7 @@ const storiesDatabase: Record<string, StoryData> = {
       },
       {
         id: "vizhinjam",
-        title: "A Meaningful Return: Vizhinjam Community Health Centre",
+        title: "Revisiting the birthplace of the world's first DHIS2 pilot",
         teaser: "Revisiting the birthplace of the world's first DHIS2 pilot in Kerala, India."
       }
     ]
@@ -318,7 +318,7 @@ const storiesDatabase: Record<string, StoryData> = {
       },
       {
         id: "vizhinjam",
-        title: "A Meaningful Return: Vizhinjam Community Health Centre",
+        title: "Revisiting the birthplace of the world's first DHIS2 pilot",
         teaser: "Revisiting the birthplace of the world's first DHIS2 pilot in Kerala, India."
       }
     ]

@@ -7,6 +7,11 @@ import { Calendar, MapPin, Images, Sparkles, Camera, ExternalLink } from "lucide
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
 import amrRoundtable2025 from "@/assets/amr-roundtable-2025.png";
+import dataScienceWorkshop from "@/assets/data-science-workshop-2025.jpg";
+import philippinesNutrition from "@/assets/philippines-nutrition-2025.jpg";
+import hispIntegrationMeeting from "@/assets/hisp-integration-meeting-2024.jpg";
+import hispAnnualRetreat from "@/assets/hisp-annual-retreat-2024.jpg";
+import dmchTraining from "@/assets/dmch-training-2025.jpg";
 
 interface EventAlbum {
   id: string;
@@ -31,58 +36,58 @@ const eventAlbums: EventAlbum[] = [
     category: "Conference",
   },
   {
-    id: "dhis2-workshop-2024",
-    title: "DHIS2 Implementation Workshop",
-    description: "Hands-on training sessions for state health officials on DHIS2 platform customization and data management.",
-    date: "February 2024",
-    location: "Bangalore, India",
-    coverImage: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&auto=format&fit=crop",
-    googlePhotosUrl: "https://photos.google.com/share/AF1QipNHbWZBbAG3YvLQwZ5C0xVdEZBxWUBQlNs7nJb8IuGU1IEV8bLiQPwHLJl8ZUyQjA?key=placeholder",
+    id: "data-science-workshop-2025",
+    title: "Data Science for Public Health (ToT) Workshop",
+    description: "Empowering public health leaders to teach and scale data-driven solutions for low- and middle-income countries—bridging the gap between public health practice and modern data analytics.",
+    date: "October 2025",
+    location: "India",
+    coverImage: dataScienceWorkshop,
+    googlePhotosUrl: "https://photos.app.goo.gl/placeholder1",
     category: "Workshop",
   },
   {
-    id: "chw-training-2024",
-    title: "Community Health Worker Training",
-    description: "Empowering frontline health workers with digital tools and data collection techniques for better community health outcomes.",
-    date: "January 2024",
-    location: "Lucknow, India",
-    coverImage: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&auto=format&fit=crop",
-    googlePhotosUrl: "https://photos.google.com/share/AF1QipNHbWZBbAG3YvLQwZ5C0xVdEZBxWUBQlNs7nJb8IuGU1IEV8bLiQPwHLJl8ZUyQjA?key=placeholder",
-    category: "Training",
+    id: "philippines-nutrition-2025",
+    title: "Data for Nutrition: HISP India in the Philippines",
+    description: "Supporting the Philippines' Multi-Sectoral Nutrition Project through the Household Convergence Scorecard. Strengthening primary health care in the first 1,000 days, advancing WASH and ECCD services, and scaling national capacity through a Train-the-Trainer model. Delivered hands-on DHIS2 workshops across four batches with real-time assessments to drive continuous learning and better health outcomes.",
+    date: "August 2025",
+    location: "Philippines",
+    coverImage: philippinesNutrition,
+    googlePhotosUrl: "https://photos.app.goo.gl/placeholder2",
+    category: "International",
   },
   {
-    id: "team-retreat-2023",
-    title: "Team Building Retreat 2023",
-    description: "A memorable gathering of the HISP India family, celebrating our achievements and strengthening bonds.",
-    date: "December 2023",
-    location: "Jaipur, India",
-    coverImage: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&auto=format&fit=crop",
-    googlePhotosUrl: "https://photos.google.com/share/AF1QipNHbWZBbAG3YvLQwZ5C0xVdEZBxWUBQlNs7nJb8IuGU1IEV8bLiQPwHLJl8ZUyQjA?key=placeholder",
-    category: "Team Event",
-  },
-  {
-    id: "global-summit-2023",
-    title: "Global Health Summit Participation",
-    description: "HISP India's representation at the international health informatics summit, sharing insights and learning best practices.",
-    date: "November 2023",
-    location: "Geneva, Switzerland",
-    coverImage: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&auto=format&fit=crop",
-    googlePhotosUrl: "https://photos.google.com/share/AF1QipNHbWZBbAG3YvLQwZ5C0xVdEZBxWUBQlNs7nJb8IuGU1IEV8bLiQPwHLJl8ZUyQjA?key=placeholder",
+    id: "hisp-integration-meeting-2024",
+    title: "HISP Integration Meeting 2024",
+    description: "HISP India participated in the HISP Integration Meeting 2024 in Colombo, presenting impactful use cases that showcased scalable integrations between open-source tools and DHIS2. The workshop strengthened our capabilities in FHIR integration, API-based data extraction, and data pipeline development using Camel, SUSHI, and JBang. Equipped with these new insights and technologies, we're excited to advance future-ready, efficient, and scalable integration solutions for health systems worldwide.",
+    date: "November 2024",
+    location: "Colombo, Sri Lanka",
+    coverImage: hispIntegrationMeeting,
+    googlePhotosUrl: "https://photos.app.goo.gl/placeholder3",
     category: "Conference",
   },
   {
-    id: "state-rollout-2023",
-    title: "State-Level HMIS Rollout",
-    description: "Documentation of our successful health management information system deployment across multiple districts.",
-    date: "October 2023",
-    location: "Multiple States, India",
-    coverImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&fit=crop",
-    googlePhotosUrl: "https://photos.google.com/share/AF1QipNHbWZBbAG3YvLQwZ5C0xVdEZBxWUBQlNs7nJb8IuGU1IEV8bLiQPwHLJl8ZUyQjA?key=placeholder",
-    category: "Implementation",
+    id: "hisp-annual-retreat-2024",
+    title: "HISP India Annual Retreat 2024",
+    description: "HISP India Annual Retreat 2024 brought the team together for a year-end reflection and forward planning, celebrating our collective achievements and aligning on goals for the future. The retreat fostered collaboration, innovation, and renewed commitment as we continue strengthening digital health systems and driving impactful solutions across projects.",
+    date: "2024",
+    location: "India",
+    coverImage: hispAnnualRetreat,
+    googlePhotosUrl: "https://photos.app.goo.gl/placeholder4",
+    category: "Team Event",
+  },
+  {
+    id: "dmch-training-2025",
+    title: "DMCH Training for the New Patient Centric Android App",
+    description: "HISP India continues to advance its mission of strengthening public health systems through collaborative, context-driven digital innovations. One key initiative is the development of a patient-centric IT system for Dayanand Medical College and Hospital (DMCH) in Ludhiana, Punjab. Built on DHIS2 and guided by FOSS principles, the solution supports a population of 50,000 across both urban and rural communities through DMCH's network of 21 health centres.",
+    date: "July 2025",
+    location: "Ludhiana, Punjab, India",
+    coverImage: dmchTraining,
+    googlePhotosUrl: "https://photos.app.goo.gl/placeholder5",
+    category: "Training",
   },
 ];
 
-const categories = ["All", "Conference", "Workshop", "Training", "Team Event", "Implementation"];
+const categories = ["All", "Conference", "Workshop", "Training", "Team Event", "International"];
 
 export default function Gallery() {
   const [selectedAlbum, setSelectedAlbum] = useState<EventAlbum | null>(null);

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Hero } from "@/components/Hero";
 import { CTASection } from "@/components/CTASection";
@@ -359,12 +358,6 @@ const departments = [
 ];
 
 export default function Team() {
-  const [expandedMemberId, setExpandedMemberId] = useState<string | null>(null);
-
-  const handleToggle = (memberId: string) => {
-    setExpandedMemberId(expandedMemberId === memberId ? null : memberId);
-  };
-
   return (
     <div className="flex flex-col">
       <Hero
@@ -404,8 +397,6 @@ export default function Team() {
                     role={member.role}
                     bio={member.bio}
                     imageUrl={member.imageUrl}
-                    isExpanded={expandedMemberId === member.id}
-                    onToggle={() => handleToggle(member.id)}
                   />
                 ))}
               </div>

@@ -415,6 +415,111 @@ const storiesDatabase: Record<string, StoryData> = {
         teaser: "A prestigious recognition of 25 years of leadership in health informatics education."
       }
     ]
+  },
+  "india-tibet": {
+    id: "india-tibet",
+    title: "India-Tibet Collaboration in Public Health and Health Informatics",
+    subtitle: "Practical Solutions Beyond Political Context",
+    theme: "Country Implementations & Case Studies",
+    themeColor: "bg-teal-500",
+    location: "India & Nepal",
+    year: "2017 - Present",
+    heroImage: undefined,
+    heroImageCaption: "TVHA Health Informatics System / Tibetan Healthcare Network",
+    heroIcon: "location",
+    closingIcon: "globe",
+    sections: [
+      {
+        title: "A Unique Collaboration Beyond Politics",
+        content: [
+          "At a time when diplomatic relations between India and Tibet remain undefined, the two nations have quietly built something remarkable: a shared healthcare infrastructure that transcends political boundaries.",
+          "This collaboration in public health and health informatics stands as a testament to what's possible when human welfare takes precedence over geopolitical constraints.",
+          "While India does not officially recognize Tibet as a nation—maintaining diplomatic ties with China instead—it has consistently provided refuge, resources, and support to the Tibetan community for decades."
+        ]
+      },
+      {
+        title: "The Beginning: A Paper-Based System in Need of Transformation",
+        content: [
+          "The journey began in 2015 when Prof. Sundeep Sahay from the University of Oslo conducted an evaluation of the health information system used by the Tibetan Voluntary Health Association (TVHA) in Dharamshala.",
+          "What he found was a system struggling under the weight of manual processes—paper-based records, fragmented data, and limited analytical capacity.",
+          "The evaluation revealed significant challenges: data quality issues, delayed reporting, difficulty tracking mobile populations, and an inability to generate actionable insights for health planning.",
+          "This assessment laid the groundwork for a comprehensive digital transformation that would take shape two years later."
+        ],
+        contributors: [
+          "Prof. Sundeep Sahay, University of Oslo",
+          "Tibetan Voluntary Health Association (TVHA)"
+        ]
+      },
+      {
+        title: "DHIS2 and OpenMRS: Building the Digital Foundation",
+        content: [
+          "In 2017, a formal partnership was established with funding support from USAID to implement modern health information systems across Tibetan healthcare facilities.",
+          "The project introduced two complementary open-source platforms: DHIS2 for aggregate health data management and reporting, and OpenMRS for individual patient records at hospitals.",
+          "DHIS2 was deployed across 45 health facilities—spanning both the settlements in India and the exile community in Nepal—creating a unified system for health surveillance and program monitoring.",
+          "OpenMRS was implemented in 7 major hospitals, enabling comprehensive electronic medical records, appointment scheduling, and clinical decision support."
+        ]
+      },
+      {
+        title: "Customisation is the Beauty: Context-Sensitive Design",
+        content: [
+          "One of the project's defining strengths was its commitment to customisation. Rather than imposing a generic system, the team worked closely with Tibetan health workers to design interfaces and workflows that matched their specific needs.",
+          "Three integrated platforms emerged: DHIS2 for population health data, OpenMRS for hospital information systems, and a dedicated COVID-19 management module developed during the pandemic.",
+          "The COVID-19 response showcased the system's flexibility. Within weeks, new data collection forms, dashboards, and reporting mechanisms were deployed to track cases across the scattered Tibetan settlements.",
+          "Regional comparisons became possible for the first time, allowing health administrators to identify disparities, allocate resources effectively, and benchmark performance across facilities."
+        ]
+      },
+      {
+        title: "The Technology Trail: Global Tools, Local Impact",
+        content: [
+          "The platforms chosen for this implementation carry a remarkable global legacy. DHIS2 is now used in over 80 countries, supporting health systems that serve 3.2 billion people—approximately 40% of the world's population.",
+          "OpenMRS powers electronic medical records in low-resource settings worldwide, with implementations across Africa, Asia, and Latin America.",
+          "By adopting these proven, open-source tools, the Tibetan health system gained access to continuous improvements, a global community of developers, and interoperability with international health standards.",
+          "The choice of open-source was deliberate: it ensured sustainability, avoided vendor lock-in, and aligned with the collaborative ethos that defines this partnership."
+        ]
+      },
+      {
+        title: "Designing for a Mobile Population",
+        content: [
+          "Perhaps the most innovative aspect of the project was its approach to serving a highly mobile population. Tibetan refugees move frequently between settlements, travel for pilgrimages, and often seek healthcare far from their registered locations.",
+          "The system was designed with this mobility in mind. Patient records in OpenMRS are accessible across all connected hospitals, ensuring continuity of care regardless of where someone seeks treatment.",
+          "DHIS2's hierarchical structure was configured to aggregate data meaningfully despite population movement, allowing accurate health indicators even for scattered communities.",
+          "Participatory design workshops with community health workers ensured that the final system reflected real-world workflows rather than theoretical ideals."
+        ],
+        contributors: [
+          "Central Tibetan Administration (CTA)",
+          "Community health workers across settlements",
+          "HISP India technical team"
+        ]
+      },
+      {
+        title: "Offline Solutions for Remote Areas",
+        content: [
+          "Connectivity remains a challenge in many Tibetan settlements, particularly those in remote Himalayan regions. The project addressed this through innovative offline solutions.",
+          "An Android-based mobile application was developed to allow data collection and patient registration even without internet connectivity. Data synchronizes automatically when connectivity is restored.",
+          "This offline-first approach ensures that healthcare workers in the most remote areas can still maintain complete records and contribute to the unified health information system.",
+          "The solution has proven particularly valuable during harsh winters when internet infrastructure often fails in mountainous areas."
+        ]
+      }
+    ],
+    stats: [
+      { value: "45", label: "Facilities using DHIS2" },
+      { value: "7", label: "Hospitals on OpenMRS" },
+      { value: "3", label: "Integrated platforms" },
+      { value: "2017", label: "Year of implementation" }
+    ],
+    closingNote: "This collaboration has become a global example of how governments can support communities seeking asylum and collaborate for their long-term health benefits. HISP India has become a trusted, long-term technical partner to the Tibetan government—demonstrating that practical solutions can flourish even in the most complex political contexts.",
+    relatedStories: [
+      {
+        id: "vizhinjam",
+        title: "Revisiting the birthplace of the world's first DHIS2 pilot",
+        teaser: "How a small health centre in Kerala became the starting point for a global health information revolution."
+      },
+      {
+        id: "philosophy-digital-health",
+        title: "Understanding the Philosophy Behind Digital Health",
+        teaser: "A candid conversation with Prof. Sundeep Sahay on context, commitment, and community-centred systems."
+      }
+    ]
   }
 };
 

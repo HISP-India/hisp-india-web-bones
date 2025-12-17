@@ -631,6 +631,108 @@ const storiesDatabase: Record<string, StoryData> = {
         teaser: "How a small health centre in Kerala became the starting point for a global health information revolution."
       }
     ]
+  },
+
+  "himachal-openmrs": {
+    id: "himachal-openmrs",
+    title: "OpenMRS-Based Hospital Information System in Himachal Pradesh",
+    subtitle: "A Decade of Lessons, Collaboration, and Impact",
+    theme: "Country Implementations & Case Studies",
+    themeColor: "bg-teal-500",
+    location: "Himachal Pradesh, India",
+    year: "2010 - Present",
+    heroImage: undefined,
+    heroImageCaption: "HP-HIS Implementation / Himachal Pradesh Hospital Network",
+    heroIcon: "location",
+    closingIcon: "globe",
+    sections: [
+      {
+        title: "Introduction: The Vision for Digital Healthcare in the Himalayas",
+        content: [
+          "In 2010, the Government of Himachal Pradesh embarked on an ambitious e-Health initiative, partnering with HISP India and the National Health Systems Resource Centre (NHSRC) to modernise its healthcare delivery systems.",
+          "A tripartite agreement was signed with the aim of digitising health information management across the state. The initiative encompassed four key components: state-level summary data management through DHIS2, individual patient-level data for hospitals through an OpenMRS-based system (HP-HIS), patient data management at primary health centres through an EHMIS, and equipment maintenance through a biomedical equipment management system.",
+          "What followed was over a decade of innovation, adaptation, and learning—a story of how open-source philosophy, local capacity building, and on-ground engagement created a sustainable model for hospital information systems in a mountainous state."
+        ]
+      },
+      {
+        title: "HP-HIS: A Statewide Public Hospital Solution",
+        content: [
+          "The HP-HIS is based on OpenMRS, a globally trusted open-source platform for hospital information management. This system was designed for deployment across regional and civil hospitals in Himachal Pradesh.",
+          "In its initial avatar, HP-HIS featured a central server hosted at the Directorate of Health Services in Shimla. The application was accessed via a Local Area Network (LAN), with modules covering registration, OPD management, inpatient admission, discharge, lab, radiology, pharmacy, store management, billing, and MIS reporting.",
+          "HISP India customised the system extensively to meet the specific workflows and administrative requirements of Himachal's hospitals, including integration with DHIS2 for aggregate-level reporting."
+        ]
+      },
+      {
+        title: "The Pilot at DDU Hospital, Shimla",
+        content: [
+          "The journey began at DDU Hospital in Shimla, where the system was first piloted between 2010 and 2012. Implementation proceeded in carefully planned phases:",
+          "Phase 1 (2010): A dedicated computer room was established within the hospital. Initial staff engagement involved administrators, registration clerks, and record-keepers. A key design principle was adopted early—'What You See Is What You Get'—ensuring the software closely mirrored existing paper registers to reduce resistance and training time.",
+          "Phase 2 (2011): OPD and billing modules were rolled out. Training sessions were organised for nurses and doctors. Though initial engagement was limited—primarily from male nurses due to scheduling constraints—the system steadily gained traction.",
+          "Phase 3 (2012 onwards): Inpatient and laboratory modules were introduced. Data operators were recruited to manage digitisation. A core group of 'champions' emerged among the nursing staff, driving internal adoption."
+        ]
+      },
+      {
+        title: "Navigating Challenges on the Ground",
+        content: [
+          "Implementing a hospital information system in a resource-constrained public hospital environment presented numerous obstacles:",
+          "Resistance from doctors and nurses: Concerns about transparency, workload, and digital literacy made initial uptake slow. Many feared that digital systems would add rather than reduce their burden.",
+          "Space and infrastructure constraints: Allocating physical space for computer terminals and ensuring reliable power and internet in high-altitude terrain proved difficult.",
+          "Administrative instability: Frequent leadership changes at the hospital level meant that champions of the project were often transferred, disrupting continuity.",
+          "Technical issues: Printers, barcode scanners, and LAN equipment required consistent maintenance—often a challenge in remote locations.",
+          "Despite these hurdles, the project persisted. The HISP India team prioritised relationship building, on-site support, and iterative improvement—learning from each setback to refine both the software and the implementation approach."
+        ]
+      },
+      {
+        title: "Maintenance and Support (2016–2024)",
+        content: [
+          "Following the initial development and pilot phase, HISP India transitioned from receiving external technical support (initially from Vietnamese developers) to building a fully in-house capacity.",
+          "Today, HP-HIS is deployed across 22 hospitals in 11 districts. HISP India continues to provide:",
+          "Helpdesk support for troubleshooting software and hardware issues.",
+          "Refresher training sessions, including onboarding new staff and running orientation programmes for newly transferred personnel.",
+          "System upgrades and feature enhancements based on user feedback and evolving government requirements.",
+          "This long-term, embedded model of support is central to HISP India's philosophy: digital transformation does not end with deployment—it requires consistent nurturing."
+        ]
+      },
+      {
+        title: "System Improvements and User Feedback",
+        content: [
+          "A hallmark of the HP-HIS project has been its responsiveness to user needs. For example:",
+          "Registration interface fix: Originally, all patients were registered as 'new' by default, requiring clerks to manually check for returning patients. This was reversed—now, the system assumes patients are returning, and clerks click only once if the patient is new. This small design change, prompted by clerk feedback, significantly improved efficiency and data accuracy.",
+          "Virtual queue system: A screen in the OPD waiting area now displays a live queue of patients, improving transparency and reducing perceived wait times.",
+          "Support visits: HISP India's Shimla-based team, led by Rashi, regularly visits hospitals to provide hands-on assistance, understand emerging needs, and train users in new features."
+        ]
+      },
+      {
+        title: "A Decade of Learnings and Locally Rooted Innovation",
+        content: [
+          "The HP-HIS project is, at its heart, a story of long-term commitment. Over more than ten years, HISP India has remained embedded in the healthcare ecosystem of Himachal Pradesh—not as an external vendor, but as a partner in strengthening public health systems.",
+          "The journey has reinforced several key lessons:",
+          "Open-source ensures sustainability: By choosing OpenMRS, the state avoided vendor lock-in and retained the flexibility to adapt the system to changing needs.",
+          "Contextual customisation matters: A system designed around the way frontline workers actually operate is far more likely to succeed than one that imposes new workflows.",
+          "Technology is only part of the story: Building trust, nurturing local champions, and maintaining a consistent presence on the ground are just as crucial as writing good code.",
+          "The Himachal Pradesh experience is a reminder that technology alone cannot transform systems—it is the people, processes, and philosophy behind it that truly create impact."
+        ]
+      }
+    ],
+    stats: [
+      { value: "22", label: "Hospitals across the state" },
+      { value: "11", label: "Districts covered" },
+      { value: "10+", label: "Years of sustained operation" },
+      { value: "10", label: "System modules deployed" }
+    ],
+    closingNote: "The HP-HIS project is a story of long-term commitment, contextual customisation, and relationship-driven implementation. The Himachal Pradesh experience is a reminder that technology alone cannot transform systems—it is the people, processes, and philosophy behind it that truly create impact.",
+    relatedStories: [
+      {
+        id: "india-tibet",
+        title: "India-Tibet Collaboration in Public Health and Health Informatics",
+        teaser: "How practical healthcare solutions transcended political boundaries to serve the Tibetan refugee community."
+      },
+      {
+        id: "dmch-ludhiana",
+        title: "Building a Patient-Centric IT System at DMCH Ludhiana",
+        teaser: "How a community-oriented, open-source digital platform transformed data use and patient care for 50,000 people."
+      }
+    ]
   }
 };
 

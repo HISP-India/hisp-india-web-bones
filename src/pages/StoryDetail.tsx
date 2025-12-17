@@ -733,6 +733,123 @@ const storiesDatabase: Record<string, StoryData> = {
         teaser: "How a community-oriented, open-source digital platform transformed data use and patient care for 50,000 people."
       }
     ]
+  },
+  "nepal-hiv": {
+    id: "nepal-hiv",
+    title: "Digital Innovation and Collaborative Impact in HIV Care and ART Tracking System in Nepal",
+    subtitle: "A national-level HIV tracking system blending biometrics, SMS, and DHIS2 Tracker—improving ART coverage in Nepal",
+    theme: "Country Implementations & Case Studies",
+    themeColor: "bg-teal-500",
+    location: "Nepal",
+    year: "2017 - Present",
+    heroImage: undefined,
+    heroImageCaption: "Nepal HIV Care and ART Tracking System / National Health Programme",
+    heroIcon: "location",
+    closingIcon: "globe",
+    sections: [
+      {
+        title: "Introduction",
+        content: [
+          "The fight against HIV requires not only sustained clinical intervention but also strong systems for case tracking, data management, and patient support. In Nepal, where an estimated 30,300 people were living with HIV (PLHIV) as of 2021, the Government took major strides to ensure long-term care for those affected.",
+          "A critical component of this effort is the HIV Care and ART Tracking System, a digital information platform designed and implemented with technical support from HISP India.",
+          "Launched in 2017 by the National Centre for AIDS and STD Control (NCASC) under the Ministry of Health and Population (MoH), Nepal, the system was built on the DHIS2 Tracker platform and integrates biometric authentication, SMS notifications, and an Android-based app. It brought greater efficiency, data accuracy, and patient-centricity to Nepal's national HIV response."
+        ],
+        contributors: [
+          "National Centre for AIDS and STD Control (NCASC), Nepal",
+          "Ministry of Health and Population, Nepal",
+          "HISP India",
+          "Save the Children",
+          "FHI360",
+          "AIDS Health Care Foundation",
+          "Global Fund Programme",
+          "PEPFAR"
+        ]
+      },
+      {
+        title: "Background and Context",
+        content: [
+          "HIV prevalence in Nepal remains relatively low at 0.13%. However, effective long-term management was critical given the lifelong nature of HIV treatment.",
+          "Prior to the digital system, case tracking relied on paper-based registers that lacked proper management of unique identifiers. This led to duplicate records, overestimation of indicators, and limited capability for data-driven decision-making.",
+          "To respond to these challenges, NCASC partnered with HISP India, alongside Save the Children, FHI360, and AIDS Health Care Foundation, under the funding support of the Global Fund Programme and PEPFAR. Together, they designed a biometric-enabled, mobile-integrated HIV Tracker system that centralises longitudinal data for all PLHIV enrolled in care."
+        ]
+      },
+      {
+        title: "Project Overview",
+        content: [
+          "The project was piloted at three HIV treatment centres in Kathmandu. Following its success, a comprehensive user manual was developed by HISP India, translated into Nepali, and used to guide the national rollout.",
+          "Training, on-site coaching, and participatory feedback loops enabled quick system adoption and adaptation.",
+          "Over time, the system grew to incorporate: biometric integration using ZKFinger SDK-v5.3.0.21-Lite, SMS alerts for appointment reminders and health promotion, integration with the Nepali calendar, a new Android version of the application, and audio-visual tutorials for healthcare workers."
+        ]
+      },
+      {
+        title: "Key Features and Technical Interventions",
+        content: [
+          "The HIV Care and ART Tracking System was unique in its blend of interoperability, flexibility, and user-friendliness. Its core elements include:",
+          "Individual-level tracking using the DHIS2 Tracker for longitudinal patient data management.",
+          "Biometric registration and verification to prevent duplication and ensure accurate patient identification.",
+          "SMS and email alerts for appointment and medication reminders, test notifications, and general health messages.",
+          "Integration with mHealth tools for improved patient retention.",
+          "Custom date configuration supporting both Nepali and Gregorian calendars.",
+          "Data from the system was used for automated ART report generation, site-level dashboards, and harmonised planning across programme, logistics, and monitoring and evaluation departments. The integration of metadata across these domains resolved discrepancies in reporting and improved planning accuracy."
+        ]
+      },
+      {
+        title: "Impact and Outcomes",
+        content: [
+          "Since its inception, the system has demonstrated measurable improvements:",
+          "ART coverage increased from 65% in 2017 to 84% by 2021.",
+          "Sustained retention in care and patient adherence through systematic follow-up mechanisms.",
+          "Improved data visibility and accessibility for healthcare providers at all levels.",
+          "Use of dashboards to track key indicators such as viral suppression, on-time drug pickup, and follow-up visits.",
+          "Enhanced ART procurement planning through harmonised data across all stakeholders.",
+          "The system also supported one-click report generation in the national HMIS format, easing the workload on healthcare workers and ensuring compliance with reporting requirements."
+        ]
+      },
+      {
+        title: "Addressing Implementation Challenges",
+        content: [
+          "The project was not without obstacles. A major challenge involved transcribing 13 years of historical data into the new system. Many records were stored using the Nepali calendar, while the DHIS2 Tracker operates on the Gregorian calendar.",
+          "HISP India resolved this by designing custom scripts that enabled the system to accept both formats on the front end, while storing data uniformly in the Gregorian format. The system is now configured to accept data for the next 100 years.",
+          "Another challenge was the accurate classification of ART regimens. Previously, mismatches between reported drug types and regimens created inconsistencies across programme reports and procurement. With all stakeholders now using the same DHIS2 metadata, such mismatches have been resolved.",
+          "Furthermore, the high patient load placed additional pressure on healthcare workers during the data transcription phase. The Android version of the application, though currently without biometric functionality, has helped to streamline field-level data entry and reduce administrative burden."
+        ]
+      },
+      {
+        title: "Innovations and Scalability",
+        content: [
+          "The solution integrated both state and non-state data sources, enabling a comprehensive view of the HIV care landscape in Nepal. Customisation of patient workflows, from diagnosis to follow-up, ensured personalised care delivery.",
+          "PLHIV now receive messages that are not only medical in nature but also geared towards behavioural change and well-being, such as reminders for regular check-ups and safe sex practices.",
+          "As part of its capacity-building approach, video-based tutorials and refresher materials have been developed for health workers. These tools function as a ready reckoner, ensuring sustainability beyond the initial implementation period."
+        ]
+      },
+      {
+        title: "Client Recognition and Global Visibility",
+        content: [
+          "The system has received appreciation from MoH Nepal and has been showcased at international forums.",
+          "In 2021, Dr Keshab Deuba presented the system at the DHIS2 Tracker Use Academy, and again in 2022 at the Asia-Pacific Regional DHIS2 Conference.",
+          "The HIV Care and ART Tracking System now stands as a globally referenced model for patient-centred HIV care, with its impact story featured on the official DHIS2 website."
+        ]
+      }
+    ],
+    stats: [
+      { value: "84%", label: "ART coverage achieved by 2021" },
+      { value: "30,300", label: "People living with HIV supported" },
+      { value: "13", label: "Years of historical data transcribed" },
+      { value: "2", label: "Global DHIS2 conferences featured" }
+    ],
+    closingNote: "The success of Nepal's HIV Care and ART Tracking System underscores the value of collaborative innovation, open-source platforms, and contextual adaptation. Technology alone is not enough—it is the alignment of tools with philosophy, systems with users, and data with action that delivers lasting change. The journey of this platform is not just about software. It is a reflection of what becomes possible when digital systems are built for, with, and around people.",
+    relatedStories: [
+      {
+        id: "dmch-ludhiana",
+        title: "Building a Patient-Centric IT System at DMCH Ludhiana",
+        teaser: "How a community-oriented, open-source digital platform transformed data use and patient care."
+      },
+      {
+        id: "himachal-openmrs",
+        title: "OpenMRS-Based Hospital Information System in Himachal Pradesh",
+        teaser: "A decade of lessons, collaboration, and impact in hospital information systems."
+      }
+    ]
   }
 };
 

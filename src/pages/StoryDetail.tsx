@@ -850,6 +850,143 @@ const storiesDatabase: Record<string, StoryData> = {
         teaser: "A decade of lessons, collaboration, and impact in hospital information systems."
       }
     ]
+  },
+  "uphmis": {
+    id: "uphmis",
+    title: "UPHMIS: Building a Scalable and Integrated Health Information System for Uttar Pradesh",
+    subtitle: "One of India's most ambitious digital health interventions—integrating massive data volumes across 75 districts",
+    theme: "Country Implementations & Case Studies",
+    themeColor: "bg-teal-500",
+    location: "Uttar Pradesh, India",
+    year: "2015 - 2021",
+    heroImage: undefined,
+    heroImageCaption: "UPHMIS Implementation / State Health Information Portal",
+    heroIcon: "location",
+    closingIcon: "globe",
+    sections: [
+      {
+        title: "Introduction",
+        content: [
+          "HISP India collaborated with India Health Action Trust (IHAT) to provide technical support for the Uttar Pradesh Health Management Information System (UPHMIS) under the National Health Mission (NHM), Uttar Pradesh.",
+          "The project spanned four phases from October 2015 to April 2021, with support from the Bill and Melinda Gates Foundation.",
+          "UPHMIS was developed on the DHIS2 platform version 2.30, providing a comprehensive state health information portal as a central data warehouse for routine health data.",
+          "Alongside the core DHIS2 system, HISP India developed a suite of external web and mobile applications—including Raw Data App, Doctor Diary, Bulk Import App, and Sub-Centre Android App—to enable real-time data entry across all levels of the health system."
+        ],
+        contributors: [
+          "HISP India",
+          "India Health Action Trust (IHAT)",
+          "National Health Mission, Uttar Pradesh",
+          "Bill and Melinda Gates Foundation"
+        ]
+      },
+      {
+        title: "Project Background",
+        content: [
+          "The vision of UPHMIS was to create a unified State Health Information Portal serving as a central data warehouse for routine health data across Uttar Pradesh's vast health network.",
+          "The system needed to accommodate over 25,000 public health facilities and more than 3,000 private facilities across 75 districts.",
+          "External applications were developed to complement the core DHIS2 platform, enabling flexible data capture mechanisms including web-based tools and mobile applications.",
+          "The Raw Data App, Doctor Diary, Bulk Import App, and Sub-Centre Android App were designed to facilitate real-time data entry and reduce the burden on healthcare workers."
+        ]
+      },
+      {
+        title: "System Development and Support",
+        content: [
+          "HISP India's support for UPHMIS was organised around five major domains: Application, Hardware, Data, Documentation, and Governance.",
+          "Application support included development of user interfaces, mobile applications, dashboards, and integration with other health systems such as DVDMS and BCPM.",
+          "Hardware support involved capacity planning, infrastructure management, and eventual migration to AWS cloud infrastructure in 2020.",
+          "Data support focused on routine data integrity audits, redundancy cleanup, and ensuring high-quality health information across the system."
+        ]
+      },
+      {
+        title: "Application Development",
+        content: [
+          "The team developed multiple user interfaces and dashboards tailored to different user needs across the health system hierarchy.",
+          "The Android application was scaled to cover all 75 districts, enabling field-level data capture at sub-centre and community levels.",
+          "Integration work connected UPHMIS with other critical systems including DVDMS (Drug and Vaccine Distribution Management System) and BCPM (Birth and Death Registration).",
+          "In 2020, the system was migrated to AWS cloud infrastructure to ensure scalability and reliability for the massive data volumes.",
+          "Security audits were conducted in 2018 and 2020 to ensure data protection and system integrity."
+        ]
+      },
+      {
+        title: "Data Quality and Documentation",
+        content: [
+          "Routine data integrity audits were conducted to identify and resolve data quality issues across the system.",
+          "Redundancy cleanup processes were implemented to maintain database efficiency and accuracy.",
+          "Comprehensive documentation was developed including user manuals, test cases, FAQs, and Standard Operating Procedures (SOPs).",
+          "Source code was managed through GitHub, ensuring version control and collaborative development practices.",
+          "The documentation served as a knowledge repository for system administrators and end users alike."
+        ]
+      },
+      {
+        title: "Governance and Coordination",
+        content: [
+          "Weekly work plans were developed and tracked to ensure systematic progress across all project domains.",
+          "JIRA was used for issue tracking and project management, enabling transparent coordination between HISP India and IHAT teams.",
+          "Resource trackers were maintained to monitor capacity utilisation and identify gaps in staffing or skills.",
+          "DHIS2 database optimisation was performed regularly to ensure system performance at scale.",
+          "Metadata revisions and custom SQL views were developed to meet evolving reporting requirements."
+        ]
+      },
+      {
+        title: "Operational Innovations and Best Practices",
+        content: [
+          "A single project coordinator model was adopted to streamline communication and decision-making with the client.",
+          "Vertical specialisations were established within the team—covering Android development, customisation, documentation, and testing—to build deep expertise.",
+          "Structured requirement analysis processes ensured that client needs were thoroughly understood before development began.",
+          "A WhatsApp-based escalation strategy was implemented to enable rapid response to critical issues and maintain high system availability.",
+          "These practices enabled HISP India to manage the complexity of supporting one of India's largest health information systems."
+        ]
+      },
+      {
+        title: "Challenges and Adaptability",
+        content: [
+          "The project faced rapidly changing requirements as the state health system evolved and new programmes were introduced.",
+          "Long turnaround times for approvals and feedback sometimes delayed development cycles.",
+          "One of the most significant technical challenges was developing custom Excel import functionality for over 25,000 public and 3,000 private facilities.",
+          "Bulk import innovations were created to handle the massive data volumes generated across the state's health network.",
+          "The team demonstrated remarkable adaptability in responding to these challenges while maintaining system stability and data quality."
+        ]
+      },
+      {
+        title: "Client Feedback and Impact",
+        content: [
+          "IHAT acknowledged HISP India's contributions to the success of UPHMIS, recognising the technical expertise and collaborative approach.",
+          "The array of applications developed—Raw Data App, Doctor Diary, Android App, Bulk Import Tools, and Excel Import Modules—transformed how health data was captured and used.",
+          "Real-time analytics and dashboards enabled programme managers to monitor performance and make data-driven decisions.",
+          "The system supported evidence-based planning for maternal and child health, immunisation, and other priority health programmes.",
+          "UPHMIS became a reference implementation for large-scale DHIS2 deployments in India."
+        ]
+      },
+      {
+        title: "Conclusion",
+        content: [
+          "The UPHMIS project exemplified how strong governance, contextual customisation, and cross-functional teamwork can overcome systemic constraints in large-scale health system digitisation.",
+          "The design practices developed during the project—single coordinator model, vertical specialisations, structured requirements analysis—offer valuable lessons for similar initiatives.",
+          "Technical innovations in bulk import, custom Excel handling, and cloud migration demonstrated HISP India's capacity to solve complex challenges at scale.",
+          "The collaborative governance model between HISP India and IHAT proved essential for navigating the complexities of working within a large state health system.",
+          "UPHMIS stands as one of India's most ambitious digital health interventions, its impact extending beyond technology to influence how health data is valued and used for decision-making."
+        ]
+      }
+    ],
+    stats: [
+      { value: "75", label: "Districts covered" },
+      { value: "25,000+", label: "Public health facilities" },
+      { value: "3,000", label: "Private facilities integrated" },
+      { value: "4", label: "Project phases completed" }
+    ],
+    closingNote: "The UPHMIS project exemplified how strong governance, contextual customisation, and cross-functional teamwork can overcome systemic constraints in large-scale health system digitisation. Its design practices, technical innovations, and collaborative governance offer enduring lessons for future digital health initiatives across India and beyond.",
+    relatedStories: [
+      {
+        id: "himachal-openmrs",
+        title: "OpenMRS-Based Hospital Information System in Himachal Pradesh",
+        teaser: "A decade of lessons, collaboration, and impact in hospital information systems."
+      },
+      {
+        id: "dmch-ludhiana",
+        title: "Building a Patient-Centric IT System at DMCH Ludhiana",
+        teaser: "How a community-oriented, open-source digital platform transformed data use and patient care."
+      }
+    ]
   }
 };
 

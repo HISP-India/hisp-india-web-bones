@@ -520,6 +520,117 @@ const storiesDatabase: Record<string, StoryData> = {
         teaser: "A candid conversation with Prof. Sundeep Sahay on context, commitment, and community-centred systems."
       }
     ]
+  },
+  "dmch-ludhiana": {
+    id: "dmch-ludhiana",
+    title: "Building a Patient-Centric IT System at DMCH Ludhiana",
+    subtitle: "How a community-oriented, open-source digital platform transformed data use and patient care for 50,000 people",
+    theme: "Country Implementations & Case Studies",
+    themeColor: "bg-teal-500",
+    location: "Ludhiana, Punjab, India",
+    year: "2019 - Present",
+    heroImage: undefined,
+    heroImageCaption: "DMCH Community Health Workers / Digital Health Implementation",
+    heroIcon: "location",
+    closingIcon: "globe",
+    sections: [
+      {
+        title: "Introduction: A Commitment to Community-Centred Care",
+        content: [
+          "HISP India's engagement with Dayanand Medical College & Hospital (DMCH), Ludhiana, represents a model of how digital health systems can be designed with the community at the centre.",
+          "This case study captures the journey of implementing DHIS2—an open-source platform—to transform the way primary healthcare data is collected, used, and shared across DMCH's 21 health centres.",
+          "At the core of this initiative lies a philosophy that underpins all HISP India projects: that public health systems should be built on free and open-source software (FOSS), promoting accessibility, customisation, and local ownership.",
+          "The result is a patient-centric IT ecosystem that now supports over 50,000 registered individuals and continues to grow."
+        ]
+      },
+      {
+        title: "Context and Project Inception",
+        content: [
+          "The National Medical Commission (NMC) mandates that medical colleges adopt a minimum of 50,000 population for their field practice area, and that data management be robust enough to support clinical learning, public health research, and community service.",
+          "DMCH's Department of Community Medicine recognised early on that meeting this mandate required more than traditional paper-based methods. They needed a comprehensive, scalable, and interoperable health information system.",
+          "In 2019, HISP India and DMCH entered a Memorandum of Understanding (MoU) to implement DHIS2 across DMCH's field practice areas. The initiative was guided by lessons learned from an earlier pilot at PGI Chandigarh's School of Public Health.",
+          "That pilot had demonstrated the potential of community-level data capture but also revealed the need for tighter integration, better training protocols, and more intuitive user interfaces."
+        ],
+        contributors: [
+          "DMCH Department of Community Medicine",
+          "PGI School of Public Health, Chandigarh",
+          "HISP India technical team"
+        ]
+      },
+      {
+        title: "Community-Based and Online Solutions",
+        content: [
+          "The project began with the customisation of DHIS2 version 2.32, tailored to DMCH's specific needs. Five core modules were developed: household registration, individual registration, programme enrolments, visit tracking, and referrals.",
+          "However, the rollout faced an unexpected challenge: the COVID-19 pandemic. With lockdowns and restrictions, field activities were suspended, and the initial training programme had to be reimagined.",
+          "Rather than halting progress, the team pivoted to virtual training. Online sessions were conducted with Community Health Workers (CHWs) and field supervisors, ensuring readiness for when in-person activities could resume.",
+          "This adaptability became a hallmark of the project—responding to real-world constraints while staying true to the end goal of digitised, patient-centric care."
+        ]
+      },
+      {
+        title: "Key Objectives of the Implementation",
+        content: [
+          "The project was designed around five key objectives that continue to guide its evolution:",
+          "First, establishing a baseline through comprehensive household and individual registration across the field practice area. Second, providing continuous technical support to ensure seamless adoption of the digital platform.",
+          "Third, enabling advanced analytics and visualisation so that health data could inform decisions, not just reports. Fourth, customising the platform to match DMCH's workflows, terminology, and service delivery model.",
+          "Fifth, creating dynamic dashboards that allow supervisors, medical officers, and policymakers to monitor health outcomes in near real-time."
+        ]
+      },
+      {
+        title: "Android Application Rollout",
+        content: [
+          "In May 2023, the project entered a new phase with the introduction of Android tablets for field-level data collection. Twelve Community Health Workers received devices preloaded with the DHIS2 Android app.",
+          "This marked a decisive shift away from paper-based registers. Data could now be captured at the household level, synced in real time, and immediately available for analysis.",
+          "The app was designed with simplicity in mind—large buttons, local language support, and offline capability for areas with poor connectivity.",
+          "Training was hands-on and iterative. Workers practiced in real field conditions, and feedback was incorporated into subsequent updates to the app's interface and workflow."
+        ]
+      },
+      {
+        title: "Key Outcomes and System Features",
+        content: [
+          "By the end of 2023, the system had registered 11,528 households and 51,887 individuals across 21 health centres. Programme enrolments—for immunisation, antenatal care, chronic disease management, and more—were being tracked digitally.",
+          "One significant innovation was the automated calculation of Socio-Economic Status (SES) based on household data. This replaced manual classification, reduced errors, and ensured that vulnerable populations were identified accurately.",
+          "The platform also supported disease-specific interventions. Fever surveillance, tuberculosis case tracking, and maternal health indicators were all built into the system, enabling targeted public health responses.",
+          "Dashboards provided an at-a-glance view of coverage, gaps, and trends—empowering local health teams to take data-driven action."
+        ]
+      },
+      {
+        title: "A Thoughtful, Incremental Implementation",
+        content: [
+          "What distinguished this project was its incremental, participatory approach. The team began with a detailed situation assessment, mapping existing workflows and identifying pain points.",
+          "Each phase built on the last. Household registration came first, followed by individual registration, then programme modules. This ensured that users were not overwhelmed and that each layer of the system was stable before adding complexity.",
+          "User feedback was central. Health workers were not just trained—they were consulted. Their insights shaped everything from form design to report formats.",
+          "The result was a system that felt like their own, rather than an external imposition—a key factor in sustained adoption and data quality."
+        ]
+      },
+      {
+        title: "Conclusion: A Model for Patient-Centric Digital Health",
+        content: [
+          "The DMCH-Ludhiana implementation is more than a technical success. It is a demonstration of how public health systems can be transformed when technology is designed around people.",
+          "By choosing open-source, DMCH ensured long-term sustainability and avoided vendor lock-in. By engaging community health workers as partners, the project secured buy-in and real-world relevance.",
+          "As DMCH continues to expand and refine its digital infrastructure, this case stands as a model for medical colleges and public health institutions across India.",
+          "This story is a testament to what can be achieved when institutions commit to building resilient, people-centred public health systems."
+        ]
+      }
+    ],
+    stats: [
+      { value: "11,528", label: "Households registered" },
+      { value: "51,887", label: "Individuals registered" },
+      { value: "21", label: "Health centres connected" },
+      { value: "12", label: "Health workers with tablets" }
+    ],
+    closingNote: "The DMCH-Ludhiana case stands as a model of how patient-centricity, digital innovation, and contextual relevance can come together to create meaningful change. This is a testament to what can be achieved when institutions commit to building resilient, people-centred public health systems.",
+    relatedStories: [
+      {
+        id: "india-tibet",
+        title: "India-Tibet Collaboration in Public Health and Health Informatics",
+        teaser: "How practical healthcare solutions transcended political boundaries to serve the Tibetan refugee community."
+      },
+      {
+        id: "vizhinjam",
+        title: "Revisiting the birthplace of the world's first DHIS2 pilot",
+        teaser: "How a small health centre in Kerala became the starting point for a global health information revolution."
+      }
+    ]
   }
 };
 

@@ -78,7 +78,7 @@ export function ProjectCard({ id, title, excerpt, category, status, location, cl
         
         {/* Expandable Description */}
         <p className={cn(
-          "text-sm text-primary leading-relaxed",
+          "text-sm text-muted-foreground leading-relaxed",
           !isExpanded && "line-clamp-3"
         )}>
           {excerpt}

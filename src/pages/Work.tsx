@@ -48,18 +48,6 @@ const filterConfig = [
       { value: "OpenMRS", label: "OpenMRS" },
     ],
   },
-  {
-    id: "location",
-    label: "Location",
-    options: [
-      { value: "all", label: "All Locations" },
-      { value: "India", label: "India" },
-      { value: "Global", label: "Global" },
-      { value: "South East Asia", label: "South East Asia" },
-      { value: "Africa", label: "Africa" },
-      { value: "Other", label: "Other" },
-    ],
-  },
 ];
 
 // Status colors no longer needed here - moved to ProjectCard component

@@ -5,7 +5,23 @@ import { CTASection } from "@/components/CTASection";
 import { FilterBar } from "@/components/FilterBar";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Button } from "@/components/ui/button";
-import { Users, MapPin, TrendingUp } from "lucide-react";
+import { 
+  Globe, 
+  Calendar, 
+  LayoutGrid, 
+  Users, 
+  User, 
+  Target, 
+  TrendingUp, 
+  MapPin, 
+  Handshake,
+  BarChart3,
+  Monitor,
+  Search,
+  GraduationCap,
+  Settings,
+  Smartphone
+} from "lucide-react";
 
 const filterConfig = [
   {
@@ -670,12 +686,81 @@ export default function Work() {
     return true;
   });
 
+  // Stats data
+  const statsData = [
+    { icon: Globe, value: "15", label: "Countries Served", subtitle: "Across 4 continents", color: "bg-blue-500" },
+    { icon: Calendar, value: "18", label: "Years of Experience", subtitle: "2008 - 2025", color: "bg-teal-500" },
+    { icon: LayoutGrid, value: "8", label: "Unique Offerings", subtitle: "Service categories", color: "bg-cyan-600" },
+    { icon: Users, value: "38", label: "Partner Organizations", subtitle: "Global partnerships", color: "bg-purple-500" },
+    { icon: User, value: "12", label: "WHO Collaborations", subtitle: "Global health impact", color: "bg-indigo-500" },
+  ];
+
+  // Key highlights data
+  const keyHighlights = [
+    { icon: Target, title: "Technology Leadership", description: "28 DHIS2 implementations and 2 OpenMRS systems deployed globally" },
+    { icon: Smartphone, title: "Mobile Innovation", description: "8 Android applications developed for field data collection and patient tracking" },
+    { icon: MapPin, title: "Global Reach", description: "Active in 15 countries across Asia, Africa, Middle East, and Latin America" },
+    { icon: Handshake, title: "Strategic Partnerships", description: "12 WHO collaborations and 1 Global Fund supported initiatives" },
+  ];
+
+  // Digital health solutions data
+  const digitalHealthSolutions = [
+    { 
+      icon: BarChart3, 
+      title: "Routine Health Information Systems", 
+      description: "Structured systems for regular health data collection, processing, and dissemination supporting decision-making at all healthcare levels",
+      bgColor: "bg-blue-500"
+    },
+    { 
+      icon: Users, 
+      title: "Community Information Systems", 
+      description: "Technology-enabled community participation for improved public health surveillance and primary care with participatory data collection",
+      bgColor: "bg-teal-500"
+    },
+    { 
+      icon: Monitor, 
+      title: "OpenMRS", 
+      description: "Electronic Medical Record Systems based on OpenMRS platform - a low-cost, scalable, and sustainable software solution",
+      bgColor: "bg-cyan-600"
+    },
+    { 
+      icon: TrendingUp, 
+      title: "Data Analytics & Integration", 
+      description: "Open-source data management platforms like DHIS2 with advanced analytics and management dashboards",
+      bgColor: "bg-gradient-to-br from-purple-500 to-indigo-600"
+    },
+    { 
+      icon: Search, 
+      title: "Action & Implementation Research", 
+      description: "Real-world application of health information systems focusing on AMR surveillance, antibiotic practices, and environmental AMR",
+      bgColor: "bg-red-500"
+    },
+    { 
+      icon: GraduationCap, 
+      title: "Capacity Building", 
+      description: "Specialized courses on Public Health, Disease Surveillance, and AMR in collaboration with leading universities",
+      bgColor: "bg-orange-500"
+    },
+    { 
+      icon: Globe, 
+      title: "Climate & Health Data Analytics", 
+      description: "Enhanced HIS for climate-sensitive health risks with analytics tools and data visualization dashboards",
+      bgColor: "bg-gradient-to-br from-pink-500 to-rose-500"
+    },
+    { 
+      icon: Settings, 
+      title: "AMR Research", 
+      description: "Antimicrobial resistance surveillance systems with One Health approach for coordinated monitoring across human, animal, and environmental sectors",
+      bgColor: "bg-purple-600"
+    },
+  ];
+
   return (
     <div className="flex flex-col">
       <Hero
-        title="Our Work"
-        subtitle="Projects & Impact"
-        description="Explore our portfolio of health information system implementations across India and beyond."
+        title="HISP India Projects"
+        subtitle="Our Work"
+        description="Strengthening health information systems across the globe through innovative digital solutions, capacity building, and collaborative partnerships."
         variant="gradient"
         className="bg-gradient-to-br from-primary via-primary/90 to-primary/80 text-primary-foreground"
       />
@@ -684,26 +769,70 @@ export default function Work() {
       <section className="py-12 bg-muted/30 border-b">
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6 max-w-6xl mx-auto">
-            <div className="bg-card rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow border">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">50+</div>
-              <p className="text-sm md:text-base text-muted-foreground font-medium">Live Projects</p>
+            {statsData.map((stat, index) => (
+              <div key={index} className="bg-card rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow border">
+                <div className={`w-12 h-12 ${stat.color} rounded-lg flex items-center justify-center mx-auto mb-4`}>
+                  <stat.icon className="w-6 h-6 text-white" />
+                </div>
+                <div className="text-3xl md:text-4xl font-bold text-foreground mb-1">{stat.value}</div>
+                <p className="text-sm md:text-base font-semibold text-foreground mb-1">{stat.label}</p>
+                <p className="text-xs text-muted-foreground">{stat.subtitle}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Key Highlights Section */}
+      <section className="py-8">
+        <div className="container">
+          <div className="bg-cyan-500 rounded-2xl p-8 max-w-6xl mx-auto">
+            <h3 className="text-white text-center text-lg font-semibold mb-6">Key Highlights</h3>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              {keyHighlights.map((highlight, index) => (
+                <div key={index} className="text-center text-white">
+                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <highlight.icon className="w-6 h-6" />
+                  </div>
+                  <h4 className="font-semibold mb-2">{highlight.title}</h4>
+                  <p className="text-sm text-white/90">{highlight.description}</p>
+                </div>
+              ))}
             </div>
-            <div className="bg-card rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow border">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">28+</div>
-              <p className="text-sm md:text-base text-muted-foreground font-medium">States Covered</p>
-            </div>
-            <div className="bg-card rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow border">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">15+</div>
-              <p className="text-sm md:text-base text-muted-foreground font-medium">Countries</p>
-            </div>
-            <div className="bg-card rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow border">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">200+</div>
-              <p className="text-sm md:text-base text-muted-foreground font-medium">Training Programs</p>
-            </div>
-            <div className="bg-card rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-shadow border">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">1000+</div>
-              <p className="text-sm md:text-base text-muted-foreground font-medium">Personnel Trained</p>
-            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Comprehensive Digital Health Solutions Section */}
+      <section className="py-16 bg-background">
+        <div className="container">
+          <div className="text-center mb-12 max-w-3xl mx-auto">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
+              Comprehensive Digital Health Solutions
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Empowering global health through innovative technology, research, and capacity building initiatives
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {digitalHealthSolutions.map((solution, index) => (
+              <div 
+                key={index} 
+                className={`${solution.bgColor} rounded-2xl p-6 text-white relative overflow-hidden group hover:scale-[1.02] transition-transform`}
+              >
+                {/* Background decorative icon */}
+                <solution.icon className="absolute -top-4 -right-4 w-24 h-24 text-white/10" />
+                
+                {/* Main icon */}
+                <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-4 relative z-10">
+                  <solution.icon className="w-6 h-6" />
+                </div>
+                
+                <h3 className="font-semibold text-lg mb-3 relative z-10">{solution.title}</h3>
+                <p className="text-sm text-white/90 relative z-10 leading-relaxed">{solution.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -749,52 +878,6 @@ export default function Work() {
               </Button>
             </div>
           )}
-        </div>
-      </section>
-
-      {/* Impact Stats */}
-      <section className="py-16 md:py-24 bg-primary text-primary-foreground">
-        <div className="container">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-12 text-center">
-            Our Impact Across India
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 max-w-6xl mx-auto">
-            <div className="text-center">
-              <div className="h-16 w-16 rounded-full bg-primary-foreground/10 flex items-center justify-center mx-auto mb-4">
-                <TrendingUp className="h-8 w-8" />
-              </div>
-              <div className="text-4xl font-bold mb-2">50+</div>
-              <p className="opacity-90 text-sm">Live Projects</p>
-            </div>
-            <div className="text-center">
-              <div className="h-16 w-16 rounded-full bg-primary-foreground/10 flex items-center justify-center mx-auto mb-4">
-                <MapPin className="h-8 w-8" />
-              </div>
-              <div className="text-4xl font-bold mb-2">28+</div>
-              <p className="opacity-90 text-sm">States & UTs</p>
-            </div>
-            <div className="text-center">
-              <div className="h-16 w-16 rounded-full bg-primary-foreground/10 flex items-center justify-center mx-auto mb-4">
-                <MapPin className="h-8 w-8" />
-              </div>
-              <div className="text-4xl font-bold mb-2">15+</div>
-              <p className="opacity-90 text-sm">Countries</p>
-            </div>
-            <div className="text-center">
-              <div className="h-16 w-16 rounded-full bg-primary-foreground/10 flex items-center justify-center mx-auto mb-4">
-                <Users className="h-8 w-8" />
-              </div>
-              <div className="text-4xl font-bold mb-2">200+</div>
-              <p className="opacity-90 text-sm">Training Programs</p>
-            </div>
-            <div className="text-center">
-              <div className="h-16 w-16 rounded-full bg-primary-foreground/10 flex items-center justify-center mx-auto mb-4">
-                <Users className="h-8 w-8" />
-              </div>
-              <div className="text-4xl font-bold mb-2">1000+</div>
-              <p className="opacity-90 text-sm">Personnel Trained</p>
-            </div>
-          </div>
         </div>
       </section>
 

@@ -10,6 +10,7 @@ import sundeepSahayPhilosophyHero from "@/assets/sundeep-sahay-philosophy-hero.j
 import rvTalkHero from "@/assets/rv-talk-hero.jpg";
 import rvBosHero from "@/assets/rv-bos-hero.jpg";
 import dmchLudhianaCover from "@/assets/dmch-ludhiana-cover.jpg";
+import uphmisCover from "@/assets/uphims-cover.jpg";
 
 interface StoryData {
   id: string;
@@ -860,7 +861,7 @@ const storiesDatabase: Record<string, StoryData> = {
     themeColor: "bg-teal-500",
     location: "Uttar Pradesh, India",
     year: "2015 - 2021",
-    heroImage: undefined,
+    heroImage: uphmisCover,
     heroImageCaption: "UPHMIS Implementation / State Health Information Portal",
     heroIcon: "location",
     closingIcon: "globe",

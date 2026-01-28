@@ -10,6 +10,7 @@ import calleHedbergImage from "@/assets/calle-hedberg.jpg";
 import sundeepSahayPhilosophyThumbnail from "@/assets/sundeep-sahay-philosophy-thumbnail.jpg";
 import rvBosThumbnail from "@/assets/rv-bos-thumbnail.jpg";
 import rvTalkThumbnail from "@/assets/rv-talk-thumbnail.jpg";
+import dmchLudhianaCover from "@/assets/dmch-ludhiana-cover.jpg";
 
 interface Story {
   id: string;
@@ -86,7 +87,7 @@ const storiesData: ThemeSection[] = [
         id: "dmch-ludhiana",
         title: "Building a Patient-Centric IT System at DMCH Ludhiana",
         teaser: "How a community-oriented, open-source digital platform transformed data use and patient care for 50,000 people.",
-        image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&auto=format&fit=crop",
+        image: dmchLudhianaCover,
       },
       {
         id: "himachal-openmrs",

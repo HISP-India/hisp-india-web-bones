@@ -9,6 +9,7 @@ import calleHedbergImage from "@/assets/calle-hedberg.jpg";
 import sundeepSahayPhilosophyHero from "@/assets/sundeep-sahay-philosophy-hero.jpg";
 import rvTalkHero from "@/assets/rv-talk-hero.jpg";
 import rvBosHero from "@/assets/rv-bos-hero.jpg";
+import dmchLudhianaCover from "@/assets/dmch-ludhiana-cover.jpg";
 
 interface StoryData {
   id: string;
@@ -529,7 +530,7 @@ const storiesDatabase: Record<string, StoryData> = {
     themeColor: "bg-teal-500",
     location: "Ludhiana, Punjab, India",
     year: "2019 - Present",
-    heroImage: undefined,
+    heroImage: dmchLudhianaCover,
     heroImageCaption: "DMCH Community Health Workers / Digital Health Implementation",
     heroIcon: "location",
     closingIcon: "globe",

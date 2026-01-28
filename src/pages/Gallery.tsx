@@ -16,6 +16,7 @@ import nepalHivWorkshop from "@/assets/nepal-hiv-workshop-2025.jpg";
 import tvhaTrainingLeh from "@/assets/tvha-training-leh-2025.jpg";
 import libyaDhis2Training from "@/assets/libya-dhis2-training-2023.jpg";
 import fphiWorkshopVadodara from "@/assets/fphi-workshop-vadodara-2026.jpg";
+import serverTrainingLomeTogo from "@/assets/server-training-lome-togo-2024.jpg";
 interface EventAlbum {
   id: string;
   title: string;
@@ -127,6 +128,16 @@ const eventAlbums: EventAlbum[] = [
     coverImage: fphiWorkshopVadodara,
     googlePhotosUrl: "https://photos.app.goo.gl/placeholder9",
     category: "Workshop",
+  },
+  {
+    id: "server-training-lome-togo-2024",
+    title: "Server Training Lome Togo",
+    description: "HISP India conducted a server training workshop in Lome, Togo, focusing on DHIS2 server management and technical capacity building for African health information system professionals.",
+    date: "November 2024",
+    location: "Lome, Togo",
+    coverImage: serverTrainingLomeTogo,
+    googlePhotosUrl: "https://photos.app.goo.gl/placeholder10",
+    category: "Training",
   },
 ];
 

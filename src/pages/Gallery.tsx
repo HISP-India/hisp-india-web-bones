@@ -257,30 +257,6 @@ export default function Gallery() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-muted">
-        <div className="container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { number: "500+", label: "Photos Captured", icon: Camera },
-              { number: "50+", label: "Events Documented", icon: Calendar },
-              { number: "15+", label: "States Covered", icon: MapPin },
-              { number: "1000+", label: "Memories Shared", icon: Images },
-            ].map((stat, index) => (
-              <div
-                key={index}
-                className="text-center p-6 bg-background rounded-xl shadow-sm hover:shadow-md transition-shadow"
-              >
-                <stat.icon className="h-8 w-8 text-primary mx-auto mb-3" />
-                <div className="font-heading text-3xl md:text-4xl font-bold text-primary mb-1">
-                  {stat.number}
-                </div>
-                <div className="text-muted-foreground text-sm">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Album Modal */}
       <Dialog open={!!selectedAlbum} onOpenChange={() => setSelectedAlbum(null)}>

@@ -12,6 +12,7 @@ import rvBosHero from "@/assets/rv-bos-hero.jpg";
 import dmchLudhianaCover from "@/assets/dmch-ludhiana-cover.jpg";
 import uphmisCover from "@/assets/uphims-cover.jpg";
 import indiaTibetCover from "@/assets/india-tibet-cover.jpg";
+import himachalOpenmrsCover from "@/assets/himachal-openmrs-cover.jpg";
 
 interface StoryData {
   id: string;
@@ -644,7 +645,7 @@ const storiesDatabase: Record<string, StoryData> = {
     themeColor: "bg-teal-500",
     location: "Himachal Pradesh, India",
     year: "2010 - Present",
-    heroImage: undefined,
+    heroImage: himachalOpenmrsCover,
     heroImageCaption: "HP-HIS Implementation / Himachal Pradesh Hospital Network",
     heroIcon: "location",
     closingIcon: "globe",

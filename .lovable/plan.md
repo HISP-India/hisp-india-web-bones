@@ -1,78 +1,82 @@
 
 
-# Plan: Update "Reframing Antimicrobial Stewardship" Digital Story
+# Plan: Add "Institutionalising Information Systems for Universal Health Coverage" Digital Story
 
 ## Overview
 
-This plan will update the "Reframing Antimicrobial Stewardship" digital story to include the full content from the provided document, following the established story format used throughout the website.
+This plan will add the complete content for the "Institutionalising Information Systems for Universal Health Coverage" digital story based on the provided document, following the established website format.
 
 ## Current State
 
-- The story exists as a card in `DigitalStories.tsx` with a placeholder Unsplash image
-- The story detail page does NOT exist in `StoryDetail.tsx` - clicking the card currently shows "Story Not Found"
-- No custom cover image exists for this story
+| Location | Status |
+|----------|--------|
+| `DigitalStories.tsx` | Story card EXISTS with placeholder Unsplash image |
+| `StoryDetail.tsx` | Story content does NOT exist - clicking the card shows "Story Not Found" |
+| Cover image | No custom image provided |
 
-## What Will Be Created
+## Document Content Summary
 
-### 1. Story Content Based on Document
+The document describes a research study co-authored by Prof. Sundeep Sahay exploring how health information systems must evolve to support Universal Health Coverage (UHC). Key themes include:
 
-**Title:** Reframing Antimicrobial Stewardship through a Biosocial Lens
+1. **UHC and Information Systems** - The critical but under-discussed role of HIS in achieving universal health coverage
+2. **The Study Context** - A UHC-HIS pilot in a northern Indian state with participatory design and living labs
+3. **Contradictions Encountered** - Health workers caught between paper-based and digital systems, infrastructure challenges
+4. **Institutional Work** - Framing HIS implementation as institutional change, not just technology deployment
+5. **Design Guidelines** - Strengthening existing processes, designing for connectivity gaps, enabling interoperability
+6. **HISP India Philosophy** - "Aeroplanes don't fly, airlines do" - systems must work in real-world contexts
 
-**Subtitle:** Insights from a Public Health Study in North India
+## Story Structure to Create
 
-**Theme:** Research & Impact Stories (using `bg-blue-500`)
+### Metadata
+- **ID:** `uhc-information-systems`
+- **Title:** Bridging Institutions and Information: HISP India's Work on Universal Health Coverage and HIS Reform
+- **Subtitle:** Insights from a Research Study on Institutionalising Health Information Systems
+- **Theme:** Research & Impact Stories
+- **Theme Color:** `bg-blue-500`
+- **Location:** Northern India
+- **Year:** 2024
 
-**Location:** North India
+### Sections
 
-**Year:** 2024
+1. **Understanding Universal Health Coverage in Practice**
+   - UHC goals: equity, quality, financial protection
+   - Why information systems are a critical but under-discussed pillar
+   - Need for patient-centric systems vs upward reporting
 
-**Sections to Include:**
+2. **The Study: Empirical Reflections from an Indian State**
+   - UHC-HIS pilot through collaboration (Norwegian/Indian universities, NGO, HISP India)
+   - Living labs and participatory design with health workers
+   - Key contradictions: ANMs and doctors caught between old and new systems
 
-1. **Understanding the Issue: Antibiotic Overuse in Everyday Practice**
-   - Context of AMR challenges in low- and middle-income countries
-   - Prof. Sundeep Sahay's collaboration with Indian and Norwegian colleagues
-   - HISP India's commitment to health systems strengthening
+3. **The Institutional Layer Beyond Technology**
+   - New systems must engage with embedded norms, practices, belief systems
+   - Doctors resisting longitudinal tracking
+   - ANMs lacking infrastructure
+   - Patients unfamiliar with continuity-of-care responsibilities
 
-2. **Why a Biosocial Perspective?**
-   - Departure from conventional biomedical assessments
-   - Integration of biological and social factors
-   - Methodology: 1100+ prescriptions analysed, interviews conducted
+4. **From Contradictions to Design Opportunities**
+   - Strengthening existing care processes, not replacing overnight
+   - Judicious incremental design
+   - Designing for connectivity gaps (hybrid paper/digital)
+   - Enabling interoperability through open architecture
+   - Empowering health workers by reducing data burdens
 
-3. **Key Findings from the Study**
-   - 98% of prescriptions contained antimicrobials
-   - 74% were broad-spectrum antibiotics
-   - Only 9% preceded by antimicrobial sensitivity testing
-   - Issues with incomplete prescriptions
+5. **A Vision Rooted in Reality**
+   - HISP India's philosophy: "Aeroplanes don't fly, airlines do"
+   - Balance between technology and context, innovation and institution
+   - Limitations as opportunities for reimagining design
 
-4. **Biosocial Themes: What Really Shapes Prescriptions**
-   - Risk avoidance through broad-spectrum drugs
-   - Perceived inferiority of hospital drugs for children
-   - "Doctor Knows Best" culture
-   - Lack of time for counselling
-   - Inconsistent follow-up behaviour
-   - Symptom-based prescriptions
+### Statistics
+- Research piloted in a northern Indian state
+- Multiple stakeholders (universities, NGO, HISP India)
+- Design guidelines based on institutional theory
 
-5. **Implications for Health Policy and Practice**
-   - Strengthening diagnostic support and AST access
-   - Empowering pharmacists through AMS frameworks
-   - Fostering collaborative care
-   - Investing in public awareness campaigns
-   - Enhancing drug quality in public pharmacies
+### Closing Note
+As UHC remains a global mandate, this study from HISP India adds critical insights for countries attempting to make information systems work at the frontlines. The way forward is a layered and inclusive journey that acknowledges tensions while building pathways to more integrated, equitable, and people-centred health systems.
 
-6. **Grounded in HISP India's Philosophy**
-   - Technology and systems working with people
-   - Context-sensitive research approach
-   - Integrated responses to real-world challenges
-
-**Statistics to Display:**
-- 1,100+ prescriptions analysed
-- 98% contained antimicrobials
-- 74% broad-spectrum antibiotics
-- 9% preceded by AST testing
-
-**Closing Note:** Aligned with the document's conclusion about context-sensitive research and learning from frontline experiences.
-
-**Related Stories:** Links to other relevant research or implementation stories
+### Related Stories
+- Link to "Reframing Antimicrobial Stewardship" story
+- Link to "Contemporary Challenges in Public Health Informatics"
 
 ## Files to Modify
 
@@ -80,37 +84,38 @@ This plan will update the "Reframing Antimicrobial Stewardship" digital story to
 
 **Action:** Add new story entry to `storiesDatabase` object
 
-- Add the complete story data object for `antimicrobial-stewardship`
-- Include all sections mapped from the document content
-- Use placeholder for `heroImage` (no custom image provided) or use a gradient fallback
-- Set appropriate icons and theme colors consistent with "Research & Impact Stories"
+Add the complete `uhc-information-systems` story object with:
+- All content sections from the document
+- Stats highlighting key research aspects
+- Appropriate icons (location for hero, lightbulb for closing)
+- Related stories links
+- Gradient fallback for hero image (no custom image provided)
 
 ### File 2: `src/pages/DigitalStories.tsx`
 
-**Action:** Update the story card entry
+**Action:** Update teaser text if needed (currently already accurate)
 
-- Keep the existing title and update teaser if needed
-- The image remains as the Unsplash placeholder until a custom cover image is provided
+The existing teaser text is appropriate: "An in-depth exploration of UHC-HIS implementation, unpacking tensions between institutional practices and digital design."
 
-## Technical Details
+## Technical Implementation
 
 The story entry will follow this structure:
 
 ```text
-"antimicrobial-stewardship": {
-  id: "antimicrobial-stewardship",
-  title: "Reframing Antimicrobial Stewardship...",
-  subtitle: "Insights from a Public Health Study...",
+"uhc-information-systems": {
+  id: "uhc-information-systems",
+  title: "Bridging Institutions and Information...",
+  subtitle: "Insights from a Research Study...",
   theme: "Research & Impact Stories",
   themeColor: "bg-blue-500",
-  location: "North India",
+  location: "Northern India",
   year: "2024",
   heroImage: undefined, // Gradient fallback
   heroImageCaption: "...",
   heroIcon: "location",
-  closingIcon: "brain",
-  sections: [...],
-  stats: [...],
+  closingIcon: "lightbulb",
+  sections: [...], // 5 content sections
+  stats: [...], // Research highlights
   closingNote: "...",
   relatedStories: [...]
 }
@@ -121,12 +126,13 @@ The story entry will follow this structure:
 | File | Change |
 |------|--------|
 | `src/pages/StoryDetail.tsx` | Add complete story entry with all content from document |
-| `src/pages/DigitalStories.tsx` | Minor teaser update if needed |
+| `src/pages/DigitalStories.tsx` | No changes needed - existing card is accurate |
 
 ## Notes
 
-- The story will use a gradient placeholder for the hero image since no custom cover image was provided with this request
+- The story will use a gradient placeholder for the hero image since no custom cover image was provided
 - Content is mapped directly from the document to maintain accuracy
-- The story follows the "Impact Story" template (not "Tribute Story") based on its research-focused nature
+- The story follows the "Impact Story" template based on its research-focused nature
+- The full paper link (https://doi.org/10.17705/1CAIS.04403) will be included in the closing note
 - If you have a cover image for this story, we can add it in a follow-up update
 

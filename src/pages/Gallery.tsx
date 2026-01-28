@@ -98,7 +98,7 @@ const eventAlbums: EventAlbum[] = [
   },
   {
     id: "tvha-training-leh-2025",
-    title: "TVHA Training in Leh Ladakh",
+    title: "Tibetan Voluntary Health Association (TVHA) Training in Leh Ladakh",
     description: "HISP India conducted TVHA (Tracker for Voluntary Health Association) training in the high-altitude region of Leh, Ladakh. The workshop focused on strengthening digital health capacity and empowering local health workers with skills to effectively use health information systems.",
     date: "October 2025",
     location: "Leh, Ladakh, India",

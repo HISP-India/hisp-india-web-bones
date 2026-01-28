@@ -13,6 +13,7 @@ import rvTalkThumbnail from "@/assets/rv-talk-thumbnail.jpg";
 import dmchLudhianaCover from "@/assets/dmch-ludhiana-cover.jpg";
 import uphmisCover from "@/assets/uphims-cover.jpg";
 import indiaTibetCover from "@/assets/india-tibet-cover.jpg";
+import himachalOpenmrsCover from "@/assets/himachal-openmrs-cover.jpg";
 
 interface Story {
   id: string;
@@ -95,7 +96,7 @@ const storiesData: ThemeSection[] = [
         id: "himachal-openmrs",
         title: "OpenMRS-Based Hospital Information System in Himachal Pradesh",
         teaser: "A 10-year journey of implementing a statewide hospital information system across 22 hospitals.",
-        image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&auto=format&fit=crop",
+        image: himachalOpenmrsCover,
       },
       {
         id: "nepal-hiv",

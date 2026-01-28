@@ -992,6 +992,93 @@ const storiesDatabase: Record<string, StoryData> = {
       }
     ]
   },
+  "uhc-information-systems": {
+    id: "uhc-information-systems",
+    title: "Bridging Institutions and Information: HISP India's Work on Universal Health Coverage and HIS Reform",
+    subtitle: "Insights from a Research Study on Institutionalising Health Information Systems",
+    theme: "Research & Impact Stories",
+    themeColor: "bg-blue-500",
+    location: "Northern India",
+    year: "2024",
+    heroImage: undefined,
+    heroImageCaption: "UHC-HIS Research Study / Northern India",
+    heroIcon: "location",
+    closingIcon: "lightbulb",
+    sections: [
+      {
+        title: "Understanding Universal Health Coverage in Practice",
+        icon: "Globe",
+        content: [
+          "Universal Health Coverage (UHC) stands as one of the most ambitious global mandates in public health. Its goals are clear: equity in access, quality of services, and protection against financial hardship. Central to achieving these outcomes is the health information system (HIS)—a critical but often under-discussed pillar of UHC.",
+          "Yet, a key question remains: Can current HIS models, often designed for upward reporting and aggregate monitoring, support the patient-centric continuity of care that UHC demands?",
+          "Prof. Sundeep Sahay, in collaboration with colleagues from the University of Oslo, IIIT Bangalore, and an Indian development NGO, explored this question through a published study examining the institutionalisation of HIS for UHC implementation.",
+          "At HISP India, this research reflects our commitment to go beyond technology—towards building sustainable, people-centred, and context-responsive health systems."
+        ]
+      },
+      {
+        title: "The Study: Empirical Reflections from an Indian State",
+        icon: "BookOpen",
+        content: [
+          "The study emerged from a UHC-HIS pilot in a northern Indian state, facilitated through a collaboration between Norwegian and Indian universities, an NGO, and HISP India. Employing living labs and participatory design, the pilot engaged health workers in the co-creation of digital systems.",
+          "These living labs uncovered significant contradictions between new digital systems and existing institutional processes:",
+          "Auxiliary Nurse Midwives (ANMs), often the first point of contact in rural health systems, were expected to track patients longitudinally for antenatal and postnatal care. Yet, infrastructure limitations—such as poor internet connectivity and insufficient devices—severely constrained their ability to do so.",
+          "Doctors in primary care settings were observed to be highly pressed for time. Entering detailed patient information into a new system was seen as an additional burden, with limited immediate benefit to their workflow.",
+          "Patients themselves were largely unfamiliar with the concept of longitudinal care. Many had no prior experience of being tracked across different health visits or being called back for follow-up.",
+          "The study revealed that introducing a new HIS is not merely a technical challenge—it is an institutional one. Deeply embedded norms, belief systems, and professional identities must be engaged and transformed for new systems to take root."
+        ]
+      },
+      {
+        title: "The Institutional Layer Beyond Technology",
+        icon: "Building",
+        content: [
+          "One of the study's central arguments is that HIS implementation must be understood not just as a technology deployment but as institutional work. New systems challenge old ways of working and require more than training—they require shifts in organisational culture, professional identity, and power dynamics.",
+          "The study draws on institutional theory—specifically the concept of institutional work—to frame how health workers and administrators actively shape, resist, and adapt new systems. Recognising this dynamic is essential for designing systems that can be sustained in the long term.",
+          "For HISP India, this insight aligns closely with our philosophy of 'learning by doing'. We believe sustainable systems emerge when frontline workers are not just trained to use a platform, but genuinely empowered to shape it.",
+          "The research found that doctors often resisted longitudinal tracking not out of laziness, but because it conflicted with their understanding of their professional role and the realities of patient load."
+        ]
+      },
+      {
+        title: "From Contradictions to Design Opportunities",
+        icon: "Lightbulb",
+        content: [
+          "Rather than viewing the contradictions uncovered as failures, the study reframes them as design opportunities. Several actionable guidelines emerged:",
+          "Strengthening Existing Care Processes: Rather than replacing paper-based workflows overnight, digital systems should first strengthen what already works—improving continuity of care incrementally and building trust among users.",
+          "Designing for Connectivity Gaps: In contexts where internet access is unreliable, systems must be designed to function offline or through hybrid paper-digital workflows.",
+          "Enabling Interoperability: Systems must talk to each other. In the Indian context, this means linking sub-district health systems with district, state, and national platforms through open architecture and standard protocols.",
+          "Empowering Health Workers: The burden on ANMs and frontline workers should not increase—systems should reduce data entry friction, offer actionable insights, and respect the constraints of their working environment."
+        ]
+      },
+      {
+        title: "A Vision Rooted in Reality",
+        icon: "Target",
+        content: [
+          "What this study captures is a recurring theme in HISP India's journey: technology is not the answer—it is part of the answer. A system without context will remain an orphan; a system that listens, learns, and adapts can become a living part of the health ecosystem.",
+          "As Prof. Sahay often emphasises, 'Aeroplanes don't fly, airlines do'—meaning the success of any system depends on the broader institutional infrastructure around it. This philosophy underpins all of HISP India's work, from DHIS2 implementations across 80+ countries to community-based health information initiatives in remote Indian states.",
+          "The study concludes with a call for research that is not just theoretical but deeply engaged with real-world practice—research that learns from frontline experiences and contributes back to the communities it studies.",
+          "This research offers a rare window into the institutional dynamics that shape HIS implementation in low-resource settings. The contradictions and tensions uncovered are not failures—they are starting points for more honest, grounded, and ultimately effective digital health strategies."
+        ]
+      }
+    ],
+    stats: [
+      { value: "UHC-HIS", label: "Pilot implementation studied" },
+      { value: "Multi-stakeholder", label: "Research collaboration" },
+      { value: "Living Labs", label: "Participatory design approach" },
+      { value: "Institutional", label: "Theory-informed analysis" }
+    ],
+    closingNote: "As UHC remains a global mandate, this study from HISP India adds critical insights for countries attempting to make information systems work at the frontlines. The way forward is not a shortcut. It is a layered and inclusive journey—one that acknowledges tensions while building pathways to more integrated, equitable, and people-centred health systems. For the full research paper, see: https://doi.org/10.17705/1CAIS.04403",
+    relatedStories: [
+      {
+        id: "antimicrobial-stewardship",
+        title: "Reframing Antimicrobial Stewardship through a Biosocial Lens",
+        teaser: "Insights from a public health study on antibiotic prescribing practices in North India."
+      },
+      {
+        id: "contemporary-challenges",
+        title: "Contemporary Challenges & Opportunities in Public Health Informatics",
+        teaser: "Insights from Prof. Sahay's distinguished talk on biosocial gaps, inequities, and health information systems."
+      }
+    ]
+  },
   "antimicrobial-stewardship": {
     id: "antimicrobial-stewardship",
     title: "Reframing Antimicrobial Stewardship through a Biosocial Lens",

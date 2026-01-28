@@ -12,7 +12,7 @@ import philippinesNutrition from "@/assets/philippines-nutrition-2025.jpg";
 import hispIntegrationMeeting from "@/assets/hisp-integration-meeting-2024.jpg";
 import hispAnnualRetreat from "@/assets/hisp-annual-retreat-2024.jpg";
 import dmchTraining from "@/assets/dmch-training-2025.jpg";
-
+import nepalHivWorkshop from "@/assets/nepal-hiv-workshop-2025.jpg";
 interface EventAlbum {
   id: string;
   title: string;
@@ -84,6 +84,16 @@ const eventAlbums: EventAlbum[] = [
     coverImage: dmchTraining,
     googlePhotosUrl: "https://photos.app.goo.gl/placeholder5",
     category: "Training",
+  },
+  {
+    id: "nepal-hiv-workshop-2025",
+    title: "Strengthening National HIV Information Systems through Collaboration & Interoperability",
+    description: "HISP India participated in intensive technical workshops with NCASC, UNDP, FHI 360, AHF, and WHO to strengthen Nepal's DHIS2-based HIV Care and ART Tracking System. The sessions focused on interoperability between HIV Tracker and iHMIS, harmonising program indicators, and optimising system architecture and metadata quality—resulting in a more stable, interoperable, and program-responsive HIV information system.",
+    date: "January 2025",
+    location: "Kathmandu, Nepal",
+    coverImage: nepalHivWorkshop,
+    googlePhotosUrl: "https://photos.app.goo.gl/placeholder6",
+    category: "Workshop",
   },
 ];
 

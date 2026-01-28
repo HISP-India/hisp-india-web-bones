@@ -11,6 +11,7 @@ import rvTalkHero from "@/assets/rv-talk-hero.jpg";
 import rvBosHero from "@/assets/rv-bos-hero.jpg";
 import dmchLudhianaCover from "@/assets/dmch-ludhiana-cover.jpg";
 import uphmisCover from "@/assets/uphims-cover.jpg";
+import indiaTibetCover from "@/assets/india-tibet-cover.jpg";
 
 interface StoryData {
   id: string;
@@ -426,7 +427,7 @@ const storiesDatabase: Record<string, StoryData> = {
     themeColor: "bg-teal-500",
     location: "India & Nepal",
     year: "2017 - Present",
-    heroImage: undefined,
+    heroImage: indiaTibetCover,
     heroImageCaption: "TVHA Health Informatics System / Tibetan Healthcare Network",
     heroIcon: "location",
     closingIcon: "globe",

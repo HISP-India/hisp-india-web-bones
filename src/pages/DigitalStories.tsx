@@ -12,6 +12,7 @@ import rvBosThumbnail from "@/assets/rv-bos-thumbnail.jpg";
 import rvTalkThumbnail from "@/assets/rv-talk-thumbnail.jpg";
 import dmchLudhianaCover from "@/assets/dmch-ludhiana-cover.jpg";
 import uphmisCover from "@/assets/uphims-cover.jpg";
+import indiaTibetCover from "@/assets/india-tibet-cover.jpg";
 
 interface Story {
   id: string;
@@ -82,7 +83,7 @@ const storiesData: ThemeSection[] = [
         id: "india-tibet",
         title: "India–Tibet Collaboration: Strengthening Health Informatics Across Borders",
         teaser: "A decade-long partnership supporting Tibetan health systems across India and Nepal using OpenMRS, DHIS2, and Android-based innovations.",
-        image: "https://images.unsplash.com/photo-1464746133101-a2c3f88e0dd9?w=800&auto=format&fit=crop",
+        image: indiaTibetCover,
       },
       {
         id: "dmch-ludhiana",

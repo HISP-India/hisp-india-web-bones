@@ -13,6 +13,7 @@ import hispIntegrationMeeting from "@/assets/hisp-integration-meeting-2024.jpg";
 import hispAnnualRetreat from "@/assets/hisp-annual-retreat-2024.jpg";
 import dmchTraining from "@/assets/dmch-training-2025.jpg";
 import nepalHivWorkshop from "@/assets/nepal-hiv-workshop-2025.jpg";
+import tvhaTrainingLeh from "@/assets/tvha-training-leh-2025.jpg";
 interface EventAlbum {
   id: string;
   title: string;
@@ -94,6 +95,16 @@ const eventAlbums: EventAlbum[] = [
     coverImage: nepalHivWorkshop,
     googlePhotosUrl: "https://photos.app.goo.gl/placeholder6",
     category: "Workshop",
+  },
+  {
+    id: "tvha-training-leh-2025",
+    title: "TVHA Training in Leh Ladakh",
+    description: "HISP India conducted TVHA (Tracker for Voluntary Health Association) training in the high-altitude region of Leh, Ladakh. The workshop focused on strengthening digital health capacity and empowering local health workers with skills to effectively use health information systems.",
+    date: "October 2025",
+    location: "Leh, Ladakh, India",
+    coverImage: tvhaTrainingLeh,
+    googlePhotosUrl: "https://photos.app.goo.gl/placeholder7",
+    category: "Training",
   },
 ];
 

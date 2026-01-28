@@ -14,6 +14,7 @@ import hispAnnualRetreat from "@/assets/hisp-annual-retreat-2024.jpg";
 import dmchTraining from "@/assets/dmch-training-2025.jpg";
 import nepalHivWorkshop from "@/assets/nepal-hiv-workshop-2025.jpg";
 import tvhaTrainingLeh from "@/assets/tvha-training-leh-2025.jpg";
+import libyaDhis2Training from "@/assets/libya-dhis2-training-2023.jpg";
 interface EventAlbum {
   id: string;
   title: string;
@@ -104,6 +105,16 @@ const eventAlbums: EventAlbum[] = [
     location: "Leh, Ladakh, India",
     coverImage: tvhaTrainingLeh,
     googlePhotosUrl: "https://photos.app.goo.gl/placeholder7",
+    category: "Training",
+  },
+  {
+    id: "libya-dhis2-training-2023",
+    title: "DHIS2 Server Management Training for Libya Health Information Center",
+    description: "Training workshop for Health Information Center core team on DHIS2 server management and a review of the existing DHIS2 implementation in Libya by HISP India expertise.",
+    date: "June–July 2023",
+    location: "Tunis, Tunisia",
+    coverImage: libyaDhis2Training,
+    googlePhotosUrl: "https://photos.app.goo.gl/placeholder8",
     category: "Training",
   },
 ];

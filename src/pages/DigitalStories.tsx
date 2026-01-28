@@ -11,6 +11,7 @@ import sundeepSahayPhilosophyThumbnail from "@/assets/sundeep-sahay-philosophy-t
 import rvBosThumbnail from "@/assets/rv-bos-thumbnail.jpg";
 import rvTalkThumbnail from "@/assets/rv-talk-thumbnail.jpg";
 import dmchLudhianaCover from "@/assets/dmch-ludhiana-cover.jpg";
+import uphmisCover from "@/assets/uphims-cover.jpg";
 
 interface Story {
   id: string;
@@ -105,7 +106,7 @@ const storiesData: ThemeSection[] = [
         id: "uphmis",
         title: "UPHMIS – Health Information System for Uttar Pradesh",
         teaser: "One of India's most complex digital health missions—integrating massive data volumes across 75 districts.",
-        image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&auto=format&fit=crop",
+        image: uphmisCover,
       },
     ],
   },

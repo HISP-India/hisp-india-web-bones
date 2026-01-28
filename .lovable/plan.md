@@ -1,138 +1,55 @@
 
 
-# Plan: Add "Institutionalising Information Systems for Universal Health Coverage" Digital Story
+# Plan: Add TVHA Training Leh Ladakh Album to Gallery
 
 ## Overview
 
-This plan will add the complete content for the "Institutionalising Information Systems for Universal Health Coverage" digital story based on the provided document, following the established website format.
+This plan will add a new gallery album for the TVHA Training event in Leh Ladakh with the uploaded cover image.
 
-## Current State
+## Album Details (Extracted from User Request)
 
-| Location | Status |
-|----------|--------|
-| `DigitalStories.tsx` | Story card EXISTS with placeholder Unsplash image |
-| `StoryDetail.tsx` | Story content does NOT exist - clicking the card shows "Story Not Found" |
-| Cover image | No custom image provided |
-
-## Document Content Summary
-
-The document describes a research study co-authored by Prof. Sundeep Sahay exploring how health information systems must evolve to support Universal Health Coverage (UHC). Key themes include:
-
-1. **UHC and Information Systems** - The critical but under-discussed role of HIS in achieving universal health coverage
-2. **The Study Context** - A UHC-HIS pilot in a northern Indian state with participatory design and living labs
-3. **Contradictions Encountered** - Health workers caught between paper-based and digital systems, infrastructure challenges
-4. **Institutional Work** - Framing HIS implementation as institutional change, not just technology deployment
-5. **Design Guidelines** - Strengthening existing processes, designing for connectivity gaps, enabling interoperability
-6. **HISP India Philosophy** - "Aeroplanes don't fly, airlines do" - systems must work in real-world contexts
-
-## Story Structure to Create
-
-### Metadata
-- **ID:** `uhc-information-systems`
-- **Title:** Bridging Institutions and Information: HISP India's Work on Universal Health Coverage and HIS Reform
-- **Subtitle:** Insights from a Research Study on Institutionalising Health Information Systems
-- **Theme:** Research & Impact Stories
-- **Theme Color:** `bg-blue-500`
-- **Location:** Northern India
-- **Year:** 2024
-
-### Sections
-
-1. **Understanding Universal Health Coverage in Practice**
-   - UHC goals: equity, quality, financial protection
-   - Why information systems are a critical but under-discussed pillar
-   - Need for patient-centric systems vs upward reporting
-
-2. **The Study: Empirical Reflections from an Indian State**
-   - UHC-HIS pilot through collaboration (Norwegian/Indian universities, NGO, HISP India)
-   - Living labs and participatory design with health workers
-   - Key contradictions: ANMs and doctors caught between old and new systems
-
-3. **The Institutional Layer Beyond Technology**
-   - New systems must engage with embedded norms, practices, belief systems
-   - Doctors resisting longitudinal tracking
-   - ANMs lacking infrastructure
-   - Patients unfamiliar with continuity-of-care responsibilities
-
-4. **From Contradictions to Design Opportunities**
-   - Strengthening existing care processes, not replacing overnight
-   - Judicious incremental design
-   - Designing for connectivity gaps (hybrid paper/digital)
-   - Enabling interoperability through open architecture
-   - Empowering health workers by reducing data burdens
-
-5. **A Vision Rooted in Reality**
-   - HISP India's philosophy: "Aeroplanes don't fly, airlines do"
-   - Balance between technology and context, innovation and institution
-   - Limitations as opportunities for reimagining design
-
-### Statistics
-- Research piloted in a northern Indian state
-- Multiple stakeholders (universities, NGO, HISP India)
-- Design guidelines based on institutional theory
-
-### Closing Note
-As UHC remains a global mandate, this study from HISP India adds critical insights for countries attempting to make information systems work at the frontlines. The way forward is a layered and inclusive journey that acknowledges tensions while building pathways to more integrated, equitable, and people-centred health systems.
-
-### Related Stories
-- Link to "Reframing Antimicrobial Stewardship" story
-- Link to "Contemporary Challenges in Public Health Informatics"
+| Field | Value |
+|-------|-------|
+| **Title** | TVHA Training in Leh Ladakh |
+| **Date** | October 2025 |
+| **Location** | Leh, Ladakh, India |
+| **Category** | Training |
+| **Cover Image** | User-provided training session photo |
 
 ## Files to Modify
 
-### File 1: `src/pages/StoryDetail.tsx`
+### Step 1: Copy Cover Image to Assets
 
-**Action:** Add new story entry to `storiesDatabase` object
+**Action:** Copy the uploaded image to the project assets folder
 
-Add the complete `uhc-information-systems` story object with:
-- All content sections from the document
-- Stats highlighting key research aspects
-- Appropriate icons (location for hero, lightbulb for closing)
-- Related stories links
-- Gradient fallback for hero image (no custom image provided)
+- Source: `user-uploads://Untitled_design_6.jpg`
+- Destination: `src/assets/tvha-training-leh-2025.jpg`
 
-### File 2: `src/pages/DigitalStories.tsx`
+### Step 2: Update Gallery.tsx
 
-**Action:** Update teaser text if needed (currently already accurate)
+**Action:** Add new album entry to the `albums` array
 
-The existing teaser text is appropriate: "An in-depth exploration of UHC-HIS implementation, unpacking tensions between institutional practices and digital design."
-
-## Technical Implementation
-
-The story entry will follow this structure:
-
-```text
-"uhc-information-systems": {
-  id: "uhc-information-systems",
-  title: "Bridging Institutions and Information...",
-  subtitle: "Insights from a Research Study...",
-  theme: "Research & Impact Stories",
-  themeColor: "bg-blue-500",
-  location: "Northern India",
-  year: "2024",
-  heroImage: undefined, // Gradient fallback
-  heroImageCaption: "...",
-  heroIcon: "location",
-  closingIcon: "lightbulb",
-  sections: [...], // 5 content sections
-  stats: [...], // Research highlights
-  closingNote: "...",
-  relatedStories: [...]
-}
-```
+- Add import statement for the new cover image
+- Add new album object with:
+  - ID: `tvha-training-leh-2025`
+  - Title: "TVHA Training in Leh Ladakh"
+  - Description: A brief description of the TVHA training event
+  - Date: "October 2025"
+  - Location: "Leh, Ladakh, India"
+  - Category: "Training"
+  - Cover image: The imported image
+  - Google Photos URL: Placeholder link (can be updated later with actual album link)
 
 ## Summary of Changes
 
 | File | Change |
 |------|--------|
-| `src/pages/StoryDetail.tsx` | Add complete story entry with all content from document |
-| `src/pages/DigitalStories.tsx` | No changes needed - existing card is accurate |
+| `src/assets/tvha-training-leh-2025.jpg` | New cover image file |
+| `src/pages/Gallery.tsx` | Add import + new album entry |
 
 ## Notes
 
-- The story will use a gradient placeholder for the hero image since no custom cover image was provided
-- Content is mapped directly from the document to maintain accuracy
-- The story follows the "Impact Story" template based on its research-focused nature
-- The full paper link (https://doi.org/10.17705/1CAIS.04403) will be included in the closing note
-- If you have a cover image for this story, we can add it in a follow-up update
+- The album will use a placeholder Google Photos URL that can be updated later with the actual album link
+- The description will be brief since no detailed description was provided - you can request a more detailed description if needed
+- The image shows a training workshop setting which aligns perfectly with the "Training" category
 

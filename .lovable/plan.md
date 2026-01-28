@@ -1,20 +1,22 @@
 
 
-# Plan: Add TVHA Training Leh Ladakh Album to Gallery
+# Plan: Add FPHI Workshop Album to Gallery
 
 ## Overview
 
-This plan will add a new gallery album for the TVHA Training event in Leh Ladakh with the uploaded cover image.
+This plan will add a new gallery album for the Two-Day Workshop on Fundamentals of Public Health Informatics (FPHI) with the uploaded cover image.
 
 ## Album Details (Extracted from User Request)
 
 | Field | Value |
 |-------|-------|
-| **Title** | TVHA Training in Leh Ladakh |
-| **Date** | October 2025 |
-| **Location** | Leh, Ladakh, India |
-| **Category** | Training |
-| **Cover Image** | User-provided training session photo |
+| **Title** | Two-Day Workshop on Fundamentals of Public Health Informatics (FPHI) |
+| **Subtitle** | Hands-on Applications for Teaching and Practice |
+| **Organized by** | Parul Institute of Public Health (PIPH), Faculty of Medicine |
+| **Date** | 7-8 January 2026 |
+| **Location** | Vadodara, Gujarat, India |
+| **Category** | Workshop |
+| **Cover Image** | User-provided group photo from the workshop |
 
 ## Files to Modify
 
@@ -22,34 +24,42 @@ This plan will add a new gallery album for the TVHA Training event in Leh Ladakh
 
 **Action:** Copy the uploaded image to the project assets folder
 
-- Source: `user-uploads://Untitled_design_6.jpg`
-- Destination: `src/assets/tvha-training-leh-2025.jpg`
+- Source: `user-uploads://Untitled_design_8.jpg`
+- Destination: `src/assets/fphi-workshop-vadodara-2026.jpg`
 
 ### Step 2: Update Gallery.tsx
 
 **Action:** Add new album entry to the `albums` array
 
-- Add import statement for the new cover image
-- Add new album object with:
-  - ID: `tvha-training-leh-2025`
-  - Title: "TVHA Training in Leh Ladakh"
-  - Description: A brief description of the TVHA training event
-  - Date: "October 2025"
-  - Location: "Leh, Ladakh, India"
-  - Category: "Training"
-  - Cover image: The imported image
-  - Google Photos URL: Placeholder link (can be updated later with actual album link)
+Add import statement at line 17:
+```typescript
+import fphiWorkshopVadodara from "@/assets/fphi-workshop-vadodara-2026.jpg";
+```
+
+Add new album object after the Libya training entry:
+```typescript
+{
+  id: "fphi-workshop-vadodara-2026",
+  title: "Two-Day Workshop on Fundamentals of Public Health Informatics (FPHI)",
+  description: "Hands-on Applications for Teaching and Practice. Organized by Parul Institute of Public Health (PIPH), Faculty of Medicine, this workshop focused on building foundational skills in public health informatics for educators and practitioners.",
+  date: "7-8 January 2026",
+  location: "Vadodara, Gujarat, India",
+  coverImage: fphiWorkshopVadodara,
+  googlePhotosUrl: "https://photos.app.goo.gl/placeholder9",
+  category: "Workshop",
+},
+```
 
 ## Summary of Changes
 
 | File | Change |
 |------|--------|
-| `src/assets/tvha-training-leh-2025.jpg` | New cover image file |
+| `src/assets/fphi-workshop-vadodara-2026.jpg` | New cover image file |
 | `src/pages/Gallery.tsx` | Add import + new album entry |
 
 ## Notes
 
 - The album will use a placeholder Google Photos URL that can be updated later with the actual album link
-- The description will be brief since no detailed description was provided - you can request a more detailed description if needed
-- The image shows a training workshop setting which aligns perfectly with the "Training" category
+- The description combines the subtitle and organizing institution details for context
+- Category set as "Workshop" which already exists in the filter options
 

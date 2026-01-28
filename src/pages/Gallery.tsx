@@ -17,6 +17,7 @@ import tvhaTrainingLeh from "@/assets/tvha-training-leh-2025.jpg";
 import libyaDhis2Training from "@/assets/libya-dhis2-training-2023.jpg";
 import fphiWorkshopVadodara from "@/assets/fphi-workshop-vadodara-2026.jpg";
 import serverTrainingLomeTogo from "@/assets/server-training-lome-togo-2024.jpg";
+import indiaTibetCollaboration from "@/assets/india-tibet-collaboration.jpg";
 interface EventAlbum {
   id: string;
   title: string;
@@ -138,6 +139,16 @@ const eventAlbums: EventAlbum[] = [
     coverImage: serverTrainingLomeTogo,
     googlePhotosUrl: "https://photos.app.goo.gl/placeholder10",
     category: "Training",
+  },
+  {
+    id: "india-tibet-collaboration",
+    title: "India-Tibet Collaboration in Public Health and Health Informatics",
+    description: "Strengthening collaboration between India and Tibet in public health and health informatics, focusing on knowledge exchange and capacity building for improved healthcare delivery.",
+    date: "2023",
+    location: "India",
+    coverImage: indiaTibetCollaboration,
+    googlePhotosUrl: "https://photos.app.goo.gl/placeholder11",
+    category: "International",
   },
 ];
 

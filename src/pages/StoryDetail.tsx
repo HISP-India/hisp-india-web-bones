@@ -991,6 +991,106 @@ const storiesDatabase: Record<string, StoryData> = {
         teaser: "How a community-oriented, open-source digital platform transformed data use and patient care."
       }
     ]
+  },
+  "antimicrobial-stewardship": {
+    id: "antimicrobial-stewardship",
+    title: "Reframing Antimicrobial Stewardship through a Biosocial Lens",
+    subtitle: "Insights from a Public Health Study in North India",
+    theme: "Research & Impact Stories",
+    themeColor: "bg-blue-500",
+    location: "North India",
+    year: "2024",
+    heroImage: undefined,
+    heroImageCaption: "Antimicrobial Stewardship Research / North India Public Health Study",
+    heroIcon: "location",
+    closingIcon: "brain",
+    sections: [
+      {
+        title: "Understanding the Issue: Antibiotic Overuse in Everyday Practice",
+        icon: "Target",
+        content: [
+          "Antimicrobial Resistance (AMR) presents one of the most pressing public health challenges of our time. When antibiotics are overused or misused, bacteria evolve, rendering treatment ineffective and threatening the advances of modern medicine.",
+          "In response to this challenge, Prof. Sundeep Sahay—Founder and President of HISP India—led a research initiative alongside colleagues from both Indian and Norwegian institutions. Their objective: to understand what truly drives antimicrobial prescriptions in public health settings in North India.",
+          "This biosocial study emerged from HISP India's long-standing commitment to understanding health systems not merely through technological tools, but through the people, practices, and contexts that define them. The findings offer critical insights for policy, practice, and future health informatics interventions."
+        ]
+      },
+      {
+        title: "Why a Biosocial Perspective?",
+        icon: "BookOpen",
+        content: [
+          "The study deliberately moved away from conventional biomedical assessments—those that examine only what is prescribed and whether it matches clinical guidelines.",
+          "Instead, the research adopted a biosocial lens, examining how social, cultural, and systemic factors influence prescriber behaviour. This means looking beyond what is prescribed to asking: Why is it being prescribed? What shapes the prescriber's decision?",
+          "By combining the analysis of 1,100+ prescriptions with in-depth interviews involving doctors, pharmacists, and patients, the study captured both quantitative patterns and the lived realities behind them.",
+          "This dual lens enabled researchers to move from observation to explanation—a necessary step for meaningful intervention."
+        ]
+      },
+      {
+        title: "Key Findings from the Study",
+        icon: "Target",
+        content: [
+          "The analysis of prescriptions revealed a striking picture of routine antimicrobial use in outpatient settings:",
+          "98% of prescriptions contained at least one antimicrobial agent. This indicates that antibiotic prescribing is near-universal in this context, regardless of clinical indication.",
+          "74% of prescribed antimicrobials were broad-spectrum antibiotics—powerful drugs intended for resistant or unknown infections, used often when narrower alternatives might suffice.",
+          "Only 9% of prescriptions were preceded by Antimicrobial Sensitivity Testing (AST). This means the vast majority of antibiotics were prescribed without laboratory confirmation of the infection type or its susceptibility.",
+          "In addition, many prescriptions lacked complete diagnostic information, with symptom-based prescribing prevailing over confirmed diagnoses."
+        ]
+      },
+      {
+        title: "Biosocial Themes: What Really Shapes Prescriptions",
+        icon: "Brain",
+        content: [
+          "The qualitative component of the study unearthed several recurring biosocial themes that shape prescriber behaviour:",
+          "Risk Avoidance Through Broad-Spectrum Drugs: Doctors often choose broad-spectrum antibiotics as a safety measure—to cover all possible pathogens when diagnostic tools are unavailable or results are delayed.",
+          "Perceived Inferiority of Hospital Drugs for Children: Some caregivers believe antibiotics from private pharmacies are \"stronger\" or \"better\" than those dispensed at public facilities, pushing prescribers to respond to these expectations.",
+          "\"Doctor Knows Best\" Culture: Patients and families often defer entirely to the clinician's judgement, reducing the scope for shared decision-making about whether antibiotics are truly necessary.",
+          "Lack of Time for Counselling: Heavy patient loads limit the time prescribers have for educating patients about antibiotic use, potential resistance, and alternative treatments.",
+          "Inconsistent Follow-Up Behaviour: Many patients do not return for follow-up consultations, making it difficult to track treatment outcomes and adjust therapy if needed.",
+          "Symptom-Based Prescriptions: Given infrastructural limitations, many prescriptions are based on presenting symptoms rather than confirmed diagnoses—creating room for unnecessary or inappropriate antibiotic use."
+        ]
+      },
+      {
+        title: "Implications for Health Policy and Practice",
+        icon: "Lightbulb",
+        content: [
+          "Drawing from these insights, the study outlined several implications for policymakers and practitioners working towards responsible antibiotic use:",
+          "Strengthen Diagnostic Support and AST Access: Making antimicrobial sensitivity testing more accessible and affordable can reduce reliance on empirical prescribing.",
+          "Empower Pharmacists through Antimicrobial Stewardship (AMS) Frameworks: Pharmacists are often the first point of contact for patients. Trained pharmacists can guide rational antibiotic use and reduce over-the-counter prescriptions.",
+          "Foster Collaborative Care Through Interprofessional Engagement: Doctors, nurses, pharmacists, and lab technicians should be brought into dialogue to build integrated, team-based approaches to prescribing.",
+          "Invest in Public Awareness Campaigns: Educating patients and caregivers on antibiotic resistance—and the dangers of self-medication—can shift demand-side behaviour.",
+          "Enhance Drug Quality in Public Pharmacies: Addressing perceptions about \"inferior\" public sector medicines can rebuild trust and reduce demand for unnecessary prescriptions from private providers."
+        ]
+      },
+      {
+        title: "Grounded in HISP India's Philosophy",
+        icon: "Heart",
+        content: [
+          "This research exemplifies HISP India's broader philosophy: that technology and systems are only as effective as their understanding of the people and contexts they serve.",
+          "Just as DHIS2 or OpenMRS implementations are designed with local health workers and administrators, this AMR study was designed to centre the voices of those who prescribe, dispense, and consume antibiotics.",
+          "For over 25 years, HISP India has worked on health systems strengthening—building not just platforms, but partnerships; not just tools, but understanding.",
+          "This study is part of that commitment. It reflects a belief that health research should be practical, participatory, and geared towards action.",
+          "The findings serve as a reminder: solutions to complex public health challenges must be grounded in context-sensitive research. What works elsewhere may not work here—and what works here must emerge from here."
+        ]
+      }
+    ],
+    stats: [
+      { value: "1,100+", label: "Prescriptions analysed" },
+      { value: "98%", label: "Contained antimicrobials" },
+      { value: "74%", label: "Broad-spectrum antibiotics" },
+      { value: "9%", label: "Preceded by AST testing" }
+    ],
+    closingNote: "The AMR study underscores what HISP India has always believed: lasting change comes from learning with and from the communities we serve. By listening to frontline healthcare workers and patients alike, we move closer to solutions that are not only effective—but also equitable and enduring. The findings serve as a reminder: solutions to complex public health challenges must be grounded in context-sensitive research.",
+    relatedStories: [
+      {
+        id: "contemporary-challenges",
+        title: "Contemporary Challenges & Opportunities in Public Health Informatics",
+        teaser: "Insights from Prof. Sahay's distinguished talk on biosocial gaps, inequities, and health information systems."
+      },
+      {
+        id: "philosophy-digital-health",
+        title: "Understanding the Philosophy Behind Digital Health",
+        teaser: "A candid conversation with Prof. Sundeep Sahay exploring HISP India's approach to health systems strengthening."
+      }
+    ]
   }
 };
 

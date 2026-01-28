@@ -15,6 +15,7 @@ import dmchTraining from "@/assets/dmch-training-2025.jpg";
 import nepalHivWorkshop from "@/assets/nepal-hiv-workshop-2025.jpg";
 import tvhaTrainingLeh from "@/assets/tvha-training-leh-2025.jpg";
 import libyaDhis2Training from "@/assets/libya-dhis2-training-2023.jpg";
+import fphiWorkshopVadodara from "@/assets/fphi-workshop-vadodara-2026.jpg";
 interface EventAlbum {
   id: string;
   title: string;
@@ -116,6 +117,16 @@ const eventAlbums: EventAlbum[] = [
     coverImage: libyaDhis2Training,
     googlePhotosUrl: "https://photos.app.goo.gl/placeholder8",
     category: "Training",
+  },
+  {
+    id: "fphi-workshop-vadodara-2026",
+    title: "Two-Day Workshop on Fundamentals of Public Health Informatics (FPHI)",
+    description: "Hands-on Applications for Teaching and Practice. Organized by Parul Institute of Public Health (PIPH), Faculty of Medicine, this workshop focused on building foundational skills in public health informatics for educators and practitioners.",
+    date: "7-8 January 2026",
+    location: "Vadodara, Gujarat, India",
+    coverImage: fphiWorkshopVadodara,
+    googlePhotosUrl: "https://photos.app.goo.gl/placeholder9",
+    category: "Workshop",
   },
 ];
 

@@ -446,18 +446,6 @@ export default function Team() {
         </div>
       </section>
 
-      <CTASection
-        title="Join Our Team"
-        description="Interested in being part of our mission? Explore career opportunities and join us in transforming health systems."
-        variant="default"
-      >
-        <Button asChild size="lg" variant="default">
-          <Link to="/careers">View Open Positions</Link>
-        </Button>
-        <Button asChild size="lg" variant="outline">
-          <Link to="/about">Learn About HISP India</Link>
-        </Button>
-      </CTASection>
     </div>
   );
 }

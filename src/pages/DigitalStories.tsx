@@ -208,18 +208,15 @@ export default function DigitalStories() {
 
   return (
     <main>
-      {/* Hero Section */}
-      <Hero
-        variant="gradient"
-        title="Digital Stories"
-        subtitle="Real experiences, field insights, and transformative journeys from HISP India's work across India, Nepal, and beyond."
-        description="At HISP India, every project is more than technology—it's a story of people, context, collaboration, and change. Explore our collection of digital stories capturing more than two decades of work in strengthening public health systems."
-        className="bg-gradient-to-br from-primary via-primary/90 to-primary/80 text-primary-foreground"
-      />
-
-      {/* Stats Section */}
-      <section className="py-12 bg-muted border-b border-border">
+      {/* Combined Intro & Stats Section */}
+      <section className="py-16 bg-muted">
         <div className="container">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              Real experiences, field insights, and transformative journeys from HISP India's work across India, Nepal, and beyond. Every project is more than technology—it's a story of people, context, collaboration, and change.
+            </p>
+          </div>
+          
           <div className="flex flex-wrap justify-center gap-8 md:gap-16">
             <div className="text-center">
               <div className="flex items-center justify-center gap-2 mb-2">

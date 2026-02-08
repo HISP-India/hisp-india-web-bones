@@ -1,4 +1,4 @@
-
+import { Hero } from "@/components/Hero";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, BookOpen, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -208,46 +208,44 @@ export default function DigitalStories() {
 
   return (
     <main>
-      {/* Stats Section with Description */}
-      <section className="py-16 bg-gradient-to-br from-primary via-primary/90 to-primary/80 text-primary-foreground">
+      {/* Hero Section */}
+      <Hero
+        variant="gradient"
+        title="Digital Stories"
+        subtitle="Real experiences, field insights, and transformative journeys from HISP India's work across India, Nepal, and beyond."
+        description="At HISP India, every project is more than technology—it's a story of people, context, collaboration, and change. Explore our collection of digital stories capturing more than two decades of work in strengthening public health systems."
+        className="bg-gradient-to-br from-primary via-primary/90 to-primary/80 text-primary-foreground"
+      />
+
+      {/* Stats Section */}
+      <section className="py-12 bg-muted border-b border-border">
         <div className="container">
-          {/* Subtitle */}
-          <p className="text-sm font-medium uppercase tracking-wider text-primary-foreground/90 text-center mb-4">
-            Real experiences, field insights, and transformative journeys from HISP India's work across India, Nepal, and beyond.
-          </p>
-          
-          {/* Description */}
-          <p className="text-lg md:text-xl max-w-3xl mx-auto text-center text-primary-foreground/80 mb-10">
-            At HISP India, every project is more than technology—it's a story of people, context, collaboration, and change. Explore our collection of digital stories capturing more than two decades of work in strengthening public health systems.
-          </p>
-          
-          {/* Stats */}
           <div className="flex flex-wrap justify-center gap-8 md:gap-16">
             <div className="text-center">
               <div className="flex items-center justify-center gap-2 mb-2">
-                <BookOpen className="h-5 w-5 text-primary-foreground/80" />
-                <span className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground">{totalStories}+</span>
+                <BookOpen className="h-5 w-5 text-primary" />
+                <span className="font-heading text-3xl md:text-4xl font-bold text-foreground">{totalStories}+</span>
               </div>
-              <p className="text-primary-foreground/70 text-sm">Stories Shared</p>
+              <p className="text-muted-foreground text-sm">Stories Shared</p>
             </div>
             <div className="text-center">
               <div className="flex items-center justify-center gap-2 mb-2">
-                <Sparkles className="h-5 w-5 text-primary-foreground/80" />
-                <span className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground">{totalThemes}</span>
+                <Sparkles className="h-5 w-5 text-primary" />
+                <span className="font-heading text-3xl md:text-4xl font-bold text-foreground">{totalThemes}</span>
               </div>
-              <p className="text-primary-foreground/70 text-sm">Thematic Areas</p>
+              <p className="text-muted-foreground text-sm">Thematic Areas</p>
             </div>
             <div className="text-center">
               <div className="flex items-center justify-center gap-2 mb-2">
-                <span className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground">20+</span>
+                <span className="font-heading text-3xl md:text-4xl font-bold text-foreground">20+</span>
               </div>
-              <p className="text-primary-foreground/70 text-sm">Years of Impact</p>
+              <p className="text-muted-foreground text-sm">Years of Impact</p>
             </div>
             <div className="text-center">
               <div className="flex items-center justify-center gap-2 mb-2">
-                <span className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground">10+</span>
+                <span className="font-heading text-3xl md:text-4xl font-bold text-foreground">10+</span>
               </div>
-              <p className="text-primary-foreground/70 text-sm">Countries Reached</p>
+              <p className="text-muted-foreground text-sm">Countries Reached</p>
             </div>
           </div>
         </div>

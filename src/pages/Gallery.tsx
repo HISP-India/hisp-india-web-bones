@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Hero } from "@/components/Hero";
+
 import { CTASection } from "@/components/CTASection";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
@@ -164,13 +164,6 @@ export default function Gallery() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <Hero
-        variant="gradient"
-        title="Gallery"
-        subtitle="Capturing Moments of Impact"
-        description="Explore our journey through images — from transformative workshops to global conferences, every moment tells a story of progress in health informatics."
-      />
 
       {/* Floating Decorative Elements */}
       <section className="relative py-20 overflow-hidden">

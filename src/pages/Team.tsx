@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Hero } from "@/components/Hero";
+
 import { CTASection } from "@/components/CTASection";
 import { TeamMemberCard } from "@/components/TeamMemberCard";
 import { Button } from "@/components/ui/button";
@@ -360,13 +360,16 @@ const departments = [
 export default function Team() {
   return (
     <div className="flex flex-col">
-      <Hero
-        title="Our Team"
-        subtitle="Meet the People"
-        description="A diverse team of public health professionals, technologists, researchers, and educators dedicated to strengthening health information systems."
-        variant="gradient"
-        className="bg-gradient-to-br from-primary via-primary/90 to-primary/80 text-primary-foreground"
-      />
+      {/* Intro Section */}
+      <section className="py-16 bg-muted">
+        <div className="container">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              A diverse team of public health professionals, technologists, researchers, and educators dedicated to strengthening health information systems.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {departments.map((department, deptIndex) => {
         // Adjust grid layout based on number of members

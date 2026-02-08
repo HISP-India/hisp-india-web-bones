@@ -85,7 +85,7 @@ const departments = [
       },
       {
         id: "5",
-        name: "Chahat Narula Thakur",
+        name: "Chahat Narula",
         role: "Head – Project Operations",
         imageUrl: chahatImage,
         bio: "Chahat Narula is a driven and compassionate healthcare professional with over 12 years of experience in health systems strengthening, digital health, and project management. Currently serving as the Head of Project Operations at HISP India, she provides techno-managerial leadership to teams, oversees field-based interventions, and ensures the successful execution of health information system projects. Chahat is a post-graduate in Health and Hospital Management from IIHMR, New Delhi, and a B.Tech in Biotechnology. She has played a key role in preparing technical reports, stakeholder engagement, and knowledge dissemination across national and international projects. Her experience spans digital health implementations, immunization programs, and hospital information systems in India, Kenya, and Bangladesh. Chahat is committed to improving performance and productivity by setting realistic goals, enforcing deadlines, and driving impactful collaborations in the healthcare sector.",

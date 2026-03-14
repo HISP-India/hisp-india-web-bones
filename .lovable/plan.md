@@ -1,44 +1,65 @@
 
 
-## Brevo Email Integration for Contact Form
+# Plan: Add FPHI Workshop Album to Gallery
 
-### What We'll Build
+## Overview
 
-When a user submits the Contact form, two emails will be sent via Brevo's API:
-1. **Acknowledgement email** to the submitter confirming receipt
-2. **Notification email** to HISP India (contact@hispindia.org) with the form submission details
+This plan will add a new gallery album for the Two-Day Workshop on Fundamentals of Public Health Informatics (FPHI) with the uploaded cover image.
 
-### Architecture
+## Album Details (Extracted from User Request)
 
-```text
-Contact Form (React)
-       │
-       ▼
-Supabase Edge Function (/send-contact-email)
-       │
-       ▼
-Brevo Transactional Email API (api.brevo.com/v3/smtp/email)
-       │
-       ├── Email to submitter (acknowledgement)
-       └── Email to HISP India (notification)
+| Field | Value |
+|-------|-------|
+| **Title** | Two-Day Workshop on Fundamentals of Public Health Informatics (FPHI) |
+| **Subtitle** | Hands-on Applications for Teaching and Practice |
+| **Organized by** | Parul Institute of Public Health (PIPH), Faculty of Medicine |
+| **Date** | 7-8 January 2026 |
+| **Location** | Vadodara, Gujarat, India |
+| **Category** | Workshop |
+| **Cover Image** | User-provided group photo from the workshop |
+
+## Files to Modify
+
+### Step 1: Copy Cover Image to Assets
+
+**Action:** Copy the uploaded image to the project assets folder
+
+- Source: `user-uploads://Untitled_design_8.jpg`
+- Destination: `src/assets/fphi-workshop-vadodara-2026.jpg`
+
+### Step 2: Update Gallery.tsx
+
+**Action:** Add new album entry to the `albums` array
+
+Add import statement at line 17:
+```typescript
+import fphiWorkshopVadodara from "@/assets/fphi-workshop-vadodara-2026.jpg";
 ```
 
-### Steps
+Add new album object after the Libya training entry:
+```typescript
+{
+  id: "fphi-workshop-vadodara-2026",
+  title: "Two-Day Workshop on Fundamentals of Public Health Informatics (FPHI)",
+  description: "Hands-on Applications for Teaching and Practice. Organized by Parul Institute of Public Health (PIPH), Faculty of Medicine, this workshop focused on building foundational skills in public health informatics for educators and practitioners.",
+  date: "7-8 January 2026",
+  location: "Vadodara, Gujarat, India",
+  coverImage: fphiWorkshopVadodara,
+  googlePhotosUrl: "https://photos.app.goo.gl/placeholder9",
+  category: "Workshop",
+},
+```
 
-1. **Enable Lovable Cloud** — needed for Supabase Edge Functions
-2. **Store Brevo API key** as a runtime secret (`BREVO_API_KEY`)
-3. **Create Edge Function** `send-contact-email` that:
-   - Validates input (name, email, subject, message, organization)
-   - Sends acknowledgement email to the user via Brevo
-   - Sends notification email to contact@hispindia.org with submission details
-   - Returns success/error response with CORS headers
-4. **Update Contact.tsx** to:
-   - Add form state management with React Hook Form + Zod validation
-   - Call the edge function on submit
-   - Show loading state and success/error toast notifications
+## Summary of Changes
 
-### Prerequisites from You
+| File | Change |
+|------|--------|
+| `src/assets/fphi-workshop-vadodara-2026.jpg` | New cover image file |
+| `src/pages/Gallery.tsx` | Add import + new album entry |
 
-- A **Brevo account** with a transactional email API key (found in Brevo → Settings → API Keys)
-- A **verified sender email** in Brevo (e.g., contact@hispindia.org or noreply@hispindia.org)
+## Notes
+
+- The album will use a placeholder Google Photos URL that can be updated later with the actual album link
+- The description combines the subtitle and organizing institution details for context
+- Category set as "Workshop" which already exists in the filter options
 

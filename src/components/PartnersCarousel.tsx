@@ -10,6 +10,15 @@ import iihmrDelhiLogo from "@/assets/partners/iihmr-delhi.png";
 import akrosLogo from "@/assets/partners/akros.png";
 import careLogo from "@/assets/partners/care.png";
 import cdcLogo from "@/assets/partners/cdc.png";
+import clintonLogo from "@/assets/partners/clinton-health-access-initiative.png";
+import gizLogo from "@/assets/partners/giz.png";
+import greenstarLogo from "@/assets/partners/greenstar.png";
+import healthPovertyLogo from "@/assets/partners/health-poverty-action.png";
+import helenKellerLogo from "@/assets/partners/helen-keller-intl.png";
+import ihatLogo from "@/assets/partners/ihat.png";
+import icmrLogo from "@/assets/partners/icmr.png";
+import ippfLogo from "@/assets/partners/ippf.png";
+import lshtmLogo from "@/assets/partners/lshtm.png";
 
 interface Partner {
   name: string;
@@ -27,6 +36,15 @@ const partners: Partner[] = [
   { name: "Akros", imageUrl: akrosLogo },
   { name: "CARE", imageUrl: careLogo },
   { name: "CDC", imageUrl: cdcLogo },
+  { name: "Clinton Health Access Initiative", imageUrl: clintonLogo },
+  { name: "GIZ", imageUrl: gizLogo },
+  { name: "Greenstar", imageUrl: greenstarLogo },
+  { name: "Health Poverty Action", imageUrl: healthPovertyLogo },
+  { name: "Helen Keller Intl", imageUrl: helenKellerLogo },
+  { name: "IHAT", imageUrl: ihatLogo },
+  { name: "ICMR", imageUrl: icmrLogo },
+  { name: "IPPF", imageUrl: ippfLogo },
+  { name: "London School of Hygiene & Tropical Medicine", imageUrl: lshtmLogo },
 ];
 
 export function PartnersCarousel() {

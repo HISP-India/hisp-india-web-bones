@@ -180,7 +180,9 @@ export default function OfferingRHIS() {
                 <div className="space-y-4">
                   {enhancingItems.map((item, i) => (
                     <div key={i} className="flex items-start gap-3 p-3 rounded-lg bg-muted">
-                      <ChevronRight className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <div className="w-5 h-5 flex-shrink-0 mt-0.5 flex items-center justify-center">
+                        <div className="w-2 h-2 rounded-full bg-primary" />
+                      </div>
                       <div>
                         <h4 className="font-semibold text-sm text-foreground">{item.title}</h4>
                         <p className="text-xs text-muted-foreground">{item.description}</p>

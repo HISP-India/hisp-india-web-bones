@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { FilterBar } from "@/components/FilterBar";
+import { ResumeSubmitDialog } from "@/components/ResumeSubmitDialog";
 import { MapPin, Briefcase, Clock, ArrowRight } from "lucide-react";
 
 const filterConfig = [

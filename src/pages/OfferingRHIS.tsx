@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Hero } from "@/components/Hero";
 import { CTASection } from "@/components/CTASection";
+import { ScheduleCallDialog } from "@/components/ScheduleCallDialog";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -291,16 +292,15 @@ export default function OfferingRHIS() {
         <Button size="lg" variant="secondary" asChild>
           <Link to="/contact">Contact Us</Link>
         </Button>
-        <Button
-          size="lg"
-          variant="outline"
-          asChild
-          className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10"
-        >
-          <a href="https://calendly.com" target="_blank" rel="noopener noreferrer">
+        <ScheduleCallDialog>
+          <Button
+            size="lg"
+            variant="outline"
+            className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10"
+          >
             Schedule a Call
-          </a>
-        </Button>
+          </Button>
+        </ScheduleCallDialog>
       </CTASection>
     </div>
   );

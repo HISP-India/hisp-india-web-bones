@@ -173,6 +173,12 @@ const offeringsData: Record<string, any> = {
 
 export default function OfferingDetail() {
   const { id } = useParams<{ id: string }>();
+
+  // Redirect RHIS to its dedicated page
+  if (id === "routine-health-info-systems") {
+    return <Navigate to="/offerings/routine-health-info-systems" replace />;
+  }
+
   const offering = id ? offeringsData[id] : null;
 
   if (!offering) {

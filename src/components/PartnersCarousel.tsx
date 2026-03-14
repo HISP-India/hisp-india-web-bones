@@ -19,6 +19,16 @@ import ihatLogo from "@/assets/partners/ihat.png";
 import icmrLogo from "@/assets/partners/icmr.png";
 import ippfLogo from "@/assets/partners/ippf.png";
 import lshtmLogo from "@/assets/partners/lshtm.png";
+import msfLogo from "@/assets/partners/msf.png";
+import mmvLogo from "@/assets/partners/mmv.png";
+import nhmLogo from "@/assets/partners/nhm.png";
+import nvbdcpLogo from "@/assets/partners/nvbdcp.png";
+import pathLogo from "@/assets/partners/path.png";
+import planIntlLogo from "@/assets/partners/plan-international.png";
+import shsBiharLogo from "@/assets/partners/shs-bihar.png";
+import shsMaharashtraLogo from "@/assets/partners/shs-maharashtra.png";
+import punjabHscLogo from "@/assets/partners/punjab-hsc.png";
+import whoLogo from "@/assets/partners/who.png";
 
 interface Partner {
   name: string;

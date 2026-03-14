@@ -1,12 +1,86 @@
+import { useState } from "react";
 import { Hero } from "@/components/Hero";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { MapPin, Mail, Phone, Facebook, Twitter, Linkedin, Globe, Landmark } from "lucide-react";
+import { MapPin, Mail, Phone, Facebook, Twitter, Linkedin, Globe, Landmark, Loader2 } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
+import { z } from "zod";
+
+const contactSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100),
+  email: z.string().trim().email("Invalid email address").max(255),
+  organization: z.string().trim().max(200).optional(),
+  subject: z.string().trim().min(1, "Subject is required").max(200),
+  message: z.string().trim().min(1, "Message is required").max(2000),
+});
+
+type ContactForm = z.infer<typeof contactSchema>;
 
 export default function Contact() {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [form, setForm] = useState<ContactForm>({
+    name: "",
+    email: "",
+    organization: "",
+    subject: "",
+    message: "",
+  });
+  const [errors, setErrors] = useState<Partial<Record<keyof ContactForm, string>>>({});
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setForm((prev) => ({ ...prev, [id]: value }));
+    if (errors[id as keyof ContactForm]) {
+      setErrors((prev) => ({ ...prev, [id]: undefined }));
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setErrors({});
+
+    const result = contactSchema.safeParse(form);
+    if (!result.success) {
+      const fieldErrors: Partial<Record<keyof ContactForm, string>> = {};
+      result.error.errors.forEach((err) => {
+        const field = err.path[0] as keyof ContactForm;
+        fieldErrors[field] = err.message;
+      });
+      setErrors(fieldErrors);
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      const { data, error } = await supabase.functions.invoke("send-contact-email", {
+        body: result.data,
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for reaching out. We'll get back to you soon.",
+      });
+
+      setForm({ name: "", email: "", organization: "", subject: "", message: "" });
+    } catch (err) {
+      console.error("Contact form error:", err);
+      toast({
+        title: "Failed to send",
+        description: "Something went wrong. Please try again or email us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const offices = [
     {
       type: "Main Office",
@@ -89,26 +163,29 @@ export default function Contact() {
               <h2 className="font-heading text-3xl font-bold mb-6">Send Us a Message</h2>
               <Card>
                 <CardContent className="pt-6">
-                  <form className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="name">Name *</Label>
-                        <Input id="name" required />
+                        <Input id="name" value={form.name} onChange={handleChange} />
+                        {errors.name && <p className="text-sm text-destructive">{errors.name}</p>}
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="email">Email *</Label>
-                        <Input id="email" type="email" required />
+                        <Input id="email" type="email" value={form.email} onChange={handleChange} />
+                        {errors.email && <p className="text-sm text-destructive">{errors.email}</p>}
                       </div>
                     </div>
 
                     <div className="space-y-2">
                       <Label htmlFor="organization">Organization</Label>
-                      <Input id="organization" />
+                      <Input id="organization" value={form.organization} onChange={handleChange} />
                     </div>
 
                     <div className="space-y-2">
                       <Label htmlFor="subject">Subject *</Label>
-                      <Input id="subject" required />
+                      <Input id="subject" value={form.subject} onChange={handleChange} />
+                      {errors.subject && <p className="text-sm text-destructive">{errors.subject}</p>}
                     </div>
 
                     <div className="space-y-2">
@@ -117,12 +194,21 @@ export default function Contact() {
                         id="message"
                         placeholder="Tell us how we can help..."
                         rows={6}
-                        required
+                        value={form.message}
+                        onChange={handleChange}
                       />
+                      {errors.message && <p className="text-sm text-destructive">{errors.message}</p>}
                     </div>
 
-                    <Button type="submit" size="lg" className="w-full">
-                      Send Message
+                    <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                          Sending...
+                        </>
+                      ) : (
+                        "Send Message"
+                      )}
                     </Button>
                   </form>
                 </CardContent>

@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { FilterBar } from "@/components/FilterBar";
+import { ResumeSubmitDialog } from "@/components/ResumeSubmitDialog";
 import { MapPin, Briefcase, Clock, ArrowRight } from "lucide-react";
 
 const filterConfig = [
@@ -229,9 +230,9 @@ export default function Careers() {
         description="We're always interested in hearing from talented individuals passionate about public health technology."
         variant="default"
       >
-        <Button asChild size="lg" variant="default">
-          <Link to="/contact">Send Us Your Resume</Link>
-        </Button>
+        <ResumeSubmitDialog>
+          <Button size="lg" variant="default">Send Us Your Resume</Button>
+        </ResumeSubmitDialog>
         <Button asChild size="lg" variant="outline">
           <Link to="/about">Learn More About Us</Link>
         </Button>

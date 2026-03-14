@@ -1,27 +1,65 @@
 
 
-# Plan: Add Email Notifications for Schedule a Call Form
+# Plan: Add FPHI Workshop Album to Gallery
 
 ## Overview
-Create a new edge function `send-schedule-call-email` that sends both an acknowledgement email to the submitter and a notification email to HISP India (same pattern as the contact form). Then update the `ScheduleCallDialog` to invoke it.
 
-## Changes
+This plan will add a new gallery album for the Two-Day Workshop on Fundamentals of Public Health Informatics (FPHI) with the uploaded cover image.
 
-### 1. Create Edge Function `supabase/functions/send-schedule-call-email/index.ts`
-- Mirror the `send-contact-email` pattern using Brevo API with `BREVO_API_KEY`
-- Accept all form fields: firstName, lastName, email, country, url, phone, dhis2Interest, domain, services
-- **Acknowledgement email** to submitter: Thank them for scheduling a call, summarize their selections (domain, services, DHIS2 interest)
-- **Notification email** to `sahil.bhardwaj@hispindia.org`: Include all submitted fields in a table, with replyTo set to submitter's email
-- Same CORS headers, validation, and error handling as contact form
+## Album Details (Extracted from User Request)
 
-### 2. Update `supabase/config.toml`
-- Add `[functions.send-schedule-call-email]` with `verify_jwt = false`
+| Field | Value |
+|-------|-------|
+| **Title** | Two-Day Workshop on Fundamentals of Public Health Informatics (FPHI) |
+| **Subtitle** | Hands-on Applications for Teaching and Practice |
+| **Organized by** | Parul Institute of Public Health (PIPH), Faculty of Medicine |
+| **Date** | 7-8 January 2026 |
+| **Location** | Vadodara, Gujarat, India |
+| **Category** | Workshop |
+| **Cover Image** | User-provided group photo from the workshop |
 
-### 3. Update `src/components/ScheduleCallDialog.tsx`
-- Replace the simulated `setTimeout` with `supabase.functions.invoke('send-schedule-call-email', { body: form })`
-- Import supabase client
-- Handle success/error responses properly
+## Files to Modify
 
-### 4. Deploy
-- Deploy the new edge function
+### Step 1: Copy Cover Image to Assets
+
+**Action:** Copy the uploaded image to the project assets folder
+
+- Source: `user-uploads://Untitled_design_8.jpg`
+- Destination: `src/assets/fphi-workshop-vadodara-2026.jpg`
+
+### Step 2: Update Gallery.tsx
+
+**Action:** Add new album entry to the `albums` array
+
+Add import statement at line 17:
+```typescript
+import fphiWorkshopVadodara from "@/assets/fphi-workshop-vadodara-2026.jpg";
+```
+
+Add new album object after the Libya training entry:
+```typescript
+{
+  id: "fphi-workshop-vadodara-2026",
+  title: "Two-Day Workshop on Fundamentals of Public Health Informatics (FPHI)",
+  description: "Hands-on Applications for Teaching and Practice. Organized by Parul Institute of Public Health (PIPH), Faculty of Medicine, this workshop focused on building foundational skills in public health informatics for educators and practitioners.",
+  date: "7-8 January 2026",
+  location: "Vadodara, Gujarat, India",
+  coverImage: fphiWorkshopVadodara,
+  googlePhotosUrl: "https://photos.app.goo.gl/placeholder9",
+  category: "Workshop",
+},
+```
+
+## Summary of Changes
+
+| File | Change |
+|------|--------|
+| `src/assets/fphi-workshop-vadodara-2026.jpg` | New cover image file |
+| `src/pages/Gallery.tsx` | Add import + new album entry |
+
+## Notes
+
+- The album will use a placeholder Google Photos URL that can be updated later with the actual album link
+- The description combines the subtitle and organizing institution details for context
+- Category set as "Workshop" which already exists in the filter options
 

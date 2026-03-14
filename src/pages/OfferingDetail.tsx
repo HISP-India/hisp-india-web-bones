@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, Navigate } from "react-router-dom";
 import { Hero } from "@/components/Hero";
 import { CTASection } from "@/components/CTASection";
 import { Button } from "@/components/ui/button";
@@ -7,33 +7,6 @@ import { Badge } from "@/components/ui/badge";
 import { CheckCircle2, ArrowLeft } from "lucide-react";
 
 const offeringsData: Record<string, any> = {
-  "routine-health-info-systems": {
-    title: "Routine Health Information Systems",
-    overview: "We design and implement comprehensive digital solutions for routine health data management, reporting, and analysis. Our implementations of DHIS2 and custom platforms support health program monitoring, disease surveillance, and health facility reporting at district, state, and national scales. We work with governments and health organizations to build systems that streamline data collection, improve data quality, and enable timely, evidence-based decision making.",
-    features: [
-      "DHIS2 implementation and customization",
-      "Health program indicator tracking and reporting",
-      "Disease surveillance systems",
-      "Health facility reporting platforms",
-      "Data quality assessment and improvement frameworks",
-      "Mobile data collection applications",
-      "Dashboard development and visualization",
-      "Integration with national health management information systems",
-    ],
-    caseStudies: [
-      {
-        title: "National Health Mission DHIS2 Deployment",
-        description: "Implemented DHIS2 across all states for maternal and child health program monitoring, reaching 30,000+ health facilities.",
-        impact: "Improved data completeness from 60% to 95%",
-      },
-      {
-        title: "State-level Disease Surveillance System",
-        description: "Deployed integrated disease surveillance platform covering 15 districts with real-time outbreak alerts.",
-        impact: "Reduced outbreak response time by 40%",
-      },
-    ],
-    relatedProjects: ["National Health Mission Implementation", "State Disease Surveillance Platform", "District Health Facility Reporting"],
-  },
   "community-info-systems": {
     title: "Community Information Systems",
     overview: "We empower communities with digital tools for local health information management. Our mobile-first platforms support community health workers in collecting, managing, and using health data at the community level. We adopt participatory design approaches to ensure systems meet community needs and strengthen community ownership of health data and health programs.",
@@ -200,6 +173,12 @@ const offeringsData: Record<string, any> = {
 
 export default function OfferingDetail() {
   const { id } = useParams<{ id: string }>();
+
+  // Redirect RHIS to its dedicated page
+  if (id === "routine-health-info-systems") {
+    return <Navigate to="/offerings/routine-health-info-systems" replace />;
+  }
+
   const offering = id ? offeringsData[id] : null;
 
   if (!offering) {

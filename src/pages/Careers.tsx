@@ -50,64 +50,6 @@ export default function Careers() {
         </div>
       </section>
 
-      {/* Open Positions */}
-      <section className="py-16 md:py-24">
-        <div className="container">
-          <h2 className="font-heading text-3xl font-bold mb-8">Open Positions</h2>
-          
-          <div className="mb-8">
-            <FilterBar
-              filterConfig={filterConfig}
-              filters={filters}
-              onFilterChange={setFilters}
-            />
-          </div>
-
-          {filteredJobs.length > 0 ? (
-            <div className="space-y-4">
-              {filteredJobs.map((job) => (
-                <Card key={job.id} className="hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                      <div className="flex-1">
-                        <CardTitle className="text-xl mb-2">{job.title}</CardTitle>
-                        <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
-                          <div className="flex items-center">
-                            <Briefcase className="h-4 w-4 mr-1" />
-                            {job.department}
-                          </div>
-                          <div className="flex items-center">
-                            <MapPin className="h-4 w-4 mr-1" />
-                            {job.location}
-                          </div>
-                          <div className="flex items-center">
-                            <Clock className="h-4 w-4 mr-1" />
-                            {job.type}
-                          </div>
-                        </div>
-                      </div>
-                      <Badge>{job.type}</Badge>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground mb-4">{job.description}</p>
-                    <Button asChild>
-                      <Link to={`/careers/${job.id}`}>
-                        View Details <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-16">
-              <p className="text-muted-foreground text-lg">No positions found matching your filters.</p>
-            </div>
-          )}
-        </div>
-      </section>
-
       {/* Application Process */}
       <section className="py-16 md:py-24 bg-primary text-primary-foreground">
         <div className="container max-w-4xl">

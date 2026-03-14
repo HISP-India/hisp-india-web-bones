@@ -1,65 +1,29 @@
 
 
-# Plan: Add FPHI Workshop Album to Gallery
+# Plan: Resume Submission Form on Careers Page
 
 ## Overview
+Create a resume submission dialog form triggered by the "Send Us Your Resume" button, with acknowledgement and notification emails via a new edge function — following the same pattern as the contact and schedule-a-call forms.
 
-This plan will add a new gallery album for the Two-Day Workshop on Fundamentals of Public Health Informatics (FPHI) with the uploaded cover image.
+## Changes
 
-## Album Details (Extracted from User Request)
+### 1. Create `src/components/ResumeSubmitDialog.tsx`
+- Dialog component with fields: First Name, Last Name, Email, Phone, Position of Interest (dropdown with current job titles + "General/Open Application"), Cover Letter/Message (textarea), Resume Upload (file input accepting PDF/DOC/DOCX)
+- Since Brevo doesn't support file attachments easily without base64, we'll convert the uploaded resume to base64 and send it as an attachment in the notification email
+- Zod validation for required fields
+- Calls `supabase.functions.invoke('send-resume-email', { body: formData })`
 
-| Field | Value |
-|-------|-------|
-| **Title** | Two-Day Workshop on Fundamentals of Public Health Informatics (FPHI) |
-| **Subtitle** | Hands-on Applications for Teaching and Practice |
-| **Organized by** | Parul Institute of Public Health (PIPH), Faculty of Medicine |
-| **Date** | 7-8 January 2026 |
-| **Location** | Vadodara, Gujarat, India |
-| **Category** | Workshop |
-| **Cover Image** | User-provided group photo from the workshop |
+### 2. Create `supabase/functions/send-resume-email/index.ts`
+- Same pattern as `send-contact-email` and `send-schedule-call-email`
+- **Acknowledgement email** to applicant: Thank them, summarize position of interest
+- **Notification email** to `sahil.bhardwaj@hispindia.org`: All details + resume as Brevo attachment (base64)
+- CORS headers, validation, BREVO_API_KEY
 
-## Files to Modify
+### 3. Update `supabase/config.toml`
+- Add `[functions.send-resume-email]` with `verify_jwt = false`
 
-### Step 1: Copy Cover Image to Assets
+### 4. Update `src/pages/Careers.tsx`
+- Replace the "Send Us Your Resume" `<Link to="/contact">` with `ResumeSubmitDialog` wrapping the button
 
-**Action:** Copy the uploaded image to the project assets folder
-
-- Source: `user-uploads://Untitled_design_8.jpg`
-- Destination: `src/assets/fphi-workshop-vadodara-2026.jpg`
-
-### Step 2: Update Gallery.tsx
-
-**Action:** Add new album entry to the `albums` array
-
-Add import statement at line 17:
-```typescript
-import fphiWorkshopVadodara from "@/assets/fphi-workshop-vadodara-2026.jpg";
-```
-
-Add new album object after the Libya training entry:
-```typescript
-{
-  id: "fphi-workshop-vadodara-2026",
-  title: "Two-Day Workshop on Fundamentals of Public Health Informatics (FPHI)",
-  description: "Hands-on Applications for Teaching and Practice. Organized by Parul Institute of Public Health (PIPH), Faculty of Medicine, this workshop focused on building foundational skills in public health informatics for educators and practitioners.",
-  date: "7-8 January 2026",
-  location: "Vadodara, Gujarat, India",
-  coverImage: fphiWorkshopVadodara,
-  googlePhotosUrl: "https://photos.app.goo.gl/placeholder9",
-  category: "Workshop",
-},
-```
-
-## Summary of Changes
-
-| File | Change |
-|------|--------|
-| `src/assets/fphi-workshop-vadodara-2026.jpg` | New cover image file |
-| `src/pages/Gallery.tsx` | Add import + new album entry |
-
-## Notes
-
-- The album will use a placeholder Google Photos URL that can be updated later with the actual album link
-- The description combines the subtitle and organizing institution details for context
-- Category set as "Workshop" which already exists in the filter options
+### 5. Deploy the edge function
 

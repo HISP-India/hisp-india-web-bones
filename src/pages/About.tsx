@@ -176,26 +176,33 @@ export default function About() {
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-12 text-center">
             Our Journey
           </h2>
-          <Carousel className="max-w-5xl mx-auto">
-            <CarouselContent>
-              {timeline.map((item, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <Card className="h-full">
-                    <CardContent className="pt-6 flex flex-col h-full">
-                      <div className="inline-block mb-4">
-                        <span className="px-4 py-2 rounded-full bg-primary text-primary-foreground font-bold text-lg">
-                          {item.year}
-                        </span>
-                      </div>
-                      <h3 className="font-heading font-semibold text-lg mb-3">{item.title}</h3>
-                      <p className="text-sm text-muted-foreground flex-1">{item.description}</p>
-                    </CardContent>
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+          <Carousel className="max-w-5xl mx-auto" opts={{ align: "start" }}>
+            {/* Timeline bar with dots */}
+            <div className="relative mb-8 mx-12">
+              <div className="absolute top-1/2 left-0 right-0 h-1 bg-primary -translate-y-1/2 rounded-full" />
+              <div className="relative flex justify-between">
+                {Array.from({ length: 3 }).map((_, i) => (
+                  <div key={i} className="w-4 h-4 rounded-full bg-[hsl(var(--chart-1))] border-2 border-[hsl(var(--chart-1))] z-10" />
+                ))}
+              </div>
+            </div>
+            <div className="relative">
+              <CarouselContent className="-ml-4">
+                {timeline.map((item, index) => (
+                  <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                    <div className="h-full border-2 border-[hsl(195,100%,45%)] rounded-lg bg-background p-6 flex flex-col">
+                      <span className="text-[hsl(195,100%,45%)] font-bold text-2xl mb-3">
+                        {item.year}
+                      </span>
+                      <h3 className="font-heading font-bold text-base mb-2">{item.title}</h3>
+                      <p className="text-sm text-muted-foreground flex-1 leading-relaxed">{item.description}</p>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-0 -translate-x-full bg-[hsl(195,100%,45%)] text-white hover:bg-[hsl(195,100%,35%)] hover:text-white border-none h-10 w-10" />
+              <CarouselNext className="right-0 translate-x-full bg-[hsl(195,100%,45%)] text-white hover:bg-[hsl(195,100%,35%)] hover:text-white border-none h-10 w-10" />
+            </div>
           </Carousel>
         </div>
       </section>

@@ -10,6 +10,7 @@ import Team from "./pages/Team";
 import Offerings from "./pages/Offerings";
 import OfferingDetail from "./pages/OfferingDetail";
 import OfferingRHIS from "./pages/OfferingRHIS";
+import OfferingCIS from "./pages/OfferingCIS";
 import Work from "./pages/Work";
 import ProjectDetail from "./pages/ProjectDetail";
 import Research from "./pages/Research";

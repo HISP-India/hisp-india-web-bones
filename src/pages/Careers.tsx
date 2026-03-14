@@ -1,102 +1,11 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Hero } from "@/components/Hero";
 import { CTASection } from "@/components/CTASection";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { FilterBar } from "@/components/FilterBar";
 import { ResumeSubmitDialog } from "@/components/ResumeSubmitDialog";
-import { MapPin, Briefcase, Clock, ArrowRight } from "lucide-react";
-
-const filterConfig = [
-  {
-    id: "location",
-    label: "Location",
-    options: [
-      { value: "all", label: "All Locations" },
-      { value: "delhi", label: "Delhi" },
-      { value: "bangalore", label: "Bangalore" },
-      { value: "remote", label: "Remote" },
-    ],
-  },
-  {
-    id: "department",
-    label: "Department",
-    options: [
-      { value: "all", label: "All Departments" },
-      { value: "tech", label: "Technology" },
-      { value: "program", label: "Program Management" },
-      { value: "research", label: "Research" },
-      { value: "training", label: "Capacity Building" },
-    ],
-  },
-];
-
-const jobs = [
-  {
-    id: "sr-dhis2-dev",
-    title: "Senior DHIS2 Developer",
-    department: "Technology",
-    location: "Delhi",
-    type: "Full-time",
-    description: "Lead DHIS2 implementation projects, develop custom applications and integrations, and mentor junior developers.",
-    departmentId: "tech",
-    locationId: "delhi",
-  },
-  {
-    id: "program-manager",
-    title: "Program Manager - Health Information Systems",
-    department: "Program Management",
-    location: "Bangalore",
-    type: "Full-time",
-    description: "Manage health information system implementation projects, coordinate with government partners, and ensure project delivery.",
-    departmentId: "program",
-    locationId: "bangalore",
-  },
-  {
-    id: "research-associate",
-    title: "Research Associate - Implementation Science",
-    department: "Research",
-    location: "Remote",
-    type: "Full-time",
-    description: "Conduct implementation research, data analysis, and contribute to research publications on health information systems.",
-    departmentId: "research",
-    locationId: "remote",
-  },
-  {
-    id: "training-coordinator",
-    title: "Training Coordinator",
-    department: "Capacity Building",
-    location: "Delhi",
-    type: "Full-time",
-    description: "Coordinate training programs, develop training materials, and deliver DHIS2 and health informatics training.",
-    departmentId: "training",
-    locationId: "delhi",
-  },
-  {
-    id: "implementation-specialist",
-    title: "Implementation Specialist",
-    department: "Program Management",
-    location: "Bangalore",
-    type: "Full-time",
-    description: "Support field-level implementation of health information systems, conduct user training, and provide technical support.",
-    departmentId: "program",
-    locationId: "bangalore",
-  },
-];
 
 export default function Careers() {
-  const [filters, setFilters] = useState<Record<string, string>>({
-    location: "all",
-    department: "all",
-  });
-
-  const filteredJobs = jobs.filter((job) => {
-    if (filters.location !== "all" && job.locationId !== filters.location) return false;
-    if (filters.department !== "all" && job.departmentId !== filters.department) return false;
-    return true;
-  });
 
   return (
     <div className="flex flex-col">
@@ -138,64 +47,6 @@ export default function Careers() {
               </CardContent>
             </Card>
           </div>
-        </div>
-      </section>
-
-      {/* Open Positions */}
-      <section className="py-16 md:py-24">
-        <div className="container">
-          <h2 className="font-heading text-3xl font-bold mb-8">Open Positions</h2>
-          
-          <div className="mb-8">
-            <FilterBar
-              filterConfig={filterConfig}
-              filters={filters}
-              onFilterChange={setFilters}
-            />
-          </div>
-
-          {filteredJobs.length > 0 ? (
-            <div className="space-y-4">
-              {filteredJobs.map((job) => (
-                <Card key={job.id} className="hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                      <div className="flex-1">
-                        <CardTitle className="text-xl mb-2">{job.title}</CardTitle>
-                        <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
-                          <div className="flex items-center">
-                            <Briefcase className="h-4 w-4 mr-1" />
-                            {job.department}
-                          </div>
-                          <div className="flex items-center">
-                            <MapPin className="h-4 w-4 mr-1" />
-                            {job.location}
-                          </div>
-                          <div className="flex items-center">
-                            <Clock className="h-4 w-4 mr-1" />
-                            {job.type}
-                          </div>
-                        </div>
-                      </div>
-                      <Badge>{job.type}</Badge>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground mb-4">{job.description}</p>
-                    <Button asChild>
-                      <Link to={`/careers/${job.id}`}>
-                        View Details <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-16">
-              <p className="text-muted-foreground text-lg">No positions found matching your filters.</p>
-            </div>
-          )}
         </div>
       </section>
 

@@ -7,33 +7,6 @@ import { Badge } from "@/components/ui/badge";
 import { CheckCircle2, ArrowLeft } from "lucide-react";
 
 const offeringsData: Record<string, any> = {
-  "community-info-systems": {
-    title: "Community Information Systems",
-    overview: "We empower communities with digital tools for local health information management. Our mobile-first platforms support community health workers in collecting, managing, and using health data at the community level. We adopt participatory design approaches to ensure systems meet community needs and strengthen community ownership of health data and health programs.",
-    features: [
-      "Mobile applications for community health workers",
-      "Community-based health data collection",
-      "Participatory health monitoring tools",
-      "Local health dashboard and reporting",
-      "Offline-first mobile data capture",
-      "Community feedback and grievance mechanisms",
-      "Integration with routine health information systems",
-      "Community health worker performance monitoring",
-    ],
-    caseStudies: [
-      {
-        title: "Community Health Worker Digital Platform",
-        description: "Developed mobile application for 5,000 community health workers tracking maternal and child health in rural areas.",
-        impact: "Increased antenatal care coverage by 25%",
-      },
-      {
-        title: "Participatory Community Health Monitoring",
-        description: "Implemented community-led health monitoring system in 50 villages with local health committees.",
-        impact: "Enhanced community engagement in health planning",
-      },
-    ],
-    relatedProjects: ["Rural CHW Mobile Platform", "Community Health Monitoring System", "Village Health Dashboard"],
-  },
   "openmrs-his": {
     title: "OpenMRS Integrated Hospital Information Systems",
     overview: "We implement and customize OpenMRS-based hospital information systems for seamless patient care coordination. Our solutions integrate electronic medical records, pharmacy management, laboratory systems, and hospital workflows into unified platforms that improve clinical care, operational efficiency, and patient safety. We work with hospitals of all sizes, from small district facilities to large tertiary care centers.",
@@ -174,9 +147,12 @@ const offeringsData: Record<string, any> = {
 export default function OfferingDetail() {
   const { id } = useParams<{ id: string }>();
 
-  // Redirect RHIS to its dedicated page
+  // Redirect to dedicated pages
   if (id === "routine-health-info-systems") {
     return <Navigate to="/offerings/routine-health-info-systems" replace />;
+  }
+  if (id === "community-info-systems") {
+    return <Navigate to="/offerings/community-info-systems" replace />;
   }
 
   const offering = id ? offeringsData[id] : null;

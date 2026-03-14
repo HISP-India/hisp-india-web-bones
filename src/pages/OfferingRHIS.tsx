@@ -249,22 +249,37 @@ export default function OfferingRHIS() {
               Explore our other Offerings
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {[
               {
+                title: "Community Information Systems",
+                description: "Empowering communities with digital tools for local health information management and mobile-first platforms.",
+                link: "/offerings/community-info-systems",
+              },
+              {
                 title: "OpenMRS Integrated Hospital Information Systems",
-                description: "HISP offers a scalable, open-source solution for managing patient records and hospital operations efficiently.",
+                description: "Open-source hospital management systems for seamless patient care coordination and electronic medical records.",
                 link: "/offerings/openmrs-his",
               },
               {
-                title: "Data Analytics, Integration, and Data Management",
-                description: "Developing advanced dashboards on open-source platforms for better health data integration and decision-making.",
+                title: "Data Analytics, Integration & Data Management",
+                description: "Advanced analytics and data integration solutions for evidence-based decision making.",
                 link: "/offerings/data-analytics",
               },
               {
-                title: "Action and Implementation Research",
-                description: "HISP India strengthens health systems with evidence-driven research for impactful public health outcomes.",
+                title: "Action & Implementation Research",
+                description: "Research-driven approaches to implement and evaluate health information systems effectively.",
                 link: "/offerings/research",
+              },
+              {
+                title: "Capacity Building & Education",
+                description: "Training and education programs to build sustainable health information system capacity.",
+                link: "/offerings/capacity-building",
+              },
+              {
+                title: "Climate & Health Data Analytics",
+                description: "Innovative analytics linking climate data with health outcomes for better preparedness.",
+                link: "/offerings/climate-health-analytics",
               },
             ].map((item, i) => (
               <Card key={i} className="text-center hover:shadow-lg transition-shadow">

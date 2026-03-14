@@ -1,28 +1,65 @@
 
 
-# Plan: Show All 6 Other Offerings in "Explore Other Offerings" Section
+# Plan: Add FPHI Workshop Album to Gallery
 
-## Context
-Currently, the RHIS page only shows 3 other offerings. The user wants all 6 remaining offerings listed (excluding the current page's offering). This applies to both `OfferingRHIS.tsx` and the upcoming `OfferingCIS.tsx`.
+## Overview
 
-## All 7 Offerings
-1. Community Information Systems (`community-info-systems`)
-2. Routine Health Information Systems (`routine-health-info-systems`)
-3. OpenMRS Integrated Hospital Information Systems (`openmrs-his`)
-4. Data Analytics, Integration & Data Management (`data-analytics`)
-5. Action & Implementation Research (`research`)
-6. Capacity Building & Education (`capacity-building`)
-7. Climate & Health Data Analytics (`climate-health-analytics`)
+This plan will add a new gallery album for the Two-Day Workshop on Fundamentals of Public Health Informatics (FPHI) with the uploaded cover image.
 
-## Changes
+## Album Details (Extracted from User Request)
 
-### 1. Update `src/pages/OfferingRHIS.tsx`
-- Replace the 3-card array with all 6 other offerings (excluding RHIS)
-- Change grid from `md:grid-cols-3` to `md:grid-cols-3 lg:grid-cols-3` with 2 rows (6 cards total)
+| Field | Value |
+|-------|-------|
+| **Title** | Two-Day Workshop on Fundamentals of Public Health Informatics (FPHI) |
+| **Subtitle** | Hands-on Applications for Teaching and Practice |
+| **Organized by** | Parul Institute of Public Health (PIPH), Faculty of Medicine |
+| **Date** | 7-8 January 2026 |
+| **Location** | Vadodara, Gujarat, India |
+| **Category** | Workshop |
+| **Cover Image** | User-provided group photo from the workshop |
 
-### 2. Apply same pattern to `OfferingCIS.tsx` when created
-- Show 6 offerings excluding CIS
+## Files to Modify
 
-### 3. Update `src/pages/OfferingDetail.tsx`
-- In the "Explore Other Offerings" section (if present), filter out the current offering and show the remaining 6
+### Step 1: Copy Cover Image to Assets
+
+**Action:** Copy the uploaded image to the project assets folder
+
+- Source: `user-uploads://Untitled_design_8.jpg`
+- Destination: `src/assets/fphi-workshop-vadodara-2026.jpg`
+
+### Step 2: Update Gallery.tsx
+
+**Action:** Add new album entry to the `albums` array
+
+Add import statement at line 17:
+```typescript
+import fphiWorkshopVadodara from "@/assets/fphi-workshop-vadodara-2026.jpg";
+```
+
+Add new album object after the Libya training entry:
+```typescript
+{
+  id: "fphi-workshop-vadodara-2026",
+  title: "Two-Day Workshop on Fundamentals of Public Health Informatics (FPHI)",
+  description: "Hands-on Applications for Teaching and Practice. Organized by Parul Institute of Public Health (PIPH), Faculty of Medicine, this workshop focused on building foundational skills in public health informatics for educators and practitioners.",
+  date: "7-8 January 2026",
+  location: "Vadodara, Gujarat, India",
+  coverImage: fphiWorkshopVadodara,
+  googlePhotosUrl: "https://photos.app.goo.gl/placeholder9",
+  category: "Workshop",
+},
+```
+
+## Summary of Changes
+
+| File | Change |
+|------|--------|
+| `src/assets/fphi-workshop-vadodara-2026.jpg` | New cover image file |
+| `src/pages/Gallery.tsx` | Add import + new album entry |
+
+## Notes
+
+- The album will use a placeholder Google Photos URL that can be updated later with the actual album link
+- The description combines the subtitle and organizing institution details for context
+- Category set as "Workshop" which already exists in the filter options
 

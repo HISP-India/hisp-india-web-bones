@@ -21,6 +21,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
+import { supabase } from "@/integrations/supabase/client";
 
 const countries = [
   "Afghanistan", "Albania", "Algeria", "Argentina", "Australia", "Bangladesh",

@@ -55,6 +55,16 @@ const partners: Partner[] = [
   { name: "ICMR", imageUrl: icmrLogo },
   { name: "IPPF", imageUrl: ippfLogo },
   { name: "London School of Hygiene & Tropical Medicine", imageUrl: lshtmLogo },
+  { name: "Médecins Sans Frontières", imageUrl: msfLogo },
+  { name: "Medicines for Malaria Venture", imageUrl: mmvLogo },
+  { name: "National Health Mission", imageUrl: nhmLogo },
+  { name: "NVBDCP", imageUrl: nvbdcpLogo },
+  { name: "PATH", imageUrl: pathLogo },
+  { name: "Plan International", imageUrl: planIntlLogo },
+  { name: "State Health Society Bihar", imageUrl: shsBiharLogo },
+  { name: "State Health Society Maharashtra", imageUrl: shsMaharashtraLogo },
+  { name: "Punjab Health Systems Corporation", imageUrl: punjabHscLogo },
+  { name: "World Health Organization", imageUrl: whoLogo },
 ];
 
 export function PartnersCarousel() {

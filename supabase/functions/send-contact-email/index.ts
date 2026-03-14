@@ -43,7 +43,7 @@ serve(async (req) => {
       );
     }
 
-    const senderEmail = 'contact@hispindia.org';
+    const senderEmail = 'sahil.bhardwaj@hispindia.org';
 
     // 1. Send acknowledgement email to the submitter
     const ackResponse = await fetch('https://api.brevo.com/v3/smtp/email', {

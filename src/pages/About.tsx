@@ -52,6 +52,36 @@ const timeline = [
     title: "DHIS2 and India",
     description: "A landmark development in HISP India's history was the birth of DHIS2 in 2005, which was globally first piloted in Kerala, a Southern State in India. This was a significant milestone, marking the conceptualisation and testing of DHIS2 within India.",
   },
+  {
+    year: "2007",
+    title: "Reformed as a national NGO",
+    description: 'In 2007, it was restructured as the national NGO "Society for Health Information Systems Program," supported by seed funding from the University of Oslo, solidifying its mission and operations.',
+  },
+  {
+    year: "2016",
+    title: "ISO",
+    description: "HISP India achieved ISO 9001:2015 certification. This significant accomplishment demonstrated HISP's commitment to Quality Management, Customer Focus, Process Improvement and Risk Management.",
+  },
+  {
+    year: "2018",
+    title: "DSIR",
+    description: "HISP India received recognition from the Department of Scientific & Industrial Research (DSIR), Government of India. This recognition signifies that HISP India has an established and recognised Research and Development (R&D) unit.",
+  },
+  {
+    year: "2021",
+    title: "Establishment of the HISP Asia Hub",
+    description: "With support from the Global Fund, the HISP Asia Hub was established to strengthen regional collaboration in health information systems. Led by HISP India, the Asia Hub now includes five member groups: HISP Bangladesh, HISP Indonesia, HISP Sri Lanka, HISP Vietnam, and HISP MENA (Middle East and North Africa).",
+  },
+  {
+    year: "2022",
+    title: "REAC",
+    description: "HISP India established the Research Ethics Advisory Committee (REAC) for ethical review of research proposals, including informed consents, and risk assessments.",
+  },
+  {
+    year: "2024",
+    title: "POSH",
+    description: "HISP India is committed to a safe and respectful workplace. In compliance with the POSH Act, 2013, an Internal Committee (IC) has been formed to address sexual harassment concerns. Employees are encouraged to Speak Up & Speak Out.",
+  },
 ];
 
 const anchoringPhilosophies = [

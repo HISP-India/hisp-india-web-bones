@@ -19,6 +19,16 @@ import ihatLogo from "@/assets/partners/ihat.png";
 import icmrLogo from "@/assets/partners/icmr.png";
 import ippfLogo from "@/assets/partners/ippf.png";
 import lshtmLogo from "@/assets/partners/lshtm.png";
+import msfLogo from "@/assets/partners/msf.png";
+import mmvLogo from "@/assets/partners/mmv.png";
+import nhmLogo from "@/assets/partners/nhm.png";
+import nvbdcpLogo from "@/assets/partners/nvbdcp.png";
+import pathLogo from "@/assets/partners/path.png";
+import planIntlLogo from "@/assets/partners/plan-international.png";
+import shsBiharLogo from "@/assets/partners/shs-bihar.png";
+import shsMaharashtraLogo from "@/assets/partners/shs-maharashtra.png";
+import punjabHscLogo from "@/assets/partners/punjab-hsc.png";
+import whoLogo from "@/assets/partners/who.png";
 
 interface Partner {
   name: string;
@@ -45,6 +55,16 @@ const partners: Partner[] = [
   { name: "ICMR", imageUrl: icmrLogo },
   { name: "IPPF", imageUrl: ippfLogo },
   { name: "London School of Hygiene & Tropical Medicine", imageUrl: lshtmLogo },
+  { name: "Médecins Sans Frontières", imageUrl: msfLogo },
+  { name: "Medicines for Malaria Venture", imageUrl: mmvLogo },
+  { name: "National Health Mission", imageUrl: nhmLogo },
+  { name: "NVBDCP", imageUrl: nvbdcpLogo },
+  { name: "PATH", imageUrl: pathLogo },
+  { name: "Plan International", imageUrl: planIntlLogo },
+  { name: "State Health Society Bihar", imageUrl: shsBiharLogo },
+  { name: "State Health Society Maharashtra", imageUrl: shsMaharashtraLogo },
+  { name: "Punjab Health Systems Corporation", imageUrl: punjabHscLogo },
+  { name: "World Health Organization", imageUrl: whoLogo },
 ];
 
 export function PartnersCarousel() {

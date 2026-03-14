@@ -296,7 +296,7 @@ export default function OfferingRHIS() {
           <Button
             size="lg"
             variant="outline"
-            className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10"
+            className="border-white text-white bg-white/20 hover:bg-white/30"
           >
             Schedule a Call
           </Button>

@@ -6,28 +6,29 @@ import { Button } from "./ui/button";
 
 const testimonials = [
   {
-    quote: "HISP India's DHIS2 implementation transformed our state's health data management. The training provided was exceptional and our healthcare workers adapted quickly to the new system.",
-    author: "Dr. Rajesh Sharma",
-    designation: "State Health Director",
-    organization: "Government of Kerala",
+    quote: "We are pleased to say that we have found technical support from HISP India as very good and professional. They bring in skills from the domains of both public health and informatics, and they combine it with strong implementation experience.",
+    author: "Dr Robert Gaertner",
+    organization: "EPOS, Germany",
   },
   {
-    quote: "Working with HISP India has been instrumental in strengthening our community health worker program. Their expertise in health informatics is unmatched.",
-    author: "Priya Menon",
-    designation: "Program Manager",
-    organization: "National Health Mission",
+    quote: "We are very pleased with the quality of HISP India's technical work with respect to the design and the development of our information systems. They bring skills from the domains of both public health and informatics, which they combine with strong implementation experience.",
+    author: "Richard Anderson",
+    organization: "University of Washington",
   },
   {
-    quote: "The research collaboration with HISP India produced actionable insights that influenced our policy decisions and improved maternal health outcomes significantly.",
-    author: "Dr. James Wilson",
-    designation: "Regional Representative",
-    organization: "WHO India",
+    quote: "We are happy to partner with HISP India, who are a professional group with skills in the technical and public health domains, and most importantly, with solid practical experience of making such systems work in real life settings of developing countries.",
+    author: "Dr Custodia Mandlhate",
+    organization: "WHO",
   },
   {
-    quote: "HISP India's capacity building programs have empowered our team to independently manage and analyze health data, leading to better decision-making at all levels.",
-    author: "Amit Patel",
-    designation: "Data Manager",
-    organization: "Government of Gujarat",
+    quote: "During the course of our projects at FAO, we have found HISP India very committed to respond to the users' needs and to learning, demonstrating positive results.",
+    author: "Ciro Fiorillo",
+    organization: "FAO",
+  },
+  {
+    quote: "We are happy with the work done by HISP India in the product implementation, support and capacity building domains. They have helped us to establish the infrastructure and promote sustainability of systems.",
+    author: "Ali R Rizvi",
+    organization: "Himachal Pradesh",
   },
 ];
 
@@ -78,19 +79,12 @@ export function TestimonialCarousel() {
                     <blockquote className="text-lg md:text-xl text-foreground mb-8 leading-relaxed">
                       "{testimonial.quote}"
                     </blockquote>
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                        <span className="text-primary font-bold text-lg">
-                          {testimonial.author.charAt(0)}
-                        </span>
+                    <div>
+                      <div className="font-semibold text-foreground">
+                        {testimonial.author}
                       </div>
-                      <div>
-                        <div className="font-semibold text-foreground">
-                          {testimonial.author}
-                        </div>
-                        <div className="text-sm text-muted-foreground">
-                          {testimonial.designation}, {testimonial.organization}
-                        </div>
+                      <div className="text-sm text-muted-foreground">
+                        {testimonial.organization}
                       </div>
                     </div>
                   </div>

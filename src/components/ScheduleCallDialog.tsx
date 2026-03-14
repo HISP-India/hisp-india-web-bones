@@ -134,11 +134,16 @@ export function ScheduleCallDialog({ children }: ScheduleCallDialogProps) {
 
     setIsSubmitting(true);
     try {
-      // For now, just show success toast
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const { data, error } = await supabase.functions.invoke('send-schedule-call-email', {
+        body: result.data,
+      });
+
+      if (error) throw error;
+      if (data && !data.success) throw new Error(data.error || 'Failed to send');
+
       toast({
         title: "Request Submitted!",
-        description: "We'll get back to you shortly to schedule a call.",
+        description: "We've sent you a confirmation email. Our team will get back to you shortly.",
       });
       setForm({
         firstName: "", lastName: "", email: "", country: "",

@@ -52,6 +52,36 @@ const timeline = [
     title: "DHIS2 and India",
     description: "A landmark development in HISP India's history was the birth of DHIS2 in 2005, which was globally first piloted in Kerala, a Southern State in India. This was a significant milestone, marking the conceptualisation and testing of DHIS2 within India.",
   },
+  {
+    year: "2007",
+    title: "Reformed as a national NGO",
+    description: 'In 2007, it was restructured as the national NGO "Society for Health Information Systems Program," supported by seed funding from the University of Oslo, solidifying its mission and operations.',
+  },
+  {
+    year: "2016",
+    title: "ISO",
+    description: "HISP India achieved ISO 9001:2015 certification. This significant accomplishment demonstrated HISP's commitment to Quality Management, Customer Focus, Process Improvement and Risk Management.",
+  },
+  {
+    year: "2018",
+    title: "DSIR",
+    description: "HISP India received recognition from the Department of Scientific & Industrial Research (DSIR), Government of India. This recognition signifies that HISP India has an established and recognised Research and Development (R&D) unit.",
+  },
+  {
+    year: "2021",
+    title: "Establishment of the HISP Asia Hub",
+    description: "With support from the Global Fund, the HISP Asia Hub was established to strengthen regional collaboration in health information systems. Led by HISP India, the Asia Hub now includes five member groups: HISP Bangladesh, HISP Indonesia, HISP Sri Lanka, HISP Vietnam, and HISP MENA (Middle East and North Africa).",
+  },
+  {
+    year: "2022",
+    title: "REAC",
+    description: "HISP India established the Research Ethics Advisory Committee (REAC) for ethical review of research proposals, including informed consents, and risk assessments.",
+  },
+  {
+    year: "2024",
+    title: "POSH",
+    description: "HISP India is committed to a safe and respectful workplace. In compliance with the POSH Act, 2013, an Internal Committee (IC) has been formed to address sexual harassment concerns. Employees are encouraged to Speak Up & Speak Out.",
+  },
 ];
 
 const anchoringPhilosophies = [
@@ -146,26 +176,33 @@ export default function About() {
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-12 text-center">
             Our Journey
           </h2>
-          <Carousel className="max-w-5xl mx-auto">
-            <CarouselContent>
-              {timeline.map((item, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <Card className="h-full">
-                    <CardContent className="pt-6 flex flex-col h-full">
-                      <div className="inline-block mb-4">
-                        <span className="px-4 py-2 rounded-full bg-primary text-primary-foreground font-bold text-lg">
-                          {item.year}
-                        </span>
-                      </div>
-                      <h3 className="font-heading font-semibold text-lg mb-3">{item.title}</h3>
-                      <p className="text-sm text-muted-foreground flex-1">{item.description}</p>
-                    </CardContent>
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+          <Carousel className="max-w-5xl mx-auto" opts={{ align: "start" }}>
+            {/* Timeline bar with dots */}
+            <div className="relative mb-8 mx-12">
+              <div className="absolute top-1/2 left-0 right-0 h-1 bg-primary -translate-y-1/2 rounded-full" />
+              <div className="relative flex justify-between">
+                {Array.from({ length: 3 }).map((_, i) => (
+                  <div key={i} className="w-4 h-4 rounded-full bg-[hsl(var(--chart-1))] border-2 border-[hsl(var(--chart-1))] z-10" />
+                ))}
+              </div>
+            </div>
+            <div className="relative">
+              <CarouselContent className="-ml-4">
+                {timeline.map((item, index) => (
+                  <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                    <div className="h-full border-2 border-[hsl(195,100%,45%)] rounded-lg bg-background p-6 flex flex-col">
+                      <span className="text-[hsl(195,100%,45%)] font-bold text-2xl mb-3">
+                        {item.year}
+                      </span>
+                      <h3 className="font-heading font-bold text-base mb-2">{item.title}</h3>
+                      <p className="text-sm text-muted-foreground flex-1 leading-relaxed">{item.description}</p>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-0 -translate-x-full bg-[hsl(195,100%,45%)] text-white hover:bg-[hsl(195,100%,35%)] hover:text-white border-none h-10 w-10" />
+              <CarouselNext className="right-0 translate-x-full bg-[hsl(195,100%,45%)] text-white hover:bg-[hsl(195,100%,35%)] hover:text-white border-none h-10 w-10" />
+            </div>
           </Carousel>
         </div>
       </section>

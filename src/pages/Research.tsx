@@ -1,47 +1,29 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { Hero } from "@/components/Hero";
 import { CTASection } from "@/components/CTASection";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { FileText, Download, BookOpen, Microscope } from "lucide-react";
+import { FileText, Download, BookOpen, Microscope, Search, ExternalLink } from "lucide-react";
+import { publications } from "@/data/publications";
 
-const publications = [
-  {
-    title: "Participatory Design of Health Information Systems in Low-Resource Settings",
-    authors: "Singh A, Kumar R, Verma A",
-    year: 2023,
-    journal: "Journal of Health Informatics",
-    category: "Implementation",
-    abstract: "This study examines participatory design approaches in implementing health information systems...",
-  },
-  {
-    title: "Data Use for Decision Making: Evidence from District Health Offices",
-    authors: "Verma A, Sharma P, Singh A",
-    year: 2022,
-    journal: "Health Policy and Planning",
-    category: "Data Use",
-    abstract: "Multi-year mixed methods research exploring factors influencing data use by district health managers...",
-  },
-  {
-    title: "Sustainability of Health Information Systems: A Framework",
-    authors: "Kumar R, Patel A, Singh A",
-    year: 2022,
-    journal: "Implementation Science",
-    category: "Sustainability",
-    abstract: "Evidence-based framework identifying critical factors for long-term sustainability of health information systems...",
-  },
-  {
-    title: "Climate-Health Data Integration for Outbreak Prediction",
-    authors: "Gupta R, Verma A, Singh A",
-    year: 2023,
-    journal: "International Journal of Medical Informatics",
-    category: "Climate & Health",
-    abstract: "Machine learning approaches to integrate climate and epidemiological data for early outbreak detection...",
-  },
+const ITEMS_PER_PAGE = 20;
+
+const publicationTypes = [
+  "All Types",
+  "Journal Publication",
+  "Conference Publication",
+  "Special Issue",
+  "Special Article",
+  "Workshop",
+  "Review Article",
+  "Book Review",
 ];
+
+const years = Array.from(new Set(publications.map((p) => p.year))).sort((a, b) => b - a);
 
 const ongoingStudies = [
   {
@@ -92,11 +74,31 @@ const resources = [
 ];
 
 export default function Research() {
-  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedType, setSelectedType] = useState("All Types");
+  const [selectedYear, setSelectedYear] = useState("all");
+  const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
 
-  const filteredPublications = selectedCategory === "all" 
-    ? publications 
-    : publications.filter(pub => pub.category === selectedCategory);
+  const filteredPublications = useMemo(() => {
+    return publications.filter((pub) => {
+      const matchesSearch =
+        !searchQuery ||
+        pub.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        pub.publicationName.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesType = selectedType === "All Types" || pub.type === selectedType;
+      const matchesYear = selectedYear === "all" || pub.year === parseInt(selectedYear);
+      return matchesSearch && matchesType && matchesYear;
+    });
+  }, [searchQuery, selectedType, selectedYear]);
+
+  const visiblePublications = filteredPublications.slice(0, visibleCount);
+  const hasMore = visibleCount < filteredPublications.length;
+
+  // Reset visible count when filters change
+  const handleFilterChange = (setter: (v: string) => void) => (value: string) => {
+    setter(value);
+    setVisibleCount(ITEMS_PER_PAGE);
+  };
 
   return (
     <div className="flex flex-col">
@@ -111,47 +113,102 @@ export default function Research() {
       {/* Publications */}
       <section className="py-16 md:py-24">
         <div className="container">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
-            <h2 className="font-heading text-3xl font-bold">Publications</h2>
-            <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-              <SelectTrigger className="w-[200px]">
-                <SelectValue placeholder="Filter by category" />
+          <h2 className="font-heading text-3xl font-bold mb-8">Publications</h2>
+
+          {/* Search and Filters */}
+          <div className="flex flex-col md:flex-row gap-4 mb-6">
+            <div className="relative flex-1">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Input
+                placeholder="Search by title or publication name..."
+                value={searchQuery}
+                onChange={(e) => {
+                  setSearchQuery(e.target.value);
+                  setVisibleCount(ITEMS_PER_PAGE);
+                }}
+                className="pl-10"
+              />
+            </div>
+            <Select value={selectedType} onValueChange={handleFilterChange(setSelectedType)}>
+              <SelectTrigger className="w-full md:w-[220px]">
+                <SelectValue placeholder="Type" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">All Categories</SelectItem>
-                <SelectItem value="Implementation">Implementation</SelectItem>
-                <SelectItem value="Data Use">Data Use</SelectItem>
-                <SelectItem value="Sustainability">Sustainability</SelectItem>
-                <SelectItem value="Climate & Health">Climate & Health</SelectItem>
+                {publicationTypes.map((type) => (
+                  <SelectItem key={type} value={type}>
+                    {type}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            <Select value={selectedYear} onValueChange={handleFilterChange(setSelectedYear)}>
+              <SelectTrigger className="w-full md:w-[160px]">
+                <SelectValue placeholder="Year" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All Years</SelectItem>
+                {years.map((year) => (
+                  <SelectItem key={year} value={String(year)}>
+                    {year}
+                  </SelectItem>
+                ))}
               </SelectContent>
             </Select>
           </div>
 
+          {/* Result count */}
+          <p className="text-sm text-muted-foreground mb-4">
+            Showing {visiblePublications.length} of {filteredPublications.length} publications
+          </p>
+
+          {/* Publication cards */}
           <div className="space-y-4">
-            {filteredPublications.map((pub, index) => (
+            {visiblePublications.map((pub, index) => (
               <Card key={index}>
-                <CardHeader>
+                <CardHeader className="pb-3">
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1">
-                      <CardTitle className="text-xl mb-2">{pub.title}</CardTitle>
-                      <p className="text-sm text-muted-foreground">{pub.authors}</p>
+                      <CardTitle className="text-lg leading-snug mb-1">{pub.title}</CardTitle>
                       <p className="text-sm text-muted-foreground">
-                        {pub.journal}, {pub.year}
+                        {pub.publicationName}, {pub.year}
                       </p>
                     </div>
-                    <Badge>{pub.category}</Badge>
+                    <Badge variant="secondary" className="shrink-0 text-xs">
+                      {pub.type}
+                    </Badge>
                   </div>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">{pub.abstract}</p>
-                  <Button variant="link" className="p-0 h-auto">
-                    <FileText className="mr-2 h-4 w-4" />
-                    View Publication
-                  </Button>
-                </CardContent>
+                {pub.url && (
+                  <CardContent className="pt-0">
+                    <a
+                      href={pub.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-sm text-primary hover:underline"
+                    >
+                      <ExternalLink className="mr-1.5 h-3.5 w-3.5" />
+                      View Publication
+                    </a>
+                  </CardContent>
+                )}
               </Card>
             ))}
           </div>
+
+          {/* Load More */}
+          {hasMore && (
+            <div className="mt-8 text-center">
+              <Button variant="outline" onClick={() => setVisibleCount((v) => v + ITEMS_PER_PAGE)}>
+                Load More Publications
+              </Button>
+            </div>
+          )}
+
+          {filteredPublications.length === 0 && (
+            <p className="text-center text-muted-foreground py-12">
+              No publications found matching your criteria.
+            </p>
+          )}
         </div>
       </section>
 

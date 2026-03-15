@@ -7,7 +7,12 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { FileText, Download, BookOpen, Microscope, Search, ExternalLink } from "lucide-react";
+import { FileText, BookOpen, Microscope, Search, ExternalLink, ShoppingCart } from "lucide-react";
+import digitalDevelopment from "@/assets/books/digital-development.jpg";
+import publicHealthInformatics from "@/assets/books/public-health-informatics.jpg";
+import integratedHealthInfoArch from "@/assets/books/integrated-health-info-architecture.jpg";
+import globalItOutsourcing from "@/assets/books/global-it-outsourcing.jpg";
+import gisDevelopingCountries from "@/assets/books/gis-developing-countries.jpg";
 import { publications } from "@/data/publications";
 
 const ITEMS_PER_PAGE = 20;
@@ -66,11 +71,37 @@ const researchThemes = [
   },
 ];
 
-const resources = [
-  { title: "HISP India Annual Report 2023", type: "Report", size: "2.5 MB" },
-  { title: "DHIS2 Implementation Guidelines", type: "Guide", size: "1.8 MB" },
-  { title: "Data Quality Assessment Framework", type: "Toolkit", size: "3.2 MB" },
-  { title: "Community Health Information Systems: Best Practices", type: "Guide", size: "2.1 MB" },
+const books = [
+  {
+    title: "Digital Development: Stories of Hope from Health and Development",
+    authors: "Sundeep Sahay, Arunima Mukherjee, Geoff Walsham, Thomas Hylland Eriksen",
+    cover: digitalDevelopment,
+    url: "https://www.amazon.in/Digital-Development-Stories-health-development/dp/1788532066",
+  },
+  {
+    title: "Public Health Informatics: A Developing Country Perspective",
+    authors: "Sundeep Sahay, T. Sundararaman, Jorn Braa",
+    cover: publicHealthInformatics,
+    url: "https://www.amazon.in/Public-Health-Informatics-developing-perspective-ebook/dp/B01MSE5TEK",
+  },
+  {
+    title: "Integrated Health Information Architecture: Power to the Users",
+    authors: "Jorn Braa, Sundeep Sahay",
+    cover: integratedHealthInfoArch,
+    url: "https://www.amazon.in/Integrated-Health-Information-Architecture-Power/dp/9381320063",
+  },
+  {
+    title: "Global IT Outsourcing: Software Development Across Borders",
+    authors: "Sundeep Sahay, Brian Nicholson, S. Krishna",
+    cover: globalItOutsourcing,
+    url: "https://www.amazon.in/Global-Outsourcing-Software-Development-Borders/dp/0521039487",
+  },
+  {
+    title: "The Use of GIS in Developing Countries",
+    authors: "Sundeep Sahay, Geoff Walsham",
+    cover: gisDevelopingCountries,
+    url: "",
+  },
 ];
 
 export default function Research() {
@@ -250,27 +281,34 @@ export default function Research() {
         </div>
       </section>
 
-      {/* Downloadable Resources */}
+      {/* Books Published */}
       <section className="py-16 md:py-24 bg-muted">
-        <div className="container max-w-4xl">
-          <h2 className="font-heading text-3xl font-bold mb-8">Downloadable Resources</h2>
-          <div className="space-y-4">
-            {resources.map((resource, index) => (
-              <Card key={index}>
-                <CardContent className="flex items-center justify-between p-6">
-                  <div className="flex items-center space-x-4">
-                    <FileText className="h-8 w-8 text-primary" />
-                    <div>
-                      <h3 className="font-semibold">{resource.title}</h3>
-                      <p className="text-sm text-muted-foreground">
-                        {resource.type} • {resource.size}
-                      </p>
-                    </div>
-                  </div>
-                  <Button variant="outline" size="sm">
-                    <Download className="mr-2 h-4 w-4" />
-                    Download
-                  </Button>
+        <div className="container">
+          <h2 className="font-heading text-3xl font-bold mb-8">Books Published</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+            {books.map((book, index) => (
+              <Card key={index} className="overflow-hidden flex flex-col">
+                <div className="aspect-[3/4] overflow-hidden">
+                  <img
+                    src={book.cover}
+                    alt={book.title}
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  />
+                </div>
+                <CardContent className="flex flex-col flex-1 p-4">
+                  <h3 className="font-semibold text-sm leading-snug mb-1">{book.title}</h3>
+                  <p className="text-xs text-muted-foreground mb-3">{book.authors}</p>
+                  {book.url && (
+                    <a
+                      href={book.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-auto inline-flex items-center text-xs text-primary hover:underline font-medium"
+                    >
+                      <ShoppingCart className="mr-1 h-3.5 w-3.5" />
+                      Buy on Amazon
+                    </a>
+                  )}
                 </CardContent>
               </Card>
             ))}

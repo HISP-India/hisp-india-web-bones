@@ -127,6 +127,9 @@ export default function OfferingDetail() {
   if (id === "community-info-systems") {
     return <Navigate to="/offerings/community-info-systems" replace />;
   }
+  if (id === "data-analytics") {
+    return <Navigate to="/offerings/data-analytics" replace />;
+  }
   if (id === "openmrs-his") {
     return <Navigate to="/offerings/openmrs-his" replace />;
   }

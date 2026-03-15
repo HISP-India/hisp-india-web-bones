@@ -215,8 +215,8 @@ export default function About() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {anchoringPhilosophies.map((item, index) => (
-              <div key={index} className="bg-primary-foreground/10 backdrop-blur-sm rounded-xl p-8 text-center hover:bg-primary-foreground/20 transition-all duration-300">
-                <div className="h-16 w-16 rounded-full bg-primary-foreground/15 flex items-center justify-center mx-auto mb-5">
+              <div key={index} className="bg-primary-foreground/10 backdrop-blur-sm rounded-xl p-8 text-left hover:bg-primary-foreground/20 transition-all duration-300">
+                <div className="h-16 w-16 rounded-full bg-primary-foreground/15 flex items-center justify-center mb-5">
                   <item.icon className="h-8 w-8" />
                 </div>
                 <h3 className="font-heading font-semibold text-2xl mb-3">{item.title}</h3>

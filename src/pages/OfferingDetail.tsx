@@ -133,6 +133,9 @@ export default function OfferingDetail() {
   if (id === "research") {
     return <Navigate to="/offerings/research" replace />;
   }
+  if (id === "capacity-building") {
+    return <Navigate to="/offerings/capacity-building" replace />;
+  }
   if (id === "openmrs-his") {
     return <Navigate to="/offerings/openmrs-his" replace />;
   }

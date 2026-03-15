@@ -15,6 +15,7 @@ import OfferingOpenMRS from "./pages/OfferingOpenMRS";
 import OfferingDataAnalytics from "./pages/OfferingDataAnalytics";
 import OfferingResearch from "./pages/OfferingResearch";
 import OfferingCapacityBuilding from "./pages/OfferingCapacityBuilding";
+import OfferingClimateHealth from "./pages/OfferingClimateHealth";
 import Work from "./pages/Work";
 import ProjectDetail from "./pages/ProjectDetail";
 import Research from "./pages/Research";
@@ -50,6 +51,7 @@ const App = () => (
             <Route path="/offerings/data-analytics" element={<OfferingDataAnalytics />} />
             <Route path="/offerings/research" element={<OfferingResearch />} />
             <Route path="/offerings/capacity-building" element={<OfferingCapacityBuilding />} />
+            <Route path="/offerings/climate-health-analytics" element={<OfferingClimateHealth />} />
             <Route path="/offerings/:id" element={<OfferingDetail />} />
             <Route path="/work" element={<Work />} />
             <Route path="/work/:id" element={<ProjectDetail />} />

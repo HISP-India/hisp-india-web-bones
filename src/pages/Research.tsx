@@ -7,7 +7,12 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { FileText, Download, BookOpen, Microscope, Search, ExternalLink } from "lucide-react";
+import { FileText, BookOpen, Microscope, Search, ExternalLink, ShoppingCart } from "lucide-react";
+import digitalDevelopment from "@/assets/books/digital-development.jpg";
+import publicHealthInformatics from "@/assets/books/public-health-informatics.jpg";
+import integratedHealthInfoArch from "@/assets/books/integrated-health-info-architecture.jpg";
+import globalItOutsourcing from "@/assets/books/global-it-outsourcing.jpg";
+import gisDevelopingCountries from "@/assets/books/gis-developing-countries.jpg";
 import { publications } from "@/data/publications";
 
 const ITEMS_PER_PAGE = 20;

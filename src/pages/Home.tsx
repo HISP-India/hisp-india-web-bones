@@ -110,6 +110,9 @@ export default function Home() {
         </Button>
       </Hero>
 
+      {/* News Ticker */}
+      <NewsTicker />
+
       {/* About Us in Brief */}
       <section className="py-20 md:py-32 bg-background scroll-snap-start">
         <div className="container">

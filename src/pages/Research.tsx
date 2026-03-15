@@ -281,27 +281,34 @@ export default function Research() {
         </div>
       </section>
 
-      {/* Downloadable Resources */}
+      {/* Books Published */}
       <section className="py-16 md:py-24 bg-muted">
-        <div className="container max-w-4xl">
-          <h2 className="font-heading text-3xl font-bold mb-8">Downloadable Resources</h2>
-          <div className="space-y-4">
-            {resources.map((resource, index) => (
-              <Card key={index}>
-                <CardContent className="flex items-center justify-between p-6">
-                  <div className="flex items-center space-x-4">
-                    <FileText className="h-8 w-8 text-primary" />
-                    <div>
-                      <h3 className="font-semibold">{resource.title}</h3>
-                      <p className="text-sm text-muted-foreground">
-                        {resource.type} • {resource.size}
-                      </p>
-                    </div>
-                  </div>
-                  <Button variant="outline" size="sm">
-                    <Download className="mr-2 h-4 w-4" />
-                    Download
-                  </Button>
+        <div className="container">
+          <h2 className="font-heading text-3xl font-bold mb-8">Books Published</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+            {books.map((book, index) => (
+              <Card key={index} className="overflow-hidden flex flex-col">
+                <div className="aspect-[3/4] overflow-hidden">
+                  <img
+                    src={book.cover}
+                    alt={book.title}
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  />
+                </div>
+                <CardContent className="flex flex-col flex-1 p-4">
+                  <h3 className="font-semibold text-sm leading-snug mb-1">{book.title}</h3>
+                  <p className="text-xs text-muted-foreground mb-3">{book.authors}</p>
+                  {book.url && (
+                    <a
+                      href={book.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-auto inline-flex items-center text-xs text-primary hover:underline font-medium"
+                    >
+                      <ShoppingCart className="mr-1 h-3.5 w-3.5" />
+                      Buy on Amazon
+                    </a>
+                  )}
                 </CardContent>
               </Card>
             ))}

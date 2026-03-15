@@ -1,26 +1,65 @@
 
 
-# Plan: Update Research Publications from CSV with Search and Filters
+# Plan: Add FPHI Workshop Album to Gallery
 
 ## Overview
-Replace the 4 hardcoded publications with all 210 entries from the CSV, sorted by year (newest first). Add a search bar and filters for Type and Year. Show 20 at a time with "Load More."
 
-## Changes to `src/pages/Research.tsx`
+This plan will add a new gallery album for the Two-Day Workshop on Fundamentals of Public Health Informatics (FPHI) with the uploaded cover image.
 
-1. **Replace `publications` array** with 210 entries from CSV, each with: `title`, `publicationName`, `year`, `type`, `url`. Array pre-sorted by year descending.
+## Album Details (Extracted from User Request)
 
-2. **Add search bar** (text input) above the publications list to filter by title or publication name (case-insensitive).
+| Field | Value |
+|-------|-------|
+| **Title** | Two-Day Workshop on Fundamentals of Public Health Informatics (FPHI) |
+| **Subtitle** | Hands-on Applications for Teaching and Practice |
+| **Organized by** | Parul Institute of Public Health (PIPH), Faculty of Medicine |
+| **Date** | 7-8 January 2026 |
+| **Location** | Vadodara, Gujarat, India |
+| **Category** | Workshop |
+| **Cover Image** | User-provided group photo from the workshop |
 
-3. **Add two filter dropdowns** alongside search:
-   - **Type**: All Types, Journal Publication, Conference Publication, Special Issue, Special Article, Workshop, Review Article, Book Review
-   - **Year**: All Years, then individual years 2025 down to 1991
+## Files to Modify
 
-4. **Update publication cards**:
-   - Show title, publication name, year, type badge
-   - "View Publication" link only when URL exists
-   - Remove `authors`, `abstract`, `category` fields
+### Step 1: Copy Cover Image to Assets
 
-5. **Add "Load More" pagination** — show 20 at a time
+**Action:** Copy the uploaded image to the project assets folder
 
-6. **Show result count** — "Showing X of Y publications"
+- Source: `user-uploads://Untitled_design_8.jpg`
+- Destination: `src/assets/fphi-workshop-vadodara-2026.jpg`
+
+### Step 2: Update Gallery.tsx
+
+**Action:** Add new album entry to the `albums` array
+
+Add import statement at line 17:
+```typescript
+import fphiWorkshopVadodara from "@/assets/fphi-workshop-vadodara-2026.jpg";
+```
+
+Add new album object after the Libya training entry:
+```typescript
+{
+  id: "fphi-workshop-vadodara-2026",
+  title: "Two-Day Workshop on Fundamentals of Public Health Informatics (FPHI)",
+  description: "Hands-on Applications for Teaching and Practice. Organized by Parul Institute of Public Health (PIPH), Faculty of Medicine, this workshop focused on building foundational skills in public health informatics for educators and practitioners.",
+  date: "7-8 January 2026",
+  location: "Vadodara, Gujarat, India",
+  coverImage: fphiWorkshopVadodara,
+  googlePhotosUrl: "https://photos.app.goo.gl/placeholder9",
+  category: "Workshop",
+},
+```
+
+## Summary of Changes
+
+| File | Change |
+|------|--------|
+| `src/assets/fphi-workshop-vadodara-2026.jpg` | New cover image file |
+| `src/pages/Gallery.tsx` | Add import + new album entry |
+
+## Notes
+
+- The album will use a placeholder Google Photos URL that can be updated later with the actual album link
+- The description combines the subtitle and organizing institution details for context
+- Category set as "Workshop" which already exists in the filter options
 

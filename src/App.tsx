@@ -14,6 +14,7 @@ import OfferingCIS from "./pages/OfferingCIS";
 import OfferingOpenMRS from "./pages/OfferingOpenMRS";
 import OfferingDataAnalytics from "./pages/OfferingDataAnalytics";
 import OfferingResearch from "./pages/OfferingResearch";
+import OfferingCapacityBuilding from "./pages/OfferingCapacityBuilding";
 import Work from "./pages/Work";
 import ProjectDetail from "./pages/ProjectDetail";
 import Research from "./pages/Research";

@@ -1,65 +1,29 @@
 
 
-# Plan: Add FPHI Workshop Album to Gallery
+# Plan: Replace Downloadable Resources with Books Published Section
 
 ## Overview
+Remove the "Downloadable Resources" section and replace it with a "Books Published" section showcasing 4 books with their cover images and Amazon purchase links.
 
-This plan will add a new gallery album for the Two-Day Workshop on Fundamentals of Public Health Informatics (FPHI) with the uploaded cover image.
+## Changes
 
-## Album Details (Extracted from User Request)
+### 1. Copy uploaded book cover images to `src/assets/books/`
+- `1-3-2.jpg` → `digital-development.jpg`
+- `2-3.jpg` → `public-health-informatics.jpg`
+- `3-3.jpg` → `integrated-health-info-architecture.jpg`
+- `4-3.jpg` → `global-it-outsourcing.jpg`
+- `5-4.jpg` → `gis-developing-countries.jpg`
 
-| Field | Value |
-|-------|-------|
-| **Title** | Two-Day Workshop on Fundamentals of Public Health Informatics (FPHI) |
-| **Subtitle** | Hands-on Applications for Teaching and Practice |
-| **Organized by** | Parul Institute of Public Health (PIPH), Faculty of Medicine |
-| **Date** | 7-8 January 2026 |
-| **Location** | Vadodara, Gujarat, India |
-| **Category** | Workshop |
-| **Cover Image** | User-provided group photo from the workshop |
-
-## Files to Modify
-
-### Step 1: Copy Cover Image to Assets
-
-**Action:** Copy the uploaded image to the project assets folder
-
-- Source: `user-uploads://Untitled_design_8.jpg`
-- Destination: `src/assets/fphi-workshop-vadodara-2026.jpg`
-
-### Step 2: Update Gallery.tsx
-
-**Action:** Add new album entry to the `albums` array
-
-Add import statement at line 17:
-```typescript
-import fphiWorkshopVadodara from "@/assets/fphi-workshop-vadodara-2026.jpg";
-```
-
-Add new album object after the Libya training entry:
-```typescript
-{
-  id: "fphi-workshop-vadodara-2026",
-  title: "Two-Day Workshop on Fundamentals of Public Health Informatics (FPHI)",
-  description: "Hands-on Applications for Teaching and Practice. Organized by Parul Institute of Public Health (PIPH), Faculty of Medicine, this workshop focused on building foundational skills in public health informatics for educators and practitioners.",
-  date: "7-8 January 2026",
-  location: "Vadodara, Gujarat, India",
-  coverImage: fphiWorkshopVadodara,
-  googlePhotosUrl: "https://photos.app.goo.gl/placeholder9",
-  category: "Workshop",
-},
-```
-
-## Summary of Changes
-
-| File | Change |
-|------|--------|
-| `src/assets/fphi-workshop-vadodara-2026.jpg` | New cover image file |
-| `src/pages/Gallery.tsx` | Add import + new album entry |
-
-## Notes
-
-- The album will use a placeholder Google Photos URL that can be updated later with the actual album link
-- The description combines the subtitle and organizing institution details for context
-- Category set as "Workshop" which already exists in the filter options
+### 2. Update `src/pages/Research.tsx`
+- Remove the `resources` array (lines 69-74)
+- Remove the `Download` icon import
+- Replace the "Downloadable Resources" section (lines 253-279) with a "Books Published" section:
+  - Display books in a responsive grid (2-4 columns)
+  - Each book card: cover image, title, authors, and "Buy on Amazon" link
+  - Books:
+    1. **Digital Development** — Sundeep Sahay, Arunima Mukherjee, Geoff Walsham, Thomas Hylland Eriksen
+    2. **Public Health Informatics** — Sundeep Sahay, T. Sundararaman, Jorn Braa
+    3. **Integrated Health Information Architecture** — Jorn Braa, Sundeep Sahay
+    4. **Global IT Outsourcing** — Sundeep Sahay, Brian Nicholson, S. Krishna
+    5. **The Use of GIS in Developing Countries** — Sundeep Sahay, Geoff Walsham
 

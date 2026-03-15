@@ -7,33 +7,6 @@ import { Badge } from "@/components/ui/badge";
 import { CheckCircle2, ArrowLeft } from "lucide-react";
 
 const offeringsData: Record<string, any> = {
-  "openmrs-his": {
-    title: "OpenMRS Integrated Hospital Information Systems",
-    overview: "We implement and customize OpenMRS-based hospital information systems for seamless patient care coordination. Our solutions integrate electronic medical records, pharmacy management, laboratory systems, and hospital workflows into unified platforms that improve clinical care, operational efficiency, and patient safety. We work with hospitals of all sizes, from small district facilities to large tertiary care centers.",
-    features: [
-      "Electronic Medical Records (EMR) implementation",
-      "Patient registration and management",
-      "Clinical decision support systems",
-      "Pharmacy and inventory management",
-      "Laboratory information system integration",
-      "Radiology and imaging management",
-      "Billing and financial management integration",
-      "Hospital dashboard and performance monitoring",
-    ],
-    caseStudies: [
-      {
-        title: "District Hospital OpenMRS Deployment",
-        description: "Implemented comprehensive hospital information system across 30 district hospitals serving 500,000 patients annually.",
-        impact: "Reduced patient wait times by 35%",
-      },
-      {
-        title: "Tertiary Care Hospital Integration",
-        description: "Integrated OpenMRS with existing hospital systems creating unified patient care platform at major teaching hospital.",
-        impact: "Improved clinical documentation quality by 60%",
-      },
-    ],
-    relatedProjects: ["Multi-Hospital HIS Implementation", "OpenMRS Customization for TB Care", "Integrated Hospital Dashboard"],
-  },
   "data-analytics": {
     title: "Data Analytics, Integration & Data Management",
     overview: "We provide advanced analytics and data integration solutions that transform health data into actionable insights. Our services include designing data warehouses, developing business intelligence dashboards, implementing predictive analytics, and building health information exchange platforms. We help organizations make sense of complex health data from multiple sources to support evidence-based decision making and strategic planning.",
@@ -153,6 +126,9 @@ export default function OfferingDetail() {
   }
   if (id === "community-info-systems") {
     return <Navigate to="/offerings/community-info-systems" replace />;
+  }
+  if (id === "openmrs-his") {
+    return <Navigate to="/offerings/openmrs-his" replace />;
   }
 
   const offering = id ? offeringsData[id] : null;

@@ -11,6 +11,7 @@ import Offerings from "./pages/Offerings";
 import OfferingDetail from "./pages/OfferingDetail";
 import OfferingRHIS from "./pages/OfferingRHIS";
 import OfferingCIS from "./pages/OfferingCIS";
+import OfferingOpenMRS from "./pages/OfferingOpenMRS";
 import Work from "./pages/Work";
 import ProjectDetail from "./pages/ProjectDetail";
 import Research from "./pages/Research";
@@ -42,6 +43,7 @@ const App = () => (
             <Route path="/offerings" element={<Offerings />} />
             <Route path="/offerings/routine-health-info-systems" element={<OfferingRHIS />} />
             <Route path="/offerings/community-info-systems" element={<OfferingCIS />} />
+            <Route path="/offerings/openmrs-his" element={<OfferingOpenMRS />} />
             <Route path="/offerings/:id" element={<OfferingDetail />} />
             <Route path="/work" element={<Work />} />
             <Route path="/work/:id" element={<ProjectDetail />} />

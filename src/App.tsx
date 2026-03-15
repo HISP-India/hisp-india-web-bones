@@ -12,6 +12,7 @@ import OfferingDetail from "./pages/OfferingDetail";
 import OfferingRHIS from "./pages/OfferingRHIS";
 import OfferingCIS from "./pages/OfferingCIS";
 import OfferingOpenMRS from "./pages/OfferingOpenMRS";
+import OfferingDataAnalytics from "./pages/OfferingDataAnalytics";
 import Work from "./pages/Work";
 import ProjectDetail from "./pages/ProjectDetail";
 import Research from "./pages/Research";

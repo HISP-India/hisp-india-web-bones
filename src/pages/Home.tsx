@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Hero } from "@/components/Hero";
+import { NewsTicker } from "@/components/NewsTicker";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -108,6 +109,9 @@ export default function Home() {
           <Link to="/contact">Get in Touch</Link>
         </Button>
       </Hero>
+
+      {/* News Ticker */}
+      <NewsTicker />
 
       {/* About Us in Brief */}
       <section className="py-20 md:py-32 bg-background scroll-snap-start">

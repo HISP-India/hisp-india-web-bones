@@ -94,13 +94,13 @@ export function PartnersCarousel() {
             {[...partners, ...partners].map((partner, index) => (
               <div
                 key={index}
-                className="flex-[0_0_200px] min-w-0"
+                className="flex-[0_0_240px] min-w-0"
               >
-                <div className="bg-card rounded-lg p-6 h-32 flex flex-col items-center justify-center border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg">
+                <div className="bg-card rounded-lg p-6 h-40 flex flex-col items-center justify-center border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg">
                   <img 
                     src={partner.imageUrl} 
                     alt={partner.name}
-                    className="max-h-14 max-w-[140px] object-contain"
+                    className="max-h-20 max-w-[180px] object-contain"
                   />
                   <div className="text-[10px] text-muted-foreground mt-2 text-center line-clamp-2 leading-tight">
                     {partner.name}

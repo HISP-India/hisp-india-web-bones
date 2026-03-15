@@ -71,11 +71,37 @@ const researchThemes = [
   },
 ];
 
-const resources = [
-  { title: "HISP India Annual Report 2023", type: "Report", size: "2.5 MB" },
-  { title: "DHIS2 Implementation Guidelines", type: "Guide", size: "1.8 MB" },
-  { title: "Data Quality Assessment Framework", type: "Toolkit", size: "3.2 MB" },
-  { title: "Community Health Information Systems: Best Practices", type: "Guide", size: "2.1 MB" },
+const books = [
+  {
+    title: "Digital Development: Stories of Hope from Health and Development",
+    authors: "Sundeep Sahay, Arunima Mukherjee, Geoff Walsham, Thomas Hylland Eriksen",
+    cover: digitalDevelopment,
+    url: "https://www.amazon.in/Digital-Development-Stories-health-development/dp/1788532066",
+  },
+  {
+    title: "Public Health Informatics: A Developing Country Perspective",
+    authors: "Sundeep Sahay, T. Sundararaman, Jorn Braa",
+    cover: publicHealthInformatics,
+    url: "https://www.amazon.in/Public-Health-Informatics-developing-perspective-ebook/dp/B01MSE5TEK",
+  },
+  {
+    title: "Integrated Health Information Architecture: Power to the Users",
+    authors: "Jorn Braa, Sundeep Sahay",
+    cover: integratedHealthInfoArch,
+    url: "https://www.amazon.in/Integrated-Health-Information-Architecture-Power/dp/9381320063",
+  },
+  {
+    title: "Global IT Outsourcing: Software Development Across Borders",
+    authors: "Sundeep Sahay, Brian Nicholson, S. Krishna",
+    cover: globalItOutsourcing,
+    url: "https://www.amazon.in/Global-Outsourcing-Software-Development-Borders/dp/0521039487",
+  },
+  {
+    title: "The Use of GIS in Developing Countries",
+    authors: "Sundeep Sahay, Geoff Walsham",
+    cover: gisDevelopingCountries,
+    url: "",
+  },
 ];
 
 export default function Research() {

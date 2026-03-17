@@ -76,7 +76,7 @@ export default function Terms() {
             <strong>HISP India</strong><br />
             DLF Tower B, 12th Floor, Office No-1211<br />
             Jasola, New Delhi-110025, India<br />
-            Email: <a href="mailto:info@hispindia.org" className="text-primary hover:underline">info@hispindia.org</a><br />
+            Email: <a href="mailto:contact@hispindia.org" className="text-primary hover:underline">contact@hispindia.org</a><br />
             Website: <a href="https://www.hispindia.org" className="text-primary hover:underline">www.hispindia.org</a>
           </address>
         </section>

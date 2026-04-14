@@ -79,7 +79,7 @@ const departments = [
       {
         id: "29",
         name: "Rashi Banta",
-        role: "Management/ISO/Research",
+        role: "Sr. Advisor",
         imageUrl: rashiImage,
         bio: "Ms. Rashi Banta is a post graduate in management with over 20 years of valuable hands-on experience in MNCs, Corporate and NGOs. She is a versatile and experienced professional specializing in management, ISO coordination, compliance, and government liaison. Demonstrated expertise in business development, academic coordination, and organizing international academic conferences such as HDCA and IHIP. Skilled in research related to antimicrobial resistance (AMR) projects, with a strong focus on fostering collaboration across diverse stakeholders. Key Skills and Expertise: Project Management & Coordination - Proven ability to manage complex projects, streamline operations, and ensure successful execution of academic and business initiatives under openMRS & DHIS2. ISO Coordination & Compliance - Proficient in developing, implementing, and maintaining ISO standards to ensure operational excellence and regulatory compliance. Successfully coordinated high-profile international academic conferences, including HDCA and IFIP. Played a key role in AMR-related projects, contributing to impactful research and policy recommendations.",
       },

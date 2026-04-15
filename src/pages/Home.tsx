@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Hero } from "@/components/Hero";
+import { HeroSlider } from "@/components/HeroSlider";
 import { NewsTicker } from "@/components/NewsTicker";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";

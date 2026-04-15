@@ -13,7 +13,7 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    image: "",
+    image: "/images/hero-slide-1.jpg",
     title: "Building Health Information Systems for Public Good",
     subtitle: "HISP India",
     description: "Empowering nations with open-source solutions, research excellence, and capacity building for sustainable public health transformation",

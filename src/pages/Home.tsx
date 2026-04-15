@@ -95,20 +95,7 @@ export default function Home() {
   return (
     <div className="scroll-smooth">
       {/* Hero Section - Full Viewport Height */}
-      <Hero
-        variant="fullscreen"
-        subtitle="HISP India"
-        title="Building Health Information Systems for Public Good"
-        description="Empowering nations with open-source solutions, research excellence, and capacity building for sustainable public health transformation"
-        showScrollIndicator
-      >
-        <Button asChild size="lg" className="shadow-lg">
-          <Link to="/about">Learn More</Link>
-        </Button>
-        <Button asChild size="lg" variant="outline" className="shadow-lg bg-background/20 border-primary-foreground/30 text-primary-foreground hover:bg-background/30">
-          <Link to="/contact">Get in Touch</Link>
-        </Button>
-      </Hero>
+      <HeroSlider />
 
       {/* News Ticker */}
       <NewsTicker />

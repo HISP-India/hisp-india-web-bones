@@ -95,11 +95,11 @@ export default function Home() {
 
   return (
     <div className="scroll-smooth">
-      {/* News Ticker - above the fold */}
-      <NewsTicker />
-
       {/* Hero Section - Impact Stats Bento */}
       <ImpactHero />
+
+      {/* News Ticker */}
+      <NewsTicker />
 
       {/* About Us in Brief */}
       <section className="py-20 md:py-32 bg-background scroll-snap-start">

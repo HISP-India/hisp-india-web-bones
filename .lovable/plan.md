@@ -1,13 +1,22 @@
+# Plan: Make Hero Image Visible Behind Text
 
+**Problem**: Centered, large title + subtitle + dark 50% overlay cover the hero image on slide 1.
 
-# Plan: Update Hero Slider 1 Background Image
+## Changes (`src/components/HeroSlider.tsx`)
 
-**What**: Copy the uploaded image (FRIPRO.jpg) into the project and set it as the background for slider slide 1.
+1. **Lighter image overlay**: Replace full `bg-black/50` with a bottom-weighted gradient `bg-gradient-to-t from-black/70 via-black/30 to-transparent` so the top/center of the image stays visible.
 
-## Steps
+2. **Anchor text to the bottom** instead of centering it:
+   - Change content wrapper from centered flex to bottom-aligned (`justify-end pb-32`).
+   - Remove the invisible spacer block (lines 125–133) — no longer needed once content is bottom-anchored.
 
-1. **Copy image**: Copy `user-uploads://FRIPRO.jpg` to `public/images/hero-slide-1.jpg`
-2. **Update `src/components/HeroSlider.tsx`**: Change slide 1's `image` from `""` to `"/images/hero-slide-1.jpg"` (line 16)
+3. **Smaller, tighter text** so it occupies less vertical space:
+   - Title: `text-3xl md:text-4xl lg:text-5xl` (down from up to `7xl`).
+   - Description: `text-base md:text-lg` (down from `xl`).
+   - Reduce `space-y-6` → `space-y-3`.
 
-Single-line change plus one file copy.
+4. **Reposition dots/scroll indicator** slightly so they don't collide with the lowered text block (keep current positions; verify spacing).
 
+CTA buttons remain visible below the text.
+
+Result: image fills the viewport, text sits as a readable caption band at the bottom over a soft gradient.

@@ -85,7 +85,7 @@ export function HeroSlider() {
                 alt={slide.title}
                 className="absolute inset-0 w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-black/50" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
             </>
           ) : (
             <div className={cn("absolute inset-0", gradients[index % gradients.length])}>
@@ -97,43 +97,34 @@ export function HeroSlider() {
       ))}
 
       {/* Content */}
-      <div className="container relative z-10">
-        <div className="max-w-4xl mx-auto text-center space-y-6">
-          {slides.map((slide, index) => (
-            <div
-              key={index}
-              className={cn(
-                "transition-all duration-700 ease-in-out absolute inset-0 flex flex-col items-center justify-center space-y-6 px-4",
-                index === current
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-4 pointer-events-none"
-              )}
-            >
-              <p className="text-sm font-medium uppercase tracking-wider text-primary-foreground/90 animate-fade-in">
-                {slide.subtitle}
-              </p>
-              <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-primary-foreground">
-                {slide.title}
-              </h1>
-              <p className="text-lg md:text-xl max-w-2xl mx-auto text-primary-foreground/80">
-                {slide.description}
-              </p>
-            </div>
-          ))}
-
-          {/* Spacer to maintain layout height */}
-          <div className="invisible space-y-6">
-            <p className="text-sm font-medium uppercase tracking-wider">placeholder</p>
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight">
-              {slides[0].title}
-            </h1>
-            <p className="text-lg md:text-xl max-w-2xl mx-auto">
-              {slides[0].description}
-            </p>
+      <div className="container relative z-10 self-end pb-32 md:pb-36">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="relative min-h-[180px] md:min-h-[200px]">
+            {slides.map((slide, index) => (
+              <div
+                key={index}
+                className={cn(
+                  "transition-all duration-700 ease-in-out absolute inset-0 flex flex-col items-center justify-end space-y-3 px-4",
+                  index === current
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-4 pointer-events-none"
+                )}
+              >
+                <p className="text-xs md:text-sm font-medium uppercase tracking-wider text-primary-foreground/90 animate-fade-in">
+                  {slide.subtitle}
+                </p>
+                <h1 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-primary-foreground drop-shadow-lg">
+                  {slide.title}
+                </h1>
+                <p className="text-sm md:text-base max-w-2xl mx-auto text-primary-foreground/90 drop-shadow">
+                  {slide.description}
+                </p>
+              </div>
+            ))}
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-4 relative z-20">
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-6 relative z-20">
             <Button asChild size="lg" className="shadow-lg">
               <Link to="/about">Learn More</Link>
             </Button>

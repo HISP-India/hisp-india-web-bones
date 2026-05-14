@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { PartnersCarousel } from "@/components/PartnersCarousel";
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
+import { LatestStories } from "@/components/LatestStories";
 import {
   Database,
   Users,
@@ -177,6 +178,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Latest Stories */}
+      <LatestStories />
 
       {/* Our Offerings */}
       <section className="py-20 md:py-32 bg-card scroll-snap-start">

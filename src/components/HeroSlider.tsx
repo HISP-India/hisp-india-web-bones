@@ -83,7 +83,7 @@ export function HeroSlider() {
               <img
                 src={slide.image}
                 alt={slide.title}
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-contain md:object-cover bg-black"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
             </>
@@ -96,25 +96,6 @@ export function HeroSlider() {
         </div>
       ))}
 
-      {/* Content */}
-      <div className="container relative z-10 self-end pb-20 md:pb-24">
-        <div className="max-w-xl mr-auto text-left">
-          {/* CTA Buttons */}
-          <div className="flex flex-wrap items-center justify-start gap-4 relative z-20">
-            <Button asChild size="lg" className="shadow-lg">
-              <Link to="/about">Learn More</Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="shadow-lg bg-background/20 border-primary-foreground/30 text-primary-foreground hover:bg-background/30"
-            >
-              <Link to="/contact">Get in Touch</Link>
-            </Button>
-          </div>
-        </div>
-      </div>
 
       {/* Arrow controls */}
       <button

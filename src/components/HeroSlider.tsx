@@ -65,7 +65,7 @@ export function HeroSlider() {
 
   return (
     <section
-      className="relative w-full min-h-screen flex items-center justify-center overflow-hidden scroll-snap-start"
+      className="relative w-full min-h-[calc(100svh-108px)] flex items-center justify-center overflow-hidden scroll-snap-start"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -97,7 +97,7 @@ export function HeroSlider() {
       ))}
 
       {/* Content */}
-      <div className="container relative z-10 self-end pb-32 md:pb-36">
+      <div className="container relative z-10 self-end pb-24 md:pb-28">
         <div className="max-w-4xl mx-auto text-center">
           <div className="relative min-h-[180px] md:min-h-[200px]">
             {slides.map((slide, index) => (

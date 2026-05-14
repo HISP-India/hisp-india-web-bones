@@ -85,7 +85,7 @@ export function HeroSlider() {
                 alt={slide.title}
                 className="absolute inset-0 w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
             </>
           ) : (
             <div className={cn("absolute inset-0", gradients[index % gradients.length])}>
@@ -97,14 +97,14 @@ export function HeroSlider() {
       ))}
 
       {/* Content */}
-      <div className="container relative z-10 self-end pb-24 md:pb-28">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="relative min-h-[180px] md:min-h-[200px]">
+      <div className="container relative z-10 self-end pb-20 md:pb-24">
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="relative min-h-[150px] md:min-h-[170px] rounded-xl bg-black/40 backdrop-blur-sm border border-white/10 shadow-xl px-6 py-5 md:px-8 md:py-6">
             {slides.map((slide, index) => (
               <div
                 key={index}
                 className={cn(
-                  "transition-all duration-700 ease-in-out absolute inset-0 flex flex-col items-center justify-end space-y-3 px-4",
+                  "transition-all duration-700 ease-in-out absolute inset-0 flex flex-col items-center justify-center space-y-3 px-6 md:px-8",
                   index === current
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-4 pointer-events-none"

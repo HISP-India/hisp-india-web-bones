@@ -98,13 +98,13 @@ export function HeroSlider() {
 
       {/* Content */}
       <div className="container relative z-10 self-end pb-20 md:pb-24">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-xl mr-auto text-left">
           <div className="relative min-h-[150px] md:min-h-[170px] rounded-xl bg-black/40 backdrop-blur-sm border border-white/10 shadow-xl px-6 py-5 md:px-8 md:py-6">
             {slides.map((slide, index) => (
               <div
                 key={index}
                 className={cn(
-                  "transition-all duration-700 ease-in-out absolute inset-0 flex flex-col items-center justify-center space-y-3 px-6 md:px-8",
+                  "transition-all duration-700 ease-in-out absolute inset-0 flex flex-col items-start justify-center space-y-3 px-6 md:px-8",
                   index === current
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-4 pointer-events-none"
@@ -113,10 +113,10 @@ export function HeroSlider() {
                 <p className="text-xs md:text-sm font-medium uppercase tracking-wider text-primary-foreground/90 animate-fade-in">
                   {slide.subtitle}
                 </p>
-                <h1 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-primary-foreground drop-shadow-lg">
+                <h1 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-primary-foreground drop-shadow-lg text-left">
                   {slide.title}
                 </h1>
-                <p className="text-sm md:text-base max-w-2xl mx-auto text-primary-foreground/90 drop-shadow">
+                <p className="text-sm md:text-base text-primary-foreground/90 drop-shadow text-left">
                   {slide.description}
                 </p>
               </div>
@@ -124,7 +124,7 @@ export function HeroSlider() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-6 relative z-20">
+          <div className="flex flex-wrap items-center justify-start gap-4 pt-6 relative z-20">
             <Button asChild size="lg" className="shadow-lg">
               <Link to="/about">Learn More</Link>
             </Button>

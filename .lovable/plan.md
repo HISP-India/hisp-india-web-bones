@@ -1,22 +1,11 @@
-# Plan: Make Hero Image Visible Behind Text
+# Plan: Show News Ticker in Initial Viewport
 
-**Problem**: Centered, large title + subtitle + dark 50% overlay cover the hero image on slide 1.
+**Problem**: `HeroSlider` uses `min-h-screen`, pushing the `NewsTicker` below the fold.
 
-## Changes (`src/components/HeroSlider.tsx`)
+## Change
 
-1. **Lighter image overlay**: Replace full `bg-black/50` with a bottom-weighted gradient `bg-gradient-to-t from-black/70 via-black/30 to-transparent` so the top/center of the image stays visible.
+**`src/components/HeroSlider.tsx`** (line 68): change the section height from `min-h-screen` to `min-h-[calc(100svh-44px)]` so the hero reserves space for the ~44px-tall news ticker, allowing it to peek into the initial viewport.
 
-2. **Anchor text to the bottom** instead of centering it:
-   - Change content wrapper from centered flex to bottom-aligned (`justify-end pb-32`).
-   - Remove the invisible spacer block (lines 125–133) — no longer needed once content is bottom-anchored.
+Also nudge the bottom-anchored content padding from `pb-32 md:pb-36` down to `pb-24 md:pb-28` to compensate for the slightly shorter hero so the dots/scroll indicator don't crowd the text.
 
-3. **Smaller, tighter text** so it occupies less vertical space:
-   - Title: `text-3xl md:text-4xl lg:text-5xl` (down from up to `7xl`).
-   - Description: `text-base md:text-lg` (down from `xl`).
-   - Reduce `space-y-6` → `space-y-3`.
-
-4. **Reposition dots/scroll indicator** slightly so they don't collide with the lowered text block (keep current positions; verify spacing).
-
-CTA buttons remain visible below the text.
-
-Result: image fills the viewport, text sits as a readable caption band at the bottom over a soft gradient.
+That's the only change. NewsTicker placement in `Home.tsx` stays the same (right after `<HeroSlider />`).

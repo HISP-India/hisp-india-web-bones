@@ -76,7 +76,7 @@ export function ImpactHero() {
         <div className="absolute -bottom-32 -right-32 w-[32rem] h-[32rem] bg-accent/15 rounded-full blur-3xl" />
       </div>
 
-      <div className="container py-16 md:py-24 lg:py-28">
+      <div className="container py-10 md:py-16 lg:py-20">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           {/* Headline */}
           <div className="lg:col-span-5 space-y-6">

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Hero } from "@/components/Hero";
-import { HeroSlider } from "@/components/HeroSlider";
+import { ImpactHero } from "@/components/ImpactHero";
 import { NewsTicker } from "@/components/NewsTicker";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -95,8 +95,8 @@ export default function Home() {
 
   return (
     <div className="scroll-smooth">
-      {/* Hero Section - Full Viewport Height */}
-      <HeroSlider />
+      {/* Hero Section - Impact Stats Bento */}
+      <ImpactHero />
 
       {/* News Ticker */}
       <NewsTicker />

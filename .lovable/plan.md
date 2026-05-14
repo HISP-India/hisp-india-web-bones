@@ -1,21 +1,35 @@
-# Plan: Optimize Hero Slider Text Placement
+## Animations for the Stats Bento Hero
 
-Give the image more visual real estate and make text pop with a subtle translucent panel behind it.
+Add tasteful, performance-friendly motion to `src/components/ImpactHero.tsx` using existing Tailwind keyframes (`fade-in`, `scale-in`) plus a few new utilities. No new dependencies.
 
-## Changes (`src/components/HeroSlider.tsx`)
+### 1. Entrance animations (on mount)
+- **Headline column**: badge → h1 → paragraph → CTA buttons fade-in-up in sequence with staggered delays (0ms, 120ms, 240ms, 360ms).
+- **Bento stat tiles**: each tile scales/fades in with a stagger (80ms apart) so the grid assembles smoothly.
+- **Background blobs**: slow continuous drift (subtle translate + scale loop, 12–16s) to add ambient life without distraction.
 
-1. **Lighten the full-image overlay** (line 88): Replace the current dark gradient with a much softer one (`from-black/40 via-transparent to-transparent`) so the image is visible across most of the slide.
+### 2. Number count-up
+- Stat values (`29+`, `10K+`, `500M+`, etc.) animate from 0 to target on first view using a lightweight `requestAnimationFrame` counter that respects the suffix (`+`, `K`, `M`).
+- Triggered once via `IntersectionObserver` so it only runs when visible.
 
-2. **Anchor text to the bottom** (line 100): Tighten bottom padding from `pb-24 md:pb-28` to `pb-20 md:pb-24` so text sits closer to the bottom edge, freeing up the upper ~75% for the image.
+### 3. Hover micro-interactions
+- Tiles already lift on hover; add:
+  - icon container rotates ~6° and scales 1.1
+  - a soft radial glow (`bg-primary/10` blur) fades in behind the icon
+  - value text nudges up 2px
+- CTA primary button: arrow icon already translates; add subtle shimmer (gradient sweep) on hover.
 
-3. **Add a translucent "glass" panel behind the text block** (lines 102–124):
-   - Wrap the text content in a panel with `bg-black/40 backdrop-blur-sm rounded-xl px-6 py-5 md:px-8 md:py-6 border border-white/10 shadow-xl`.
-   - Constrain its width (`max-w-3xl mx-auto`) so it reads as a contained highlight card, not a full-width bar.
-   - Reduce the min-height (`min-h-[150px] md:min-h-[170px]`) since the panel itself provides visual weight.
+### 4. Live "pulse" accent
+- The small dot in the "Public Health Informatics" badge keeps its existing pulse.
+- Add a faint pulsing ring around the MapPin icon in the "29+ States" tile to signal "live footprint".
 
-4. **CTA buttons** stay below the panel (unchanged), keeping breathing room between the highlighted text card and the buttons.
+### 5. Accessibility
+- Wrap all motion in a `prefers-reduced-motion` guard: when reduced motion is requested, skip count-up (show final value), skip stagger, keep only opacity transitions.
 
-## Result
+### Technical notes
+- Add 2 keyframes to `tailwind.config.ts`: `fade-in-up` (already similar to `fade-in`) and `float-slow` for blobs.
+- Use inline `style={{ animationDelay: ... }}` for staggers — no JS lib needed.
+- Count-up: small inline hook `useCountUp(target, durationMs)` inside `ImpactHero.tsx`, parsing numeric prefix from `stat.value` and re-appending the suffix.
+- IntersectionObserver attached to the bento grid root, fires once.
+- Files touched: `src/components/ImpactHero.tsx`, `tailwind.config.ts`.
 
-- Image gets ~75% of vertical space, unobstructed by heavy gradients.
-- Text sits in a compact, frosted-glass card at the bottom — high contrast and clearly highlighted without darkening the whole image.
+No layout, copy, or color changes — purely additive motion.

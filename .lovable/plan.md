@@ -1,35 +1,32 @@
-## Animations for the Stats Bento Hero
+## Latest Stories section on homepage (WHO-style)
 
-Add tasteful, performance-friendly motion to `src/components/ImpactHero.tsx` using existing Tailwind keyframes (`fade-in`, `scale-in`) plus a few new utilities. No new dependencies.
+Add a "Latest Stories" section to `src/pages/Home.tsx` that surfaces recent entries from Digital Stories with thumbnails, in the WHO News/Stories style — a horizontal row of large image cards with a coloured theme tag, headline, and subtle hover lift.
 
-### 1. Entrance animations (on mount)
-- **Headline column**: badge → h1 → paragraph → CTA buttons fade-in-up in sequence with staggered delays (0ms, 120ms, 240ms, 360ms).
-- **Bento stat tiles**: each tile scales/fades in with a stagger (80ms apart) so the grid assembles smoothly.
-- **Background blobs**: slow continuous drift (subtle translate + scale loop, 12–16s) to add ambient life without distraction.
+### What it looks like (WHO style)
+- Section header row: small label "Stories" + heading "Latest from HISP India" on the left, "View all stories" link on the right.
+- Grid: 1 / 2 / 3 columns (mobile / tablet / desktop) of large story cards.
+- Each card: full-width thumbnail (4:3), coloured theme pill on top-left of the image, two-line headline below image on white background, subtle hover image-zoom and shadow lift.
+- Clean, editorial, lots of whitespace — no teaser paragraph (matches WHO concise style).
 
-### 2. Number count-up
-- Stat values (`29+`, `10K+`, `500M+`, etc.) animate from 0 to target on first view using a lightweight `requestAnimationFrame` counter that respects the suffix (`+`, `K`, `M`).
-- Triggered once via `IntersectionObserver` so it only runs when visible.
+### Data source
+- Extract the `storiesData` array from `src/pages/DigitalStories.tsx` into a shared module `src/data/stories.ts` so both the Digital Stories page and the homepage section import the same source of truth.
+- Pick the latest 6 stories: flatten all themes, take the first 6 in defined order (which is curated newest-first on that page). Keep theme color + label per story.
+- Each card links to `/research/digital-stories/{id}`.
 
-### 3. Hover micro-interactions
-- Tiles already lift on hover; add:
-  - icon container rotates ~6° and scales 1.1
-  - a soft radial glow (`bg-primary/10` blur) fades in behind the icon
-  - value text nudges up 2px
-- CTA primary button: arrow icon already translates; add subtle shimmer (gradient sweep) on hover.
+### Placement on Home
+Insert between **Our Expertise** and **Our Offerings** so the hero/stats lead, expertise frames credibility, latest stories give freshness, then offerings invite action.
 
-### 4. Live "pulse" accent
-- The small dot in the "Public Health Informatics" badge keeps its existing pulse.
-- Add a faint pulsing ring around the MapPin icon in the "29+ States" tile to signal "live footprint".
+### Files touched
+- `src/data/stories.ts` (new) — exports `storiesData`, `Story`, `ThemeSection`, plus a helper `getLatestStories(n)`.
+- `src/pages/DigitalStories.tsx` — replace local `storiesData` with import from `src/data/stories.ts`. No UI change.
+- `src/components/LatestStories.tsx` (new) — the homepage section component (WHO-style cards).
+- `src/pages/Home.tsx` — import and render `<LatestStories />` between Expertise and Offerings.
 
-### 5. Accessibility
-- Wrap all motion in a `prefers-reduced-motion` guard: when reduced motion is requested, skip count-up (show final value), skip stagger, keep only opacity transitions.
+### Visual details
+- Cards: `rounded-2xl`, `bg-card`, `shadow-sm` → `hover:shadow-xl`, image `transition-transform duration-500 group-hover:scale-105`.
+- Theme pill: existing per-theme color (`bg-teal-500`, `bg-blue-500`, etc.) on top-left of image, white text, small rounded.
+- Headline: `font-heading text-lg font-semibold line-clamp-2 group-hover:text-primary`.
+- Section background: `bg-muted/30` to separate it from neighbouring sections.
+- Reuse `animate-fade-in-up` with stagger for entrance.
 
-### Technical notes
-- Add 2 keyframes to `tailwind.config.ts`: `fade-in-up` (already similar to `fade-in`) and `float-slow` for blobs.
-- Use inline `style={{ animationDelay: ... }}` for staggers — no JS lib needed.
-- Count-up: small inline hook `useCountUp(target, durationMs)` inside `ImpactHero.tsx`, parsing numeric prefix from `stat.value` and re-appending the suffix.
-- IntersectionObserver attached to the bento grid root, fires once.
-- Files touched: `src/components/ImpactHero.tsx`, `tailwind.config.ts`.
-
-No layout, copy, or color changes — purely additive motion.
+No backend, no new dependencies.

@@ -85,7 +85,7 @@ export function HeroSlider() {
                 alt={slide.title}
                 className="absolute inset-0 w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
             </>
           ) : (
             <div className={cn("absolute inset-0", gradients[index % gradients.length])}>

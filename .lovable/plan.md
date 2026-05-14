@@ -1,11 +1,21 @@
-# Plan: Show News Ticker in Initial Viewport
+# Plan: Optimize Hero Slider Text Placement
 
-**Problem**: `HeroSlider` uses `min-h-screen`, pushing the `NewsTicker` below the fold.
+Give the image more visual real estate and make text pop with a subtle translucent panel behind it.
 
-## Change
+## Changes (`src/components/HeroSlider.tsx`)
 
-**`src/components/HeroSlider.tsx`** (line 68): change the section height from `min-h-screen` to `min-h-[calc(100svh-44px)]` so the hero reserves space for the ~44px-tall news ticker, allowing it to peek into the initial viewport.
+1. **Lighten the full-image overlay** (line 88): Replace the current dark gradient with a much softer one (`from-black/40 via-transparent to-transparent`) so the image is visible across most of the slide.
 
-Also nudge the bottom-anchored content padding from `pb-32 md:pb-36` down to `pb-24 md:pb-28` to compensate for the slightly shorter hero so the dots/scroll indicator don't crowd the text.
+2. **Anchor text to the bottom** (line 100): Tighten bottom padding from `pb-24 md:pb-28` to `pb-20 md:pb-24` so text sits closer to the bottom edge, freeing up the upper ~75% for the image.
 
-That's the only change. NewsTicker placement in `Home.tsx` stays the same (right after `<HeroSlider />`).
+3. **Add a translucent "glass" panel behind the text block** (lines 102–124):
+   - Wrap the text content in a panel with `bg-black/40 backdrop-blur-sm rounded-xl px-6 py-5 md:px-8 md:py-6 border border-white/10 shadow-xl`.
+   - Constrain its width (`max-w-3xl mx-auto`) so it reads as a contained highlight card, not a full-width bar.
+   - Reduce the min-height (`min-h-[150px] md:min-h-[170px]`) since the panel itself provides visual weight.
+
+4. **CTA buttons** stay below the panel (unchanged), keeping breathing room between the highlighted text card and the buttons.
+
+## Result
+
+- Image gets ~75% of vertical space, unobstructed by heavy gradients.
+- Text sits in a compact, frosted-glass card at the bottom — high contrast and clearly highlighted without darkening the whole image.

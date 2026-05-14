@@ -83,7 +83,7 @@ export function HeroSlider() {
               <img
                 src={slide.image}
                 alt={slide.title}
-                className="absolute inset-0 w-full h-full object-contain md:object-cover bg-black"
+                className="absolute inset-0 w-full h-full object-contain md:object-cover bg-gradient-to-br from-primary via-primary to-cyan-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
             </>

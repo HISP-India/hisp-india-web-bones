@@ -1,7 +1,10 @@
+import { Hero } from "@/components/Hero";
+
 export default function Terms() {
   return (
-    <div className="container max-w-4xl py-16 md:py-24">
-      <h1 className="font-heading text-4xl font-bold mb-8">Terms & Conditions</h1>
+    <div className="flex flex-col">
+      <Hero title="Terms & Conditions" />
+      <div className="container max-w-4xl py-16 md:py-24">
       
       <div className="prose prose-lg max-w-none space-y-8">
         <section>

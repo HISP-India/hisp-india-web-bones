@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Hero } from "@/components/Hero";
 
 import { CTASection } from "@/components/CTASection";
 import { Button } from "@/components/ui/button";

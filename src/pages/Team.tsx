@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Hero } from "@/components/Hero";
 
 import { CTASection } from "@/components/CTASection";
 import { TeamMemberCard } from "@/components/TeamMemberCard";

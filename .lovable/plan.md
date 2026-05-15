@@ -1,28 +1,64 @@
-## Goal
-Make partner logos significantly more prominent in the "Our Partners" carousel on the homepage so they read clearly instead of feeling like tiny thumbnails.
+# Relevant Icons in Digital Story Stat Cards
 
-## Changes (single file: `src/components/PartnersCarousel.tsx`)
+Replace the single `Globe` icon currently shown above every stat in `StoryDetail.tsx` with a contextually relevant Lucide icon, applied uniformly across all digital stories.
 
-1. **Larger cards**
-   - Card width: `240px` → `300px` (`flex-[0_0_300px]`)
-   - Card height: `h-40` (160px) → `h-48` (192px)
-   - Inner padding: `p-6` → `p-8`
-   - Gap between cards: `gap-8` → `gap-6` (slightly tighter so more logos remain visible per row)
+## Approach
 
-2. **Larger logos**
-   - `max-h-20` (80px) → `max-h-28` (112px)
-   - `max-w-[180px]` → `max-w-[220px]`
-   - Keep `object-contain` so aspect ratios stay intact
+Use a **keyword-based icon resolver** so we don't have to manually annotate every one of the ~40 stats. The label text already describes what the stat is — we map keywords in the label to a Lucide icon. We also add an **optional `icon` override** on the stat type so any future stat can pin a specific icon.
 
-3. **Cleaner caption**
-   - Bump partner name from `text-[10px]` → `text-xs` and `mt-2` → `mt-3` for breathing room
+This keeps the stat data clean and means new stories automatically get sensible icons.
 
-4. **Visual polish**
-   - Slight grayscale-to-color hover: add `grayscale hover:grayscale-0 transition` on the `<img>` so logos feel premium and unify visually at rest (common pattern for partner walls). Optional — included by default; easy to remove if you'd rather show full color always.
+## Files changed
 
-## Memory update
-The existing memory `mem://design/partners-logo-dimensions` (cards 240x160, logos max-h 80, max-w 180) will be updated to the new dimensions after implementation so future changes stay consistent.
+- `src/pages/StoryDetail.tsx` — extend the `stats` type with an optional `icon` field, add a `getStatIcon(label)` resolver, render the resolved icon instead of `Globe`.
+
+## Icon mapping (label keyword → Lucide icon)
+
+| Label contains | Icon |
+|---|---|
+| countries, global, world, population | `Globe` |
+| districts | `MapPin` |
+| public health facilities, hospitals, health centres | `Hospital` |
+| private facilities | `Building2` |
+| people, individuals, supported | `Users` |
+| households | `Home` |
+| students, enrolled | `GraduationCap` |
+| years, leadership | `Award` (leadership) / `Calendar` (years) |
+| modules, platforms, integrated | `Layers` |
+| workers, ANMs | `UserCog` |
+| tablets | `Tablet` |
+| coverage, ART, HIV | `HeartPulse` |
+| prescriptions | `FileText` |
+| antimicrobials, antibiotics, AST, broad-spectrum | `Pill` |
+| challenges | `AlertCircle` |
+| conferences | `Presentation` |
+| phases, project phases | `CheckCircle2` |
+| year of implementation, 2017 etc. | `Calendar` |
+| research, theory, analysis, design | `Microscope` |
+| pilot | `Rocket` |
+| multi-stakeholder, collaboration | `Handshake` |
+| data, registered | `Database` |
+| time spent, % | `Clock` (time) / `Percent` (raw %) |
+| **fallback** | `Globe` |
+
+Resolver runs case-insensitive substring checks in priority order, returns the first match.
+
+## Concrete examples (from current stories)
+
+- `Districts covered` → `MapPin`
+- `Public health facilities` → `Hospital`
+- `Private facilities integrated` → `Building2`
+- `Project phases completed` → `CheckCircle2`
+- `Households registered` → `Home`
+- `Health workers with tablets` → `Tablet`
+- `ART coverage achieved by 2021` → `HeartPulse`
+- `Prescriptions analysed` → `FileText`
+- `Broad-spectrum antibiotics` → `Pill`
+- `Countries using DHIS2` → `Globe`
+- `Years of HISP India leadership` → `Award`
 
 ## Out of scope
-- No changes to the partner list, ordering, autoscroll behavior, or section heading.
-- No changes to other carousels or pages.
+
+- No changes to stat values, labels, layout, sizing, colors, or the surrounding section heading.
+- No icon changes elsewhere on the site (Hero, Project cards, Offerings, etc.).
+- No new dependency — all icons come from `lucide-react`, already used in the project.

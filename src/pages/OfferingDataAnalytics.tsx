@@ -119,7 +119,7 @@ export default function OfferingDataAnalytics() {
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center justify-center mb-10">
-              <div className="inline-block bg-accent text-accent-foreground px-8 py-2.5 rounded-full text-lg font-semibold shadow-md">
+              <div className="inline-block bg-primary text-primary-foreground px-8 py-2.5 rounded-full text-lg font-semibold shadow-md">
                 Introduction
               </div>
             </div>
@@ -140,7 +140,7 @@ export default function OfferingDataAnalytics() {
       <section className="py-16 md:py-20 bg-muted">
         <div className="container">
           <div className="flex items-center justify-center mb-12">
-            <div className="inline-block bg-accent text-accent-foreground px-8 py-2.5 rounded-full text-lg font-semibold shadow-md">
+            <div className="inline-block bg-primary text-primary-foreground px-8 py-2.5 rounded-full text-lg font-semibold shadow-md">
               Key Features
             </div>
           </div>
@@ -170,7 +170,7 @@ export default function OfferingDataAnalytics() {
       <section className="py-16 md:py-20">
         <div className="container">
           <div className="flex items-center justify-center mb-12">
-            <div className="inline-block bg-accent text-accent-foreground px-8 py-2.5 rounded-full text-lg font-semibold shadow-md">
+            <div className="inline-block bg-primary text-primary-foreground px-8 py-2.5 rounded-full text-lg font-semibold shadow-md">
               Impact
             </div>
           </div>
@@ -219,7 +219,7 @@ export default function OfferingDataAnalytics() {
       <section className="py-16 md:py-20 bg-muted">
         <div className="container">
           <div className="flex items-center justify-center mb-10">
-            <div className="inline-block bg-accent text-accent-foreground px-8 py-2.5 rounded-full text-lg font-semibold shadow-md">
+            <div className="inline-block bg-primary text-primary-foreground px-8 py-2.5 rounded-full text-lg font-semibold shadow-md">
               Explore our other Offerings
             </div>
           </div>

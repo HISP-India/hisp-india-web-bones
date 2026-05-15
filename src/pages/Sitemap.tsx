@@ -51,10 +51,7 @@ const sitemapSections = [
 export default function Sitemap() {
   return (
     <div className="flex flex-col">
-      <Hero
-        title="Sitemap"
-        description="Navigate through all pages of the HISP India website."
-      />
+      <Hero title="Sitemap" />
 
       <section className="py-16 md:py-24">
         <div className="container max-w-5xl">

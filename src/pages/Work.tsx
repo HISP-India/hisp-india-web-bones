@@ -745,13 +745,7 @@ export default function Work() {
 
   return (
     <div className="flex flex-col">
-      <Hero 
-        title="Our Work"
-        subtitle="Projects"
-        description="Strengthening health information systems across the globe through innovative digital solutions, capacity building, and collaborative partnerships."
-        variant="gradient"
-        className="bg-gradient-to-br from-primary via-primary/90 to-primary/80 text-primary-foreground"
-      />
+      <Hero title="Our Work" subtitle="Projects" />
 
       {/* Stats Overview Section */}
       <section className="py-12 bg-muted/30 border-b">

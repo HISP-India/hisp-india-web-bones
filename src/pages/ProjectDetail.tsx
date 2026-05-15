@@ -140,7 +140,7 @@ export default function ProjectDetail() {
 
   return (
     <div className="flex flex-col">
-      <Hero title={project.title} description={project.hero} />
+      <Hero title={project.title} />
 
       {/* Back Button */}
       <div className="container py-6">

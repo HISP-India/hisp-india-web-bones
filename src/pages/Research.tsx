@@ -133,13 +133,7 @@ export default function Research() {
 
   return (
     <div className="flex flex-col">
-      <Hero
-        title="Research & Publications"
-        subtitle="Evidence & Innovation"
-        description="Generating evidence to inform health information system design, implementation, and policy."
-        variant="gradient"
-        className="bg-gradient-to-br from-primary via-primary/90 to-primary/80 text-primary-foreground"
-      />
+      <Hero title="Research & Publications" subtitle="Evidence & Innovation" />
 
       {/* Publications */}
       <section className="py-16 md:py-24">

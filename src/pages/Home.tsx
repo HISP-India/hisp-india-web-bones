@@ -170,7 +170,7 @@ export default function Home() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <p className="text-muted-foreground leading-relaxed min-h-[4rem]">
+                    <p className="text-base text-muted-foreground leading-relaxed min-h-[4rem]">
                       {item.description}
                     </p>
                     <Button asChild variant="link" className="text-primary font-semibold p-0 h-auto group/link">

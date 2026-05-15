@@ -7,18 +7,16 @@ export function LatestStories() {
   const stories = getLatestStories(6);
 
   return (
-    <section className="py-20 md:py-28 bg-muted/40">
+    <section className="py-16 md:py-24 bg-muted/40">
       <div className="container">
-        {/* Header row — WHO style */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 border-b border-border pb-6">
-          <div>
-            <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-3">
-              Stories
-            </p>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">
-              Latest from HISP India
-            </h2>
-          </div>
+        {/* Header */}
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-3">
+            Stories
+          </p>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
+            Latest from HISP India
+          </h2>
           <Link
             to="/research/digital-stories"
             className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"

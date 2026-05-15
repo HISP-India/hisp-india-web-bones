@@ -78,13 +78,16 @@ export function PartnersCarousel() {
   );
 
   return (
-    <section className="py-20 md:py-32 bg-accent/5">
+    <section className="py-16 md:py-24 bg-accent/5">
       <div className="container">
-        <div className="text-center mb-12">
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-3">
+            Partners
+          </p>
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
             Our Partners
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground">
             Collaborating with governments, international organizations, and institutions to strengthen health systems
           </p>
         </div>

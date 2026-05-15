@@ -110,7 +110,7 @@ export default function OfferingCIS() {
               <AccordionContent className="px-6">
                 {/* Introduction */}
                 <div className="mb-10">
-                  <h3 className="inline-block bg-secondary text-secondary-foreground px-5 py-1.5 rounded-full text-sm font-semibold mb-4">
+                  <h3 className="inline-block bg-primary text-primary-foreground px-5 py-1.5 rounded-full text-sm font-semibold mb-4">
                     Introduction
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
@@ -135,7 +135,7 @@ export default function OfferingCIS() {
 
                 {/* Impact */}
                 <div className="mb-4">
-                  <h3 className="inline-block bg-accent text-accent-foreground px-5 py-1.5 rounded-full text-sm font-semibold mb-6">
+                  <h3 className="inline-block bg-primary text-primary-foreground px-5 py-1.5 rounded-full text-sm font-semibold mb-6">
                     Impact
                   </h3>
                   <div className="space-y-4">
@@ -165,7 +165,7 @@ export default function OfferingCIS() {
               <AccordionContent className="px-6">
                 {/* Introduction */}
                 <div className="mb-10">
-                  <h3 className="inline-block bg-secondary text-secondary-foreground px-5 py-1.5 rounded-full text-sm font-semibold mb-4">
+                  <h3 className="inline-block bg-primary text-primary-foreground px-5 py-1.5 rounded-full text-sm font-semibold mb-4">
                     Introduction
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
@@ -190,7 +190,7 @@ export default function OfferingCIS() {
 
                 {/* Impact */}
                 <div className="mb-4">
-                  <h3 className="inline-block bg-accent text-accent-foreground px-5 py-1.5 rounded-full text-sm font-semibold mb-6">
+                  <h3 className="inline-block bg-primary text-primary-foreground px-5 py-1.5 rounded-full text-sm font-semibold mb-6">
                     Impact
                   </h3>
                   <div className="space-y-4">

@@ -1,5 +1,33 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, MapPin, Calendar, Users, Globe, Building, Award, User, Heart, Quote, BookOpen, Target, Link2, Scale, Lightbulb, Brain, Lock, GraduationCap } from "lucide-react";
+import { ArrowLeft, MapPin, Calendar, Users, Globe, Building, Building2, Award, User, Heart, HeartPulse, Quote, BookOpen, Target, Link2, Scale, Lightbulb, Brain, Lock, GraduationCap, Hospital, Home, Tablet, Layers, UserCog, FileText, Pill, AlertCircle, Presentation, CheckCircle2, Microscope, Rocket, Handshake, Database, Clock, Percent, type LucideIcon } from "lucide-react";
+
+const getStatIcon = (label: string): LucideIcon => {
+  const l = label.toLowerCase();
+  if (/district/.test(l)) return MapPin;
+  if (/public health|hospital|health centre|health center|facilities using|facilities$/.test(l) && !/private/.test(l)) return Hospital;
+  if (/private/.test(l)) return Building2;
+  if (/household/.test(l)) return Home;
+  if (/student|enrolled/.test(l)) return GraduationCap;
+  if (/tablet/.test(l)) return Tablet;
+  if (/anm|worker/.test(l)) return UserCog;
+  if (/coverage|art |hiv/.test(l)) return HeartPulse;
+  if (/prescription/.test(l)) return FileText;
+  if (/antimicrobial|antibiotic|ast|broad-spectrum/.test(l)) return Pill;
+  if (/challenge/.test(l)) return AlertCircle;
+  if (/conference/.test(l)) return Presentation;
+  if (/phase/.test(l)) return CheckCircle2;
+  if (/pilot/.test(l)) return Rocket;
+  if (/stakeholder|collaboration/.test(l)) return Handshake;
+  if (/research|theory|analysis|design/.test(l)) return Microscope;
+  if (/module|platform|integrated/.test(l)) return Layers;
+  if (/registered|data/.test(l)) return Database;
+  if (/leadership/.test(l)) return Award;
+  if (/year|implementation/.test(l)) return Calendar;
+  if (/time|spend/.test(l)) return Clock;
+  if (/people|individual|supported/.test(l)) return Users;
+  if (/countries|global|world|population/.test(l)) return Globe;
+  return Globe;
+};
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -40,6 +68,7 @@ interface StoryData {
   stats?: {
     value: string;
     label: string;
+    icon?: LucideIcon;
   }[];
   legacyItems?: string[];
   closingNote: string;
@@ -1346,21 +1375,24 @@ export default function StoryDetail() {
             </div>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
-              {story.stats.map((stat, index) => (
-                <Card key={index} className="bg-white/10 border-white/20 backdrop-blur">
-                  <CardContent className="p-4 md:p-6 text-center">
-                    <div className="flex justify-center mb-2 md:mb-3">
-                      <Globe className="h-6 w-6 md:h-8 md:w-8 text-primary-foreground/70" />
-                    </div>
-                    <p className="font-bold text-primary-foreground mb-1 break-words text-3xl md:text-4xl">
-                      {stat.value}
-                    </p>
-                    <p className="text-primary-foreground/80 text-xs md:text-sm">
-                      {stat.label}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
+              {story.stats.map((stat, index) => {
+                const Icon = stat.icon ?? getStatIcon(stat.label);
+                return (
+                  <Card key={index} className="bg-white/10 border-white/20 backdrop-blur">
+                    <CardContent className="p-4 md:p-6 text-center">
+                      <div className="flex justify-center mb-2 md:mb-3">
+                        <Icon className="h-6 w-6 md:h-8 md:w-8 text-primary-foreground/70" />
+                      </div>
+                      <p className="font-bold text-primary-foreground mb-1 break-words text-3xl md:text-4xl">
+                        {stat.value}
+                      </p>
+                      <p className="text-primary-foreground/80 text-xs md:text-sm">
+                        {stat.label}
+                      </p>
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
           </div>
         </section>

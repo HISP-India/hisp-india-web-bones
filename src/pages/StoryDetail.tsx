@@ -1346,29 +1346,21 @@ export default function StoryDetail() {
             </div>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
-              {story.stats.map((stat, index) => {
-                // Check if value is numeric/short or text-based to adjust styling
-                const isTextValue = stat.value.length > 6 || isNaN(Number(stat.value.replace(/[+%,]/g, '')));
-                return (
-                  <Card key={index} className="bg-white/10 border-white/20 backdrop-blur">
-                    <CardContent className="p-4 md:p-6 text-center">
-                      <div className="flex justify-center mb-2 md:mb-3">
-                        <Globe className="h-6 w-6 md:h-8 md:w-8 text-primary-foreground/70" />
-                      </div>
-                      <p className={`font-bold text-primary-foreground mb-1 break-words ${
-                        isTextValue 
-                          ? 'text-lg md:text-xl' 
-                          : 'text-3xl md:text-4xl'
-                      }`}>
-                        {stat.value}
-                      </p>
-                      <p className="text-primary-foreground/80 text-xs md:text-sm">
-                        {stat.label}
-                      </p>
-                    </CardContent>
-                  </Card>
-                );
-              })}
+              {story.stats.map((stat, index) => (
+                <Card key={index} className="bg-white/10 border-white/20 backdrop-blur">
+                  <CardContent className="p-4 md:p-6 text-center">
+                    <div className="flex justify-center mb-2 md:mb-3">
+                      <Globe className="h-6 w-6 md:h-8 md:w-8 text-primary-foreground/70" />
+                    </div>
+                    <p className="font-bold text-primary-foreground mb-1 break-words text-3xl md:text-4xl">
+                      {stat.value}
+                    </p>
+                    <p className="text-primary-foreground/80 text-xs md:text-sm">
+                      {stat.label}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </section>

@@ -1,62 +1,76 @@
-## Footer redesign + stats refresh
+# Homepage rhythm pass: uniform section titles + tighter spacing
 
-### 1. Update "Our Impact" stats to match HISP India content
+## Audit of current section titles
 
-Replace the 4 generic footer stats with the verified numbers used in the hero bento:
+| Section | Current title style | Kicker | Vertical padding |
+|---|---|---|---|
+| About Us in Brief | `text-3xl md:text-4xl` | `<Badge>` | `py-20 md:py-32` |
+| Our Expertise | `text-3xl md:text-5xl` ALL CAPS + full-width primary bar | none | `py-20 md:py-32`, `mb-16` after bar |
+| Latest Stories | `text-3xl md:text-4xl` | small "Stories" kicker, border-bottom row, "View all" link on right | `py-20 md:py-28` |
+| Our Offerings | `text-3xl md:text-4xl` | `<Badge>` | `py-20 md:py-32`, `mb-16` |
+| Partners | `text-3xl md:text-4xl` | none | `py-20 md:py-32` |
+| Testimonials | `text-3xl md:text-4xl` | none | `py-20 md:py-32` |
 
-```text
-20+  Years of Impact          →  18+  Years of Experience
-15+  Countries Supported      →  15+  Countries Served
-1B+  People Reached           →  30+  DHIS2 & OpenMRS Deployments
-100+ Projects Delivered       →  38+  Partner Organizations
+Inconsistencies: Expertise uses a 5xl shouty all-caps title with a unique full-width bar; Latest Stories uses a left-aligned WHO header while everything else is centered with a Badge or nothing; vertical padding swings between `md:py-28` and `md:py-32`; bottom margins of headers vary (`mb-12`/`mb-16`).
+
+## Standard title pattern
+
+Every section header on the homepage will use this exact structure:
+
+```tsx
+<div className="text-center max-w-2xl mx-auto mb-12">
+  <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-3">
+    {kicker}
+  </p>
+  <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
+    {title}
+  </h2>
+  {subtitle && (
+    <p className="text-muted-foreground">{subtitle}</p>
+  )}
+</div>
 ```
 
-Numbers will animate (count-up on scroll into view) using the same `CountUp` pattern already in `ImpactHero.tsx` for visual continuity.
+- `font-heading text-3xl md:text-4xl font-bold` — single size for every section h2.
+- Small uppercase kicker in `text-primary` replaces the inconsistent Badge / no-kicker / huge-bar variants.
+- `mb-12` for header→content spacing across the board.
+- The About Us section keeps its 2-column layout but its inline header adopts the same `kicker + h2 size`.
 
-### 2. New footer concept — "Aurora Dock"
+## Section spacing
 
-A single, slick footer that feels like a product dock rather than a 4-column wall of links.
+Standardize every section to `py-16 md:py-24` (down from `md:py-32`). This removes the extra whitespace the user flagged while keeping clear separation. Background alternation stays as-is so sections remain visually distinct: `bg-background` → `bg-muted` → `bg-muted/40` → `bg-card` → `bg-accent/5` → `bg-muted`.
 
-```text
-┌────────────────────────────────────────────────────────────────┐
-│  ░░ ambient cyan→deep-teal aurora gradient + grain ░░          │
-│                                                                │
-│   Big italic mission line, fades word-by-word on scroll-in:    │
-│   "Open source. Open data. Open futures for public health."    │
-│                                                                │
-│   ┌─ Stay in the loop ────────────────┐  ┌─ Talk to us ─────┐ │
-│   │  email input  ▸  Subscribe        │  │ contact@ ⌁ phone │ │
-│   └───────────────────────────────────┘  └──────────────────┘ │
-│                                                                │
-│   Impact strip — 4 animated counters in a single row           │
-│   18+ Years · 15+ Countries · 30+ Deployments · 38+ Partners   │
-│                                                                │
-│   ── thin divider ──                                           │
-│                                                                │
-│   Compact link rail (one row, pill separators):                │
-│   About · Work · Offerings · Research · Stories · Team · Careers│
-│                                                                │
-│   © 2026 HISP India   •   Terms · Privacy · Sitemap            │
-│   [globe pill] Part of Global HISP Network    [LI] [X] [FB]    │
-└────────────────────────────────────────────────────────────────┘
-```
+## Per-section changes
 
-Unique touches:
-- **Aurora gradient** — animated cyan → deep-teal blob that drifts slowly behind the content (CSS keyframes, GPU-only).
-- **Grain overlay** — very faint SVG noise so the gradient never looks flat.
-- **Word-by-word reveal** of the mission line as the footer enters the viewport.
-- **Impact strip** with the same `CountUp` animation as the hero (numbers tick up when footer scrolls into view).
-- **Magnetic social pills** — small hover-tilt on the LinkedIn/X/Facebook icons (transform only, no JS lib needed).
-- **Email input with inline arrow submit** — collapses the form to a single rounded pill.
-- **Compact horizontal link rail** instead of a separate "Quick Links" column, giving the footer more breathing room.
-- **Scroll-to-top** stays as the floating cyan button (kept).
+### `src/pages/Home.tsx`
 
-### Files touched
+- **About Us in Brief** — replace `<Badge>About HISP India</Badge>` with kicker `<p>` in the same style; section padding `py-16 md:py-24`.
+- **Our Expertise** — drop the `text-5xl` all-caps title and the full-width primary bar. Replace with the standard centered header (kicker `Our Expertise`, title `What We Do Best`, subtitle one line). Padding `py-16 md:py-24`. Cards grid spacing unchanged.
+- **Our Offerings** — replace Badge with kicker, keep h2 size (already correct), `mb-16` → `mb-12`, padding `py-16 md:py-24`. Trim `mt-12` on the "View All Offerings" button row to `mt-10`.
 
-- `src/components/Footer.tsx` — full rewrite of the footer body; keep export name and scroll-to-top behaviour.
-- No new dependencies. Animations use existing Tailwind keyframes + a small inline `@keyframes aurora` block (or extend `tailwind.config.ts` with `aurora-drift`).
+### `src/components/LatestStories.tsx`
 
-### Out of scope
+Keep the editorial WHO feel but bring it in line: same kicker + h2 sizes (already match), drop the `border-b` divider row and stack the "View all stories" link below the header (centered) so all sections share the centered header pattern. Reduce `py-20 md:py-28` to `py-16 md:py-24`. Reduce `mb-12` on header to remain `mb-12` (already fine).
 
-- Newsletter backend wiring (form stays presentational).
-- Header/global layout — memory notes say the site intentionally has no global header/footer; this redesign only changes the `Footer` component itself for pages that already render it.
+### `src/components/PartnersCarousel.tsx`
+
+Add the standard kicker (`Partners`) above the existing h2. Padding `py-16 md:py-24`.
+
+### `src/components/TestimonialCarousel.tsx`
+
+Add the standard kicker (`Testimonials`) above the existing h2. Padding `py-16 md:py-24`.
+
+### `src/components/NewsTicker.tsx`
+
+Untouched — it's a thin band, not a content section.
+
+### `ImpactHero`
+
+Untouched — it's the page opener, not a numbered section.
+
+## Result
+
+- Six homepage sections share the same centered kicker + `text-3xl md:text-4xl` title pattern.
+- Vertical rhythm is uniform `py-16 md:py-24` everywhere.
+- Section backgrounds still alternate so each block reads as clearly separated.
+- No content removed; only typography, kickers, and spacing normalized.

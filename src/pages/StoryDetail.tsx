@@ -68,6 +68,7 @@ interface StoryData {
   stats?: {
     value: string;
     label: string;
+    icon?: LucideIcon;
   }[];
   legacyItems?: string[];
   closingNote: string;

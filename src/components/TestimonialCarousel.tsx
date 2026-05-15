@@ -58,13 +58,16 @@ export function TestimonialCarousel() {
   const scrollNext = () => emblaApi?.scrollNext();
 
   return (
-    <section className="py-20 md:py-32 bg-muted">
+    <section className="py-16 md:py-24 bg-muted">
       <div className="container">
-        <div className="text-center mb-12">
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-3">
+            Testimonials
+          </p>
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
             Voices of Impact
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground">
             Hear from our partners about the difference we've made together
           </p>
         </div>

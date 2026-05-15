@@ -97,7 +97,7 @@ export default function OfferingCapacityBuilding() {
 
             {/* Introduction Text */}
             <div>
-              <div className="inline-block bg-accent text-accent-foreground px-8 py-2.5 rounded-full text-lg font-semibold shadow-md mb-6">
+              <div className="inline-block bg-primary text-primary-foreground px-8 py-2.5 rounded-full text-lg font-semibold shadow-md mb-6">
                 Introduction
               </div>
               <div className="space-y-4 text-muted-foreground text-sm leading-relaxed">
@@ -136,7 +136,7 @@ export default function OfferingCapacityBuilding() {
       <section className="py-16 md:py-20 bg-muted">
         <div className="container">
           <div className="flex items-center justify-center mb-12">
-            <div className="inline-block bg-accent text-accent-foreground px-8 py-2.5 rounded-full text-lg font-semibold shadow-md">
+            <div className="inline-block bg-primary text-primary-foreground px-8 py-2.5 rounded-full text-lg font-semibold shadow-md">
               Our Work
             </div>
           </div>
@@ -219,7 +219,7 @@ export default function OfferingCapacityBuilding() {
       <section className="py-16 md:py-20">
         <div className="container">
           <div className="flex items-center justify-center mb-12">
-            <div className="inline-block bg-accent text-accent-foreground px-8 py-2.5 rounded-full text-lg font-semibold shadow-md">
+            <div className="inline-block bg-primary text-primary-foreground px-8 py-2.5 rounded-full text-lg font-semibold shadow-md">
               Our Partners
             </div>
           </div>
@@ -240,7 +240,7 @@ export default function OfferingCapacityBuilding() {
       <section className="py-16 md:py-20 bg-muted">
         <div className="container">
           <div className="flex items-center justify-center mb-12">
-            <div className="inline-block bg-accent text-accent-foreground px-8 py-2.5 rounded-full text-lg font-semibold shadow-md">
+            <div className="inline-block bg-primary text-primary-foreground px-8 py-2.5 rounded-full text-lg font-semibold shadow-md">
               Gallery
             </div>
           </div>
@@ -261,7 +261,7 @@ export default function OfferingCapacityBuilding() {
       <section className="py-16 md:py-20">
         <div className="container">
           <div className="flex items-center justify-center mb-10">
-            <div className="inline-block bg-accent text-accent-foreground px-8 py-2.5 rounded-full text-lg font-semibold shadow-md">
+            <div className="inline-block bg-primary text-primary-foreground px-8 py-2.5 rounded-full text-lg font-semibold shadow-md">
               Explore our other Offerings
             </div>
           </div>

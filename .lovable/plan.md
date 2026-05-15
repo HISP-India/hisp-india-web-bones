@@ -1,64 +1,40 @@
-# Relevant Icons in Digital Story Stat Cards
+## Problem
 
-Replace the single `Globe` icon currently shown above every stat in `StoryDetail.tsx` with a contextually relevant Lucide icon, applied uniformly across all digital stories.
+The offering pages use inconsistent colors for the rounded "pill" section headings (e.g. "Our Approach", "Key Components", "Case Study"). Across the 7 offering pages they currently mix three tokens:
 
-## Approach
+- `bg-primary` (cyan / sky blue, 195°) — used in OfferingOpenMRS, OfferingRHIS, OfferingCIS
+- `bg-accent` (teal, 183°) — used in OfferingResearch, OfferingDataAnalytics, OfferingCapacityBuilding, OfferingClimateHealth, and mixed into the others
+- `bg-secondary` (deeper blue, 199°) — used in OfferingCIS
 
-Use a **keyword-based icon resolver** so we don't have to manually annotate every one of the ~40 stats. The label text already describes what the stat is — we map keywords in the label to a Lucide icon. We also add an **optional `icon` override** on the stat type so any future stat can pin a specific icon.
+Because the same visual element (a section heading pill) shifts color from page to page — and even within a single page — the offerings feel disjointed.
 
-This keeps the stat data clean and means new stories automatically get sensible icons.
+## Decision
 
-## Files changed
+Unify every section-heading pill on all offering pages to **`bg-primary text-primary-foreground`** (brand cyan). Cyan is already the project's primary accent for interactive UI (per project memory), so using it consistently for these section labels reinforces the brand and removes the teal/sky inconsistency.
 
-- `src/pages/StoryDetail.tsx` — extend the `stats` type with an optional `icon` field, add a `getStatIcon(label)` resolver, render the resolved icon instead of `Globe`.
+Step-number circles, icon badges, stat backgrounds, and CTAs are **out of scope** — only the inline section-heading pills change.
 
-## Icon mapping (label keyword → Lucide icon)
+## Files to update
 
-| Label contains | Icon |
-|---|---|
-| countries, global, world, population | `Globe` |
-| districts | `MapPin` |
-| public health facilities, hospitals, health centres | `Hospital` |
-| private facilities | `Building2` |
-| people, individuals, supported | `Users` |
-| households | `Home` |
-| students, enrolled | `GraduationCap` |
-| years, leadership | `Award` (leadership) / `Calendar` (years) |
-| modules, platforms, integrated | `Layers` |
-| workers, ANMs | `UserCog` |
-| tablets | `Tablet` |
-| coverage, ART, HIV | `HeartPulse` |
-| prescriptions | `FileText` |
-| antimicrobials, antibiotics, AST, broad-spectrum | `Pill` |
-| challenges | `AlertCircle` |
-| conferences | `Presentation` |
-| phases, project phases | `CheckCircle2` |
-| year of implementation, 2017 etc. | `Calendar` |
-| research, theory, analysis, design | `Microscope` |
-| pilot | `Rocket` |
-| multi-stakeholder, collaboration | `Handshake` |
-| data, registered | `Database` |
-| time spent, % | `Clock` (time) / `Percent` (raw %) |
-| **fallback** | `Globe` |
+Only the eyebrow / section-title pills matching the pattern:
+`inline-block bg-{primary|accent|secondary} text-{...}-foreground px-8 py-2.5 rounded-full text-lg font-semibold shadow-md`
+(and the smaller `px-5 py-1.5 ... text-sm` variant in OfferingCIS).
 
-Resolver runs case-insensitive substring checks in priority order, returns the first match.
-
-## Concrete examples (from current stories)
-
-- `Districts covered` → `MapPin`
-- `Public health facilities` → `Hospital`
-- `Private facilities integrated` → `Building2`
-- `Project phases completed` → `CheckCircle2`
-- `Households registered` → `Home`
-- `Health workers with tablets` → `Tablet`
-- `ART coverage achieved by 2021` → `HeartPulse`
-- `Prescriptions analysed` → `FileText`
-- `Broad-spectrum antibiotics` → `Pill`
-- `Countries using DHIS2` → `Globe`
-- `Years of HISP India leadership` → `Award`
+- `src/pages/OfferingResearch.tsx` — pills at lines 122, 143, 173, 222 → `bg-primary`
+- `src/pages/OfferingDataAnalytics.tsx` — pills at lines 122, 143, 173, 222 → `bg-primary`
+- `src/pages/OfferingCapacityBuilding.tsx` — pills at lines 100, 139, 222, 243, 264 → `bg-primary`
+- `src/pages/OfferingClimateHealth.tsx` — any `bg-accent` section pills → `bg-primary`
+- `src/pages/OfferingOpenMRS.tsx` — pills at lines 320, 375, 420 (currently `bg-accent`) → `bg-primary`
+- `src/pages/OfferingRHIS.tsx` — pills at lines 204, 248 (currently `bg-accent`) → `bg-primary`
+- `src/pages/OfferingCIS.tsx` — pills at lines 113, 138, 168, 193 (currently `bg-secondary` / `bg-accent`) → `bg-primary`
 
 ## Out of scope
 
-- No changes to stat values, labels, layout, sizing, colors, or the surrounding section heading.
-- No icon changes elsewhere on the site (Hero, Project cards, Offerings, etc.).
-- No new dependency — all icons come from `lucide-react`, already used in the project.
+- Step-number circles (`w-10 h-10 rounded-full`) — keep current colors; they intentionally distinguish ordered phases.
+- Icon tiles, stat cards, CTAs, badges on the OpenMRS phase grid.
+- The `from-sky/cyan` tokens in `OfferingOpenMRS` line 186/191 phase pills (those encode phase categories).
+- No changes to `index.css` tokens.
+
+## Verification
+
+After the edit, screenshot each `/offerings/*` route and confirm every section-heading pill renders in the same cyan.

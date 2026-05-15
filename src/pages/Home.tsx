@@ -115,10 +115,10 @@ export default function Home() {
                   Leading Public Health Informatics Partner
                 </h2>
               </div>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-base text-muted-foreground leading-relaxed">
                 Over the last two decades, HISP India has sought to firmly establish itself as a leading public health informatics partner. It uniquely blends rigorous research and education, advanced digital solutions based on free and open-source software platforms, and targeted capacity-building initiatives to tackle public health challenges in India and globally, focusing on South Asia.
               </p>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-base text-muted-foreground leading-relaxed">
                 As a non-profit organization, HISP India has successfully developed engagement models while operating in a market increasingly dominated by large IT companies. The distinctive model, which integrates health system strengthening, research, and education, has enabled HISP India to establish a unique position.
               </p>
               <Button asChild variant="default" className="group">
@@ -170,7 +170,7 @@ export default function Home() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <p className="text-muted-foreground leading-relaxed min-h-[4rem]">
+                    <p className="text-base text-muted-foreground leading-relaxed min-h-[4rem]">
                       {item.description}
                     </p>
                     <Button asChild variant="link" className="text-primary font-semibold p-0 h-auto group/link">
@@ -221,9 +221,9 @@ export default function Home() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="mb-4 leading-relaxed">
+                    <p className="text-base text-muted-foreground leading-relaxed mb-4">
                       {offering.description}
-                    </CardDescription>
+                    </p>
                     <Button asChild variant="ghost" size="sm" className="group/btn">
                       <Link to={offering.link}>
                         Learn More <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />

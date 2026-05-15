@@ -221,9 +221,9 @@ export default function Home() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="mb-4 leading-relaxed">
+                    <p className="text-base text-muted-foreground leading-relaxed mb-4">
                       {offering.description}
-                    </CardDescription>
+                    </p>
                     <Button asChild variant="ghost" size="sm" className="group/btn">
                       <Link to={offering.link}>
                         Learn More <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />

@@ -164,6 +164,7 @@ export default function Gallery() {
 
   return (
     <div className="min-h-screen">
+      <Hero title="Gallery" subtitle="Moments & Milestones" />
 
       {/* Floating Decorative Elements */}
       <section className="relative py-20 overflow-hidden">

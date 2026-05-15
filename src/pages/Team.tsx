@@ -353,6 +353,7 @@ const departments = [
 export default function Team() {
   return (
     <div className="flex flex-col">
+      <Hero title="Our Team" subtitle="People" />
       {/* Intro Section */}
       <section className="py-16 bg-muted">
         <div className="container">

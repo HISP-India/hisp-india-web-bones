@@ -17,6 +17,9 @@ export function LatestStories() {
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
             Latest from HISP India
           </h2>
+          <p className="text-base text-muted-foreground leading-relaxed max-w-xl mx-auto mb-4">
+            Field updates, research highlights, and stories from our work across India and beyond.
+          </p>
           <Link
             to="/research/digital-stories"
             className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"

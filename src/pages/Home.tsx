@@ -147,7 +147,7 @@ export default function Home() {
             <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
               What We Do Best
             </h2>
-            <p className="text-muted-foreground">
+            <p className="text-base text-muted-foreground leading-relaxed max-w-xl mx-auto">
               Four pillars driving health informatics impact across India and beyond.
             </p>
           </div>
@@ -199,8 +199,8 @@ export default function Home() {
             <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
               Comprehensive Health Informatics Solutions
             </h2>
-            <p className="text-muted-foreground">
-              From grassroots community systems to national-level implementations
+            <p className="text-base text-muted-foreground leading-relaxed max-w-xl mx-auto">
+              From grassroots community systems to national-level implementations.
             </p>
           </div>
 

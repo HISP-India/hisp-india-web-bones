@@ -67,8 +67,8 @@ export function TestimonialCarousel() {
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
             Voices of Impact
           </h2>
-          <p className="text-muted-foreground">
-            Hear from our partners about the difference we've made together
+          <p className="text-base text-muted-foreground leading-relaxed max-w-xl mx-auto">
+            Hear from our partners about the difference we've made together.
           </p>
         </div>
 

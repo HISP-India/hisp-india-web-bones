@@ -90,6 +90,7 @@ export default function Terms() {
           Last updated: March 17, 2026
         </p>
       </div>
+      </div>
     </div>
   );
 }

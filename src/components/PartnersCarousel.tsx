@@ -93,19 +93,19 @@ export function PartnersCarousel() {
         </div>
 
         <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex gap-8">
+          <div className="flex gap-6">
             {[...partners, ...partners].map((partner, index) => (
               <div
                 key={index}
-                className="flex-[0_0_240px] min-w-0"
+                className="flex-[0_0_300px] min-w-0"
               >
-                <div className="bg-card rounded-lg p-6 h-40 flex flex-col items-center justify-center border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg">
+                <div className="bg-card rounded-lg p-8 h-48 flex flex-col items-center justify-center border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg">
                   <img 
                     src={partner.imageUrl} 
                     alt={partner.name}
-                    className="max-h-20 max-w-[180px] object-contain"
+                    className="max-h-28 max-w-[220px] object-contain grayscale hover:grayscale-0 transition duration-300"
                   />
-                  <div className="text-[10px] text-muted-foreground mt-2 text-center line-clamp-2 leading-tight">
+                  <div className="text-xs text-muted-foreground mt-3 text-center line-clamp-2 leading-tight">
                     {partner.name}
                   </div>
                 </div>

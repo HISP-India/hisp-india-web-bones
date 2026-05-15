@@ -9,13 +9,7 @@ export default function Careers() {
 
   return (
     <div className="flex flex-col">
-      <Hero
-        title="Join Our Team"
-        subtitle="Careers at HISP India"
-        description="Be part of a mission-driven team building health information systems for public good."
-        variant="gradient"
-        className="bg-gradient-to-br from-primary via-primary/90 to-primary/80 text-primary-foreground"
-      />
+      <Hero title="Join Our Team" subtitle="Careers at HISP India" />
 
       {/* Why Join Us */}
       <section className="py-16 md:py-24 bg-muted">

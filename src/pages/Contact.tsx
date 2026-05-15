@@ -104,13 +104,7 @@ export default function Contact() {
 
   return (
     <div className="flex flex-col">
-      <Hero
-        title="Contact Us"
-        subtitle="Get in Touch"
-        description="We'd love to hear from you. Reach out to discuss partnerships, projects, or learn more about our work."
-        variant="gradient"
-        className="bg-gradient-to-br from-primary via-primary/90 to-primary/80 text-primary-foreground"
-      />
+      <Hero title="Contact Us" subtitle="Get in Touch" />
 
       {/* Office Locations Section */}
       <section className="py-16 md:py-24 bg-muted">

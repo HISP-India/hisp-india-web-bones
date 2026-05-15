@@ -65,13 +65,7 @@ const offerings = [
 export default function Offerings() {
   return (
     <div className="flex flex-col">
-      <Hero
-        title="Our Offerings"
-        subtitle="What We Do"
-        description="Comprehensive solutions for health information systems across diverse contexts and needs."
-        variant="gradient"
-        className="bg-gradient-to-br from-primary via-primary/90 to-primary/80 text-primary-foreground"
-      />
+      <Hero title="Our Offerings" subtitle="What We Do" />
 
       <section className="py-16 md:py-24">
         <div className="container">

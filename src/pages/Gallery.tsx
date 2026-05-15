@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Hero } from "@/components/Hero";
 
 import { CTASection } from "@/components/CTASection";
 import { Button } from "@/components/ui/button";
@@ -164,6 +165,7 @@ export default function Gallery() {
 
   return (
     <div className="min-h-screen">
+      <Hero title="Gallery" subtitle="Moments & Milestones" />
 
       {/* Floating Decorative Elements */}
       <section className="relative py-20 overflow-hidden">

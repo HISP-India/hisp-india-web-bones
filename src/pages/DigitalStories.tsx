@@ -67,6 +67,7 @@ export default function DigitalStories() {
 
   return (
     <main>
+      <Hero title="Digital Stories" subtitle="Research" />
       {/* Combined Intro & Stats Section */}
       <section className="py-16 bg-muted">
         <div className="container">

@@ -1,32 +1,57 @@
-## Latest Stories section on homepage (WHO-style)
+# Uniform page top bar
 
-Add a "Latest Stories" section to `src/pages/Home.tsx` that surfaces recent entries from Digital Stories with thumbnails, in the WHO News/Stories style — a horizontal row of large image cards with a coloured theme tag, headline, and subtle hover lift.
+Make every page (except the Home page, which keeps its custom Impact bento hero) start with the same compact cyan top bar, matching the About page screenshot. The bar shows a **title** and an **optional subtitle**. Description text is removed from the bar (moved into the page body where it adds value).
 
-### What it looks like (WHO style)
-- Section header row: small label "Stories" + heading "Latest from HISP India" on the left, "View all stories" link on the right.
-- Grid: 1 / 2 / 3 columns (mobile / tablet / desktop) of large story cards.
-- Each card: full-width thumbnail (4:3), coloured theme pill on top-left of the image, two-line headline below image on white background, subtle hover image-zoom and shadow lift.
-- Clean, editorial, lots of whitespace — no teaser paragraph (matches WHO concise style).
+## Reference look (from About screenshot)
 
-### Data source
-- Extract the `storiesData` array from `src/pages/DigitalStories.tsx` into a shared module `src/data/stories.ts` so both the Digital Stories page and the homepage section import the same source of truth.
-- Pick the latest 6 stories: flatten all themes, take the first 6 in defined order (which is curated newest-first on that page). Keep theme color + label per story.
-- Each card links to `/research/digital-stories/{id}`.
+- Full-width cyan band (current `from-primary via-primary/90 to-primary/80` gradient)
+- Centered large title in white
+- Optional small subtitle line above the title (uppercase, tracked) — empty if the page has no subtitle
+- Fixed vertical rhythm — same height on every page regardless of content length
 
-### Placement on Home
-Insert between **Our Expertise** and **Our Offerings** so the hero/stats lead, expertise frames credibility, latest stories give freshness, then offerings invite action.
+## Changes
 
-### Files touched
-- `src/data/stories.ts` (new) — exports `storiesData`, `Story`, `ThemeSection`, plus a helper `getLatestStories(n)`.
-- `src/pages/DigitalStories.tsx` — replace local `storiesData` with import from `src/data/stories.ts`. No UI change.
-- `src/components/LatestStories.tsx` (new) — the homepage section component (WHO-style cards).
-- `src/pages/Home.tsx` — import and render `<LatestStories />` between Expertise and Offerings.
+### 1. `src/components/Hero.tsx`
 
-### Visual details
-- Cards: `rounded-2xl`, `bg-card`, `shadow-sm` → `hover:shadow-xl`, image `transition-transform duration-500 group-hover:scale-105`.
-- Theme pill: existing per-theme color (`bg-teal-500`, `bg-blue-500`, etc.) on top-left of image, white text, small rounded.
-- Headline: `font-heading text-lg font-semibold line-clamp-2 group-hover:text-primary`.
-- Section background: `bg-muted/30` to separate it from neighbouring sections.
-- Reuse `animate-fade-in-up` with stagger for entrance.
+- Lock the non-fullscreen variants to a single height: replace `py-12 md:py-16` with a fixed `min-h-[220px] md:min-h-[260px]` plus `py-12` so a title-only and a title+subtitle bar render at the same height.
+- Stop rendering the `description` paragraph in the top bar. Keep the prop for backward compatibility but ignore it (or drop it — see Technical Notes).
+- Remove the bottom CTA `children` slot from the top bar so action buttons don't inflate height (CTAs that exist today are already inside page bodies).
+- Keep the `fullscreen` variant untouched (only the homepage's old fullscreen hero used it; nothing currently does).
 
-No backend, no new dependencies.
+### 2. Pages that already use `<Hero>` — drop the `description` prop
+
+Trim every call site to `title` + optional `subtitle` + the standard cyan className. Affected files:
+
+- `src/pages/About.tsx` — already title-only, leave as is
+- `src/pages/Work.tsx`
+- `src/pages/Contact.tsx`
+- `src/pages/Research.tsx`
+- `src/pages/Careers.tsx`
+- `src/pages/Offerings.tsx`
+- `src/pages/Sitemap.tsx` (also add the cyan className it currently lacks)
+- `src/pages/ProjectDetail.tsx` (currently passes `description={project.hero}` — drop)
+- `src/pages/JobDetail.tsx`
+- `src/pages/OfferingDetail.tsx`, `OfferingCIS.tsx`, `OfferingCapacityBuilding.tsx`, `OfferingClimateHealth.tsx`, `OfferingDataAnalytics.tsx`, `OfferingOpenMRS.tsx`, `OfferingResearch.tsx`, `OfferingRHIS.tsx` — add the standard cyan className so they match the others (today they render with the default white background, hence "no top bar" feel)
+
+Where a description currently lives in the bar and adds context, move it into the first body section as a lead paragraph (e.g. Work, Contact, Research, Careers, Offerings).
+
+### 3. Pages missing a top bar — add one
+
+Insert the standard `<Hero>` at the top of these pages:
+
+- `src/pages/DigitalStories.tsx` — title `"Digital Stories"`, subtitle `"Research"`
+- `src/pages/Gallery.tsx` — title `"Gallery"`, subtitle `"Moments & Milestones"` (and remove the current decorative blob hero header that duplicates this)
+- `src/pages/Team.tsx` — title `"Our Team"`, subtitle `"People"` (replace the current intro `bg-muted` band)
+- `src/pages/Privacy.tsx` — title `"Privacy Policy"`, no subtitle
+- `src/pages/Terms.tsx` — title `"Terms & Conditions"`, no subtitle
+
+### 4. Home page
+
+Untouched. The Impact bento hero stays as the homepage's distinct opener.
+
+## Technical notes
+
+- The `description` prop is removed from `HeroProps`, and the prop is removed from every call site in the same change so TypeScript stays clean.
+- The `children` slot and `showScrollIndicator` prop on the non-fullscreen variants are dropped at call sites; the `fullscreen` branch keeps them.
+- No new dependencies, no backend changes.
+- Quick QA: open About, Work, Contact, Privacy, Gallery, Team, an Offering detail page, and confirm the cyan band is visually identical in height and styling.

@@ -103,13 +103,15 @@ export default function Home() {
       <NewsTicker />
 
       {/* About Us in Brief */}
-      <section className="py-20 md:py-32 bg-background scroll-snap-start">
+      <section className="py-16 md:py-24 bg-background scroll-snap-start">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <div>
-                <Badge className="mb-4">About HISP India</Badge>
-                <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">
+                <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-3">
+                  About HISP India
+                </p>
+                <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
                   Leading Public Health Informatics Partner
                 </h2>
               </div>
@@ -136,13 +138,18 @@ export default function Home() {
       </section>
 
       {/* Our Expertise */}
-      <section className="py-20 md:py-32 bg-muted scroll-snap-start">
+      <section className="py-16 md:py-24 bg-muted scroll-snap-start">
         <div className="container">
-          <div className="text-center mb-4">
-            <h2 className="font-heading text-3xl md:text-5xl font-bold mb-6">
-              OUR EXPERTISE
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-3">
+              Our Expertise
+            </p>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
+              What We Do Best
             </h2>
-            <div className="w-full h-1 bg-primary mb-16" />
+            <p className="text-muted-foreground">
+              Four pillars driving health informatics impact across India and beyond.
+            </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -183,14 +190,16 @@ export default function Home() {
       <LatestStories />
 
       {/* Our Offerings */}
-      <section className="py-20 md:py-32 bg-card scroll-snap-start">
+      <section className="py-16 md:py-24 bg-card scroll-snap-start">
         <div className="container">
-          <div className="text-center mb-16">
-            <Badge className="mb-4">Our Offerings</Badge>
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-3">
+              Our Offerings
+            </p>
             <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
               Comprehensive Health Informatics Solutions
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground">
               From grassroots community systems to national-level implementations
             </p>
           </div>
@@ -226,7 +235,7 @@ export default function Home() {
             })}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-10">
             <Button asChild size="lg" variant="outline">
               <Link to="/offerings">View All Offerings</Link>
             </Button>

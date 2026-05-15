@@ -1,57 +1,76 @@
-# Uniform page top bar
+# Homepage rhythm pass: uniform section titles + tighter spacing
 
-Make every page (except the Home page, which keeps its custom Impact bento hero) start with the same compact cyan top bar, matching the About page screenshot. The bar shows a **title** and an **optional subtitle**. Description text is removed from the bar (moved into the page body where it adds value).
+## Audit of current section titles
 
-## Reference look (from About screenshot)
+| Section | Current title style | Kicker | Vertical padding |
+|---|---|---|---|
+| About Us in Brief | `text-3xl md:text-4xl` | `<Badge>` | `py-20 md:py-32` |
+| Our Expertise | `text-3xl md:text-5xl` ALL CAPS + full-width primary bar | none | `py-20 md:py-32`, `mb-16` after bar |
+| Latest Stories | `text-3xl md:text-4xl` | small "Stories" kicker, border-bottom row, "View all" link on right | `py-20 md:py-28` |
+| Our Offerings | `text-3xl md:text-4xl` | `<Badge>` | `py-20 md:py-32`, `mb-16` |
+| Partners | `text-3xl md:text-4xl` | none | `py-20 md:py-32` |
+| Testimonials | `text-3xl md:text-4xl` | none | `py-20 md:py-32` |
 
-- Full-width cyan band (current `from-primary via-primary/90 to-primary/80` gradient)
-- Centered large title in white
-- Optional small subtitle line above the title (uppercase, tracked) — empty if the page has no subtitle
-- Fixed vertical rhythm — same height on every page regardless of content length
+Inconsistencies: Expertise uses a 5xl shouty all-caps title with a unique full-width bar; Latest Stories uses a left-aligned WHO header while everything else is centered with a Badge or nothing; vertical padding swings between `md:py-28` and `md:py-32`; bottom margins of headers vary (`mb-12`/`mb-16`).
 
-## Changes
+## Standard title pattern
 
-### 1. `src/components/Hero.tsx`
+Every section header on the homepage will use this exact structure:
 
-- Lock the non-fullscreen variants to a single height: replace `py-12 md:py-16` with a fixed `min-h-[220px] md:min-h-[260px]` plus `py-12` so a title-only and a title+subtitle bar render at the same height.
-- Stop rendering the `description` paragraph in the top bar. Keep the prop for backward compatibility but ignore it (or drop it — see Technical Notes).
-- Remove the bottom CTA `children` slot from the top bar so action buttons don't inflate height (CTAs that exist today are already inside page bodies).
-- Keep the `fullscreen` variant untouched (only the homepage's old fullscreen hero used it; nothing currently does).
+```tsx
+<div className="text-center max-w-2xl mx-auto mb-12">
+  <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-3">
+    {kicker}
+  </p>
+  <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
+    {title}
+  </h2>
+  {subtitle && (
+    <p className="text-muted-foreground">{subtitle}</p>
+  )}
+</div>
+```
 
-### 2. Pages that already use `<Hero>` — drop the `description` prop
+- `font-heading text-3xl md:text-4xl font-bold` — single size for every section h2.
+- Small uppercase kicker in `text-primary` replaces the inconsistent Badge / no-kicker / huge-bar variants.
+- `mb-12` for header→content spacing across the board.
+- The About Us section keeps its 2-column layout but its inline header adopts the same `kicker + h2 size`.
 
-Trim every call site to `title` + optional `subtitle` + the standard cyan className. Affected files:
+## Section spacing
 
-- `src/pages/About.tsx` — already title-only, leave as is
-- `src/pages/Work.tsx`
-- `src/pages/Contact.tsx`
-- `src/pages/Research.tsx`
-- `src/pages/Careers.tsx`
-- `src/pages/Offerings.tsx`
-- `src/pages/Sitemap.tsx` (also add the cyan className it currently lacks)
-- `src/pages/ProjectDetail.tsx` (currently passes `description={project.hero}` — drop)
-- `src/pages/JobDetail.tsx`
-- `src/pages/OfferingDetail.tsx`, `OfferingCIS.tsx`, `OfferingCapacityBuilding.tsx`, `OfferingClimateHealth.tsx`, `OfferingDataAnalytics.tsx`, `OfferingOpenMRS.tsx`, `OfferingResearch.tsx`, `OfferingRHIS.tsx` — add the standard cyan className so they match the others (today they render with the default white background, hence "no top bar" feel)
+Standardize every section to `py-16 md:py-24` (down from `md:py-32`). This removes the extra whitespace the user flagged while keeping clear separation. Background alternation stays as-is so sections remain visually distinct: `bg-background` → `bg-muted` → `bg-muted/40` → `bg-card` → `bg-accent/5` → `bg-muted`.
 
-Where a description currently lives in the bar and adds context, move it into the first body section as a lead paragraph (e.g. Work, Contact, Research, Careers, Offerings).
+## Per-section changes
 
-### 3. Pages missing a top bar — add one
+### `src/pages/Home.tsx`
 
-Insert the standard `<Hero>` at the top of these pages:
+- **About Us in Brief** — replace `<Badge>About HISP India</Badge>` with kicker `<p>` in the same style; section padding `py-16 md:py-24`.
+- **Our Expertise** — drop the `text-5xl` all-caps title and the full-width primary bar. Replace with the standard centered header (kicker `Our Expertise`, title `What We Do Best`, subtitle one line). Padding `py-16 md:py-24`. Cards grid spacing unchanged.
+- **Our Offerings** — replace Badge with kicker, keep h2 size (already correct), `mb-16` → `mb-12`, padding `py-16 md:py-24`. Trim `mt-12` on the "View All Offerings" button row to `mt-10`.
 
-- `src/pages/DigitalStories.tsx` — title `"Digital Stories"`, subtitle `"Research"`
-- `src/pages/Gallery.tsx` — title `"Gallery"`, subtitle `"Moments & Milestones"` (and remove the current decorative blob hero header that duplicates this)
-- `src/pages/Team.tsx` — title `"Our Team"`, subtitle `"People"` (replace the current intro `bg-muted` band)
-- `src/pages/Privacy.tsx` — title `"Privacy Policy"`, no subtitle
-- `src/pages/Terms.tsx` — title `"Terms & Conditions"`, no subtitle
+### `src/components/LatestStories.tsx`
 
-### 4. Home page
+Keep the editorial WHO feel but bring it in line: same kicker + h2 sizes (already match), drop the `border-b` divider row and stack the "View all stories" link below the header (centered) so all sections share the centered header pattern. Reduce `py-20 md:py-28` to `py-16 md:py-24`. Reduce `mb-12` on header to remain `mb-12` (already fine).
 
-Untouched. The Impact bento hero stays as the homepage's distinct opener.
+### `src/components/PartnersCarousel.tsx`
 
-## Technical notes
+Add the standard kicker (`Partners`) above the existing h2. Padding `py-16 md:py-24`.
 
-- The `description` prop is removed from `HeroProps`, and the prop is removed from every call site in the same change so TypeScript stays clean.
-- The `children` slot and `showScrollIndicator` prop on the non-fullscreen variants are dropped at call sites; the `fullscreen` branch keeps them.
-- No new dependencies, no backend changes.
-- Quick QA: open About, Work, Contact, Privacy, Gallery, Team, an Offering detail page, and confirm the cyan band is visually identical in height and styling.
+### `src/components/TestimonialCarousel.tsx`
+
+Add the standard kicker (`Testimonials`) above the existing h2. Padding `py-16 md:py-24`.
+
+### `src/components/NewsTicker.tsx`
+
+Untouched — it's a thin band, not a content section.
+
+### `ImpactHero`
+
+Untouched — it's the page opener, not a numbered section.
+
+## Result
+
+- Six homepage sections share the same centered kicker + `text-3xl md:text-4xl` title pattern.
+- Vertical rhythm is uniform `py-16 md:py-24` everywhere.
+- Section backgrounds still alternate so each block reads as clearly separated.
+- No content removed; only typography, kickers, and spacing normalized.

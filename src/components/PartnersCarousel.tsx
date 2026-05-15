@@ -87,8 +87,8 @@ export function PartnersCarousel() {
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
             Our Partners
           </h2>
-          <p className="text-muted-foreground">
-            Collaborating with governments, international organizations, and institutions to strengthen health systems
+          <p className="text-base text-muted-foreground leading-relaxed max-w-xl mx-auto">
+            Collaborating with governments, international organizations, and institutions to strengthen health systems.
           </p>
         </div>
 
